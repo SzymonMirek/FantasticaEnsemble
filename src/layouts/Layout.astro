@@ -1,9 +1,23 @@
 ---
 import Header from '../components/Header.astro';
+const pageTitles = {
+  '/': 'Fantastica',
+  '/o-nas': 'Fantastica | O nas',
+  '/posluchaj': 'Fantastica | Posłuchaj',
+  '/projekty': 'Fantastica | Projekty',
+  '/plyty': 'Fantastica | Płyty',
+  '/kontakt': 'Fantastica | Kontakt'
+};
+
+// Get the current pathname
+const currentPath = Astro.url.pathname;
+
+// Get the custom title or fallback to a default
+const title = pageTitles[currentPath as keyof typeof pageTitles] || 'Fantastica';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="pl">
 	<head>
 		<meta charset="UTF-8" />
 		<!-- <meta name="viewport" content="width=device-width" /> -->
@@ -17,7 +31,7 @@ import Header from '../components/Header.astro';
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Elsie:wght@400;900&family=Gilda+Display&display=swap" rel="stylesheet">
 		<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-		<title>Astro Basics</title>
+		<title>{title}</title>
 	</head>
 	<body>
 		<Header />
