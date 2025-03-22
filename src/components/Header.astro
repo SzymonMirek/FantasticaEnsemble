@@ -1,0 +1,55 @@
+---
+import Logo from '../assets/logoo.svg';
+const links = [
+  { name: "O nas", href: "/Onas" },
+  { name: "Posłuchaj", href: "/Posłuchaj" },
+  { name: "Projekty", href: "/Projekty" },
+  { name: "Albumy", href: "/Albumy" },
+  { name: "Kontakt", href: "/Kontakt" }
+];
+---
+
+<header>
+    <Logo id="logo" />
+    <ul>
+        {links.map((link) => (
+          <li><a href={link.href}>{link.name}</a></li>
+        ))}
+    </ul>
+
+</header>
+
+<style>
+    header {
+      position: fixed;
+      display: flex;
+      justify-content: space-around;
+      background: #ffffff00;
+      padding: 10px;
+      width: 100%;
+      z-index: 1;
+    }
+
+    #logo {
+        width: 90px;
+        color: white;
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      gap: 20px;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-family: "Gilda Display", serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+    a:hover {
+      color: yellow;
+    }
+</style>

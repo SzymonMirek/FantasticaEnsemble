@@ -9,6 +9,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.4.1"
+    "astro": "^5.4.1",
+    "gsap": "^3.12.7",
+    "locomotive-scroll": "^4.1.4"
+  },
+  "devDependencies": {
+    "@types/locomotive-scroll": "^4.1.4"
   }
 }

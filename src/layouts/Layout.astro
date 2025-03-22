@@ -1,22 +1,37 @@
+---
+import Header from '../components/Header.astro';
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
+		<meta name="genefantasrator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Elsie:wght@400;900&family=Gilda+Display&display=swap" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
 		<title>Astro Basics</title>
 	</head>
 	<body>
+		<Header />
 		<slot />
 	</body>
 </html>
 
-<style>
+<style is:global>
 	html,
 	body {
 		margin: 0;
 		width: 100%;
 		height: 100%;
+		overflow-x: hidden;
+		overflow: visible;
 	}
+
 </style>
