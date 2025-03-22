@@ -40,7 +40,7 @@ import Footer from '../components/Footer.astro';
         <div class="zobacz-na-zywo-embed">
 			<img class="naZywo" src={naZywo.src} alt="" />
             <iframe
-                src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                src="https://www.youtube.com/embed/ZnTkeduqcbU">
             </iframe>
         </div>
     </div>
@@ -130,8 +130,8 @@ import Footer from '../components/Footer.astro';
     .zobacz-na-zywo-embed iframe {
         position: absolute;
         top: 3.5vw;
-        left: 0;
-        justify-self: anchor-center;
+        left: 5vw;
+        /* justify-self: anchor-center; */
         aspect-ratio: 65/39;
         width: 58vw;
         z-index: 1;
@@ -146,6 +146,7 @@ import Footer from '../components/Footer.astro';
         .zobacz-na-zywo-embed iframe {
             top: 2.5vw;
             width: 80vw;
+            left: 8.4vw;
         }
     }
     @media screen and (max-width: 600px) {

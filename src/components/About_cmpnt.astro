@@ -301,7 +301,8 @@ import Footer from '../components/Footer.astro'
     }
     
     .about-content-4-aleksandra-tag {
-        writing-mode: sideways-lr;
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
         grid-column: 1 / 2;
         grid-row: 1 / 3;
         z-index: 0;
@@ -316,6 +317,10 @@ import Footer from '../components/Footer.astro'
         z-index: 1;
         justify-items: center;
         align-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 4vw;
     }
     .owczarek-test-top {
         font-size: calc(18px + 1vw);
@@ -403,7 +408,8 @@ import Footer from '../components/Footer.astro'
         margin-top: 12vh;
     }
     .sideways-text-and-text h3 {
-        writing-mode: sideways-lr;
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
         text-align: center;
         font-family: "Gilda Display";
         font-weight: 300;
