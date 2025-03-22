@@ -6,7 +6,8 @@ import Header from '../components/Header.astro';
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<!-- <meta name="viewport" content="width=device-width" /> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="genefantasrator" content={Astro.generator} />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,10 +28,12 @@ import Header from '../components/Header.astro';
 <style is:global>
 	html,
 	body {
+		/* TODO - experimental font smoothing */
+		-webkit-font-smoothing: antialiased;
+		scroll-behavior: smooth;
 		margin: 0;
 		width: 100%;
 		height: 100%;
-		overflow-x: hidden;
 		overflow: visible;
 	}
 
