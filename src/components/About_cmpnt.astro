@@ -493,7 +493,7 @@ import Footer from '../components/Footer.astro'
 /* Mobilna O nas */
 @media screen and (max-width: 800px) {
     .about-container {
-        grid-template-rows: 1fr 100vh 1fr 100vh 360vw 1fr 1fr calc(20px + 42vh);
+        grid-template-rows: 1fr 1fr 1fr 100vh 360vw 1fr 1fr calc(20px + 42vh);
     }
     .about-content-1 {
         flex-direction: column;    
@@ -510,6 +510,9 @@ import Footer from '../components/Footer.astro'
         margin-top: 5vw;
     }
 /* about 2 - mobilne */
+    .about-content-2 {
+        height: fit-content;
+    }
 
     .about-content-2-inside {
         flex-direction: column-reverse;
@@ -550,8 +553,10 @@ import Footer from '../components/Footer.astro'
     }
     #about-3-aleksandra-img {
         order: 2;
-        margin-left: calc(20vw);
-        margin-bottom: 6vw;
+        /* margin-left: calc(20vw); */
+        margin-bottom: 6vw;        
+        width: 80%;
+        align-self: end;
     }
     #about-3-aleksandra-inside-text-right {
         margin-right: 0;
