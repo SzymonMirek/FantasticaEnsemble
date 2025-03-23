@@ -3,6 +3,7 @@ import albumyHeadlineImg from '../assets/albumyHeadline.png';
 import plytyEclipse from '../assets/plytyEclipseLol.png';
 import plytyBiber from '../assets/plytyBiber.png';
 import plytyBiber2 from '../assets/plytyBiber2.png'
+import plytyBiberDots from '../assets/plyty-biber-dots.png'
 ---
 
 <div class="albumy-container">
@@ -26,7 +27,7 @@ import plytyBiber2 from '../assets/plytyBiber2.png'
             <div class="albumy-biber-text">
                 <!-- TODO - WAZNE: ZROB KROPKI -->
                 <h2>
-                    BIBER
+                    BIBER<img class="plyty-biber-dots" src={plytyBiberDots.src} alt="" />
                 </h2>
                 <h4>
                     Trochę Sacrum,<br>Trochę Profanum
@@ -177,6 +178,7 @@ import plytyBiber2 from '../assets/plytyBiber2.png'
         font-weight: 400;
         margin-bottom: 1vw;
         font-size: clamp(40px, 5vw, 76px);
+        position: relative;
     }
 
     h4 {
@@ -208,6 +210,13 @@ import plytyBiber2 from '../assets/plytyBiber2.png'
     }
     .albumy-biber-down ul {
         margin-top: 3vw;
+    }
+
+    .plyty-biber-dots {
+        position: absolute;
+        top: -6vw;
+        right: -5.3vw;
+        width: 26vw;
     }
 /* Biber2 */
 
@@ -347,6 +356,10 @@ import plytyBiber2 from '../assets/plytyBiber2.png'
         /* TODO - dadaj zdjecie zeby bylo jak w mobile na figmie */
         .albumy-biber-img-container {
             opacity: 0;
+        }
+
+        .plyty-biber-dots {
+            top: -11vw;
         }
      }
 </style>
