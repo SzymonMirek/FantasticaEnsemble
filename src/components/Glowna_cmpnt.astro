@@ -355,7 +355,7 @@ header {
 			height: 100%;
 			grid-row: 8/9;
 			grid-column: 1/4;
-			width: 101.4vw;
+			width: auto;
 		}
 		#footerson > footer {
 			width: 101.6vw;
@@ -373,7 +373,7 @@ header {
 			}
 			#main-readable-portion {
 				width: 101vw;
-				grid-template-rows: 10vh 1250px 82vh 108vh 175vw 42vh;
+				grid-template-rows: 10vh 1250px 82vh 1360px 40vh 42vh;
 			}
   /* O nas Iphone */
 			#o-nas-containter {
@@ -465,6 +465,7 @@ header {
 			}
 
 		}
+
 			@media screen and (max-width: 420px) {
 				#fantastica-glowna {
 					grid-template-rows: 114vh 66.7% 100vh 1fr;
@@ -489,6 +490,7 @@ header {
 
 				}
 			}
+		@media screen and (min-width: 1000px) {
 			@media screen and (max-height: 950px) {
 				#fantastica-glowna {
 					grid-template-rows: 122vh 53% 100vh 1fr;
@@ -529,6 +531,7 @@ header {
 					grid-template-rows: 132vh 61.1% 100vh 1fr;
 				}
 			}
+		}
 
 	</style>
 

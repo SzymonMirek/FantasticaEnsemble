@@ -103,7 +103,7 @@ import igIcon from '../assets/ig-kontakt.svg';
         grid-column: 2/3;
         object-fit: cover;
         width: 66vw;
-        height: 100vh;
+        height: -webkit-fill-available;
         box-shadow: -2px 1px 8.7px 0px rgba(0,0,0,0.25);
     }
 
@@ -168,7 +168,7 @@ import igIcon from '../assets/ig-kontakt.svg';
     @media screen and (max-width: 700px) 
     {
         .kontakt-container {
-            grid-template-rows: 39vh 0.9fr 1fr;
+            grid-template-rows: 39vh 1fr;
             grid-template-columns: 100vw;
             height: -webkit-fill-available;
             overflow: clip;

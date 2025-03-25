@@ -574,8 +574,9 @@ import projekt4img from '../assets/projekt4img.png';
         grid-template-rows: minmax(115vw, auto) repeat(4, minmax(172vw, auto));
     }
     .projekty-headline {
-        margin-top: 12vw;
+        /* margin-top: 12vw; */
         height: -webkit-fit-content;
+        
     }
 
     .projekty-headline-text {
@@ -601,7 +602,13 @@ import projekt4img from '../assets/projekt4img.png';
         .projekt-text-p {
             margin-bottom: 11vw;
         }
-
+        .projekty-headline-text > h1{
+            text-align: center;
+            padding-right: 0%;
+        }
+        .projektyHeadlineImg { 
+            width: 91%;
+        }
     /* proba img dopasowania */
     .projekt-1-up, .projekt-2-up, .projekt-3-up, .projekt-4-up {
         grid-template-columns: 1fr;
