@@ -167,7 +167,7 @@ import projekt4img from '../assets/projekt4img.png';
     /* TODO - fajnie jakby sie udalo zrobic overflow clip */
     .projekty-container {
         display: grid;
-        grid-template-rows: 99vh 83vw 140vh 140vh 140vh;
+        grid-template-rows: minmax(60vw 1569px) 83vw 140vh 140vh 140vh;
         font-weight: 400;
         font-family: "Gilda Display";
 
@@ -177,17 +177,18 @@ import projekt4img from '../assets/projekt4img.png';
         grid-row: 1/2;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
-        grid-template-rows: 14vh 1fr;
+        grid-template-rows: max-content;
         background-image: url("../assets/tloProjekty.png");
-        height: -webkit-fill-available;
+        height: auto;
+        align-content: end;    
+        padding-top: 16vh;
     }
 
     .projektyHeadlineImg {
         grid-column: 1/2;
         grid-row: 2/3;
-        height: 92%;
+        height: 50vw;
         justify-self: center;
-        align-self: anchor-center;
         margin-top: 0.2vw;
     }
     .projekty-headline-text {
@@ -214,7 +215,6 @@ import projekt4img from '../assets/projekt4img.png';
     .projekt-1-container {
         display: grid;
         grid-template-rows: 4fr 1fr;
-        margin-top: -1vw;
         }
     
     .projekt-1-up {
@@ -544,6 +544,7 @@ import projekt4img from '../assets/projekt4img.png';
             grid-column: 1/2;
             grid-row: 2/3;    
             width: 93%;
+            height: auto;
             z-index: -1;
             object-fit: contain;
         }
@@ -623,7 +624,7 @@ import projekt4img from '../assets/projekt4img.png';
     }
     .projekt1-fikusy {
         left: -6vw;
-        top: -13vw;
+        top: -5vw;
     }
     .projekt2-fikusy {
         top: -44vw;

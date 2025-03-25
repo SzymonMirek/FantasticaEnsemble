@@ -33,7 +33,7 @@ import ytIcon from '../assets/yt_icon.svg';
     #footer-gradient {
         top: 0;
         left: 0;
-        width: 100vw;
+        width: -webkit-fill-available;
         height: 23px;
         background: linear-gradient(90deg, #E180A9 23.5%, #2599F8 100%);
     }
@@ -127,7 +127,7 @@ import ytIcon from '../assets/yt_icon.svg';
 /* Footer - mobile styles */
     @media screen and (max-width: 700px) { 
         footer {
-            width: 100vw;
+            width: fit-content;
         }
         .footer {
             flex-direction: column;

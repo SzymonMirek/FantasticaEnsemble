@@ -83,14 +83,15 @@ import igIcon from '../assets/ig-kontakt.svg';
         overflow: hidden;
         display: grid;
         grid-template-columns: minmax(440px, 34vw) 1fr;
-        grid-template-rows: 50vh 50vh;
+        grid-template-rows: 50vh minmax(450px, 50vh);
         background: var(--fanstasticos-gradient, linear-gradient(180deg, #E180A9 23%, #2599F8 100%));
         font-weight: normal;
         }
     .heading-kontakt {
-        padding-top: 15vw;
         grid-row: 1/2;
         grid-column: 1/2;
+        margin-bottom: 10vh;
+        align-self: end;
     }
     .kontakt {
         grid-row: 2/3;
