@@ -23,6 +23,7 @@ const currentLinks = isEnglish ? links.en : links.pl;
 const homeLink = isEnglish ? "/en" : "/";
 ---
 <!-- TODO - na dole na mobile jak sie rozwija hamburger menu fajnie jakby na dole bylo logo fantastica to pelne -->
+ <!-- TODO - 2 logo jest nad wysuwajacym sie paskiem -->
 <header id="headinio">
   <a class="logo-container" href={homeLink} style="z-index: 999;">
     <Logo id="logo" />
@@ -85,7 +86,7 @@ const homeLink = isEnglish ? "/en" : "/";
       background: #ffffff00;
       padding: 10px;
       width: 100%;
-      z-index: 300;
+      z-index: 3000;
       position: fixed;
     }
     
@@ -112,6 +113,7 @@ const homeLink = isEnglish ? "/en" : "/";
   @media screen and (max-width: 700px) {
     header {
       position: fixed;
+      z-index: 3000;
     }
     #logo {
       padding-top: 2vh;
