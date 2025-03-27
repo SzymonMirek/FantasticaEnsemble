@@ -1,0 +1,119 @@
+---
+const { pathname } = Astro.url;
+const isEnglish = pathname.startsWith('/en');
+---
+
+<section id="lang-switch-button-m">
+    <label title="PLm" for="pl" class="label">
+      <input id="pl" name="languagem" type="radio" checked={!isEnglish} />
+      PL
+    </label>
+    <label title="ENm" for="en" class="label">
+      <input id="en" name="languagem" type="radio" checked={isEnglish} />
+      EN
+    </label>
+</section>
+
+<script>
+  function handleLanguageSwitch(lang: string) {
+    const currentPath = window.location.pathname;
+    
+    if (lang === 'enm' && !currentPath.startsWith('/en')) {
+      // Switch to English
+      if (currentPath === '/') {
+        window.location.href = '/en';
+      } else {
+        const newPath = `/en${currentPath}`;
+        window.location.href = newPath;
+      }
+    } else if (lang === 'plm' && currentPath.startsWith('/en')) {
+      // Switch to Polish
+      const newPath = currentPath.replace('/en', '');
+      window.location.href = newPath || '/';
+    }
+  }
+
+  // Add event listeners to radio buttons
+  document.querySelectorAll('input[name="language"]').forEach(radio => {
+    radio.addEventListener('change', (e) => {
+      handleLanguageSwitch((e.target as HTMLInputElement).id);
+    });
+  });
+</script>
+<style>
+ @media (min-width: 768px) { 
+    opacity: 0;
+    transform: scale(1.2);
+ }
+ #lang-switch-button-m {
+    --col-pink: linear-gradient(144deg, #af40ff, #4f46e5);
+    --col-dark: #0c0f14;
+    --col-darkGray: #52555a;
+    --col-gray: #aeaeae;
+    height: 50px; /* Increased height */
+    width: 95px; /* Increased width */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 30px; /* Increased border radius */
+    position: fixed;
+    top: 4px;
+    right: 6px;
+    font-family: "Gilda Display", serif;
+  }
+
+  #lang-switch-button-m > .label {
+    padding: 8px 2px 12px 6px; /* Increased padding */
+    transition: all 200ms;
+    display: inline-block;
+    color: var(--col-gray);
+    cursor: pointer;
+    font-size: 1.1em; /* Increased font size */
+  }
+
+  #lang-switch-button-m > .label input[type="radio"] {
+    display: none;
+  }
+
+  #lang-switch-button-m > .label:hover:not(:has(input:checked)) {
+    background: var(--col-pink);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity: 0.6;
+  }
+
+  #lang-switch-button-m > .label::before {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 3px; /* Increased underline height */
+    border-radius: 5px;
+    position: relative;
+    left: 50%;
+    top: 22px; /* Adjusted for new size */
+    background: var(--col-pink);
+    transition: all 200ms;
+  }
+
+  #lang-switch-button-m > .label:has(input:checked) {
+    background: var(--col-pink);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transform: scale(1.2); /* Increased scale */
+    margin-top: -4px;
+  }
+
+  #lang-switch-button-m > .label:has(input:checked)::before {
+    width: 100%;
+    left: 0;
+    top: 26px; /* Adjusted for new size */
+  }
+  @media (max-width: 768px) {
+    #lang-switch-button-m {
+      opacity: 1;
+      display: contents;
+    }
+  }
+</style>

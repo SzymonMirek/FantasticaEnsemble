@@ -1,40 +1,26 @@
 ---
 import Logo from '../assets/logoo.svg';
-import LangSwitchButton from '../components/LangSwitchButton.astro';
-import LangSwitchButtonM from '../components/LangSwitchButtonM.astro';
-const links = {
-  pl: [
-    { name: "O nas", href: "/o-nas" },
-    { name: "Posłuchaj", href: "/posluchaj" },
-    { name: "Projekty", href: "/projekty" },
-    { name: "Płyty", href: "/plyty" },
-    { name: "Kontakt", href: "/kontakt" }
-  ],
-  en: [
-    { name: "About", href: "/en/about" },
-    { name: "Listen", href: "/en/listen" },
-    { name: "Projects", href: "/en/projects" },
-    { name: "Albums", href: "/en/albums" },
-    { name: "Contact", href: "/en/contact" }
-  ]
-};
-const isEnglish = Astro.url.pathname.startsWith('/en');
-const currentLinks = isEnglish ? links.en : links.pl;
-const homeLink = isEnglish ? "/en" : "/";
+const links = [
+  { name: "About us", href: "/en/about" },
+  { name: "Listen", href: "/en/listen" },
+  { name: "Projects", href: "/en/projects" },
+  { name: "Albums", href: "/en/albums" },
+  { name: "Contact", href: "/en/contact" }
+];
 ---
 <!-- TODO - na dole na mobile jak sie rozwija hamburger menu fajnie jakby na dole bylo logo fantastica to pelne -->
 <header id="headinio">
-  <a class="logo-container" href={homeLink} style="z-index: 999;">
+  <a class="logo-container" href="/" style="z-index: 999;">
     <Logo id="logo" />
   </a>
   <ul class="desktop-nav">
-      {currentLinks.map((link) => (
+      {links.map((link) => (
         <li><a href={link.href}>{link.name}</a></li>
       ))}
   </ul>
-  <LangSwitchButton />
+
 <!-- Navigation - Mobile -->
-  <div class="mobile-nav">
+  <div class="mobile-nav">ą
     <nav role="navigation">
       <div id="menuToggle">
         <input type="checkbox" id="menuCheckbox" />
@@ -46,13 +32,11 @@ const homeLink = isEnglish ? "/en" : "/";
         
 
         <ul id="menu">
-          {currentLinks.map((link) => (
+          {links.map((link) => (
             <li><a href={link.href}>{link.name}</a></li>
           ))}
-          <LangSwitchButtonM />
         </ul>
       </div>
-      
     </nav>
 
 </header>
@@ -74,7 +58,6 @@ const homeLink = isEnglish ? "/en" : "/";
 
   @media screen and (min-width: 700px) {
 
-
     .mobile-nav {
       display: none;
     }
@@ -86,7 +69,6 @@ const homeLink = isEnglish ? "/en" : "/";
       padding: 10px;
       width: 100%;
       z-index: 3;
-      position: fixed;
     }
     
 
@@ -110,16 +92,10 @@ const homeLink = isEnglish ? "/en" : "/";
   }
   /* navigation - mobile STYLES */
   @media screen and (max-width: 700px) {
-    header {
-      position: fixed;
-    }
     #logo {
       padding-top: 2vh;
       padding-left: 3.7vh;
       width: 9vh;
-    }
-    #lang-switch-button1 {
-      opacity: 0;
     }
     .desktop-nav {
       display: none;
@@ -132,7 +108,7 @@ const homeLink = isEnglish ? "/en" : "/";
     .logo-container {
       position: fixed; 
       top: -10px; 
-      left: 1vw; 
+      left: -10px; 
     }
 
       #menuToggle

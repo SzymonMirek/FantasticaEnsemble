@@ -1,0 +1,128 @@
+<!-- TODO - details to be done -->
+<div class="wydarzenie">
+    <div id="data-wydarzenia">
+        <p class="data-wydarzenia-dzien">09</p>
+        <p class="data-wydarzenia-m-r">mar<br>2024</p>
+    </div>
+    <a id="nazwa-wydarzenia">Fantasticus</a>
+    <a id="miejsce-wydarzenia">Warsaw</a>
+    <a id="data-wydarzenia-link">17:30 - 18:30</a>
+</div>
+<div class="wydarzenie">
+    <div id="data-wydarzenia">
+        <p class="data-wydarzenia-dzien">25</p>
+        <p class="data-wydarzenia-m-r">jul<br>2024</p>
+    </div>
+    <a id="nazwa-wydarzenia">Biber Troche S</a>
+    <a id="miejsce-wydarzenia">Sobótka</a>
+    <a id="data-wydarzenia-link">19:00 - 20:00</a>
+</div>
+<div class="wydarzenie">
+    <div id="data-wydarzenia">
+        <p class="data-wydarzenia-dzien">21</p>
+        <p class="data-wydarzenia-m-r">jul<br>2024</p>
+    </div>
+    <a id="nazwa-wydarzenia">Pandolfi Mealli</a>
+    <a id="miejsce-wydarzenia">Murto</a>
+    <a id="data-wydarzenia-link">14:00 - 15:00</a>
+</div>
+<div class="wydarzenie">
+    <div id="data-wydarzenia">
+        <p class="data-wydarzenia-dzien">11</p>
+        <p class="data-wydarzenia-m-r">jul<br>2024</p>
+    </div>
+    <a id="nazwa-wydarzenia">Fantastica</a>
+    <a id="miejsce-wydarzenia">Gigole</a>
+    <a id="data-wydarzenia-link">15:00 - 16:00</a>
+</div>
+<div class="wydarzenie">
+    <div id="data-wydarzenia">
+        <p class="data-wydarzenia-dzien">21</p>
+        <p class="data-wydarzenia-m-r">jun<br>2024</p>
+    </div>
+    <a id="nazwa-wydarzenia">Pandolfi Mealli</a>
+    <a id="miejsce-wydarzenia">Krakow</a>
+    <a id="data-wydarzenia-link">19:00 - 20:00</a>
+</div>
+<div class="wydarzenie">
+    <div id="data-wydarzenia">
+        <p class="data-wydarzenia-dzien">21</p>
+        <p class="data-wydarzenia-m-r">jun<br>2024</p>
+    </div>
+    <a id="nazwa-wydarzenia">Theater Barakaii</a>
+    <a id="miejsce-wydarzenia">Krakow</a>
+    <a id="data-wydarzenia-link">19:00 - 20:00</a>
+</div>
+
+<style>
+    .wydarzenie {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-family: "Gilda Display";
+        align-items: center;
+        width: 96%;
+        height: 60px;
+        border-top: 1px solid #E4277640;
+        border-bottom: 1px solid #E4277640;
+        padding: 0.3% 1% 0.3% 7px;
+        margin-bottom: 11px;
+    }
+
+    #data-wydarzenia {
+        color: #353535;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0 7%;
+    }
+        .data-wydarzenia-dzien {
+            height: 100%;
+            padding-bottom: 12px;
+            font-family: Elsie;
+            font-size: 37px;
+            font-style: normal;
+            font-weight: 900;
+            line-height: normal;
+        }
+
+        .data-wydarzenia-m-r {
+            height: 100%;
+            text-align: justify;
+            font-family: "Gilda Display";
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+        #nazwa-wydarzenia {
+            flex-basis: 112px;
+        }
+        #miejsce-wydarzenia {
+            flex-basis: 75px;
+        }
+
+        #data-wydarzenia-link {
+            color: #A71250;
+            padding-right: 7vw;
+        }
+        @media screen and (max-width: 1200px) {
+            #data-wydarzenia-link {
+                padding-right: 0;
+            }
+            .wydarzenie a {
+                font-size: 15px;
+            }
+
+            #nazwa-wydarzenia {
+                margin-left: 6vw;
+                text-align: left;
+            }
+            #miejsce-wydarzenia {
+                text-align: end;
+            }
+            #data-wydarzenia-link{
+                text-align: end;
+            }
+        }
+</style>
