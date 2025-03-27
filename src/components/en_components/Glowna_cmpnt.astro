@@ -1,12 +1,12 @@
 ---
-import background from '../assets/fantastica-tlo-gradient.svg';
-import falanding from '../assets/head-z-purple-kolem.png';
-import vidoo from '../assets/fantastica-vid.mp4';
-import kimjestesmyPhoto from '../assets/kimjestesmy-photo.png'
-import Wydarzenia from '../components/Wydarzenia.astro'
-import kalendarzPicMain from '../assets/kalendarz-pic-main.png'
-import secondPhotoMain from '../assets/second-photo-main.png'
-import Footer from '../components/Footer.astro'
+import background from '../../assets/fantastica-tlo-gradient.svg';
+import falanding from '../../assets/head-z-purple-kolem.png';
+import vidoo from '../../assets/fantastica-vid.mp4';
+import kimjestesmyPhoto from '../../assets/kimjestesmy-photo.png'
+import Wydarzenia from '../../components/en_components/Wydarzenia.astro'
+import kalendarzPicMain from '../../assets/kalendarz-pic-main.png'
+import secondPhotoMain from '../../assets/second-photo-main.png'
+import Footer from '../../components/en_components/Footer.astro'
 // import first_photo from '../assets/first_photo_main.png' TODO - nie dziala, wiec zrobilem straitght link
 ---
 
@@ -25,22 +25,16 @@ import Footer from '../components/Footer.astro'
 		<div id="o-nas-containter">
 			<div id="o-nas">
 				<div id="o-nas-left">
-					<h2 style="font-family: Gilda Display;">KIM<br>JESTEŚMY?</h2>
+					<h2 style="font-family: Gilda Display;">WHO<br>ARE WE?</h2>
 					<img src={kimjestesmyPhoto.src} alt="" />
 				</div>
 				<div id="o-nas-right">
 					<div id="o-nas-right-tekscik">
-						<p>Fantastica Ensemble to przestrzeń, w której barok spotyka się z niepowtarzalną ekspresją i
-							nowatorskim podejściem. Jesteśmy zespołem o zmiennym składzie, a naszym trzonem są
-							skrzypaczka Aleksandra Owczarek i klawesynistka Klaudia Łoboda – artystki, które
-							odważnie sięgają po rzadkie i zapomniane dzieła, nadając im nowe życie. Nie odtwarzamy baroku – my go tworzymy na nowo.
+						<p>
+							Fantastica Ensemble is a space where Baroque meets unparalleled expression and an innovative approach. We are a flexible ensemble, with our core consisting of violinist Aleksandra Owczarek and harpsichordist Klaudia Łoboda—artists who boldly explore rare and forgotten works, bringing them back to life. We do not recreate Baroque—we reinvent it.
 						</p>
 						<p>
-							Fantastica Ensemble to nie tylko zespół – to artystyczna misja. Gramy
-							muzykę, która nie zna granic, odrzuca schematy i na nowo definiuje czym właściwie jest muzyka
-							dawna. Autentyczność, ekspresja, nieprzewidywalność – to nasze DNA. W naszych interpretacjach
-							można usłyszeć wszystko, co w sztuce kochamy najbardziej: intensywność, zmysłowość i piękno.
-							
+							Fantastica Ensemble is more than just a group—it is an artistic mission. We play music that knows no boundaries, defies conventions, and redefines what early music truly is. Authenticity, expression, unpredictability—this is our DNA. In our interpretations, you will hear everything we love most in art: intensity, sensuality, and beauty.
 						</p>
 					</div>
 				</div>
@@ -53,7 +47,7 @@ import Footer from '../components/Footer.astro'
 		<div id="first-photo-containter" >
 			<div id="first-photo-text-container">
 				<p>
-					„Barok odkryty na nowo.<br> Usłysz głos młodego pokolenia. ”
+					„Baroque Reimagined.<br> Hear the Voice of the Youth. ”
 				</p>
 			</div>
 		</div>
@@ -72,9 +66,9 @@ import Footer from '../components/Footer.astro'
 		<div id="second-quote-main">
 			<img src={secondPhotoMain.src} alt="" />
 			<div>
-				<h2>“Rewolucjonizują świat muzyki barokowej swoim nowatorskim podejściem”</h2>
-				<h4>Autorzy<br>Karolina Sajniak-Drzyzga, Julian Cochran Foundation</h4>
-				<a>“Ich autorskie projekty to prawdziwe perełki, które z wirtuozerią łączą świeżość i innowacyjność, przybliżając piękno baroku w sposób zaskakujący i pełen młodzieńczej energii. Każdy ich koncert to nie tylko występ muzyczny, ale przemyślana, teatralna opowieść w której tradycja spotyka się z nowoczesności.”</a>
+				<h2>“Revolutionizing the world of Baroque music with their innovative approach.”</h2>
+				<h4>Authors<br>Karolina Sajniak-Drzyzga, Julian Cochran Foundation</h4>
+				<a>“Their unique projects are true pearls, which with virtuosity combine freshness and innovation, bringing the beauty of Baroque in a surprising and youthful way. Each of their concerts is not only a musical performance, but a thoughtful, theatrical story where tradition meets modernity.”</a>
 			</div>
 		</div>
 		<!-- TODO - footer -->
@@ -96,7 +90,7 @@ header {
 	background: white;
 }
 	#kalendarz-container {
-		background: url(../assets/tlo-kalendarz.png) lightgray 50% / cover no-repeat;
+		background: url(../../assets/tlo-kalendarz.png) lightgray 50% / cover no-repeat;
 	}
 	/* landing and vid */
 		#fantastica-glowna {
@@ -241,7 +235,7 @@ header {
 			justify-content: center;
 			grid-column: 1/4;
 			grid-row-start: 3;
-			background-image: url('../assets/first_photo_main.png'); /* Set the background image */
+			background-image: url('../../assets/first_photo_main.png'); /* Set the background image */
 			background-size: cover; /* Cover the whole div */
 		}
 			#first-photo-text-container {

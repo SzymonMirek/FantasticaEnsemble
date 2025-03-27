@@ -1,18 +1,18 @@
 ---
-import albumyHeadlineImg from '../assets/albumyHeadline.png';
-import plytyEclipse from '../assets/plytyEclipseLol.png';
-import plytyBiber from '../assets/plytyBiber.png';
-import plytyBiber2 from '../assets/plytyBiber2.png'
-import plytyBiberDots from '../assets/plyty-biber-dots.png'
+import albumyHeadlineImg from '../../assets/albumyHeadline.png';
+import plytyEclipse from '../../assets/plytyEclipseLol.png';
+import plytyBiber from '../../assets/plytyBiber.png';
+import plytyBiber2 from '../../assets/plytyBiber2.png'
+import plytyBiberDots from '../../assets/plyty-biber-dots.png'
 ---
 
 <div class="albumy-container">
     <div class="albumy-headline">
         <!-- TODO - zrobic tak zeby jak sie przy 1200px zmienialo to zeby bylo bardziej kanciaste jak w canvie, wezsze bo figmie jest super -->
         <div class="albumy-headline-text">
-            <h1>Płyty</h1>
+            <h1>Albums</h1>
             <p>
-                Zapraszamy do muzycznej podróży pełnej kontrastów – od mistycznej kontemplacji po wirtuozowską ekspresję. Sprawdź nasze najnowsze albumy i pozwól się porwać barokowym brzmieniom!            </p>
+                We invite you on a musical journey filled with contrasts – from mystical contemplation to virtuosic expression. Check out our latest albums and let yourself be captivated by baroque sounds!            </p>
         </div>
         <div class="albumy-headline-img-container">
             <img class="albumyHeadlineImg" src={albumyHeadlineImg.src} alt="" />
@@ -30,14 +30,13 @@ import plytyBiberDots from '../assets/plyty-biber-dots.png'
                     BIBER<img class="plyty-biber-dots" src={plytyBiberDots.src} alt="" />
                 </h2>
                 <h4>
-                    Trochę Sacrum,<br>Trochę Profanum
+                    Sacrum. Profanum
                 </h4>
                 <p class="projekt-text-p">
-                    Pierwszy album Owczarek | Łoboda Duo to opowieść o kontrastach. TROCHĘ SACRUM, TROCHĘ PROFANUM to muzyczna podróż przez świat Heinricha Ignaza Franza von Bibera – kompozytora, który jak nikt inny potrafił balansować na granicy tego, co niezwykłe i codzienności. W jego utworach duchowość spotyka się z ziemską ekspresją, a mistyczna kontemplacja przeplata się z dziką wirtuozerią.
-                    Na tej płycie skrzypce barokowe i klawesyn nie tylko interpretują te kontrasty, ale stają się ich częścią – wibrują energią, malują przestrzeń dźwiękiem, opowiadają historie pełne napięcia, melancholii i brawury.           
+                    The debut album of Fantastica is a story of contrasts. Sacrum.Profanum. takes you on a musical journey through the world of Heinrich Ignaz Franz von Biber—a composer who masterfully balanced between the extraordinary and the everyday. In his works, spirituality meets earthly expression, and mystical contemplation intertwines with untamed virtuosity. On this album, the Baroque violin and harpsichord not only interpret these contrasts but become part of them—vibrating with energy, painting sonic landscapes, and telling stories filled with tension, melancholy, and bravado.
                 </p>
                 <h6>
-                    Premiera: 29 kwietnia 2025
+                    Release: 29 April 2025
                 </h6>
             </div>
         </div>
@@ -48,11 +47,11 @@ import plytyBiberDots from '../assets/plyty-biber-dots.png'
     <div class="albumy-fantastica-container">
         <div class="albumy-fanstastica">
             <h2>FANTASTICA</h2>
-            <h4>zmysłowa gra kontrastów</h4>
+            <h4>A Sensual Play of Contrasts</h4>
             <p>
-                Od mistyki po uliczny puls – muzyka, która kusi i zaskakuje. „Biber. Trochę sacrum. Trochę profanum.” to program, który śmiało bawi się granicą między sacrum a profanum. Zanurzone w ludowych rytmach sonaty Bibera sprawiają, że duchowość i erotyzm w muzyce splatają się w nieoczekiwanych miejscach. To opowieść pełna intensywności – zmysłowa, niepokorna, a momentami mistyczna. To czas energetycznej podróży, gdzie każdy dźwięk może stać się impulsem do kreacji na scenie – od żywiołowych, karczemnych klimatów po najgłębsze momenty sacrum. W programie celebrujemy piękno i nieprzewidywalność barokowych kontrastów, tworząc możliwość refleksji, ale też doświadczania czystej radości muzyki, która przekracza granice czasu i wyobraźni.
+                From mysticism to the pulse of the streets—music that seduces and surprises. Biber. Sacrum. Profanum. is a program that boldly plays with the boundary between the sacred and the profane. Immersed in folk rhythms, Biber’s sonatas intertwine spirituality and sensuality in unexpected places. This is a story full of intensity—sensual, rebellious, and at times mystical. It is a journey of raw energy, where every sound becomes an impulse for creation on stage—from lively, tavern-like atmospheres to the deepest moments of the sacred. In this program, we celebrate the beauty and unpredictability of Baroque contrasts, creating a space for both reflection and the sheer joy of music that transcends time and imagination.
             </p>
-            <h3>PREMIERA WKRÓTCE</h3>
+            <h3>RELEASE SOON</h3>
             <div class="albumy-fantastica-backgroundEclipses"> 
                 <div class="albumy-firstEclipse">
 
@@ -115,7 +114,7 @@ import plytyBiberDots from '../assets/plyty-biber-dots.png'
         background: linear-gradient(180deg, #8E13F3 0%, #2599F8 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        font-size: calc(80px + 7.5vw);
+        font-size: calc(50px + 7.5vw);
         /* text-align: right; */
         padding-right: 1.6vw;
         font-weight: 400;
@@ -197,7 +196,7 @@ import plytyBiberDots from '../assets/plyty-biber-dots.png'
     #bg-eclipse {
         height: 100%;
         width: 100%;
-        background-image: url("../assets/eclipseProjekty.svg");
+        background-image: url("../../assets/eclipseProjekty.svg");
         background-position: center; /* Center the image */
         background-repeat: no-repeat; /* Do not repeat the image */
         background-size: 80% 100%;
@@ -311,7 +310,7 @@ import plytyBiberDots from '../assets/plyty-biber-dots.png'
             width: 100vw;
         }
         .albumy-container {
-            grid-template-rows: 0.8fr 0.6fr 60vw 1fr;
+            grid-template-rows: 0.9fr 0.6fr 60vw 1fr;
         }
         .albumy-headline {
             grid-template-rows: 1fr 1fr;
@@ -360,6 +359,10 @@ import plytyBiberDots from '../assets/plyty-biber-dots.png'
 
         .plyty-biber-dots {
             top: -11vw;
+        }
+        .albumy-biber-up {
+            grid-template-columns: 0.1fr 1fr;
+            padding-top: 6vw;
         }
      }
 </style>

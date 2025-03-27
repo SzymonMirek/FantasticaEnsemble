@@ -1,24 +1,24 @@
 ---
-import about1 from '../assets/about1.png';
-import about1Eclipse from '../assets/about1-eclipse.svg';
-import about2 from '../assets/about2.png';
-import about2Eclipse from '../assets/about2-eclipse.svg';
-import about3 from '../assets/about3.png';
-import about5 from '../assets/about5-klaudia.png';
-import about7 from '../assets/about7.png';
-import Footer from '../components/Footer.astro'
+import about1 from '../../assets/about1.png';
+import about1Eclipse from '../../assets/about1-eclipse.svg';
+import about2 from '../../assets/about2.png';
+import about2Eclipse from '../../assets/about2-eclipse.svg';
+import about3 from '../../assets/about3.png';
+import about5 from '../../assets/about5-klaudia.png';
+import about7 from '../../assets/about7.png';
+import Footer from '../../components/en_components/Footer.astro'
 ---
+<!-- TODO - 2 nie ma niektorych zdjec -->
 <div class="about-container">
     <div class="about-content-1-bg"></div>
     <div class="about-content-1">
         <div class="about-content-1-text">
             <p style="font-size: calc(18px + 0.3vw);">
-                <span class="boldonise-text">Fantastica Ensemble</span> przełamuje schematy i odkrywa muzykę dawną w nowym świetle. Tworzymy interpretacje pełne pasji, ekspresji i nieoczywistych kontrastów, przywracając muzyce sprzed wieków jej prawdziwą intensywność i emocjonalność. Muzyka dawna to dla nas to nie muzealny eksponat, lecz żywa sztuka 
-                – pełna dramaturgii, napięcia i niezwykłej energii, którą chcemy przekazać współczesnym słuchaczom. Gramy na instrumentach historycznych, ale nie odtwarzamy mechanicznie tego, co było – zamiast tego eksplorujemy, poszukujemy i odczytujemy na nowo. Inspirują nas zarówno źródła historyczne, jak i współczesna wrażliwość i jej twórcy.
+                <span class="boldonise-text">Fantastica Ensemble</span> breaks conventions and unveils early music in a new light. We create interpretations full of passion, expression, and unexpected contrasts, restoring the true intensity and emotional depth of centuries-old music. For us, early music is not a museum artifact but a living art form—charged with drama, tension, and extraordinary energy that we want to share with contemporary audiences
             </p>
             <hr class="bold-line">
             <p style="font-size: calc(20px + 0.4vw);" class="about-content-1-text-bolder">
-                Szukamy brzmień, które poruszają i zaskakują. Nasze koncerty to spotkania z dawną muzyką i jej niezwykłą głębią. Pokazujemy, że barok jest wciąż aktualny i niezmiennie porusza pokolenia.
+                We seek sounds that move and surprise. Our concerts are encounters with early music and its profound depth, proving that Baroque remains relevant and continues to resonate across generations.
             </p>
         </div>
         <img class="about-1-img" src={about1.src} alt="O nas-1" />
@@ -32,10 +32,10 @@ import Footer from '../components/Footer.astro'
             </a>
             <div>
                 <p>
-                    Nasza misja to <span class="boldonise-text">przekraczanie granic</span> – nie tylko tych stylistycznych, ale i mentalnych. Wierzymy, że muzyka dawna może być przeżyciem intensywnym i pełnym emocji, a koncerty mogą stać się przestrzenią autentycznego dialogu między przeszłością a teraźniejszością.
+                    Our mission is to <span class="boldonise-text">transcend boundaries</span> – not only stylistic but also mental. We believe that early music can be an intense, emotional experience and that concerts can become a space for an authentic dialogue between past and present.
                 </p>
                 <p style="margin-top: 18px;">
-                    Sięgamy po odważne interpretacje i unikalne podejście do wykonawstwa, by każdy dźwięk brzmiał prawdziwie i miał swój cel.
+                    We embrace bold interpretations and a unique approach to performance, ensuring that every sound is genuine and purposeful.
                 </p>
             </div>
         </div>
@@ -47,11 +47,13 @@ import Footer from '../components/Footer.astro'
                     ALEKSANDRA<br>OWCZAREK
                 </h2>
                 <p>
-                    Muzyka bez kompromisów, dźwięk pełen emocji. Moja muzyka to ciągłe poszukiwanie – brzmienia, sensu, napięcia. Skrzypce barokowe nie są dla mnie jedynie historycznym instrumentem, ale narzędziem do wyrażania tego, co w muzyce najważniejsze: autentyczności i emocji. Każdy dźwięk może być krzykiem, szeptem, echem przeszłości lub pulsującą energią teraźniejszości.
+                    Music without compromise, sound full of emotion.My music is a constant search—of sound, meaning, and tension. The Baroque violin is not just a historical instrument to me; it is a tool for expressing what matters most in music: authenticity and emotion. Every note can be a scream, a whisper, an echo of the past, or the pulsating energy of the present.
+
                 </p>
             </div>
             <p id="about-3-aleksandra-inside-text-right">
-                Ukończyłam Akademię Muzyczną im. Krzysztofa Pendereckiego w Krakowie, studiując pod okiem wybitnych specjalistów, takich jak Sirkka-Liisa Kaakinen-Pilch i Zbigniew Pilch, a swoje umiejętności doskonaliłam na kursach mistrzowskich, pracując m.in. z Antoinette Lohmann, Jorge Jimenezem, Bruno Cocsetem i Aureliuszem Golińskim. Byłam członkinią Musicae Antiquae Collegium Varsoviense w Warszawskiej Operze Kameralnej, a od grudnia 2024 roku dołączam do Capelli Cracoviensis – jednego z najważniejszych polskich zespołów muzyki dawnej. W mojej grze szukam przestrzeni między dźwiękiem a emocją, między historią a teraźniejszością. Nie interesuje mnie neutralność – interesuje mnie prawda.
+                I graduated from the Krzysztof Penderecki Academy of Music in Kraków, studying under renowned specialists such as Sirkka-Liisa Kaakinen-Pilch and Zbigniew Pilch, and honed my skills in masterclasses with Antoinette Lohmann, Jorge Jimenez, Bruno Cocset, and Aureliusz Goliński. I was a member of Musicae Antiquae Collegium Varsoviense at the Warsaw Chamber Opera, and starting in December 2024, I will be joining Capella Cracoviensis—one of Poland’s leading early music ensembles.
+                In my playing, I seek the space between sound and emotion, between history and the present. Neutrality doesn’t interest me—truth does.
             </p>
             <img id="about-3-aleksandra-img" src={about3.src} alt="O nas-3" />
         </div>
@@ -61,12 +63,12 @@ import Footer from '../components/Footer.astro'
             <div class="about-content-4-aleksandra-container-inside">
                 <div class="about-content-4-aleksandra-text2">
                     <p class="owczarek-test-top">
-                       Moim celem jest pokazywanie, że muzyka dawna nie jest statycznym artefaktem, ale pulsującą energią, która może angażować i fascynować tak samo dzisiaj, jak setki lat temu.
+                        My goal is to show that early music is not a static artifact but a living, breathing force that can engage and fascinate just as much today as it did centuries ago.
                     </p>
                     <p class="owczarek-test-bottom">
-                        Chcę burzyć mury elitarności, otwierając przestrzeń, w której każdy może poczuć jej piękno – bez względu na wcześniejsze doświadczenia z muzyką klasyczną. Dla mnie muzyka to przestrzeń, w której przeszłość spotyka się z teraźniejszością, a tradycja staje się impulsem do odkrywania nowych środków wyrazu. 
+                        I want to break down the walls of elitism, creating a space where everyone can experience its beauty—regardless of their background in classical music. For me, music is where the past meets the present, where tradition becomes a catalyst for new forms of expression.
                         <br><br>
-                        Chcę, by każdy koncert był nie tylko słuchowym doświadczeniem, ale emocjonalnym przeżyciem, które na chwilę przenosi w inny świat. 
+                        I want every concert to be not just an auditory experience but an emotional journey—one that transports the listener to another world, if only for a moment.
                     </p>
                 </div>
                 <p class="about-content-4-aleksandra-tag">
@@ -84,11 +86,15 @@ import Footer from '../components/Footer.astro'
                     KLAUDIA<br>ŁOBODA
                 </h2>
                 <p>
-                    Klawesyn fascynuje mnie swoją dwoistością. Z jednej strony precyzyjny i surowy, z drugiej – miękki, pełen rezonansu i niepowtarzalnej ekspresji, która tylko czeka, aby ją wydobyć. To instrument, który jest niełatwym partnerem, lecz oferuje nieskończenie wiele możliwości. Każdy jego dźwięk jest dla mnie jak słowo w teatrze czy jak gest w tańcu. Klawesyn ma swój własny, unikatowy język, który jest niesłychanie poruszający i brzmieć jak puls miasta, jak szept czy krzyk. 
+                    The harpsichord fascinates me with its duality. On one hand, it is precise and raw; on the other, it is soft, resonant, and filled with an unmistakable expression just waiting to be unlocked. It is an instrument that is not an easy partner, yet it offers endless possibilities. Every sound it produces feels to me like a word in theater or a gesture in dance. The harpsichord has its own unique language—one that is profoundly moving, capable of sounding like the pulse of a city, a whisper, or a cry.
+
                 </p>
             </div>
             <p id="about-5-klaudia-inside-text-right">
-                Kształciłam się w Akademii Muzycznej w Krakowie w klasie klawesynu dra Aleksandra Mocka i prof. Marka Toporowskiego oraz klasie continuo dr Ewy Mrowcy. Studiowałam także w Royal Conservatoire w Hadze, gdzie doskonaliłam swoje umiejętności pod okiem Carole Cerasi, Patricka Ayrtona i Richarda Egarra. Zdobyłam liczne nagrody, m.in. II nagrodę w II Ogólnopolskim Konkursie Klawesynowym w Krakowie (2017), podwójną I nagrodę oraz II nagrodę w VIII Wanda Landowska Harpsichord Competition we Włoszech (2019) oraz Nagrodę Specjalną w H.I.F. Biber International Competition (2023). Koncertowałam w wielu krajach Europy od Finlandii po Wielką Brytanię i współpracowałam m.in. z Opera Rara, Handel Opera Academy czy Misteria Paschalia. Od 2024 roku podjęłam stałą współpracę z Capellą Cracoviensis.
+                I studied at the Academy of Music in Kraków in the harpsichord class of Dr. Aleksander Mocek and Prof. Marek Toporowski, as well as in the basso continuo class of Dr. Ewa Mrowca. I also pursued studies at the Royal Conservatoire in The Hague, refining my skills under Carole Cerasi, Patrick Ayrton, and Richard Egarr.
+                I have received numerous awards, including Second Prize at the II National Harpsichord Competition in Kraków (2017), a double First Prize and Second Prize at the VIII Wanda Landowska Harpsichord Competition in Italy (2019), and the Special Prize at the H.I.F. Biber International Competition (2023).
+                I have performed across Europe, from Finland to the UK, collaborating with ensembles such as Opera Rara, Handel Opera Academy, and Misteria Paschalia. Since 2024, I have been a member of Capella Cracoviensis.
+
             </p>
         </div>
 
@@ -99,14 +105,15 @@ import Footer from '../components/Footer.astro'
             <div class="sideways-text-and-text">
                 <h3>ŁOBODA</h3>
                 <p>
-                    Szukam w niej emocji, które mogą poruszyć współczesnego słuchacza tak samo, jak poruszały ludzi setki lat temu. Nie liczy się dla mnie wyłącznie piękno, ale też autentyczność, która nie omija bólu czy cierpienia. Nie chcę mechanicznie odtwarzać przeszłości, bo muzyka dawna jest dla mnie żywą przestrzenią, w której spotykają się tradycja, gest, taniec i narracja. Lubię eksperymentować z dynamiką, artykulacją, rytmem i czerpać inspirację z tego, co nas otacza – sztuki tradycyjnej, jazzu i czy nawet popu. Nie wierzę w granice w sztuce – muzyka nie zamyka się w jednej epoce ani jednej estetyce. Tworząc, staram się łączyć to, co dawne, z tym, co tu i teraz. Każdy koncert to dla mnie opowieść, w której klawesyn nie jest tylko tłem, ale pełnoprawnym narratorem. 
+                    I seek out emotions within it that can move today’s listeners just as deeply as they moved people centuries ago. For me, music is not only about beauty but also about authenticity—one that does not shy away from pain or suffering. I don’t want to mechanically recreate the past, because early music is a living space where tradition, gesture, dance, and storytelling come together. I love experimenting with dynamics, articulation, and rhythm, drawing inspiration from everything around me—from traditional art to jazz, and even pop music. I don’t believe in boundaries in art—music is not confined to a single era or aesthetic. When I play, I aim to bridge the past with the present. Every concert is a story in which the harpsichord is not just an accompaniment but a full-fledged narrator.
+
                 </p>
             </div>
             <div class="quote-with-gradient">
                 <div class="quote-with-gradient-inside">
                     <div class="gradient-of-quote"></div>
                     <p>
-                        Dążę do tego, by muzyka dawna była odbierana tak, jak wtedy gdy była tworzona – jako coś porywającego i pełnego życia.
+                        I strive for early music to be experienced as it was when it was first composed—as something captivating and full of life.
                     </p>
                 </div>
             </div>
@@ -116,7 +123,9 @@ import Footer from '../components/Footer.astro'
         <img id="about-7" src={about7.src} alt="O nas-7" />
         <div>
             <p>
-                Nasza praca została doceniona na międzynarodowych konkursach – zdobyłyśmy Nagrodę Specjalną na H.I.F. Biber International Competition (Austria, 2023), I nagrodę w III Konkursie Muzyki Kameralnej KraCamera (2023) oraz Nagrodę Specjalną za „najbardziej kreatywne wykonanie” podczas 12th International Maurizio Pratola Early Music Competition (Włochy, 2024). Wygrałyśmy również konkurs Da Vinci Young Sounds (2023), co zaowocowało nagraniem naszej debiutanckiej płyty we współpracy z Da Vinci Records. Dzięki Stypendium Twórczemu Miasta Krakowa 2024 nagrałyśmy nasz drugi album, poświęcony twórczości H.I.F. Bibera dla wytwórni Ars Sonora. Działamy na scenach krajowych i europejskich, koncertując w Polsce, Austrii, Finlandii, Holandii czy Niemczech. Tworzymy autorskie projekty, które są czymś więcej niż tylko koncertami – to pełne ekspresji, teatralne opowieści, w których tradycja spotyka się z nowoczesnością. Przecieramy też szlaki współpracując z artystami innych dziedzin i tworząc takie wydarzenia jak „Mystery. Everyone is losing someone”.
+                Our work has been recognized in international competitions—we received the Special Prize at the H.I.F. Biber International Competition (Austria, 2023), First Prize at the III KraCamera Chamber Music Competition (2023), and the Special Prize for “the most creative performance” at the 12th International Maurizio Pratola Early Music Competition (Italy, 2024). We also won the Da Vinci Young Sounds competition (2023), leading to the recording of our debut album in collaboration with Da Vinci Records. Thanks to the Creative Scholarship of the City of Kraków (2024), we recorded our second album dedicated to the works of H.I.F. Biber for the Ars Sonora label.
+
+We perform on both national and European stages, appearing in Poland, Austria, Finland, the Netherlands, and Germany. We create original projects that go beyond concerts—they are expressive, theatrical narratives where tradition meets modernity. We also pave new paths by collaborating with artists from various disciplines, bringing to life projects like “Mystery. Everyone is Losing Someone.”
             </p>
         </div>
     </div>
@@ -270,7 +279,9 @@ import Footer from '../components/Footer.astro'
         text-align: right;
 
     }
-    
+    .about-content-3-aleksandra-inside-text p {
+        text-align: justify;
+    }
     #about-3-aleksandra-inside-text-left {
         flex: display;
     }
@@ -279,6 +290,7 @@ import Footer from '../components/Footer.astro'
         font-size: calc(16px + 0.1vw);
         margin-right: calc(26vw - 340px);
         align-self: center;
+        text-align: justify;
     }
 
     #about-3-aleksandra-img {

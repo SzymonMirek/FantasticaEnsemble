@@ -2,21 +2,35 @@
 import Logo from '../assets/logoo.svg';
 import LangSwitchButton from '../components/LangSwitchButton.astro';
 import LangSwitchButtonM from '../components/LangSwitchButtonM.astro';
-const links = [
-  { name: "O nas", href: "/o-nas" },
-  { name: "Posłuchaj", href: "/posluchaj" },
-  { name: "Projekty", href: "/projekty" },
-  { name: "Płyty", href: "/plyty" },
-  { name: "Kontakt", href: "/kontakt" }
-];
+const links = {
+  pl: [
+    { name: "Home", href: "/" },
+    { name: "O nas", href: "/o-nas" },
+    { name: "Posłuchaj", href: "/posluchaj" },
+    { name: "Projekty", href: "/projekty" },
+    { name: "Płyty", href: "/plyty" },
+    { name: "Kontakt", href: "/kontakt" }
+  ],
+  en: [
+    { name: "Home", href: "/en" },
+    { name: "About", href: "/en/about" },
+    { name: "Listen", href: "/en/listen" },
+    { name: "Projects", href: "/en/projects" },
+    { name: "Albums", href: "/en/albums" },
+    { name: "Contact", href: "/en/contact" }
+  ]
+};
+const isEnglish = Astro.url.pathname.startsWith('/en');
+const currentLinks = isEnglish ? links.en : links.pl;
+const homeLink = isEnglish ? "/en" : "/";
 ---
 <!-- TODO - na dole na mobile jak sie rozwija hamburger menu fajnie jakby na dole bylo logo fantastica to pelne -->
 <header id="headinio">
-  <a class="logo-container" href="/" style="z-index: 999;">
+  <a class="logo-container" href={homeLink} style="z-index: 999;">
     <Logo id="logo" />
   </a>
   <ul class="desktop-nav">
-      {links.map((link) => (
+      {currentLinks.map((link) => (
         <li><a href={link.href}>{link.name}</a></li>
       ))}
   </ul>
@@ -34,7 +48,7 @@ const links = [
         
 
         <ul id="menu">
-          {links.map((link) => (
+          {currentLinks.map((link) => (
             <li><a href={link.href}>{link.name}</a></li>
           ))}
           <LangSwitchButtonM />
