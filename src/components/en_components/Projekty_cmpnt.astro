@@ -1,0 +1,678 @@
+---
+import projektyHeadlineImg from '../assets/projektyHeadline.png';
+// TODO - uzyc tego tloProjekty zamiast pelnego url
+import tloProjekty from '../assets/tloProjekty.png';
+import projekt1img from '../assets/projekt1img.png';
+import eclipseProjekty from '../assets/eclipseProjekty.svg';
+import projekt2img from '../assets/projekt2img.png';
+import projekt3img from '../assets/projekt3img.png';
+import projekt4img from '../assets/projekt4img.png';
+---
+<div class="projekty-container">
+    <!-- TODO - lepszy scaling (chcialbym zeby to zdjecie sie lepiej skalowalo), i moze background animated gradient, font weight jest dziwny -->
+    <div class="projekty-headline">
+        <!-- TODO - zrobic tak zeby jak sie przy 1200px zmienialo to zeby bylo bardziej kanciaste jak w canvie -->
+        <img class="projektyHeadlineImg" src={projektyHeadlineImg.src} alt="" />
+        <div class="projekty-headline-text">
+            <h1>Projekty</h1>
+            <p>
+                Fantastica Ensemble to muzyka, która przekracza granice – nie tylko czasowe, ale i estetyczne. Każdy nasz projekt to podróż, w której barok łączy się z gestem, improwizacją i nowoczesnym spojrzeniem na sztukę
+            </p>
+        </div>
+    </div>
+    <div class="projekt-1-container">
+        <div class="projekt-1-up">
+            <div class="projekt-1-img-container">
+                <img class="projekt1img" src={projekt1img.src} alt="" />
+                <svg class="projekt1-fikusy" xmlns="http://www.w3.org/2000/svg" width="945" height="1101" viewBox="0 0 945 1101" fill="none">
+                    <path d="M864 -347C774.762 -289.687 766.737 -191.5 885.277 220.015C916.707 329.128 932.608 516.018 744.763 390.674C556.919 265.331 326.935 38.9901 231 -41C143.693 -93.8091 -156.219 -66.5044 -101 173C-45.7807 412.505 214.5 739 264 851C296.869 884.2 281.885 1015.54 203 1053.28C104.394 1100.46 -368.251 938.18 -775 370.871" stroke="url(#paint0_radial_4017_73)" stroke-opacity="0.59" stroke-width="80" stroke-linecap="round"/>
+                    <path d="M864 -347C774.762 -289.687 766.737 -191.5 885.277 220.015C916.707 329.128 932.608 516.018 744.763 390.674C556.919 265.331 326.935 38.9901 231 -41C143.693 -93.8091 -156.219 -66.5044 -101 173C-45.7807 412.505 214.5 739 264 851C296.869 884.2 281.885 1015.54 203 1053.28C104.394 1100.46 -368.251 938.18 -775 370.871" stroke="url(#paint1_radial_4017_73)" stroke-opacity="0.3" stroke-width="80" stroke-linecap="round"/>
+                    <defs>
+                    <radialGradient id="paint0_radial_4017_73" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(40.2992 356.994) rotate(88.8011) scale(2005.83 2377.86)">
+                    <stop stop-color="#8E13F3"/>
+                    <stop offset="1" stop-color="#2F98F4" stop-opacity="0"/>
+                    </radialGradient>
+                    <radialGradient id="paint1_radial_4017_73" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-236.944 1194.89) rotate(-54.2336) scale(1129.87 1178.37)">
+                    <stop offset="0.19" stop-color="#C300C0"/>
+                    <stop offset="1" stop-opacity="0"/>
+                    </radialGradient>
+                    </defs>
+                    </svg>
+            </div>
+            <div class="projekt-1-text">
+                <h2>
+                    FANTASTICUS
+                </h2>
+                <h4>
+                    Barokowa Fantazja<br>     
+                    Bez Granic
+                </h4>
+                <p class="projekt-text-p">
+                    Wirtuozeria, szaleństwo i dźwiękowa podróż przez Habsburskie Imperium XVII wieku. "Fantasticus" to program pełen intensywnych, wirtuozowskich wyzwań w stylus fantasticus – stylu pełnym muzycznych uniesień, nieskrępowanej improwizacji i zaskakujących zwrotów. To zderzenie dobrze znanych sonat H.I.F. Bibera z niemal zapomnianymi kompozycjami, jak na przykład odkryta niedawno Sonata d-moll Heinricusa Litzkaua, która jest prawdziwą dźwiękową perłą. Zarejestrowany przez Da Vinci Publishing projekt to podróż w świat barokowej fantazji, gdzie wszystko jest możliwe, a granice między utworami, emocjami a wyobraźnią zacierają się, tworząc jedno spójne, pulsujące dzieło.
+                </p>
+            </div>
+        </div>
+        <div class="projekt-1-down">
+            <div id="bg-eclipse">
+                <ul>
+                    <li>G.B. Viviani - Sonata a-moll</li>
+                    <li>Ph. F. Böddecker - Sonata d-moll</li>
+                    <li>H.I.F. von Biber - Sonata dorycka C 139</li>
+                    <li>H. Litzkau - Sonata d-moll</li>
+                    <li>H.I.F. von Biber - Sonata e-moll C142</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="projekt-2-container">
+        <div class="projekt-2-up">
+            <div class="projekt-2-img-container">
+                <svg class="projekt2-fikusy" width="677" height="240" viewBox="0 0 677 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="501.5" cy="148.5" r="45.5" fill="#0BEE73"/>
+                    <circle cx="45.5" cy="116.5" r="45.5" fill="#0BEE73"/>
+                    <path d="M677 194.5C677 219.629 656.629 240 631.5 240C606.371 240 586 219.629 586 194.5C586 169.371 606.371 149 631.5 149C656.629 149 677 169.371 677 194.5Z" fill="#F55E5C"/>
+                    <path d="M439 35.5C439 55.1061 422.658 71 402.5 71C382.342 71 366 55.1061 366 35.5C366 15.8939 382.342 0 402.5 0C422.658 0 439 15.8939 439 35.5Z" fill="#F55E5C"/>
+                </svg>              
+                <svg class="projekt22-fikusy" width="91" height="91" viewBox="0 0 91 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="45.5" cy="45.5" r="45.5" fill="#F7793C"/>
+                </svg>
+
+                <img class="projekt2img" src={projekt2img.src} alt="" />
+            </div>
+            <div class="projekt-2-text">
+                <h2>
+                    Biber. Trochę sacrum.<br> Trochę profanum.
+                </h2>
+                <h4>
+                    zmysłowa gra kontrastów
+                </h4>
+                <p  class="projekt-text-p">
+                    Od mistyki po uliczny puls – muzyka, która kusi i zaskakuje. „Biber. Trochę sacrum. Trochę profanum.” to program, który śmiało bawi się granicą między sacrum a profanum. Zanurzone w ludowych rytmach sonaty Bibera sprawiają, że duchowość i erotyzm w muzyce splatają się w nieoczekiwanych miejscach. To opowieść pełna intensywności – zmysłowa, niepokorna, a momentami mistyczna. To czas energetycznej podróży, gdzie każdy dźwięk może stać się impulsem do kreacji na scenie – od żywiołowych, karczemnych klimatów po najgłębsze momenty sacrum. W programie celebrujemy piękno i nieprzewidywalność barokowych kontrastów, tworząc możliwość refleksji, ale też doświadczania czystej radości muzyki, która przekracza granice czasu i wyobraźni.
+                </p>
+            </div>
+        </div>
+        <div class="projekt-2-down">
+            <div id="bg-eclipse">
+                <ul>
+                    <li>H.I.F. von Biber - Sonata misteryjna „Wniebowzięcie NMP”</li>
+                    <li>H.I.F. von Biber - Sonata F-dur C140</li>
+                    <li>H.I.F. von Biber - Sonata misteryjna „Zwiastowanie NMP”</li>
+                    <li>H.I.F. von Biber - Sonata c-moll C143</li>
+                    <li>H.I.F. von Biber -Sonata misteryjna „Ukrzyżowanie”</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="projekt-3-container">
+        <div class="projekt-3-up">
+            <div class="projekt-3-img-container">
+                <img class="projekt3img" src={projekt3img.src} alt="" />
+            </div>
+            <div class="projekt-3-text">
+                <h2>
+                    La Stella
+                </h2>
+                <h4>
+                    Muzyczny Bunt
+                </h4>
+                <p class="projekt-text-p">
+                    Ekscentryczny geniusz, który nie znał granic, czyli Giovanni Antonio Pandolfi Mealli. Jeśli szukasz czegoś niezapomnianego "La Stella" to projekt stworzony dla Ciebie. Jego nieprzewidywalne, ciągle zmieniające się emocje w sonatach op. 4 są jak muzyczne tornado - szalone, pełne pasji i namiętności. Dedykowane przyjaciołom i znajomym kompozytora utwory są nie tyle osobistymi wyznaniami, a dźwiękową ekstrawagancją, która wciąga od pierwszej do ostatniej nuty. Najnowszy projekt dedykowany Pandolfiemu miał swoją premierę na festiwalu Gregoriana Sastamala w Finlandii. To muzyczna podróż do ekscentrycznego świata baroku.                </p>
+            </div>
+        </div>
+        <div class="projekt-3-down">
+            <div id="bg-eclipse">
+                <ul>
+                    <li>G.A. Pandolfi Mealli - Sonaty op. 4</li>
+                    <li>G.A. Pandolfi Mealli - La barnabea</li>
+                    <li>G.A. Pandolfi Mealli - La viviana La monella romanesca</li>
+                    <li>G.A. Pandolfi Mealli - La bianchiccia</li>
+                    <li>G.A. Pandolfi Mealli - La stella</li>
+                    <li>G.A. Pandolfi Mealli - La vinciolina</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="projekt-4-container">
+        <div class="projekt-4-up">
+            <div class="projekt-4-img-container">
+                <img class="projekt4img" src={projekt4img.src} alt="" />
+            </div>
+            <div class="projekt-4-text">
+                <h2>
+                    SPLEEN
+                </h2>
+                <h4>
+                    Jesienna Melancholia
+                </h4>
+                <p class="projekt-text-p">
+                    Barokowa melancholia pełna zwrotów akcji. SPLEEN to podróż przez dźwięki od połowy XVII do XVIII wieku, badająca tonację d-moll w jej wszystkich odcieniach i możliwościach. W tym programie wirtuozowskie utwory są pełne żywych emocji. Do ich połączenia inspirowała jesienna chandra i "Krakowski Spleen" Kory. Każdy utwór staje się zaproszeniem do podróży wewnątrz samego siebie, przynosząc chwilę zadumy i radości jednocześnie. SPLEEN łączy głębokie uczucia z pozytywną energią, poruszając serca i odkrywając piękno barokowych form. Każdy fragment zapraszaja do refleksji łączącej głębię z lekkością, poruszając serca i umysły w zaskakujący sposób.
+                </p>
+            </div>
+        </div>
+        <div class="projekt-4-down">
+            <div id="bg-eclipse">
+                <ul>
+                    <li>Ph. F. Böddecker - Sonata d-moll</li>
+                    <li>J.P. von Westhoff - III Sonata d-moll</li>
+                    <li>H.I.F. Biber - Sonata misteryjna „Ofiarowanie Jezusa w Świątyni”</li>
+                    <li>C.A. Lonati - II Sonata d-moll</li>
+                    <li>F.M. Veracini - XII Sonata d-moll op.2</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* TODO - fajnie jakby sie udalo zrobic overflow clip */
+    .projekty-container {
+        display: grid;
+        grid-template-rows: minmax(60vw 1569px) 83vw 140vh 140vh 140vh;
+        font-weight: 400;
+        font-family: "Gilda Display";
+
+    }
+    /* Projekty Headline */
+    .projekty-headline {
+        grid-row: 1/2;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+        grid-template-rows: max-content;
+        background-image: url("../assets/tloProjekty.png");
+        height: auto;
+        align-content: end;    
+        padding-top: 16vh;
+    }
+
+    .projektyHeadlineImg {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        height: 50vw;
+        justify-self: center;
+        margin-top: 0.2vw;
+    }
+    .projekty-headline-text {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        font-family: "Gilda Display";
+        text-align: center;
+        font-size: 23px;
+    }
+    .projekty-headline-text h1 {
+        color: #DD2471;
+        font-size: calc(80px + 7vw);
+        /* text-align: right; */
+        padding-right: 1.6vw;
+        font-weight: 400;
+    }
+    .projekty-headline-text p {
+        padding: 0 6vw;
+    }
+
+    /* TODO - small things: gradient jest inny, BIG things: ślaczek */
+    /* Projekt 1 */
+    
+    .projekt-1-container {
+        display: grid;
+        grid-template-rows: 4fr 1fr;
+        }
+    
+    .projekt-1-up {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* column-gap: 5vw; */
+        grid-column: 1/3;
+        grid-row: 1/2;
+        background: #ECE4F0;
+        padding-right: 6vw;
+    }
+
+    .projekt-1-img-container {
+        position: relative;
+        grid-column: 1/2;
+        display: flex; 
+        align-content: center;
+        justify-content: end;
+    }
+    .projekt1img {
+        object-fit: contain;
+        width: 82%;
+        padding-right: 4.3vw;
+    }
+
+    .projekt-1-text {
+        grid-column: 2/3;
+        font-size: clamp(16px, 1.8vw, 30px);
+        text-align: right;
+        align-self: anchor-center;
+    }
+
+
+    .projekt-1-down {
+        grid-row: 2/3;
+        grid-column: 1/3;
+        background: var(--gradient1, radial-gradient(74.1% 76.06% at 32.04% 109.51%, rgba(195, 0, 192, 0.30) 19%, rgba(0, 0, 0, 0.00) 100%), radial-gradient(143.37% 142.45% at 48.54% 50%, rgba(142, 19, 243, 0.59) 0%, rgba(47, 152, 244, 0.00) 100%), rgba(47, 152, 244, 0.00));
+        align-content: center;
+        display: flex;
+    }
+
+    h2 {
+        font-weight: 400;
+        margin-bottom: 1vw;
+        font-size: clamp(40px, 5vw, 76px);
+        color: #BD74E2;
+    }
+
+    h4 {
+        margin-top: 1vw;
+        margin-bottom: 5vw;
+        font-weight: 400;
+        font-size: clamp(20px, 2.5vw, 42px);
+    }
+    .projekt-1-text p {
+        /* padding-left: 7vw; */
+    }
+    #bg-eclipse {
+        height: 100%;
+        width: 100%;
+        background-image: url("../assets/eclipseProjekty.svg");
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: 80% 100%;
+    }
+    ul {
+        list-style-type: none;
+        text-align: center;
+        color: #FFF;
+        font-size: clamp(16px, 1.8vw, 30px);
+    }
+    .projekt-1-down ul {
+        margin-top: 3vw;
+    }
+    .projekt1-fikusy {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    /* projekt 2 */
+
+    .projekt-2-container {
+        display: grid;
+        grid-template-rows: 4fr 1fr;
+        }
+    
+    .projekt-2-up {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 5vw;
+        grid-column: 1/3;
+        grid-row: 1/2;
+        background: #E4E9F0;
+        padding-right: 6vw;
+    }
+
+    .projekt-2-img-container {
+        position: relative;
+        grid-column: 1/2;
+        display: flex; 
+        align-content: center;
+        justify-content: end;
+    }
+    .projekt2img {
+        object-fit: contain;
+        width: 82%;
+        padding-right: 4.3vw;
+        z-index: 1;
+    }
+
+    .projekt-2-text {
+        grid-column: 2/3;
+        font-size: clamp(16px, 1.8vw, 30px);
+        text-align: right;
+        align-self: anchor-center;
+    }
+
+    .projekt2-fikusy {
+        position: absolute;
+        top: -21vw;
+        left: 7.6vw;
+        width: 72%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    .projekt22-fikusy {
+        position: absolute;
+        top: -45vw;
+        left: -7vw;
+        z-index: 2;
+        justify-self: anchor-center;
+        align-self: anchor-center;
+        width: 9.6%;
+    }
+
+    .projekt-2-text h2 {
+        color: #3098F3;
+    }
+
+
+    .projekt-2-down {
+        grid-row: 2/3;
+        grid-column: 1/3;
+        background-color: #3098F3;
+        align-content: center;
+        display: flex;
+        margin-top: 0;
+    }
+
+    h2 {
+        font-weight: 400;
+        margin-bottom: 1vw;
+        font-size: clamp(40px, 4.5vw, 76px);
+    }
+
+    h4 {
+        margin-top: 1vw;
+        margin-bottom: 5vw;
+        font-weight: 400;
+        font-size: clamp(20px, 2.5vw, 42px);
+    }
+    .projekt-2-text p {
+        /* padding-left: 7vw; */
+    }
+    #bg-eclipse {
+        height: 100%;
+        width: 100%;
+        background-image: url("../assets/eclipseProjekty.svg");
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: 80% 100%;
+    }
+    #bg-eclipse ul {
+        list-style-type: none;
+        text-align: center;
+        color: #FFF;
+        font-size: clamp(16px, 1.8vw, 30px);
+        height: 17vw;
+        align-content: center;
+    }
+    .projekt-2-down ul {
+        margin-top: 0;
+    }
+
+    /* projekt 3 */
+
+    .projekt-3-container {
+        display: grid;
+        grid-template-rows: 4fr 1fr;
+        }
+    
+    .projekt-3-up {
+        display: grid;
+        grid-template-columns: 1fr 1fr;    
+        grid-template-rows: 0 1fr;
+        column-gap: 5vw;
+        grid-column: 1/3;
+        grid-row: 1/2;
+        background: #F0E4EA;
+        padding-left: 6vw;
+    }
+
+    .projekt-3-img-container {
+        grid-row: 2 / 3;
+        grid-column: 2/3;
+        display: flex; 
+    }
+    .projekt3img {
+        object-fit: contain;
+        width: 88%;
+    }
+
+    .projekt-3-text {
+        grid-column: 1/2;
+        grid-row: 2 / 3;
+        font-size: clamp(16px, 1.8vw, 30px);
+        text-align: left;
+        align-self: anchor-center;
+    }
+
+    .projekt-3-text h2 {
+        color: #DA4C86;
+    }
+
+
+    .projekt-3-down {
+        grid-row: 2/3;
+        grid-column: 1/3;
+        background-color: #DA4C86;
+        align-content: center;
+        display: flex;
+    }
+
+    .projekt-2-text p {
+        /* padding-left: 7vw; */
+    }
+    #bg-eclipse {
+        height: 100%;
+        width: 100%;
+        background-image: url("../assets/eclipseProjekty.svg");
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: 80% 100%;
+    }
+    #bg-eclipse ul {
+        list-style-type: none;
+        text-align: center;
+        color: #FFF;
+        font-size: clamp(16px, 1.8vw, 30px);
+        height: 17vw;
+        align-content: center;
+    }
+    .projekt-2-down ul {
+        margin-top: 2vw;
+    }
+
+    /* projekt 4 */
+    .projekt-4-container {
+        display: grid;
+        grid-template-rows: 4fr 1fr;
+    }
+    
+    .projekt-4-up {
+        display: grid;
+        grid-template-columns: 1fr 1fr;    
+        grid-template-rows: 0 1fr;
+        column-gap: 5vw;
+        grid-column: 1/3;
+        grid-row: 1/2;
+        background: #ECE4F0;
+        padding-left: 6vw;
+    }
+
+    .projekt-4-img-container {
+        grid-row: 2 / 3;
+        grid-column: 2/3;
+        display: flex; 
+    }
+
+    .projekt4img {
+        object-fit: contain;
+        width: 88%;
+    }
+
+    .projekt-4-text {
+        grid-column: 1/2;
+        grid-row: 2 / 3;
+        font-size: clamp(16px, 1.8vw, 30px);
+        text-align: left;
+        align-self: anchor-center;
+    }
+
+    .projekt-4-text h2 {
+        color: #8C00FF; /* You can change this color */
+    }
+
+    .projekt-4-down {
+        grid-row: 2/3;
+        grid-column: 1/3;
+        background-color: #8C00FF; /* You can change this color */
+        align-content: center;
+        display: flex;
+    }
+
+    img {
+        z-index: 1;
+    }
+
+
+/* PROJEKTY RESPONSIVE */
+    @media (max-width: 1200px) {
+        .projekty-container {
+            grid-template-rows: 115vw 83vw 100vw 100vw 100vw;
+            grid-template-columns: 100vw;
+        }
+        .projekty-headline {
+            z-index: -1;
+            grid-template-columns: 100vw;
+            grid-template-rows: 1fr 1fr;
+        }
+        .projektyHeadlineImg {
+            grid-column: 1/2;
+            grid-row: 2/3;    
+            width: 93%;
+            height: auto;
+            z-index: -1;
+            object-fit: contain;
+        }
+        .projekty-headline-text {
+            margin-top: 6vw;
+            grid-column: 1/2;
+            grid-row: 1/2;
+            font-size: 18px;
+
+            display: flex;
+        }
+        .projekty-headline-text p {
+            align-self: center;
+            text-align: justify;    
+            margin-top: 8vw;
+
+        }
+
+        .projekt-2-container, .projekt-3-container, .projekt-4-container {
+            height: 100vw;
+        }
+    }
+
+/* RESPONSIVE - Phone */
+@media (max-width: 700px) {
+    .projekty-container {
+        grid-template-rows: minmax(115vw, auto) repeat(4, minmax(172vw, auto));
+    }
+    .projekty-headline {
+        /* margin-top: 12vw; */
+        height: -webkit-fit-content;
+        
+    }
+
+    .projekty-headline-text {
+        text-align: left;
+        flex-direction: column;
+    
+    }
+    .projekty-headline-text p {
+            margin-top: 0;
+            margin-bottom: 5vw;
+
+        }        
+        .projekt-2-container, .projekt-3-container, .projekt-4-container {
+            height: auto;
+        }
+        .projekt-1-text, .projekt-2-text, .projekt-3-text, .projekt-4-text {
+            text-align: justify;
+        }
+        h2 {
+            margin-bottom: 5vw;
+        }
+
+        .projekt-text-p {
+            margin-bottom: 11vw;
+        }
+        .projekty-headline-text > h1{
+            text-align: center;
+            padding-right: 0%;
+        }
+        .projektyHeadlineImg { 
+            width: 91%;
+        }
+    /* proba img dopasowania */
+    .projekt-1-up, .projekt-2-up, .projekt-3-up, .projekt-4-up {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.85fr 1fr;
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+    .projekt-1-img-container, .projekt-2-img-container, .projekt-3-img-container, .projekt-4-img-container {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        height: fit-content;
+        margin-top: 16vw;
+    }
+    .projekt-1-img-container {
+        margin-top: 5vw;
+    }
+
+    .projekt-1-text {
+        grid-column: 1/2;
+    }
+    .projekt1-fikusy {
+        left: -6vw;
+        top: -5vw;
+    }
+    .projekt2-fikusy {
+        top: -44vw;
+        left: 19.6vw;
+    }
+    .projekt22-fikusy {        
+        top: calc(7vh - 27vw);
+        left: 36.6vw;
+    }
+    .projekt2img {
+        height: auto;
+    }
+    .projekt-2-text {
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+    #bg-eclipse{
+        background-size: 260.4%;
+        display: flex;
+        justify-content: center;
+    }
+    #bg-eclipse ul{
+        padding: 0 16px;
+        align-self: center;
+        height: fit-content;
+    }
+    .projekt4img {
+        width: 90%;
+    }
+    .projekt-3-img-container, .projekt-4-img-container {
+        justify-content: center;
+    }
+    .projekt-2-text h2 {
+        text-align: left;
+        font-size: clamp(37px, 4.5vw, 76px);
+    }
+}
+@media (max-width: 385px) {
+    .projekty-headline-text h1 {
+        font-size: calc(80px + 5vw);
+    }
+}
+
+</style>

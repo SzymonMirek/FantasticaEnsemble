@@ -1,0 +1,80 @@
+<section>
+    <label title="PL" for="pl" class="label">
+      <input id="pl" name="language" type="radio" checked />
+      PL
+    </label>
+    <label title="EN" for="en" class="label">
+      <input id="en" name="language" type="radio" />
+      EN
+    </label>
+  
+</section>
+
+<style>
+ section {
+    --col-orange: pink;
+    --col-dark: #0c0f14;
+    --col-darkGray: #52555a;
+    --col-gray: #aeaeae;
+    height: 40px;
+    width: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* background-color: var(--col-dark); */
+    border-radius: 25px;
+    position: fixed;
+    top: 4px;
+    right: 6px;
+  }
+
+  .label {
+    padding: 6px 0px 10px 4px;
+    transition: all 200ms;
+    display: inline-block;
+    color: var(--col-gray);
+    cursor: pointer;
+    font-size: 0.9em;
+  }
+
+  .label input[type="radio"] {
+    display: none;
+  }
+
+  .label:hover:not(:has(input:checked)) {
+    background: var(--col-orange);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity: 0.6;
+  }
+
+  .label::before {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    border-radius: 5px;
+    position: relative;
+    left: 50%;
+    top: 18px;
+    background: var(--col-orange);
+    transition: all 200ms;
+  }
+
+  .label:has(input:checked) {
+    background: var(--col-orange);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transform: scale(1.1);
+    margin-top: -4px;
+    mix-blend-mode: difference;
+  }
+
+  .label:has(input:checked)::before {
+    width: 100%;
+    left: 0;
+    top: 22px;
+  }
+</style>

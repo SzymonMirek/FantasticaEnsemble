@@ -1,0 +1,188 @@
+---
+import fbIcon from '../assets/fb_icon.svg';
+import igIcon from '../assets/ig_icon.svg';
+import ytIcon from '../assets/yt_icon.svg';
+---
+<footer>
+    <div id="footer-gradient">
+    </div>
+    <div class="footer">
+        <div class="footer-left">
+            <h2>DOŁĄCZ DO NAS</h2>
+            <form action="https://buttondown.email/api/emails/embed-subscribe/szymon" method="post">
+                            <input type="email" name="email" placeholder="E-mail" required>
+            <button type="submit" value="Subscribe">ZAPISZ SIĘ</button>
+        </form>
+        </div>
+        <div class="footer-right">
+            <h3>Kontakt</h3>
+            <a id="emailson" href="mailto:owczareklobodaduo@gmail.com">owczareklobodaduo@gmail.com</a>
+            <div class="footer-social-icons">
+                <a href="https://www.youtube.com/@owczarekobodaduo3746" class="footer-right-icon-container"><img class="footer-right-icon" src={ytIcon.src} alt="youtube" /> <span>youtube</span></a>
+                <a href="https://www.instagram.com/fantastica.ensemble/" class="footer-right-icon-container"><img class="footer-right-icon" src={igIcon.src} alt="instagram" /> <span>instagram</span></a>
+                <a href="https://www.facebook.com/fantastica.ensemble" class="footer-right-icon-container"><img class="footer-right-icon" src={fbIcon.src} alt="facebook" /> <span>facebook</span></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        overflow: hidden;
+    }
+    #footer-gradient {
+        top: 0;
+        left: 0;
+        width: -webkit-fill-available;
+        height: 23px;
+        background: linear-gradient(90deg, #E180A9 23.5%, #2599F8 100%);
+    }
+
+    .footer {
+        font-family: "Gilda Display";
+        height: 42vh;
+        background-color: black;
+        color: #FFF;
+        padding: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-left {
+        flex: 67;
+        height: 100%;
+        margin: 6vh 2vh 0vh 1vh;
+    }
+
+    .footer-left h2 {
+        margin-bottom: 16vh;
+        font-size: 6vh;
+        font-weight: normal;
+    }
+
+    .footer-left input {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid white;
+        color: white;
+        font-size: 16px;
+        padding: 19px;
+        width: calc(62vw - 355px);
+        outline: none;
+    }
+
+    .footer-left button {
+        background: transparent;
+        font-family: "Gilda Display";
+        border: 1px solid #FFF;;
+        color: #FFF;
+        padding: 20px 40px;
+        font-size: 20px;
+        cursor: pointer;
+        margin-left: 20px;
+    }
+
+    .footer-right {
+        height: 78%;
+        padding: 8vh 2vh 2vh 1vh;
+        display: flex;
+        flex-direction: column;
+        flex: 33;
+        text-align: left;
+    }
+
+    .footer-right h3 {
+        font-size: 38px;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+    
+    #emailson {
+        margin-bottom: 5vh;
+        text-decoration: underline;
+    }
+
+    .footer-right a {
+        color: #FFF;
+        font-size: 24px;
+        text-decoration: none;
+        display: block;
+        margin-top: auto;
+    }
+
+    .footer-right-icon {
+        width: 30px;
+        margin-right: 2.7vh;
+    }
+
+    .footer-right-icon-container {
+        display: flex;
+        color: #FFF;
+        font-size: 24px;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 2.2vh;
+    }
+/* Footer - mobile styles */
+    @media screen and (max-width: 700px) { 
+        footer {
+            width: fit-content;
+        }
+        .footer {
+            flex-direction: column;
+            padding: 8vw 15px;
+            height: 95vw;
+        }
+        .footer-left {
+            margin: 0;
+        }
+        .footer-left h2 {
+            margin: 0 0 5vw 0;
+            font-size: 10.6vw;
+            justify-self: center;
+        }
+        .footer-left input {
+            width: 44%;
+        }
+        .footer-left button {
+            padding: 3.5vw 7vw;
+            margin-left: 0;
+            float: right;
+            font-size: 4vw;
+            margin-top: 2.3vw;
+        }
+
+    /* footer - dolacz do nas Mobile */
+        .footer-right {
+            align-self: baseline;
+            width: 98%;
+            padding: 8vh 0vh 0vh 1vh;
+        }
+        .footer-right h3 {
+            font-size: 26px;
+        }
+
+        #emailson {
+            font-size: 21px;
+        }
+
+        .footer-right-icon-container {
+            flex-direction: column;
+            width: fit-content;
+            font-size: 21px;
+        }
+
+        .footer-social-icons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 0 1.5vw;
+        }
+        .footer-right-icon {
+            margin: 0 0 2.5vw 0;
+        }
+}
+    
+    
+</style>

@@ -1,6 +1,5 @@
 ---
 import Logo from '../assets/logoo.svg';
-import LangSwitchButton from '../components/LangSwitchButton.astro';
 const links = [
   { name: "O nas", href: "/o-nas" },
   { name: "Posłuchaj", href: "/posluchaj" },
@@ -19,7 +18,7 @@ const links = [
         <li><a href={link.href}>{link.name}</a></li>
       ))}
   </ul>
-  <LangSwitchButton />
+
 <!-- Navigation - Mobile -->
   <div class="mobile-nav">
     <nav role="navigation">

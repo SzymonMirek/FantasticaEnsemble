@@ -1,0 +1,365 @@
+---
+import albumyHeadlineImg from '../assets/albumyHeadline.png';
+import plytyEclipse from '../assets/plytyEclipseLol.png';
+import plytyBiber from '../assets/plytyBiber.png';
+import plytyBiber2 from '../assets/plytyBiber2.png'
+import plytyBiberDots from '../assets/plyty-biber-dots.png'
+---
+
+<div class="albumy-container">
+    <div class="albumy-headline">
+        <!-- TODO - zrobic tak zeby jak sie przy 1200px zmienialo to zeby bylo bardziej kanciaste jak w canvie, wezsze bo figmie jest super -->
+        <div class="albumy-headline-text">
+            <h1>Płyty</h1>
+            <p>
+                Zapraszamy do muzycznej podróży pełnej kontrastów – od mistycznej kontemplacji po wirtuozowską ekspresję. Sprawdź nasze najnowsze albumy i pozwól się porwać barokowym brzmieniom!            </p>
+        </div>
+        <div class="albumy-headline-img-container">
+            <img class="albumyHeadlineImg" src={albumyHeadlineImg.src} alt="" />
+            <img class="albumyEclipseHeadline" src={plytyEclipse.src} alt="" />
+        </div>
+    </div>
+    <div class="albumy-biber-container">
+        <div class="albumy-biber-up">
+            <div class="albumy-biber-img-container">
+                <img class="albumy-biber-img" src={plytyBiber.src} alt="" />
+            </div>
+            <div class="albumy-biber-text">
+                <!-- TODO - WAZNE: ZROB KROPKI -->
+                <h2>
+                    BIBER<img class="plyty-biber-dots" src={plytyBiberDots.src} alt="" />
+                </h2>
+                <h4>
+                    Trochę Sacrum,<br>Trochę Profanum
+                </h4>
+                <p class="projekt-text-p">
+                    Pierwszy album Owczarek | Łoboda Duo to opowieść o kontrastach. TROCHĘ SACRUM, TROCHĘ PROFANUM to muzyczna podróż przez świat Heinricha Ignaza Franza von Bibera – kompozytora, który jak nikt inny potrafił balansować na granicy tego, co niezwykłe i codzienności. W jego utworach duchowość spotyka się z ziemską ekspresją, a mistyczna kontemplacja przeplata się z dziką wirtuozerią.
+                    Na tej płycie skrzypce barokowe i klawesyn nie tylko interpretują te kontrasty, ale stają się ich częścią – wibrują energią, malują przestrzeń dźwiękiem, opowiadają historie pełne napięcia, melancholii i brawury.           
+                </p>
+                <h6>
+                    Premiera: 29 kwietnia 2025
+                </h6>
+            </div>
+        </div>
+    </div>
+    <div class="albumy-biber2-container">
+        <img class="albumy-biber2-img" src={plytyBiber2.src} alt="" />
+    </div>
+    <div class="albumy-fantastica-container">
+        <div class="albumy-fanstastica">
+            <h2>FANTASTICA</h2>
+            <h4>zmysłowa gra kontrastów</h4>
+            <p>
+                Od mistyki po uliczny puls – muzyka, która kusi i zaskakuje. „Biber. Trochę sacrum. Trochę profanum.” to program, który śmiało bawi się granicą między sacrum a profanum. Zanurzone w ludowych rytmach sonaty Bibera sprawiają, że duchowość i erotyzm w muzyce splatają się w nieoczekiwanych miejscach. To opowieść pełna intensywności – zmysłowa, niepokorna, a momentami mistyczna. To czas energetycznej podróży, gdzie każdy dźwięk może stać się impulsem do kreacji na scenie – od żywiołowych, karczemnych klimatów po najgłębsze momenty sacrum. W programie celebrujemy piękno i nieprzewidywalność barokowych kontrastów, tworząc możliwość refleksji, ale też doświadczania czystej radości muzyki, która przekracza granice czasu i wyobraźni.
+            </p>
+            <h3>PREMIERA WKRÓTCE</h3>
+            <div class="albumy-fantastica-backgroundEclipses"> 
+                <div class="albumy-firstEclipse">
+
+                </div>
+                <div class="albumy-secondEclipse">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+
+    .albumy-container {
+        display: grid;
+        grid-template-columns: 99vw;
+        grid-template-rows: 93vh 78vw 60vw 78vw;
+        font-weight: 400;
+        font-family: "Gilda Display";
+        
+    }
+    /* Projekty Headline */
+    .albumy-headline {
+        width: 99vw;
+        grid-row: 1/2;
+        display: grid;
+        grid-template-columns: 50vw 50vw;
+        grid-template-rows: 14vh 1fr;
+        background: linear-gradient(180deg, #FFF 0%, #ECE4F0 100%);
+        overflow: hidden;
+    }
+    .albumy-headline-img-container {
+        position: relative;
+        grid-column: 2/3;
+        grid-row:  2/3;
+        justify-self: center;
+        align-self: center;
+        display: flex;
+    }
+    .albumyHeadlineImg {
+        height: 29vw;
+        z-index: 1;
+    }
+
+    .albumyEclipseHeadline {
+        position: absolute;
+        top: -24vw;
+        left: -24vw;
+        z-index: 0;
+    }
+    .albumy-headline-text {
+        grid-column: 1/2;
+        grid-row:  2/3;
+        font-family: "Gilda Display";
+        text-align: center;
+        font-size: 23px;
+    }
+    .albumy-headline-text h1 {
+        background: linear-gradient(180deg, #8E13F3 0%, #2599F8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: calc(80px + 7.5vw);
+        /* text-align: right; */
+        padding-right: 1.6vw;
+        font-weight: 400;
+    }
+    .albumy-headline-text p {
+        padding: 0 6vw;
+    }
+
+/* Biber */
+
+    .albumy-biber-container {
+        display: grid;
+        grid-template-rows: 1fr;
+        width: 99vw;
+        }
+    
+    .albumy-biber-up {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* column-gap: 5vw; */
+        grid-column: 1/3;
+        grid-row: 1/2;
+        background: linear-gradient(180deg, #ECE4F0 0%, #E0DBC7 100%);
+        padding-right: 6vw;
+    }
+
+    .albumy-biber-img-container {
+        position: relative;
+        grid-column: 1/2;
+        display: flex; 
+        align-content: center;
+        justify-content: end;
+    }
+    .albumy-biber-img {
+        object-fit: contain;
+        width: 82%;
+        padding-right: 4.3vw;
+    }
+
+    .albumy-biber-text {
+        grid-column: 2/3;
+        font-size: clamp(16px, 1.8vw, 30px);
+        text-align: right;
+        align-self: center;
+    }
+
+
+    .albumy-biber-down {
+        grid-row: 2/3;
+        grid-column: 1/3;
+        background: var(--gradient1, radial-gradient(74.1% 76.06% at 32.04% 109.51%, rgba(195, 0, 192, 0.30) 19%, rgba(0, 0, 0, 0.00) 100%), radial-gradient(143.37% 142.45% at 48.54% 50%, rgba(142, 19, 243, 0.59) 0%, rgba(47, 152, 244, 0.00) 100%), rgba(47, 152, 244, 0.00));
+        align-content: center;
+        display: flex;
+    }
+
+    .projekt-text-p {
+        font-size: clamp(16px, 1.7vw, 30px);
+    }
+    h2 {
+        font-weight: 400;
+        margin-bottom: 1vw;
+        font-size: clamp(40px, 5vw, 76px);
+        position: relative;
+    }
+
+    h4 {
+        margin-top: 1vw;
+        margin-bottom: 5vw;
+        font-weight: 400;
+        font-size: clamp(20px, 2.5vw, 42px);
+    }
+    h6 {
+        font-size: clamp(16px, 1.9vw, 35px);
+        font-weight: normal;
+    }
+    .albumy-biber-text p {
+        /* padding-left: 7vw; */
+    }
+    #bg-eclipse {
+        height: 100%;
+        width: 100%;
+        background-image: url("../assets/eclipseProjekty.svg");
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: 80% 100%;
+    }
+    ul {
+        list-style-type: none;
+        text-align: center;
+        color: #FFF;
+        font-size: clamp(16px, 1.8vw, 30px);
+    }
+    .albumy-biber-down ul {
+        margin-top: 3vw;
+    }
+
+    .plyty-biber-dots {
+        position: absolute;
+        top: -6vw;
+        right: -5.3vw;
+        width: 26vw;
+    }
+/* Biber2 */
+
+    .albumy-biber2-container {
+        grid-column: 1 / 2;
+        grid-row: 3/4;
+    }
+    .albumy-biber2-img {
+        width: -webkit-fill-available;
+    }
+
+
+    
+/* plyta Fantastica  */
+    .albumy-fantastica-container {
+        background: linear-gradient(180deg, #DFDAC6 -2.09%, #FFF3EC 123.37%);
+        grid-row: 4/5;
+
+        display: grid;
+        grid-template-columns: 1fr 670px 1fr;
+        margin-top: -1vw;
+    }
+    .albumy-fanstastica {
+        grid-column: 2/3;
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10vw;
+    }
+    .albumy-fanstastica p {
+        text-align: justify;    
+        font-size: clamp(16px, 1.7vw, 25px);
+        margin: 0 0.8vw;
+    }
+    .albumy-fanstastica h2 {
+        color: #FFF;
+        z-index: 1;
+    }
+    .albumy-fanstastica h4 {
+        margin: 0 0 3.2vw 0;
+        font-size: clamp(23.6px, 2.4vw, 76px);
+        color: #FFF;
+        z-index: 1;
+    }
+    h3 {
+        font-size: 62px;
+        font-weight: normal;
+        margin-top: 2.1vw;
+        color: #FFF;
+        z-index: 1;
+    }
+
+    .albumy-fantastica-backgroundEclipses {
+        position: absolute;
+        top: 121px;
+        left: 36px;
+        z-index: 0;
+        width: 600px;
+        height: 600px;
+    }
+    .albumy-firstEclipse {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        border-radius: 1042px;
+        opacity: 0.7;
+        background: #8F06FF;
+        filter: blur(235.14999389648438px);
+        right: 10vw;
+    }
+    .albumy-secondEclipse {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        border-radius: 1051px;
+        opacity: 0.7;
+        background: #2F98F4;
+
+        filter: blur(235px);
+        left: 10vw;
+    }
+
+    @media screen and (min-width: 1800px) {
+        .albumyEclipseHeadline {
+            left: -20vw;
+        }
+     }
+     @media screen and (max-width: 600px) {
+        .albumy-headline, .albumy-biber-container, .albumy-biber2-container, .albumy-fantastica-container    {
+            width: 100vw;
+        }
+        .albumy-container {
+            grid-template-rows: 0.8fr 0.6fr 60vw 1fr;
+        }
+        .albumy-headline {
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 100vw;
+            margin-top: 11vw;
+        }
+        .albumy-headline-text {
+            grid-row: 1/2;
+            grid-column: 1/2;
+        }
+        .albumy-headline-img-container {
+            grid-row: 2/3;
+            grid-column: 1/2;
+        }
+        .albumyHeadlineImg {
+            height: 59vw;
+        }
+        .albumy-biber2-container {
+            margin-top: -0.2vw;
+        }
+        /* Album - fantastica - mobile */
+
+        .albumy-fantastica-container {
+            grid-template-columns: 1fr 1fr 1fr;
+            margin-bottom: 1vw;
+        }
+        .albumy-fantastica-backgroundEclipses {
+            width: 60vw;
+            height: 100vw;
+        }
+        /* .albumy-firstEclipse {
+            width: 60vw;
+            height: 100vw;
+        } */
+        .albumy-secondEclipse {
+            width: 60vw;
+            height: 100vw;
+        }
+        h3 {
+            margin-top: 6.1vw;
+        }
+        /* TODO - dadaj zdjecie zeby bylo jak w mobile na figmie */
+        .albumy-biber-img-container {
+            opacity: 0;
+        }
+
+        .plyty-biber-dots {
+            top: -11vw;
+        }
+     }
+</style>
