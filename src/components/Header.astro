@@ -1,6 +1,7 @@
 ---
 import Logo from '../assets/logoo.svg';
 import LangSwitchButton from '../components/LangSwitchButton.astro';
+import LangSwitchButtonM from '../components/LangSwitchButtonM.astro';
 const links = [
   { name: "O nas", href: "/o-nas" },
   { name: "Posłuchaj", href: "/posluchaj" },
@@ -36,8 +37,10 @@ const links = [
           {links.map((link) => (
             <li><a href={link.href}>{link.name}</a></li>
           ))}
+          <LangSwitchButtonM />
         </ul>
       </div>
+      
     </nav>
 
 </header>
@@ -58,6 +61,7 @@ const links = [
   }
 
   @media screen and (min-width: 700px) {
+
 
     .mobile-nav {
       display: none;
@@ -98,6 +102,9 @@ const links = [
       padding-left: 3.7vh;
       width: 9vh;
     }
+    #lang-switch-button1 {
+      opacity: 0;
+    }
     .desktop-nav {
       display: none;
     }
@@ -109,7 +116,7 @@ const links = [
     .logo-container {
       position: fixed; 
       top: -10px; 
-      left: -10px; 
+      left: 1vw; 
     }
 
       #menuToggle

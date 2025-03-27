@@ -1,4 +1,4 @@
-<section>
+<section id="lang-switch-button">
     <label title="PL" for="pl" class="label">
       <input id="pl" name="language" type="radio" checked />
       PL
@@ -11,23 +11,23 @@
 </section>
 
 <style>
- section {
+ @media (min-width: 768px) { display: flex;}
+ #lang-switch-button {
     --col-pink: pink;
     --col-dark: #0c0f14;
     --col-darkGray: #52555a;
     --col-gray: #aeaeae;
     height: 40px;
     width: 75px;
-    display: flex;
     align-items: center;
     justify-content: space-evenly;
     border-radius: 25px;
     position: fixed;
     top: 4px;
-    right: 6px;
+    right: -3px;
   }
 
-  .label {
+  #lang-switch-button > .label {
     padding: 6px 0px 10px 4px;
     transition: all 200ms;
     display: inline-block;
@@ -36,11 +36,11 @@
     font-size: 0.9em;
   }
 
-  .label input[type="radio"] {
+  #lang-switch-button > .label input[type="radio"] {
     display: none;
   }
 
-  .label:hover:not(:has(input:checked)) {
+  #lang-switch-button > .label:hover:not(:has(input:checked)) {
     background: var(--col-pink);
     -webkit-background-clip: text;
     background-clip: text;
@@ -48,7 +48,7 @@
     opacity: 0.6;
   }
 
-  .label::before {
+  #lang-switch-button > .label::before {
     content: "";
     display: block;
     width: 0%;
@@ -61,7 +61,7 @@
     transition: all 200ms;
   }
 
-  .label:has(input:checked) {
+  #lang-switch-button > .label:has(input:checked) {
     background: var(--col-pink);
     -webkit-background-clip: text;
     background-clip: text;
@@ -71,9 +71,16 @@
     mix-blend-mode: difference;
   }
 
-  .label:has(input:checked)::before {
+  #lang-switch-button > .label:has(input:checked)::before {
     width: 100%;
     left: 0;
     top: 22px;
+  }
+  @media (max-width: 768px) {
+    #lang-switch-button {
+        display: none;
+        right: -5px;    
+        /* display: contents; */
+    }
   }
 </style>
