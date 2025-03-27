@@ -1,14 +1,56 @@
+---
+const { pathname } = Astro.url;
+const isEnglish = pathname.startsWith('/en');
+
+// Define URL mappings
+const urlMappings = {
+  '/': '/en',
+  '/o-nas': '/en/about',
+  '/posluchaj': '/en/listen',
+  '/projekty': '/en/projects',
+  '/plyty': '/en/albums',
+  '/kontakt': '/en/contact'
+};
+
+// Create reverse mappings for English to Polish
+const reverseUrlMappings = Object.fromEntries(
+  Object.entries(urlMappings).map(([pl, en]) => [en, pl])
+);
+---
+
 <section id="lang-switch-button">
     <label title="PL" for="pl" class="label">
-      <input id="pl" name="language" type="radio" checked />
+      <input id="pl" name="language" type="radio" checked={!isEnglish} />
       PL
     </label>
     <label title="EN" for="en" class="label">
-      <input id="en" name="language" type="radio" />
+      <input id="en" name="language" type="radio" checked={isEnglish} />
       EN
     </label>
-  
 </section>
+
+<script define:vars={{ urlMappings, reverseUrlMappings }}>
+  function handleLanguageSwitch(lang) {
+    const currentPath = window.location.pathname;
+    
+    if (lang === 'en') {
+      // Switch to English
+      const newPath = urlMappings[currentPath] || '/en';
+      window.location.href = newPath;
+    } else {
+      // Switch to Polish
+      const newPath = reverseUrlMappings[currentPath] || '/';
+      window.location.href = newPath;
+    }
+  }
+
+  // Add event listeners to radio buttons
+  document.querySelectorAll('input[name="language"]').forEach(radio => {
+    radio.addEventListener('change', (e) => {
+      handleLanguageSwitch(e.target.id);
+    });
+  });
+</script>
 
 <style>
  @media (min-width: 768px) { display: flex;}

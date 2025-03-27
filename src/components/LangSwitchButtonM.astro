@@ -1,15 +1,45 @@
+---
+const { pathname } = Astro.url;
+const isEnglish = pathname.startsWith('/en');
+---
+
 <section id="lang-switch-button-m">
-    <label title="PLm" for="plm" class="label">
-      <input id="plm" name="languagem" type="radio" checked />
+    <label title="PLm" for="pl" class="label">
+      <input id="pl" name="languagem" type="radio" checked={!isEnglish} />
       PL
     </label>
-    <label title="ENm" for="enm" class="label">
-      <input id="enm" name="languagem" type="radio" />
+    <label title="ENm" for="en" class="label">
+      <input id="en" name="languagem" type="radio" checked={isEnglish} />
       EN
     </label>
-  
 </section>
 
+<script>
+  function handleLanguageSwitch(lang: string) {
+    const currentPath = window.location.pathname;
+    
+    if (lang === 'enm' && !currentPath.startsWith('/en')) {
+      // Switch to English
+      if (currentPath === '/') {
+        window.location.href = '/en';
+      } else {
+        const newPath = `/en${currentPath}`;
+        window.location.href = newPath;
+      }
+    } else if (lang === 'plm' && currentPath.startsWith('/en')) {
+      // Switch to Polish
+      const newPath = currentPath.replace('/en', '');
+      window.location.href = newPath || '/';
+    }
+  }
+
+  // Add event listeners to radio buttons
+  document.querySelectorAll('input[name="language"]').forEach(radio => {
+    radio.addEventListener('change', (e) => {
+      handleLanguageSwitch((e.target as HTMLInputElement).id);
+    });
+  });
+</script>
 <style>
  @media (min-width: 768px) { 
     opacity: 0;
