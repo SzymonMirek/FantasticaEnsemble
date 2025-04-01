@@ -82,12 +82,13 @@ const homeLink = isEnglish ? "/en" : "/";
     header {
       mix-blend-mode: difference;
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       background: #ffffff00;
       padding: 10px;
       width: 100%;
       z-index: 3000;
       position: fixed;
+      padding-top: 15px;
     }
     
 
@@ -107,6 +108,14 @@ const homeLink = isEnglish ? "/en" : "/";
     }
     a:hover {
       color: yellow;
+    }
+    .logo-container {
+        padding-left: 7vw;
+    }
+
+    .desktop-nav {
+      padding-right: 8vw;
+      
     }
   }
   /* navigation - mobile STYLES */
@@ -135,6 +144,7 @@ const homeLink = isEnglish ? "/en" : "/";
       position: fixed; 
       top: -10px; 
       left: 1vw; 
+      
     }
 
       #menuToggle
