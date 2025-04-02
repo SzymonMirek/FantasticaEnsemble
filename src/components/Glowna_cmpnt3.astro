@@ -204,6 +204,24 @@ import vidoo from '../assets/fantastica-vid.mp4';
 						   duration: 0.3
 					   }, "<+=0.2");  // Faster transition
 			}
+		});				
+		gsap.to("#fantastica-bg-vid", {
+			opacity: 0,
+			scrollTrigger: {
+				trigger: ".scroll-container-container",
+				start: "+=100%",
+				scrub: true,
+				onEnter: () => {
+					const video = document.querySelector("#fantastica-bg-vid");
+					video.style.display = "none";
+					video.pause();
+				},
+				onLeaveBack: () => {
+					const video = document.querySelector("#fantastica-bg-vid");
+					video.style.display = "block";
+					video.play();
+				}
+			}
 		});
 	});
 	</script>
