@@ -10,7 +10,17 @@ import vidoo from '../assets/fantastica-vid.mp4';
 				<img class="background" id="fadeImage" src={background.src} alt="" fetchpriority="high" />
 				<img class="falanding" id="fadeImage" class="widFantastica" src={falanding.src} alt="" fetchpriority="high" />
 			</section>
-			<video id="fantastica-bg-vid" autoplay muted loop>
+			<video 
+			id="fantastica-bg-vid" 
+			autoplay 
+			muted 
+			loop 
+			playsinline
+			webkit-playsinline
+			x5-playsinline
+			preload="auto"
+			disablePictureInPicture
+		  >
 				<source src={vidoo} type="video/mp4">
 			</video>
 		</div>
@@ -33,7 +43,7 @@ import vidoo from '../assets/fantastica-vid.mp4';
 	}
 	.fantastica-big-letters {
 			position: absolute;
-			z-index: 2;    
+			z-index: 5;    
 			top: calc(94.1vh - 150px);   
 			/* top: 80vh; */
 			left: 50%;
