@@ -1,0 +1,122 @@
+<div class="wydarzenie">
+    <div class="data-wydarzenia">
+        <p class="data-wydarzenia-dzien">17</p>
+        <p class="data-wydarzenia-m-r">kwie<br>2025</p>
+    </div>
+    <a class="nazwa-wydarzenia">Mystery</a>
+    <a class="opis-wydarzenia">All’Improvviso</a>
+    <a class="miejsce-wydarzenia">Gliwice, PL</a>
+    <a class="czas-wydarzenia">18:00</a>
+</div>
+<div class="wydarzenie">
+    <div class="data-wydarzenia">
+        <p class="data-wydarzenia-dzien">26</p>
+        <p class="data-wydarzenia-m-r">kwie<br>2025</p>
+    </div>
+    <a class="nazwa-wydarzenia">Biber</a>
+    <a class="opis-wydarzenia">Klasycznie Niepoważni</a>
+    <a class="miejsce-wydarzenia">Warszawa, PL</a>
+    <a class="czas-wydarzenia">19:00</a>
+</div>
+<div class="wydarzenie">
+    <div class="data-wydarzenia">
+        <p class="data-wydarzenia-dzien">29</p>
+        <p class="data-wydarzenia-m-r">kwie<br>2025</p>
+    </div>
+    <a class="nazwa-wydarzenia">Biber</a>
+    <a class="opis-wydarzenia">Klasyka na Koszykach</a>
+    <a class="miejsce-wydarzenia">Warszawa, PL</a>
+    <a class="czas-wydarzenia">20:00</a>
+</div>
+<div class="wydarzenie">
+    <div class="data-wydarzenia">
+        <p class="data-wydarzenia-dzien">25</p>
+        <p class="data-wydarzenia-m-r">maj<br>2025</p>
+    </div>
+    <a class="nazwa-wydarzenia">Biber</a>
+    <a class="opis-wydarzenia">Polskie Towarzystwo Bachowskie</a>
+    <a class="miejsce-wydarzenia">Kraków, PL</a>
+    <a class="czas-wydarzenia">18:00</a>
+</div>
+<div class="wydarzenie">
+    <div class="data-wydarzenia">
+        <p class="data-wydarzenia-dzien">12</p>
+        <p class="data-wydarzenia-m-r">lip<br>2025</p>
+    </div>
+    <a class="nazwa-wydarzenia">Fantasticus</a>
+    <a class="opis-wydarzenia">Nova Muzyka i Architektura</a>
+    <a class="miejsce-wydarzenia">Toruń, PL</a>
+    <a class="czas-wydarzenia">18:00</a>
+</div>
+<div class="wydarzenie">
+    <div class="data-wydarzenia">
+        <p class="data-wydarzenia-dzien">5</p>
+        <p class="data-wydarzenia-m-r">paź<br>2025</p>
+    </div>
+    <a style="padding-left: 22px;" class="nazwa-wydarzenia">La Stella</a>
+    <a class="opis-wydarzenia">Festiwal Cichej Muzyki</a>
+    <a class="miejsce-wydarzenia">Toruń, PL</a>
+    <a class="czas-wydarzenia">19:00</a>
+</div>
+
+<style>
+    .wydarzenie {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-family: "Gilda Display";
+        align-items: center;
+        width: 96%;
+        height: 60px;
+        border-top: 1px solid #E4277640;
+        border-bottom: 1px solid #E4277640;
+        padding: 0.3% 1% 0.3% 7px;
+        margin-bottom: 11px;
+    }
+
+    .data-wydarzenia {
+        color: #353535;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0 7%;
+    }
+        .data-wydarzenia-dzien {
+            height: 100%;
+            padding-bottom: 12px;
+            font-family: Elsie;
+            font-size: 37px;
+            font-weight: 900;
+        }
+
+        .data-wydarzenia-m-r {
+            height: 100%;
+            text-align: justify;
+            font-family: "Gilda Display";
+            font-size: 14px;
+            font-weight: 400;
+        }
+        .nazwa-wydarzenia {
+            flex-basis: 100px;
+        }
+        .opis-wydarzenia {
+            flex-basis: 200px;
+        }
+        .miejsce-wydarzenia {
+            flex-basis: 120px;
+        }
+        .czas-wydarzenia {
+            color: #A71250;
+            flex-basis: 80px;
+            text-align: right;
+        }
+
+        @media screen and (max-width: 1200px) {
+            .wydarzenie a {
+                font-size: 14px;
+            }
+            .opis-wydarzenia {
+                flex-basis: 180px;
+            }
+        }
+</style>
