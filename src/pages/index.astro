@@ -61,7 +61,7 @@ import Footer from '../components/Footer.astro'
 			</div>
 			<div id="second-quote-main">
 				<img src={secondPhotoMain.src} alt="" />
-				<div>
+				<div id="second-purple-quote">
 					<h2>“Rewolucjonizują świat muzyki barokowej swoim nowatorskim podejściem”</h2>
 					<h4>Autorka<br>Karolina Sajniak-Drzyzga
 						Julian Cochran Foundation </h4>
@@ -312,7 +312,6 @@ import Footer from '../components/Footer.astro'
 				grid-column: 1/4;
 			}
 
-
 			#o-nas {
 				position: relative; 
 				grid-template-columns: 1fr;
@@ -352,10 +351,12 @@ import Footer from '../components/Footer.astro'
 
 			/* Second quote iphone */
 			#second-quote-main {
-				grid-row: 7 / 8;
+				grid-row: 5 / 6;
 				flex-direction: column-reverse;
-				/* grid-template-columns: 1fr;
-				grid-template-rows: 1fr 1fr; */
+				height: fit-content;
+			}
+			#second-purple-quote {
+				height: 500px;
 			}
 			#second-quote-main > img {
 				height: 114vw;
@@ -375,6 +376,18 @@ import Footer from '../components/Footer.astro'
 			#fantastica-glowna {
 				grid-template-rows: 110vh 70.1% 100vh 1fr 1fr;
 			}
+			#main-readable-portion {        
+				grid-template-rows: 10vh 1250px 82vh calc(820px + 114vw) calc(515px + 114vw);
+			}
+			#first-photo-text-container > p {
+				font-size: 2.7rem;
+			}
+			#kalendarz-container {
+				height: -webkit-fill-available;
+			}
+			#kalendarz-container > div {
+				height: -webkit-fill-available;
+			}
 			.fantastica-big-letters {
 				align-self: start;
 				top: 23%;
@@ -383,10 +396,14 @@ import Footer from '../components/Footer.astro'
 				font-size: 12.5vw;
 				/* align-items: start; */
 			}
-			.falanding {
-				
-				/* left: auto;
-				top: 21vh; */
+			#second-quote-main > div > h2 {
+				font-size: 7.3vw;
+			}
+			#second-quote-main > div > h4 {
+				font-size: 3.4vw;
+			}
+			#second-quote-main > div > a {
+				font-size: 3.8vw;
 			}
 
 /* TODO - wazne, na glownej za male literki w tym */

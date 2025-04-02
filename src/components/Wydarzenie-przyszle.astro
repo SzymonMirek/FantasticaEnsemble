@@ -53,11 +53,12 @@
         <p class="data-wydarzenia-dzien">5</p>
         <p class="data-wydarzenia-m-r">paź<br>2025</p>
     </div>
-    <a style="padding-left: 22px;" class="nazwa-wydarzenia">La Stella</a>
+    <a id="lastella" class="nazwa-wydarzenia">La Stella</a>
     <a class="opis-wydarzenia">Festiwal Cichej Muzyki</a>
     <a class="miejsce-wydarzenia">Toruń, PL</a>
     <a class="czas-wydarzenia">19:00</a>
 </div>
+
 
 <style>
     .wydarzenie {
@@ -72,7 +73,15 @@
         border-bottom: 1px solid #E4277640;
         padding: 0.3% 1% 0.3% 7px;
         margin-bottom: 11px;
+        /* cursor: pointer; */
+        transition: background 0.3s, color 0.3s;
     }
+
+    /* .wydarzenie:hover {
+        background: rgba(250, 250, 250, 0.7); 
+        backdrop-filter: blur(50px); 
+
+    } */
 
     .data-wydarzenia {
         color: #353535;
@@ -99,6 +108,9 @@
         .nazwa-wydarzenia {
             flex-basis: 100px;
         }
+        #lastella {
+            margin-left: 22px;
+        }
         .opis-wydarzenia {
             flex-basis: 200px;
         }
@@ -118,5 +130,39 @@
             .opis-wydarzenia {
                 flex-basis: 180px;
             }
+        }
+        @media screen and (max-width: 600px) {
+            .wydarzenie {
+                display: grid;
+                grid-template-columns: 1.1fr 1.2fr 0.9fr;
+                grid-template-rows: 33px 33px;
+                height: 66px;
+                width: 97%;
+                padding-bottom: 0.9vh;
+            }
+            .data-wydarzenia {
+                grid-column: 1/2;
+                grid-row: 1/3;
+            }
+            .nazwa-wydarzenia {
+                grid-column: 2/3;
+                grid-row: 1/2;
+            }
+            .czas-wydarzenia {
+                grid-column: 3/4;
+                grid-row: 1/2;
+            }
+            .opis-wydarzenia {
+                grid-column: 2/3;
+                grid-row: 2/3;
+            }
+            .miejsce-wydarzenia {
+                grid-column: 3/4;
+                grid-row: 2/3;
+                text-align: right;
+            }
+        #lastella {
+            margin-left: 0;
+        }
         }
 </style>
