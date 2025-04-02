@@ -1,0 +1,395 @@
+---
+import Glowna_cmpnt3 from '../components/Glowna_cmpnt3.astro';
+import Layout from '../layouts/Layout.astro';
+import kimjestesmyPhoto from '../assets/kimjestesmy-photo.png'
+import Wydarzenia from '../components/Wydarzenia.astro'
+import kalendarzPicMain from '../assets/kalendarz-pic-main.png'
+import secondPhotoMain from '../assets/second-photo-main.png'
+import Footer from '../components/Footer.astro'
+---
+
+<Layout>
+	<div id="fantastica-glowna">
+		<Glowna_cmpnt3 />
+		<div id="main-readable-portion">
+			<div id="o-nas-containter">
+				<div id="o-nas">
+					<div id="o-nas-left">
+						<h2 style="font-family: Gilda Display;">KIM<br>JESTEŚMY?</h2>
+						<img src={kimjestesmyPhoto.src} alt="" />
+					</div>
+					<div id="o-nas-right">
+						<div id="o-nas-right-tekscik">
+							<p>Fantastica Ensemble to przestrzeń, w której barok spotyka się z niepowtarzalną ekspresją i
+								nowatorskim podejściem. Jesteśmy zespołem o zmiennym składzie, a naszym trzonem są
+								skrzypaczka Aleksandra Owczarek i klawesynistka Klaudia Łoboda – artystki, które
+								odważnie sięgają po rzadkie i zapomniane dzieła, nadając im nowe życie. Nie odtwarzamy baroku – my go tworzymy na nowo.
+							</p>
+							<p>
+								Fantastica Ensemble to nie tylko zespół – to artystyczna misja. Gramy
+								muzykę, która nie zna granic, odrzuca schematy i na nowo definiuje czym właściwie jest muzyka
+								dawna. Autentyczność, ekspresja, nieprzewidywalność – to nasze DNA. W naszych interpretacjach
+								można usłyszeć wszystko, co w sztuce kochamy najbardziej: intensywność, zmysłowość i piękno.
+								
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="o-nas-containter-bg">
+				<!-- TODO - to wychodzace poza x axis -->
+				
+			</div>
+			<div id="first-photo-containter" >
+				<div id="first-photo-text-container">
+					<p>
+						„Barok odkryty na nowo.<br> Usłysz głos młodego pokolenia. ”
+					</p>
+				</div>
+			</div>
+			<div id="kalendarz-container">
+				<div>
+					<!-- TODO - make gradient move i linki i na szerokosc zrobic max bo wyglada goofy w safari-->
+					<h2>
+						KALENDARZ
+					</h2>
+					<div class="wydarzenia">
+						<Wydarzenia title="Wydarzenia" />
+						<img src={kalendarzPicMain.src} alt="" />
+					</div>
+				</div>
+			</div>
+			<div id="second-quote-main">
+				<img src={secondPhotoMain.src} alt="" />
+				<div>
+					<h2>“Rewolucjonizują świat muzyki barokowej swoim nowatorskim podejściem”</h2>
+					<h4>Katarzyna Czubek,<br>Akademia Muzyczna im. Krzysztofa Pendereckiego, Capella
+						Cracoviensis, festiwal Młoda Muzyka Dawna</h4>
+					<a>“Porywające,
+						ekspresyjne wykonania ukazują głęboką pasję muzyków do repertuaru
+						barokowego. Wielkie kontrasty, liryzm i taneczność stanowią integralną
+						część ich interpretacji. Zespół nie boi się poszukiwać nowych rozwiązań,
+						odważnie eksplorując alternatywne miejsca koncertowe i pokazując
+						muzykę baroku szerszemu gronu odbiorców. To zespół, którego
+						poczynania warto śledzić!”</a>
+				</div>
+			</div>
+
+			<div id="footerson">
+				<Footer />
+			</div>
+	
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<style>
+		#fantastica-glowna {
+			display: grid;
+			width: 100%;
+			/* place-items: center; */
+			grid-template-rows: 150vh 56.3% 100vh 1fr;
+
+		}
+
+		#main-readable-portion {
+			display: grid;
+			grid-template-columns: 1fr 82vw 2fr;
+			grid-template-rows: 10vh 1250px 82vh 108vh 1fr 1fr;
+			width: 100%;
+			height: 2000px;
+			background-color: rgba(241, 239, 239, 0.97);
+			backdrop-filter: blur(15px);
+			grid-row-start: 2;
+			
+		}
+		
+		#o-nas-containter {
+			grid-column: 2 / 4;
+			grid-row-start: 2;
+			z-index: 1;
+		}
+		
+		#o-nas-containter-bg {
+			height: 40%;
+			grid-column: 1/4;
+			grid-row: 2/3;
+			bottom: 0;
+			align-self: flex-end;
+			z-index: 0;
+			background: linear-gradient(0deg, #E16F9E 21.65%, rgba(255, 255, 255, 0.00) 101.13%);
+		}
+
+		#o-nas {
+			display: grid;
+			grid-template-columns: 1fr 1fr;	
+			gap: 100px;
+			height: 970px;
+		}
+
+		#o-nas-left {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			height: 1020px;
+		}
+		#o-nas-left h2 {
+			color: #262626;
+			font-family: Elsie;
+			font-size: 3.8rem;
+			font-style: normal;
+			font-weight: 400;
+			line-height: normal;
+			align-self: center;
+			padding-right: 25px;
+		}
+
+		#o-nas-left img {
+			width: calc(23vw + 280px);
+			align-self: flex-end;
+		}
+
+		#o-nas-right {
+			margin-bottom: 25vh;
+			align-self: center;
+		}
+
+		#o-nas-right-tekscik {
+			color: #343232;
+			text-align: justify;
+			font-family: "Gilda Display";
+			font-size: calc(0.6vw + 11.5px);
+			font-style: normal;
+			font-weight: 400;
+			line-height: normal;
+			margin-right: calc(33vw - 340px);
+		}
+
+		#first-photo-containter {
+			display: flex;
+			justify-content: center;
+			grid-column: 1/4;
+			grid-row-start: 3;
+			background-image: url('../assets/first_photo_main.png'); /* Set the background image */
+			background-size: cover; /* Cover the whole div */
+			background-position: center;
+		}
+			#first-photo-text-container {
+				width: 94vw;
+				height: 71vh;
+				border-radius: 11px;
+				border: 1px solid rgba(220, 220, 220, 0.78);
+				margin-top: 6vh;
+			}
+
+				#first-photo-text-container > p {
+					color: #FFF;
+					font-family: "Gilda Display";
+					font-size: 3.2rem;
+					font-style: normal;
+					font-weight: 400;
+					line-height: normal;
+					padding: 0 3vw;
+				}
+		#kalendarz-container {
+			display: flex;
+			justify-content: center;
+			grid-row: 4/5;
+			grid-column: 1/4;
+			background-color: white;
+		}
+
+		#kalendarz-container > div {
+			align-self: center;
+			height: 70%;
+			width: 90%;
+			padding: 0 5.5vw;
+			padding-bottom: 17vh;
+		}
+
+		#kalendarz-container > div > h2 {
+			color: #262626;
+			font-family: Elsie;
+			font-size: 8vh;
+			font-style: normal;
+			font-weight: 400;
+			line-height: normal;
+			padding-left: 3.5%;
+		}
+
+
+		.wydarzenia {
+			display: flex;
+			justify-content: space-between;
+			flex-direction: row;
+			height: 600px;
+		}
+
+		.wydarzenia > img {
+			height: 30vw;
+		}
+
+		/* Drugi quote sekcja */
+		#second-quote-main {
+			display: flex;
+			flex-direction: row;
+			grid-row: 5/6;
+			grid-column: 1/4;
+			height: 56vw;
+		}
+		#second-quote-main > img{
+			height: 56vw;
+		}
+		#second-quote-main > div {
+			display: flex;
+			flex-direction: column;
+			padding: 1vw 1vw 5vw 4vw;
+			background-color: #D9EDFF;
+			background-image: url('../assets/quote-second-gdnt.svg');
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+
+
+		#second-quote-main > div > h2 {
+			color: #032D52;
+			text-align: right;
+			font-family: "Gilda Display";
+			font-size: 5.3vh;
+			font-style: normal;
+			font-weight: 400;
+			line-height: normal;
+		}
+		#second-quote-main > div > h4 {
+			color: #032D52;
+			font-family: "Gilda Display";
+			font-size: calc(0.6vw + 10px);
+			font-style: normal;
+			font-weight: 400;
+			line-height: normal;
+			text-align: right;
+		}
+		#second-quote-main > div > a {
+			color: #032D52;
+			font-family: "Gilda Display";
+			font-size: calc(0.6vw + 10px);
+			font-style: normal;
+			font-weight: 400;
+			line-height: normal;
+			margin-top: auto;
+			padding-right: 4vw;
+		}
+
+		#footerson {
+			height: 100%;
+			grid-row: 8/9;
+			grid-column: 1/4;
+			width: auto;
+		}
+		#footerson > footer {
+			width: 101.6vw;
+		}
+/* max-width 1000px max-width 1000px max-width 1000px max-width 1000px max-width 1000px max-width 1000px max-width 1000px max-width 1000px max-width 1000px */
+		@media screen and (max-width: 1000px) {
+			#fantastica-glowna {
+				grid-template-rows: 110vh 72% 100vh 1fr;
+			}
+			#main-readable-portion {
+				width: 101vw;
+				grid-template-rows: 10vh 1250px 82vh 1360px 40vh 42vh;
+			}
+
+			#o-nas-containter {
+				grid-column: 1/4;
+			}
+
+
+			#o-nas {
+				position: relative; 
+				grid-template-columns: 1fr;
+				grid-template-rows: 1fr 1fr;
+			}
+			#o-nas-left {
+				grid-row: 1/2;height: 264vw;
+			}
+			#o-nas-left img {
+				width: 95%;
+				align-self: center;
+			}
+			#o-nas-right {
+				width: 91vw;
+				position: absolute;
+				top: 29vh;
+				justify-self: center;
+			}
+			#o-nas-right-tekscik {
+				width: 91vw;
+				font-size: calc(1.6vw + 11.5px);
+			}
+		/* First photo iphone */
+			#first-photo-containter {
+				background-position: center;
+			}
+
+		/* kalendarz iphone */
+			.wydarzenia {
+				row-gap: 15vw;
+			}
+			#kalendarz-container > div > h2 {
+				padding: 0;
+				font-size: 7vh;
+			}
+
+
+			/* Second quote iphone */
+			#second-quote-main {
+				grid-row: 7 / 8;
+				flex-direction: column-reverse;
+				/* grid-template-columns: 1fr;
+				grid-template-rows: 1fr 1fr; */
+			}
+			#second-quote-main > img {
+				height: 114vw;
+			}
+			/* #second-quote-main > div {
+				grid-row: 2/3;
+			} */
+			.wydarzenia {
+				flex-direction: column;
+			}
+			.wydarzenia > img {
+				height: 114vw;
+			}
+
+/* max-width 600 pixels max-width 600 pixels max-width 600 pixels max-width 600 pixels max-width 600 pixels */
+		@media screen and (max-width: 600px) {
+			#fantastica-glowna {
+				grid-template-rows: 110vh 70.1% 100vh 1fr 1fr;
+			}
+			.fantastica-big-letters {
+				align-self: start;
+				top: 23%;
+			}
+			#fbl {
+				font-size: 12.5vw;
+				/* align-items: start; */
+			}
+			.falanding {
+				
+				/* left: auto;
+				top: 21vh; */
+			}
+
+/* TODO - wazne, na glownej za male literki w tym */
+			#second-quote-main > div > a, #second-quote-main > div > h4 {
+				/* font-size: 10vw; */
+			}
+
+		}
+		}
+	</style>
+</Layout>
