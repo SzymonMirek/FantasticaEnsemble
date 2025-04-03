@@ -303,10 +303,14 @@ import { ViewTransitions } from "astro:transitions";
         filter: blur(235px);
         left: 10vw;
     }
-
+    @media screen and (min-width: 2000px) {
+        .albumy-container {
+            grid-template-rows: 38vw 78vw 60vw 78vw;
+        }
+     }
     @media screen and (min-width: 1800px) {
         .albumyEclipseHeadline {
-            left: -20vw;
+            left: -1vw;
         }
      }
      @media screen and (max-width: 600px) {
