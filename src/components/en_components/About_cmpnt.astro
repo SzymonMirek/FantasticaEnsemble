@@ -7,6 +7,24 @@ import about3 from '../../assets/about3.png';
 import about5 from '../../assets/about5-klaudia.png';
 import about7 from '../../assets/about7.png';
 import Footer from '../../components/en_components/Footer.astro'
+import gallery1 from '../../assets/galeria/gallery1.png';
+import gallery2 from '../../assets/galeria/gallery2.png';
+import gallery3 from '../../assets/galeria/gallery3.png';
+import gallery4 from '../../assets/galeria/gallery4.png';
+import gallery5 from '../../assets/galeria/gallery5.png';
+import gallery6 from '../../assets/galeria/gallery6.png';
+import gallery7 from '../../assets/galeria/gallery7.png';
+import gallery8 from '../../assets/galeria/gallery8.png';
+import gallery9 from '../../assets/galeria/gallery9.png';
+import gallery10 from '../../assets/galeria/gallery10.png';
+import gallery11 from '../../assets/galeria/gallery11.png';
+import gallery12 from '../../assets/galeria/gallery12.png';
+import gallery13 from '../../assets/galeria/gallery13.png';
+import gallery14 from '../../assets/galeria/gallery14.png';
+import gallery15 from '../../assets/galeria/gallery15.png';
+import gallery16 from '../../assets/galeria/gallery16.png';
+import gallery17 from '../../assets/galeria/gallery17.png';
+import gallery18 from '../../assets/galeria/gallery18.png';
 ---
 <!-- TODO - 2 nie ma niektorych zdjec -->
 <div class="about-container">
@@ -129,6 +147,37 @@ We perform on both national and European stages, appearing in Poland, Austria, F
             </p>
         </div>
     </div>
+    <div class="gallery-container">
+        <h2>
+            Gallery
+        </h2>
+        <div class="gallery">
+
+            <img src={gallery1.src} alt="Pierwsze zdjecie galerii" />
+            <img src={gallery2.src} alt="Drugie zdjecie galerii" />
+            <img src={gallery3.src} alt="Trzecie zdjecie galerii" />
+            <img src={gallery4.src} alt="Czwarte zdjecie galerii" />
+            
+            <img src={gallery5.src} alt="Piąte zdjecie galerii" />
+            <img src={gallery6.src} alt="Szóste zdjecie galerii" />
+            <img src={gallery7.src} alt="Siódme zdjecie galerii" />
+            <img src={gallery8.src} alt="Ósme zdjecie galerii" />
+            
+            <img src={gallery9.src} alt="Dziewiąte zdjecie galerii" />
+            <img src={gallery10.src} alt="Dziesiąte zdjecie galerii" />
+            <img src={gallery11.src} alt="Jedenaste zdjecie galerii" />
+            <img src={gallery12.src} alt="Dwunaste zdjecie galerii" />
+            
+            <img src={gallery13.src} alt="Trzynaste zdjecie galerii" />
+            <img src={gallery14.src} alt="Czternaste zdjecie galerii" />
+            <img src={gallery15.src} alt="Piętnaste zdjecie galerii" />
+            <img src={gallery16.src} alt="Szesnaste zdjecie galerii" />
+            
+            <img src={gallery17.src} alt="Siedemnaste zdjecie galerii" />
+            <img src={gallery18.src} alt="Osiemnaste zdjecie galerii" />
+
+        </div>
+    </div>
     <div id="footerson-about">
         <Footer />
     </div>
@@ -140,7 +189,7 @@ We perform on both national and European stages, appearing in Poland, Austria, F
     .about-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
-        grid-template-rows: 1080px 1080px 832px 960px 40vw 680px 940px calc(20px + 42vh);
+        grid-template-rows: 1080px 1080px 832px 960px 40vw 680px 940px auto calc(20px + 42vh);
         height: 6600px;
         font-family: "Gilda Display";
         z-index: -2;
@@ -368,6 +417,7 @@ We perform on both national and European stages, appearing in Poland, Austria, F
     
     #about-5-klaudia-img {
         height: calc(120px + 25vw);
+        width: fit-content;
     }
     #about-5-klaudia-inside-text-left {
         flex: display;
@@ -473,7 +523,7 @@ We perform on both national and European stages, appearing in Poland, Austria, F
         grid-column: 1 / 12;
         grid-row: 7 / 8;
         display: grid;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: auto 2fr;
         padding-top: 21vh;
         gap: 8vw;
         padding-right: calc(32vw - 350px);
@@ -496,11 +546,55 @@ We perform on both national and European stages, appearing in Poland, Austria, F
     /* TODO - Napraw footery */
     #footerson-about {
         grid-column: 1 / 12;
-        grid-row: 8/9;
+        grid-row: 9/10;
         height: 100%;
     }
     #about-7 {
         align-self: end;
+        border-radius: 20px;
+
+    }
+
+/* Galeria Galeria Galeria Galeria Galeria Galeria Galeria Galeria Galeria Galeria Galeria Galeria */
+
+    .gallery-container {
+        grid-row: 8/9;
+        grid-column: 1/11;
+        padding: 4vw;    
+        olor: #dc5e87;
+        background: linear-gradient(360deg, #DD587C 0%, #ECDAE2 100%);
+        /* font-size: 98px; */
+    }    
+    .gallery-container > h2 {
+        font-size: 101px;
+        color: #dc5e87;
+        text-align: center;
+        margin-bottom: 50px;;
+    }
+    .gallery {
+        grid-row: 8/9;
+        grid-column: 1/11;
+        columns: 400px;
+        height: fit-content;
+        /* display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: auto;
+        grid-auto-flow: dense;
+        gap: 6px; */
+
+    }    
+    .gallery > img {
+        width: 100%;
+        margin-bottom: 1em;
+        border-radius: 1ch;
+        box-shadow: 1px 1px 9px 0px rgba(0, 0, 0, 0.25);
+        transition: all 300ms ease-in;
+        
+    }
+    .gallery > img:hover {
+        transform: rotateZ(1deg) rotateY(10deg) scale(1.1);
+        box-shadow: 0 5em 2em #111;
+        /* cursor: pointer; */
     }
 
 
@@ -508,7 +602,7 @@ We perform on both national and European stages, appearing in Poland, Austria, F
 /* Mobilna O nas */
 @media screen and (max-width: 800px) {
     .about-container {
-        grid-template-rows: 1fr 1fr 1fr 780px 360vw 1fr 1fr calc(20px + 42vh);
+        grid-template-rows: 1fr 1fr 1fr 780px 360vw 1fr 1fr auto calc(20px + 42vh);
     }
     .about-content-1 {
         flex-direction: column;    
