@@ -42,13 +42,13 @@ const title = pageTitles[currentPath as keyof typeof pageTitles] || 'Fantastica'
 		<link href="https://fonts.googleapis.com/css2?family=Elsie:wght@400;900&family=Gilda+Display&display=swap" rel="stylesheet">
 		<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
 		<title>{title}</title>
-		<ViewTransitions />    
+		<!-- <ViewTransitions />    
 		<style is:global>
 			/* Disable transition animations during language switch */
 			[data-astro-transition-fallback] {
 			  animation: none !important;
 			}
-		  </style>
+		  </style> -->
 	</head>
 	<body>
 		<Header animate:persist />
