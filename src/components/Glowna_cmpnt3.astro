@@ -121,7 +121,7 @@ import vidoo from '../assets/fantastica-vid.mp4';
 	gsap.registerPlugin(ScrollTrigger);
 	
 	// Wait for DOM to load
-	document.addEventListener("astro:page-load", () => {
+	document.addEventListener("DOMContentLoaded", () => {
 		// Set initial state (works for all screen sizes)
 		gsap.set("#background-that-fades", { opacity: 1 });
 		gsap.set("#fantastica-bg-vid", { opacity: 1 });
@@ -219,7 +219,7 @@ import vidoo from '../assets/fantastica-vid.mp4';
 			opacity: 0,
 			scrollTrigger: {
 				trigger: ".scroll-container-container",
-				start: "+=160%",
+				start: "+=130%",
 				scrub: true,
 				onEnter: () => {
 					const video = document.querySelector("#fantastica-bg-vid");

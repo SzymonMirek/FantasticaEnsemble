@@ -3,7 +3,7 @@ const { pathname } = Astro.url;
 const isEnglish = pathname.startsWith('/en');
 ---
 
-<section transition:persist id="lang-switch-button-m">
+<section id="lang-switch-button-m">
     <label title="PLm" for="pl" class="label">
       <input id="pl" name="languagem" type="radio" checked={!isEnglish} />
       PL
