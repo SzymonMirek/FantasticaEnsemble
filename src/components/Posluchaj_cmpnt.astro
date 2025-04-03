@@ -4,7 +4,11 @@ import spotifyButton from '../assets/spotifyButton.svg';
 import appleButton from '../assets/appleButton.svg';
 import naZywo from '../assets/naZywo.svg';
 import Footer from '../components/Footer.astro';
+import { ViewTransitions } from "astro:transitions";
 ---
+<head>
+    <ViewTransitions />
+</head>
 <!-- TODO - zaczyna sie zoomed in na phone!!, nie ma footera, moze lepszy embed z wieksza iloscia filmikow, zamien filmik, dodaj linki do przyciskow -->
 <div class="posluchaj-container">
     <div class="posluchaj-socials-container">
