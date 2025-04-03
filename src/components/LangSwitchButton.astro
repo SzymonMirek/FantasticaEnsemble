@@ -18,7 +18,7 @@ const reverseUrlMappings = Object.fromEntries(
 );
 ---
 
-<section id="lang-switch-button">
+<section transition:persist id="lang-switch-button">
     <label title="PL" for="pl" class="label">
       <input id="pl" name="language" type="radio" checked={!isEnglish} />
       PL
