@@ -202,8 +202,7 @@ import vidoo from '../assets/fantastica-vid.mp4';
 					}
 				});
 				
-				mobileTl.to(".fantastica-big-letters", { duration: 0.5 })
-					   .to(".fantastica-big-letters", { 
+				mobileTl.to(".fantastica-big-letters", { 
 						   color: "#A76AFB",
 						   scale: "1.2vw 1.2vw",  // Smaller scale
 						//    y: -220,               // Less vertical movement
@@ -211,8 +210,8 @@ import vidoo from '../assets/fantastica-vid.mp4';
 					   })
 					   .to("#fantastica-bg-vid", {
 						   filter: "grayscale(100%)",
-						   duration: 0.3
-					   }, "<+=0.2");  // Faster transition
+						   duration: 0.6
+					   });  // Faster transition
 			}
 		});				
 		gsap.to("#fantastica-bg-vid", {
