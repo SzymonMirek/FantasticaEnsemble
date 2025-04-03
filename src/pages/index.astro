@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import Glowna_cmpnt3 from '../components/Glowna_cmpnt3.astro';
 import Layout from '../layouts/Layout.astro';
 import kimjestesmyPhoto from '../assets/kimjestesmy-photo.png'
@@ -16,7 +17,7 @@ import Footer from '../components/Footer.astro'
 				<div id="o-nas">
 					<div id="o-nas-left">
 						<h2 style="font-family: Gilda Display;">KIM<br>JESTEŚMY?</h2>
-						<img src={kimjestesmyPhoto.src} alt="" />
+						<img src={kimjestesmyPhoto.src} alt="Kim jesteśmy photo" />
 					</div>
 					<div id="o-nas-right">
 						<div id="o-nas-right-tekscik">
@@ -60,7 +61,7 @@ import Footer from '../components/Footer.astro'
 				</div>
 			</div>
 			<div id="second-quote-main">
-				<img src={secondPhotoMain.src} alt="" />
+				<img src={secondPhotoMain.src} alt="Zdjęcie Klaudii i Aleksandry przy drugim cytacie" loading="lazy" decoding="async"/>
 				<div id="second-purple-quote">
 					<h2>“Rewolucjonizują świat muzyki barokowej swoim nowatorskim podejściem”</h2>
 					<h4>Autorka<br>Karolina Sajniak-Drzyzga
