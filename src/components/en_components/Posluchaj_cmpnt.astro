@@ -3,7 +3,6 @@ import ytButton from '../../assets/ytButton.svg';
 import spotifyButton from '../../assets/spotifyButton.svg';
 import appleButton from '../../assets/appleButton.svg';
 import naZywo from '../../assets/naZywo.svg';
-import Footer from '../../components/en_components/Footer.astro';
 import { ViewTransitions } from "astro:transitions";
 ---
 <head>
@@ -49,14 +48,17 @@ import { ViewTransitions } from "astro:transitions";
         </div>
     </div>
 </div>
-<Footer animate:persist/>
+<!-- <div id="footerlol">
 
-<style>
+</div> -->
+    <style>
 
     .posluchaj-container {
         display: grid;
-        grid-template-rows: auto auto auto;
+        grid-template-rows: auto auto;
         background: linear-gradient(180deg, #80C3FE 0%, #EBC0D8 100%);
+        z-index: 3;
+        width: 100vw;
     }
 
     .posluchaj-socials-container {
@@ -153,6 +155,11 @@ import { ViewTransitions } from "astro:transitions";
             left: 8.4vw;
         }
     }
+/* 
+    #footerlol {
+        height:  calc(42vh + 103px);
+        width: 100vw;
+    } */
     @media screen and (max-width: 600px) {
         .posluchaj-container{
             width: 100%;

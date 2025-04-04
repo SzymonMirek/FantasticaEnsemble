@@ -6,7 +6,6 @@ import about2Eclipse from '../assets/about2-eclipse.svg';
 import about3 from '../assets/about3.png';
 import about5 from '../assets/about5-klaudia.png';
 import about7 from '../assets/about7.png';
-import Footer from '../components/Footer.astro'
 import gallery1 from '../assets/galeria/gallery1.png';
 import gallery2 from '../assets/galeria/gallery2.png';
 import gallery3 from '../assets/galeria/gallery3.png';
@@ -173,9 +172,6 @@ import { ViewTransitions } from "astro:transitions";
 
         </div>
     </div>
-    <div id="footerson-about">
-        <Footer animate:persist />
-    </div>
 </div>
 <style>
     header {
@@ -184,8 +180,7 @@ import { ViewTransitions } from "astro:transitions";
     .about-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
-        grid-template-rows: 1080px 1080px 832px 960px 40vw 680px 940px auto calc(20px + 42vh);
-        height: 6600px;
+        grid-template-rows: 1080px 1080px 832px 960px 40vw 680px 940px auto;
         font-family: "Gilda Display";
         z-index: -2;
     }
@@ -541,13 +536,7 @@ import { ViewTransitions } from "astro:transitions";
         font-size: calc(15px + 0.3vw);
     }
 
-    /* Footer */
-    /* TODO - Napraw footery */
-    #footerson-about {
-        grid-column: 1 / 12;
-        grid-row: 9/10;
-        height: 100%;
-    }
+
     #about-7 {
         align-self: end;
         border-radius: 20px;
@@ -602,7 +591,7 @@ import { ViewTransitions } from "astro:transitions";
 /* Mobilna O nas */
 @media screen and (max-width: 800px) {
     .about-container {
-        grid-template-rows: 1fr 1fr 1fr 780px 360vw 1fr 1fr auto calc(20px + 42vh);
+        grid-template-rows: 1fr auto 1fr 780px 360vw auto auto auto;
     }
     .about-content-1 {
         flex-direction: column;    

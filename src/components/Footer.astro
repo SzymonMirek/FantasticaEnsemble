@@ -3,6 +3,10 @@ import fbIcon from '../assets/fb_icon.svg';
 import igIcon from '../assets/ig_icon.svg';
 import ytIcon from '../assets/yt_icon.svg';
 ---
+
+<div id="footerlol">
+</div>
+
 <footer>
     <div id="footer-gradient">
     </div>
@@ -33,14 +37,24 @@ import ytIcon from '../assets/yt_icon.svg';
 </footer>
 
 <style>
+
+    #footerlol {
+        height:  calc(42vh + 103px);
+        width: 100%;
+    }
+    
     footer {
         overflow: hidden;
+        position: fixed;
+        bottom: 0;
+        width: 100vw;
+        z-index: -9;
     }
     #footer-gradient {
         top: 0;
         left: 0;
         width: -webkit-fill-available;
-        height: 23px;
+        height: 128px;
         background: linear-gradient(90deg, #E180A9 23.5%, #2599F8 100%);
     }
 
@@ -80,118 +94,106 @@ import ytIcon from '../assets/yt_icon.svg';
     #newsletter-input {
         display: flex;
     }
-    #newsletter-input-email{
+    #newsletter-input-email {
         margin-right: 2vw;
     }
-/* PRZYCISK ZAPISZ SIE PRZYCISK ZAPISZ SIE PRZYCISK ZAPISZ SIE PRZYCISK ZAPISZ SIE PRZYCISK ZAPISZ SIE PRZYCISK ZAPISZ SIE */
-.btn {
-  background: black;
-  border: 1px solid #e0e0e0;
-  outline: none;
-  width: 155px;
-  padding: 12px 40px;
-  height: 60px;
-  border-radius: 3px;
-  overflow: hidden;
-  transform: scaleX(1);
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0, 1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;  
-}
-#btn-txt{
-  color: white;
-  width: 100%;
-  height: 100%;
-  text-align: center;  
-  transition: all 0.3s ease;
-  font-size: 15px;
-  padding-top: 41px;
-}
-#btn-txt:hover {
-  color: black;
-}
-.btn:hover {
-  animation: animate-scaleX 0.6s cubic-bezier(0.4, 0, 0, 1);
-  background: transparent;
-  color: black;
-}
 
-.btn::after {
-  color: black;
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  background: white;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0, 1),
-    border-radius 0.5s cubic-bezier(0.4, 0, 0, 1);
-  width: 100%;
-  height: 100%;
-  border-radius: 50% 50% 0 0;
-  transform: translateY(100%);
-}
-
-.btn:hover::after {
-  transform: translateY(0%);
-  border-radius: 0;
-}
-
-.btn span {
-  font-size: 20px;
-  font-weight: 500;
-  overflow: hidden;
-  position: relative;
-  color: white;
-}
-
-.btn span:after {
-  width: 100%;
-  height: 100%;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0, 1);
-  content: attr(data-text);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  z-index: 1;
-  transform: translate(-50%, 100%);
-  color: black;
-}
-.btn:hover span:after {
-  transform: translate(-50%, 0);
-}
-
-.btn:focus {
-  outline: none;
-}
-
-@keyframes animate-scaleX {
-  0% {
-    transform: scaleX(1);
-  }
-  50% {
-    transform: scaleX(1.05);
-  }
-  100% {
-    transform: scaleX(1);
-  }
-}
- 
-/* PRZYCISK ZAPISZ SIE PRZYCISK ZAPISZ SIE PRZYCISK ZAPISZ SIE PRZYCISK ZAPISZ SIE PRZYCISK ZAPISZ SIE PRZYCISK ZAPISZ SIE */
-    /* .footer-left button {
+    .btn {
+        background: black;
+        border: 1px solid #e0e0e0;
+        outline: none;
+        width: 155px;
+        padding: 12px 40px;
+        height: 60px;
+        border-radius: 3px;
+        overflow: hidden;
+        transform: scaleX(1);
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0, 1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;  
+    }
+    #btn-txt {
+        color: white;
+        width: 100%;
+        height: 100%;
+        text-align: center;  
+        transition: all 0.3s ease;
+        font-size: 15px;
+        padding-top: 41px;
+    }
+    #btn-txt:hover {
+        color: black;
+    }
+    .btn:hover {
+        animation: animate-scaleX 0.6s cubic-bezier(0.4, 0, 0, 1);
         background: transparent;
-        font-family: "Gilda Display";
-        border: 1px solid #FFF;;
-        color: #FFF;
-        padding: 20px 40px;
+        color: black;
+    }
+
+    .btn::after {
+        color: black;
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: white;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0, 1),
+            border-radius 0.5s cubic-bezier(0.4, 0, 0, 1);
+        width: 100%;
+        height: 100%;
+        border-radius: 50% 50% 0 0;
+        transform: translateY(100%);
+    }
+
+    .btn:hover::after {
+        transform: translateY(0%);
+        border-radius: 0;
+    }
+
+    .btn span {
         font-size: 20px;
-        cursor: pointer;
-        margin-left: 20px;
-    } */
+        font-weight: 500;
+        overflow: hidden;
+        position: relative;
+        color: white;
+    }
+
+    .btn span:after {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0, 1);
+        content: attr(data-text);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        z-index: 1;
+        transform: translate(-50%, 100%);
+        color: black;
+    }
+    .btn:hover span:after {
+        transform: translate(-50%, 0);
+    }
+
+    .btn:focus {
+        outline: none;
+    }
+
+    @keyframes animate-scaleX {
+        0% {
+            transform: scaleX(1);
+        }
+        50% {
+            transform: scaleX(1.05);
+        }
+        100% {
+            transform: scaleX(1);
+        }
+    }
 
     .footer-right {
         height: 78%;
@@ -241,12 +243,16 @@ import ytIcon from '../assets/yt_icon.svg';
         margin-top: 4.5vh;
         margin-bottom: 8.9vh;
     }
-/* Footer - mobile styles */
+
     @media screen and (max-width: 700px) { 
+        #footerlol {
+            height: calc(93vw + 100px);   
+        }
         #pod-dolacz {
             display: none;
         }
         footer {
+            width: -webkit-fill-available;
         }
         .footer {
             flex-direction: column;
@@ -264,15 +270,7 @@ import ytIcon from '../assets/yt_icon.svg';
         .footer-left input {
             width: 44%;
         }
-        /* .footer-left button {
-            padding: 3.5vw 7vw;
-            margin-left: 0;
-            float: right;
-            font-size: 4vw;
-            margin-top: 2.3vw;
-        } */
 
-    /* footer - dolacz do nas Mobile */
         .footer-right {
             align-self: baseline;
             width: 98%;
@@ -301,7 +299,5 @@ import ytIcon from '../assets/yt_icon.svg';
         .footer-right-icon {
             margin: 0 0 2.5vw 0;
         }
-}
-    
-    
+    }
 </style>

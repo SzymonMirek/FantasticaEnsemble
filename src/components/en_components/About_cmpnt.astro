@@ -147,7 +147,7 @@ import { ViewTransitions } from "astro:transitions";
             <p>
                 Our work has been recognized in international competitions—we received the Special Prize at the H.I.F. Biber International Competition (Austria, 2023), First Prize at the III KraCamera Chamber Music Competition (2023), and the Special Prize for “the most creative performance” at the 12th International Maurizio Pratola Early Music Competition (Italy, 2024). We also won the Da Vinci Young Sounds competition (2023), leading to the recording of our debut album in collaboration with Da Vinci Records. Thanks to the Creative Scholarship of the City of Kraków (2024), we recorded our second album dedicated to the works of H.I.F. Biber for the Ars Sonora label.
 
-We perform on both national and European stages, appearing in Poland, Austria, Finland, the Netherlands, and Germany. We create original projects that go beyond concerts—they are expressive, theatrical narratives where tradition meets modernity. We also pave new paths by collaborating with artists from various disciplines, bringing to life projects like “Mystery. Everyone is Losing Someone.”
+                We perform on both national and European stages, appearing in Poland, Austria, Finland, the Netherlands, and Germany. We create original projects that go beyond concerts—they are expressive, theatrical narratives where tradition meets modernity. We also pave new paths by collaborating with artists from various disciplines, bringing to life projects like “Mystery. Everyone is Losing Someone.”
             </p>
         </div>
     </div>
@@ -182,10 +182,8 @@ We perform on both national and European stages, appearing in Poland, Austria, F
 
         </div>
     </div>
-    <div id="footerson-about">
-        <Footer />
-    </div>
 </div>
+
 <style>
     header {
     mix-blend-mode: initial;
@@ -193,8 +191,7 @@ We perform on both national and European stages, appearing in Poland, Austria, F
     .about-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
-        grid-template-rows: 1080px 1080px 832px 960px 40vw 680px 940px auto calc(20px + 42vh);
-        height: 6600px;
+        grid-template-rows: 1080px 1080px 832px 960px 40vw 680px 940px auto;
         font-family: "Gilda Display";
         z-index: -2;
     }
@@ -547,13 +544,6 @@ We perform on both national and European stages, appearing in Poland, Austria, F
         font-size: calc(15px + 0.3vw);
     }
 
-    /* Footer */
-    /* TODO - Napraw footery */
-    #footerson-about {
-        grid-column: 1 / 12;
-        grid-row: 9/10;
-        height: 100%;
-    }
     #about-7 {
         align-self: end;
         border-radius: 20px;
@@ -607,7 +597,7 @@ We perform on both national and European stages, appearing in Poland, Austria, F
 /* Mobilna O nas */
 @media screen and (max-width: 800px) {
     .about-container {
-        grid-template-rows: 1fr 1fr 1fr 780px 360vw 1fr 1fr auto calc(20px + 42vh);
+        grid-template-rows: 1fr auto 1fr 780px 360vw auto auto auto;
     }
     .about-content-1 {
         flex-direction: column;    

@@ -95,13 +95,11 @@ import Lenis from 'lenis';
 				</div>
 			</div>
 
-			<div id="footerson">
-				<Footer />
-			</div>
 	
 			</div>
 		</div>
 	</div>
+	<Footer animate:persist/>
 
 
 
@@ -111,20 +109,20 @@ import Lenis from 'lenis';
 			display: grid;
 			width: 100%;
 			/* place-items: center; */
-			grid-template-rows: 150vh 56.3% 100vh 1fr;
+			grid-template-rows: 150vh 1fr; 
 
 		}
 
 		#main-readable-portion {
 			display: grid;
 			grid-template-columns: 1fr 82vw 2fr;
-			grid-template-rows: 10vh 1250px 82vh 108vh 1fr 1fr;
+			grid-template-rows: 10vh 1250px 82vh 108vh 1fr;
 			width: 100%;
 			height: 2000px;
 			background-color: rgba(241, 239, 239, 0.97);
 			backdrop-filter: blur(15px);
 			grid-row-start: 2;
-			
+			height: auto;
 		}
 		
 		#o-nas-containter {
@@ -307,15 +305,6 @@ import Lenis from 'lenis';
 			padding-right: 4vw;
 		}
 
-		#footerson {
-			height: 100%;
-			grid-row: 8/9;
-			grid-column: 1/4;
-			width: auto;
-		}
-		#footerson > footer {
-			width: 101.6vw;
-		}
 /* max-width 1000px max-width 1000px max-width 1000px max-width 1000px max-width 1000px max-width 1000px max-width 1000px max-width 1000px max-width 1000px */
 		@media screen and (max-width: 1000px) {
 			#fantastica-glowna {
@@ -392,7 +381,7 @@ import Lenis from 'lenis';
 /* max-width 600 pixels max-width 600 pixels max-width 600 pixels max-width 600 pixels max-width 600 pixels */
 		@media screen and (max-width: 600px) {
 			#fantastica-glowna {
-				grid-template-rows: 110vh 70.1% 100vh 1fr 1fr;
+				grid-template-rows: 110vh 1fr;
 			}
 			#main-readable-portion {        
 				grid-template-rows: 10vh 1250px 82vh calc(820px + 114vw) calc(515px + 114vw);

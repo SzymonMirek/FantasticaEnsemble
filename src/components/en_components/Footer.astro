@@ -3,6 +3,9 @@ import fbIcon from '../../assets/fb_icon.svg';
 import igIcon from '../../assets/ig_icon.svg';
 import ytIcon from '../../assets/yt_icon.svg';
 ---
+<div id="footerlol">
+</div>
+
 <footer>
     <div id="footer-gradient">
     </div>
@@ -32,14 +35,24 @@ import ytIcon from '../../assets/yt_icon.svg';
 </footer>
 
 <style>
+
+    #footerlol {
+        height:  calc(42vh + 103px);
+        width: 100%;
+    }
+    
     footer {
         overflow: hidden;
+        position: fixed;
+        bottom: 0;
+        width: 100vw;
+        z-index: -9;
     }
     #footer-gradient {
         top: 0;
         left: 0;
         width: -webkit-fill-available;
-        height: 23px;
+        height: 128px;
         background: linear-gradient(90deg, #E180A9 23.5%, #2599F8 100%);
     }
 
@@ -230,10 +243,14 @@ import ytIcon from '../../assets/yt_icon.svg';
     }
 
     @media screen and (max-width: 700px) { 
+        #footerlol {
+            height: calc(93vw + 100px);   
+        }
         #pod-dolacz {
             display: none;
         }
         footer {
+            width: -webkit-fill-available;
         }
         .footer {
             flex-direction: column;
