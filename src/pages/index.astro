@@ -17,7 +17,7 @@ import Footer from '../components/Footer.astro'
 				<div id="o-nas">
 					<div id="o-nas-left">
 						<h2 style="font-family: Gilda Display;">KIM<br>JESTEŚMY?</h2>
-						<Image src={kimjestesmyPhoto} alt="Kim jesteśmy photo" />
+						<Image src={kimjestesmyPhoto} alt="Kim jesteśmy" />
 					</div>
 					<div id="o-nas-right">
 						<div id="o-nas-right-tekscik">
@@ -419,7 +419,6 @@ import Footer from '../components/Footer.astro'
 		
 		// Register ScrollTrigger plugin
 		gsap.registerPlugin(ScrollTrigger);
-		ScrollTrigger.normalizeScroll(true);
 
 		const tl = gsap.timeline({
 
