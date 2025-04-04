@@ -19,7 +19,7 @@ import vidoo from '../assets/fantastica-vid.mp4';
 			webkit-playsinline
 			x5-playsinline
 			preload="auto"
-			disablePictureInPicture
+			disablepictureinpicture
 		  >
 				<source src={vidoo} type="video/mp4">
 			</video>
@@ -225,14 +225,26 @@ import vidoo from '../assets/fantastica-vid.mp4';
 				start: "+=130%",
 				scrub: true,
 				onEnter: () => {
-					const video = document.querySelector("#fantastica-bg-vid");
-					video.style.display = "none";
-					video.pause();
+					const video = document.querySelector("#fantastica-bg-vid") as HTMLVideoElement | null;
+					const bg = document.querySelector("#fadeImage") as HTMLImageElement | null;
+					if (video) {
+						video.style.display = "none";
+						video.pause();
+					}
+					if (bg) {
+						bg.style.display = "none";
+					}
 				},
 				onLeaveBack: () => {
-					const video = document.querySelector("#fantastica-bg-vid");
-					video.style.display = "block";
-					video.play();
+					const video = document.querySelector("#fantastica-bg-vid") as HTMLVideoElement;
+					const bg = document.querySelector("#fadeImage") as HTMLImageElement;
+					if (video) {
+						video.style.display = "block";
+						video.play();
+					}
+					if (bg) {
+						bg.style.display = "block";
+					}
 				}
 			}
 		});
