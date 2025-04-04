@@ -3,25 +3,29 @@ import fbIcon from '../../assets/fb_icon.svg';
 import igIcon from '../../assets/ig_icon.svg';
 import ytIcon from '../../assets/yt_icon.svg';
 ---
- <footer>
+<footer>
     <div id="footer-gradient">
     </div>
     <div class="footer">
         <div class="footer-left">
             <h2>JOIN US</h2>
             <p id="pod-dolacz">and enter the world of music with us:</p>
-            <form action="https://buttondown.email/api/emails/embed-subscribe/szymon" method="post">
-                            <input type="email" name="email" placeholder="E-mail" required>
-            <button type="submit" value="Subscribe">SUBSCRIBE</button>
-        </form>
+            <form id="newsletter-input" action="https://buttondown.email/api/emails/embed-subscribe/szymon" method="post">
+                <input id="newsletter-input-email" type="email" name="email" placeholder="E-mail" required>
+                <button class="btn" type="submit" value="Subscribe">
+                    <p id="btn-txt" style="position: absolute; z-index: 6;">     
+                        SUBSCRIBE
+                    <p/>
+                </button>
+            </form>
         </div>
         <div class="footer-right">
             <h3>Contact</h3>
             <a id="emailson" href="mailto:fantastica.ensemble@gmail.com" data-astro-reload>fantastica.ensemble@gmail.com</a>
             <div class="footer-social-icons">
-                <a href="https://www.youtube.com/@owczarekobodaduo3746" class="footer-right-icon-container"><img class="footer-right-icon" src={ytIcon.src} alt="youtube" /> <span>youtube</span></a>
-                <a href="https://www.instagram.com/fantastica.ensemble/" class="footer-right-icon-container"><img class="footer-right-icon" src={igIcon.src} alt="instagram" /> <span>instagram</span></a>
-                <a href="https://www.facebook.com/fantastica.ensemble" class="footer-right-icon-container"><img class="footer-right-icon" src={fbIcon.src} alt="facebook" /> <span>facebook</span></a>
+                <a href="https://www.youtube.com/@owczarekobodaduo3746" class="footer-right-icon-container"><img class="footer-right-icon" src={ytIcon.src} alt="youtube" loading="lazy" decoding="async"/> <span>youtube</span></a>
+                <a href="https://www.instagram.com/fantastica.ensemble/" class="footer-right-icon-container"><img class="footer-right-icon" src={igIcon.src} alt="instagram" loading="lazy" decoding="async"/> <span>instagram</span></a>
+                <a href="https://www.facebook.com/fantastica.ensemble" class="footer-right-icon-container"><img class="footer-right-icon" src={fbIcon.src} alt="facebook" loading="lazy" decoding="async"/> <span>facebook</span></a>
             </div>
         </div>
     </div>
@@ -72,16 +76,108 @@ import ytIcon from '../../assets/yt_icon.svg';
         width: calc(62vw - 355px);
         outline: none;
     }
+    #newsletter-input {
+        display: flex;
+    }
+    #newsletter-input-email {
+        margin-right: 2vw;
+    }
 
-    .footer-left button {
+    .btn {
+        background: black;
+        border: 1px solid #e0e0e0;
+        outline: none;
+        width: 155px;
+        padding: 12px 40px;
+        height: 60px;
+        border-radius: 3px;
+        overflow: hidden;
+        transform: scaleX(1);
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0, 1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;  
+    }
+    #btn-txt {
+        color: white;
+        width: 100%;
+        height: 100%;
+        text-align: center;  
+        transition: all 0.3s ease;
+        font-size: 15px;
+        padding-top: 41px;
+    }
+    #btn-txt:hover {
+        color: black;
+    }
+    .btn:hover {
+        animation: animate-scaleX 0.6s cubic-bezier(0.4, 0, 0, 1);
         background: transparent;
-        font-family: "Gilda Display";
-        border: 1px solid #FFF;;
-        color: #FFF;
-        padding: 20px 40px;
+        color: black;
+    }
+
+    .btn::after {
+        color: black;
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: white;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0, 1),
+            border-radius 0.5s cubic-bezier(0.4, 0, 0, 1);
+        width: 100%;
+        height: 100%;
+        border-radius: 50% 50% 0 0;
+        transform: translateY(100%);
+    }
+
+    .btn:hover::after {
+        transform: translateY(0%);
+        border-radius: 0;
+    }
+
+    .btn span {
         font-size: 20px;
-        cursor: pointer;
-        margin-left: 20px;
+        font-weight: 500;
+        overflow: hidden;
+        position: relative;
+        color: white;
+    }
+
+    .btn span:after {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0, 1);
+        content: attr(data-text);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        z-index: 1;
+        transform: translate(-50%, 100%);
+        color: black;
+    }
+    .btn:hover span:after {
+        transform: translate(-50%, 0);
+    }
+
+    .btn:focus {
+        outline: none;
+    }
+
+    @keyframes animate-scaleX {
+        0% {
+            transform: scaleX(1);
+        }
+        50% {
+            transform: scaleX(1.05);
+        }
+        100% {
+            transform: scaleX(1);
+        }
     }
 
     .footer-right {
@@ -124,6 +220,7 @@ import ytIcon from '../../assets/yt_icon.svg';
         align-items: center;
         margin-bottom: 2.2vh;
     }
+
     #pod-dolacz {
         display: block;
         font-size: 2.9vh;
@@ -131,7 +228,7 @@ import ytIcon from '../../assets/yt_icon.svg';
         margin-top: 4.5vh;
         margin-bottom: 8.9vh;
     }
-/* Footer - mobile styles */
+
     @media screen and (max-width: 700px) { 
         #pod-dolacz {
             display: none;
@@ -149,20 +246,12 @@ import ytIcon from '../../assets/yt_icon.svg';
         .footer-left h2 {
             margin: 0 0 5vw 0;
             font-size: 10.6vw;
-            justify-self: start;
+            justify-self: center;
         }
         .footer-left input {
             width: 44%;
         }
-        .footer-left button {
-            padding: 3.5vw 7vw;
-            margin-left: 0;
-            float: right;
-            font-size: 4vw;
-            margin-top: 2.3vw;
-        }
 
-    /* footer - dolacz do nas Mobile */
         .footer-right {
             align-self: baseline;
             width: 98%;
@@ -191,7 +280,5 @@ import ytIcon from '../../assets/yt_icon.svg';
         .footer-right-icon {
             margin: 0 0 2.5vw 0;
         }
-}
-    
-    
+    }
 </style>
