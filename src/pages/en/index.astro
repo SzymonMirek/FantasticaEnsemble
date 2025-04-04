@@ -233,8 +233,7 @@ import Lenis from 'lenis';
 		}
 	
 		#kalendarz-container {
-			background-image: url(../../assets/tlo-kalendarz.png) lightgray;	
-			background-size: cover;
+			background: lightgray url(../assets/tlo-kalendarz.png) 50% / cover no-repeat;
 		}
 
 		.wydarzenia {
@@ -423,22 +422,23 @@ import Lenis from 'lenis';
 		import { gsap } from "gsap";
 		import { ScrollTrigger } from "gsap/ScrollTrigger";
 		
-		// Register ScrollTrigger plugin
-		gsap.registerPlugin(ScrollTrigger);
+		if (typeof window !== "undefined") {
+			// Register ScrollTrigger plugin
+			gsap.registerPlugin(ScrollTrigger);
 
 
-		const tl = gsap.timeline({
+			const tl = gsap.timeline({
 
-		scrollTrigger: {
-			trigger: "#first-photo-containter",
-			start: "top bottom",
-			end: "bottom top",
-			scrub: true,
+			scrollTrigger: {
+				trigger: "#first-photo-containter",
+				start: "top bottom",
+				end: "bottom top",
+				scrub: true,
 
-		},
+			},
 
-		})
-		tl.to("#first-photo-containter", {backgroundPositionY: 10}, 0)
-
+			})
+			tl.to("#first-photo-containter", {backgroundPositionY: 10}, 0)
+		}
 	</script>
 </Layout>

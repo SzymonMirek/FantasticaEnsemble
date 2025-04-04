@@ -221,8 +221,7 @@ import Footer from '../components/Footer.astro'
 		}
 	
 		#kalendarz-container {
-			background: url(../assets/tlo-kalendarz.png) lightgray 50% / no-repeat;
-			background-size: cover;
+			background: lightgray url(../assets/tlo-kalendarz.png) 50% / cover no-repeat;
 		}
 
 		.wydarzenia {
@@ -416,23 +415,25 @@ import Footer from '../components/Footer.astro'
 	<script>
 		import { gsap } from "gsap";
 		import { ScrollTrigger } from "gsap/ScrollTrigger";
-		
-		// Register ScrollTrigger plugin
-		gsap.registerPlugin(ScrollTrigger);
 
-		const tl = gsap.timeline({
+		if (typeof window !== "undefined") {
 
-		scrollTrigger: {
-			trigger: "#first-photo-containter",
-			start: "top bottom",
-			end: "bottom top",
-			scrub: true,
+			// Register ScrollTrigger plugin
+			gsap.registerPlugin(ScrollTrigger);
 
-		},
+			const tl = gsap.timeline({
 
-		})
-		tl.to("#first-photo-containter", {backgroundPositionY: 10}, 0)
-		//or with multiple refs
+			scrollTrigger: {
+				trigger: "#first-photo-containter",
+				start: "top bottom",
+				end: "bottom top",
+				scrub: true,
 
+			},
+
+			})
+			tl.to("#first-photo-containter", {backgroundPositionY: 10}, 0)
+			//or with multiple refs
+		}
 	</script>
 </Layout>
