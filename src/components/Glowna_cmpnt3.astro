@@ -36,9 +36,9 @@ import vidoo from '../assets/fantastica-vid.mp4';
 	.scroll-container-container {
 		position: absolute;
 		display: flex;
-		width: 100%;
+		width: 100vw;
 		height: 150vh;
-		overflow: hidden;
+		overflow: clip;
 		grid-row: 1/2;
 	}
 	.fantastica-big-letters {
@@ -60,7 +60,7 @@ import vidoo from '../assets/fantastica-vid.mp4';
 	.scroll-container {
 		display: flex;
 		position: fixed;
-		width: 100%;
+		width: 100vw;
 		height: 100vh;
 		justify-content: center;
 		pointer-events: none
@@ -69,7 +69,7 @@ import vidoo from '../assets/fantastica-vid.mp4';
 			display: flex;
 			justify-content: center;
 			position: absolute;
-			width: 100%;
+			width: 100vw;
 			height: 100%;
 			pointer-events: none
 		}
