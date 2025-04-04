@@ -15,7 +15,8 @@ import ytIcon from '../assets/yt_icon.svg';
             <h2>DOŁĄCZ DO NAS</h2>
             <p id="pod-dolacz">i wejdź z nami do świata muzyki</p>
             <form id="newsletter-input" action="https://buttondown.email/api/emails/embed-subscribe/szymon" method="post">
-                            <input id="newsletter-input-email" type="email" name="email" placeholder="E-mail" required>
+                            <input id="newsletter-input-email" type="email" name="email" placeholder="Email" required>
+                            <label for="Email" class="form__label">E-mail</label>
             <!-- <button type="submit" value="Subscribe">ZAPISZ SIĘ</button> -->
             <button class="btn" type="submit" value="Subscribe">
                 <p id="btn-txt" style="position: absolute; z-index: 6;">     
@@ -81,7 +82,7 @@ import ytIcon from '../assets/yt_icon.svg';
         font-size: 6vh;
         font-weight: normal;
     }
-
+/* 
     .footer-left input {
         background: transparent;
         border: none;
@@ -91,14 +92,63 @@ import ytIcon from '../assets/yt_icon.svg';
         padding: 19px;
         width: calc(62vw - 355px);
         outline: none;
-    }
+    } */
+
     #newsletter-input {
         display: flex;
+        position: absolute;
+        width: 49vw;
     }
     #newsletter-input-email {
         margin-right: 2vw;
+
+        font-family: inherit;
+        width: 100%;
+        border: none;
+        border-bottom: 2px solid #9b9b9b;
+        outline: 0;
+        font-size: 21px;
+        color: #fff;
+        padding: 7px 0;
+        background: transparent;
+        transition: border-color 0.2s;
+    }
+    #newsletter-input-email::placeholder {
+        color: transparent;
+    }
+    #newsletter-input-email:focus {
+        padding-bottom: 6px;
+        font-weight: 700;
+        border-width: 3px;
+        border-image: linear-gradient(to right, #eb95b8, #b05fab);
+        border-image-slice: 1;
+    }
+    #newsletter-input-email:placeholder-shown ~ .form__label {
+        font-size: 27px;
+        cursor: text;
+        top: 10px;
+    }
+    .form__label {
+        position: absolute;
+        top: -20px;
+        display: block;
+        transition: 0.2s;
+        font-size: 21px;
+        color: #9b9b9b;
+        pointer-events: none;
+    }
+    #newsletter-input-email:focus ~ .form__label {
+        position: absolute;
+        top: -20px;
+        display: block;
+        transition: 0.2s;
+        font-size: 21px;
+        color: #e3d0e2;
+        font-weight: 700;
+        transition: 0.2s;
     }
 
+    
     .btn {
         background: black;
         border: 1px solid #e0e0e0;
@@ -268,14 +318,39 @@ import ytIcon from '../assets/yt_icon.svg';
             font-size: 10.6vw;
             justify-self: center;
         }
-        .footer-left input {
+        /* .footer-left input {
             width: 44%;
+        } */
+        #newsletter-input {
+            justify-self: center;
+            width: 90%;
+            margin: 0;
+            position: relative;
+            padding-top: 1vh;
         }
+        #newsletter-input-email {
+            font-size: 19px;    
+            top: 18px;
+        }
+
+        #newsletter-input-email:placeholder-shown ~ .form__label {
+            font-size: 14px;
+            top: 28px;
+        }
+        .form__label {
+            top: 0px;
+            font-size: 14px;
+        }
+        #newsletter-input-email:focus ~ .form__label {
+            font-size: 14px;
+            top: 0px;
+        }
+
 
         .footer-right {
             align-self: baseline;
             width: 98%;
-            padding: 8vh 0vh 0vh 1vh;
+            padding: 5vh 0vh 0vh 1vh;
         }
         .footer-right h3 {
             font-size: 26px;
