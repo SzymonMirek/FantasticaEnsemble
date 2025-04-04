@@ -10,4 +10,7 @@ export default defineConfig({
   experimental: {
       svg: true,
     },
+    integrations: [
+          // lenis(),
+        ],
 });
