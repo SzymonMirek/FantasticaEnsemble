@@ -422,4 +422,27 @@ import Lenis from 'lenis';
 		}
 	</style>
 
+	<script>
+		import { gsap } from "gsap";
+		import { ScrollTrigger } from "gsap/ScrollTrigger";
+		
+		// Register ScrollTrigger plugin
+		gsap.registerPlugin(ScrollTrigger);
+
+
+		const tl = gsap.timeline({
+
+		scrollTrigger: {
+			trigger: "#first-photo-containter",
+			start: "top bottom",
+			end: "bottom top",
+			scrub: true,
+
+		},
+
+		})
+		tl.to("#first-photo-containter", {backgroundPositionY: 10}, 0)
+		//or with multiple refs
+
+	</script>
 </Layout>
