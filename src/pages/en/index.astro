@@ -411,4 +411,21 @@ import Footer from '../../components/en_components/Footer.astro'
 		}
 		}
 	</style>
+	<script>
+			import Lenis from "lenis"
+
+			const lenis = new Lenis({ lerp: 0.9 });
+
+			//get scroll value
+			lenis.on("scroll", (e) => {
+				console.log(e);
+			});
+
+			function raf(time: number) {
+				lenis.raf(time);
+				requestAnimationFrame(raf);
+			}
+
+			requestAnimationFrame(raf);
+	</script>
 </Layout>
