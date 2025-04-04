@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import Glowna_cmpnt3 from '../../components/Glowna_cmpnt3.astro';
 import Layout from '../../layouts/Layout.astro';
 import kimjestesmyPhoto from '../../assets/kimjestesmy-photo.png'
@@ -29,7 +30,7 @@ import Lenis from 'lenis';
 				<div id="o-nas">
 					<div id="o-nas-left">
 						<h2 style="font-family: Gilda Display;">WHO<br>ARE WE?</h2>
-						<img src={kimjestesmyPhoto.src} alt="" />
+						<Image src={kimjestesmyPhoto} alt="Who are we photo" />
 					</div>
 					<div id="o-nas-right">
 						<div id="o-nas-right-tekscik">
@@ -62,12 +63,12 @@ import Lenis from 'lenis';
 					</h2>
 					<div class="wydarzenia">
 						<Wydarzenia title="Wydarzenia" />
-						<img src={kalendarzPicMain.src} alt="" />
+						<Image src={kalendarzPicMain} alt="" />
 					</div>
 				</div>
 			</div>
 			<div id="second-quote-main">
-				<img src={secondPhotoMain.src} alt="Photo of Klaudia and Aleksandra with second quote" loading="lazy" decoding="async"/>
+				<Image src={secondPhotoMain} alt="Photo of Klaudia and Aleksandra with second quote" loading="lazy" decoding="async"/>
 				<div>
 					<h2>“Revolutionizing the world of Baroque music with their innovative approach.”</h2>
 					<h4>Autorka<br>Karolina Sajniak-Drzyzga
@@ -158,6 +159,7 @@ import Lenis from 'lenis';
 		}
 
 		#o-nas-left img {
+			height: auto;
 			width: calc(23vw + 280px);
 			align-self: flex-end;
 		}
@@ -360,6 +362,7 @@ import Lenis from 'lenis';
 			}
 			#second-quote-main > img {
 				height: 114vw;
+				width: auto;
 			}
 			/* #second-quote-main > div {
 				grid-row: 2/3;
@@ -369,6 +372,7 @@ import Lenis from 'lenis';
 			}
 			.wydarzenia > img {
 				height: 114vw;
+				width: auto;
 			}
 
 /* max-width 600 pixels max-width 600 pixels max-width 600 pixels max-width 600 pixels max-width 600 pixels */

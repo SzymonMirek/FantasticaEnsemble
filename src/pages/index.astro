@@ -17,7 +17,7 @@ import Footer from '../components/Footer.astro'
 				<div id="o-nas">
 					<div id="o-nas-left">
 						<h2 style="font-family: Gilda Display;">KIM<br>JESTEŚMY?</h2>
-						<img src={kimjestesmyPhoto.src} alt="Kim jesteśmy photo" />
+						<Image src={kimjestesmyPhoto} alt="Kim jesteśmy photo" />
 					</div>
 					<div id="o-nas-right">
 						<div id="o-nas-right-tekscik">
@@ -56,12 +56,12 @@ import Footer from '../components/Footer.astro'
 					</h2>
 					<div class="wydarzenia">
 						<Wydarzenia title="Wydarzenia" />
-						<img src={kalendarzPicMain.src} alt="" />
+						<Image src={kalendarzPicMain} alt="" />
 					</div>
 				</div>
 			</div>
 			<div id="second-quote-main">
-				<img src={secondPhotoMain.src} alt="Zdjęcie Klaudii i Aleksandry przy drugim cytacie" loading="lazy" decoding="async"/>
+				<Image src={secondPhotoMain} alt="Zdjęcie Klaudii i Aleksandry przy drugim cytacie" loading="lazy" decoding="async"/>
 				<div id="second-purple-quote">
 					<h2>“Rewolucjonizują świat muzyki barokowej swoim nowatorskim podejściem”</h2>
 					<h4>Autorka<br>Karolina Sajniak-Drzyzga
@@ -147,6 +147,7 @@ import Footer from '../components/Footer.astro'
 		}
 
 		#o-nas-left img {
+			height: auto;
 			width: calc(23vw + 280px);
 			align-self: flex-end;
 		}
@@ -233,6 +234,7 @@ import Footer from '../components/Footer.astro'
 
 		.wydarzenia > img {
 			height: 30vw;
+			width: auto;
 		}
 
 		/* Drugi quote sekcja */
@@ -243,8 +245,10 @@ import Footer from '../components/Footer.astro'
 			grid-column: 1/4;
 			height: 56vw;
 		}
-		#second-quote-main > img{
-			height: 56vw;
+		#second-quote-main > img
+		{
+			width: 50vw;
+			height: auto;
 		}
 		#second-quote-main > div {
 			display: flex;
@@ -393,6 +397,11 @@ import Footer from '../components/Footer.astro'
 			}
 			#second-quote-main > div > a {
 				font-size: 3.8vw;
+			}
+			#second-quote-main > img
+			{
+				width: 100vw;
+				height: auto;
 			}
 
 /* TODO - wazne, na glownej za male literki w tym */
