@@ -585,7 +585,126 @@ import { ViewTransitions } from "astro:transitions";
 
 
 
+@media screen and (max-width: 1150px) and (min-width: 800px) {
+    .about-container {
+        grid-template-rows: auto auto auto 960px auto auto auto auto
+    }
+    .about-content-1 {
+        margin-left: 7vw;
+        margin-right: auto;
+        height: max-content;
+    }
+    .about-content-1-text {
+        align-items: center;
+    }
+    .about-content-1-text > p {
+        margin-left: 2vw;
+    }
+    .bold-line {
+        width: 100%;
+    }
+    .about-1-img {
+        margin-left: 2.3vw;
+        height: 53.5vw;    
+        margin-top: 4vw;
+    }
 
+/* about content 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 */
+    .about-content-2-inside {
+        flex-direction: column;
+        margin-top: 0;
+    }
+    .about-2-img-container {
+        width: 87vw;
+    }
+    /* .about-2-img {
+        width: calc(50% + 511px);
+    } */
+    .about-content-2-inside > div{
+        margin-top: 30px;
+        width: 70%;
+    }
+
+
+/* about content 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 */
+    .about-content-3-aleksandra {
+        height: fit-content;
+        padding: 17vh 0 7vh 0;
+    }
+    .about-content-3-aleksandra-inside {
+        /* justify-content: space-between; */
+        gap: 1.5vw;
+        height: auto;
+    }
+    .about-content-3-aleksandra-inside-text {
+        width: 35vw;
+        margin-left: 3vw;
+        align-self: auto;
+    }
+    #about-3-aleksandra-inside-text-right{
+        width: 33vw;
+    }
+    #about-3-aleksandra-img {
+        height: 32vw;
+        margin-left: auto;
+        align-self: center;
+    }
+
+
+/* about content 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 */
+    .about-content-5-klaudia {
+        height: auto;
+    }
+    .about-content-5-klaudia-inside {
+        height: auto;
+        width: calc(120vw - 320px);
+    }
+    .about-content-5-klaudia-inside-text {
+        align-self: start;
+    }
+    .quote-with-gradient-inside{
+        margin-bottom: 100px;
+    }
+    .quote-with-gradient-inside > p{
+        align-self: center;
+    }
+/* about content 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 */
+.about-content-6-klaudia {
+    grid-template-rows: 60px 1fr 10vh;  
+}
+/* about content 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 */
+    .about-content-7 {
+        height: fit-content;
+        padding-top: 0;
+        gap: 55px;
+    }
+    #about-7 {
+        width: 43vw;
+    }
+    .about-content-7 > div{
+        padding-right: 5vw;
+    }
+
+}
+@media screen and (max-width: 1000px) {
+    .about-6-inside {
+        flex-direction: column-reverse;
+        width: 100vw;
+    }
+    .sideways-text-and-text {
+        margin-top: 0;
+    }
+    .sideways-text-and-text p {
+        font-size: 2.3vw;
+        padding: 0 8vw 0 0;
+    }
+    .sideways-text-and-text h3 {
+        font-size: clamp(1rem, 15vw, 10ch);
+    }
+    .quote-with-gradient-inside {
+        width: 40%;
+    }
+}
 /* Mobilna O nas */
 @media screen and (max-width: 800px) {
     .about-container {
