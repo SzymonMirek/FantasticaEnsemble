@@ -159,18 +159,15 @@
             border-radius: 50%;
             background-image: linear-gradient(to right, #ff6b9d, #ffb8d9);
             margin: 0 5px;
-            animation: bubbleAnimation 3s ease-in-out infinite;
+            animation: 2s pulse infinite ease-in-out;
         }
-
-            @keyframes bubbleAnimation {
-            0%,
-            100% {
-                transform: scale(1);
-                opacity: 1;
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 #ffb8d9;
             }
-            50% {
-                transform: scale(1.3);
-                opacity: 0.8;
+
+            100% {
+                box-shadow: 0 0 0 9px #69ffa800;
             }
         }
         @media screen and (max-width: 1200px) {
