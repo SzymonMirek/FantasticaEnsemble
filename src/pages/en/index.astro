@@ -108,7 +108,7 @@ import Footer from '../../components/en_components/Footer.astro'
 		#main-readable-portion {
 			display: grid;
 			grid-template-columns: 1fr 82vw 2fr;
-			grid-template-rows: 10vh 1250px 82vh 108vh 1fr;
+			grid-template-rows: 10vh 1250px 82vh auto 1fr;
 			width: 100vw;
 			height: 2000px;
 			background-color: rgba(241, 239, 239, 0.97);
@@ -224,6 +224,7 @@ import Footer from '../../components/en_components/Footer.astro'
 			grid-row: 4/5;
 			grid-column: 1/4;
 			background-color: white;
+			padding-bottom: 4vw;
 		}
 
 		#kalendarz-container > div {
