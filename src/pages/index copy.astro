@@ -29,8 +29,8 @@ import Footer from '../components/Footer.astro'
 				<div id="o-nas">
 					<div id="o-nas-left">
 						<h2 style="font-family: Gilda Display;">KIM<br>JESTEŚMY?</h2>
+						<Image src={kimjestesmyPhoto} alt="Kim jesteśmy" />
 					</div>
-					<Image src={kimjestesmyPhoto} alt="Kim jesteśmy" />
 					<div id="o-nas-right">
 						<div id="o-nas-right-tekscik">
 							<p>Fantastica Ensemble to przestrzeń, w której barok spotyka się z niepowtarzalną ekspresją i
@@ -137,21 +137,8 @@ import Footer from '../components/Footer.astro'
 		#o-nas {
 			display: grid;
 			grid-template-columns: 1fr 1fr;	
-			grid-template-rows: 20% 1fr;
-			gap: 130px 100px;
+			gap: 100px;
 			height: 970px;
-		}
-
-		#o-nas > img {
-			width: 98%;
-			height: auto;
-			margin-top: 85px;
-			grid-column: 1/2;
-			grid-row: 2/3;
-		}
-		#o-nas-right {
-			grid-column: 2/3;
-			grid-row: 1/3;
 		}
 
 		#o-nas-left {
@@ -318,11 +305,11 @@ import Footer from '../components/Footer.astro'
 /* max-width 1000px max-width 1000px max-width 1000px max-width 1000px max-width 1000px max-width 1000px max-width 1000px max-width 1000px max-width 1000px */
 		@media screen and (max-width: 1000px) {
 			#fantastica-glowna {
-				grid-template-rows: 110vh 72%;
+				grid-template-rows: 110vh 72% 100vh 1fr;
 			}
 			#main-readable-portion {
 				width: -webkit-fill-available;
-				grid-template-rows: 10vh 196vw 82vh calc(800px + 117vw) auto;
+				grid-template-rows: 10vh 1250px 82vh 1360px 40vh 42vh;
 			}
 
 			#o-nas-containter {
@@ -332,31 +319,20 @@ import Footer from '../components/Footer.astro'
 			#o-nas {
 				position: relative; 
 				grid-template-columns: 1fr;
-				grid-template-rows: auto auto auto;
-				gap: 50px;
+				grid-template-rows: 1fr 1fr;
 			}
 			#o-nas-left {
-				height: auto;
-				gap: 5px;																																															
-				grid-column: 1/2;
-				grid-row: 1/2;
-				/* height: 264vw; */
+				grid-row: 1/2;height: 264vw;
+			}
+			#o-nas-left img {
+				width: 95%;
+				align-self: center;
 			}
 			#o-nas-right {
 				width: 91vw;
-				/* position: absolute; */
-				/* top: 29vh; */
+				position: absolute;
+				top: 29vh;
 				justify-self: center;
-				grid-column: 1/2;
-				grid-row: 2/3;
-				margin-bottom: 0;
-			}
-			#o-nas img {
-				width: 95%;
-				justify-self: center;
-				align-self: center;
-				grid-column: 1/2;
-				grid-row: 3/4;
 			}
 			#o-nas-right-tekscik {
 				width: 91vw;
@@ -369,15 +345,8 @@ import Footer from '../components/Footer.astro'
 
 		/* kalendarz iphone */
 			.wydarzenia {
-				/* row-gap: 15vw; */
-				gap: 111px;
+				row-gap: 15vw;
 			}
-
-			#kalendarz-container > div {
-				align-self: auto;
-				margin-top: 4vh;
-			}
-
 			#kalendarz-container > div > h2 {
 				padding: 0;
 				font-size: 7vh;
@@ -389,21 +358,16 @@ import Footer from '../components/Footer.astro'
 				grid-row: 5 / 6;
 				flex-direction: column-reverse;
 				height: fit-content;
-				font-size: 2.1vw;
-			}
-			#second-quote-main > div > a {
-				font-size: 2.1vw;
 			}
 			#second-purple-quote {
 				height: 500px;
 			}
 			#second-quote-main > img {
-				height: 600px;
-				width: 100vw;
-				object-fit: cover;    
-				object-position: bottom;
+				height: 114vw;
 			}
-
+			/* #second-quote-main > div {
+				grid-row: 2/3;
+			} */
 			.wydarzenia {
 				flex-direction: column;
 			}
@@ -419,11 +383,6 @@ import Footer from '../components/Footer.astro'
 			#main-readable-portion {        
 				grid-template-rows: 10vh 1250px 82vh calc(820px + 114vw) calc(515px + 114vw);
 			}
-
-			#o-nas img {
-				/* margin-right: 2vw; */
-			}
-
 			#first-photo-text-container > p {
 				font-size: 2.7rem;
 			}

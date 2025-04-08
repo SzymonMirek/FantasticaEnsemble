@@ -63,7 +63,7 @@ import ytIcon from '../assets/yt_icon.svg';
     .footer {
         font-family: "Gilda Display";
         height: 42vh;
-        background-color: black;
+        background-color: #080508;
         color: #FFF;
         padding: 40px;
         display: flex;
@@ -82,17 +82,7 @@ import ytIcon from '../assets/yt_icon.svg';
         font-size: 6vh;
         font-weight: normal;
     }
-/* 
-    .footer-left input {
-        background: transparent;
-        border: none;
-        border-bottom: 1px solid white;
-        color: white;
-        font-size: 16px;
-        padding: 19px;
-        width: calc(62vw - 355px);
-        outline: none;
-    } */
+
 
     #newsletter-input {
         display: flex;
@@ -150,7 +140,7 @@ import ytIcon from '../assets/yt_icon.svg';
 
     
     .btn {
-        background: black;
+        background: #080508;
         border: 1px solid #e0e0e0;
         outline: none;
         width: 155px;
@@ -175,16 +165,16 @@ import ytIcon from '../assets/yt_icon.svg';
         padding-top: 41px;
     }
     #btn-txt:hover {
-        color: black;
+        color: #080508;
     }
     .btn:hover {
         animation: animate-scaleX 0.6s cubic-bezier(0.4, 0, 0, 1);
         background: transparent;
-        color: black;
+        color: #080508;
     }
 
     .btn::after {
-        color: black;
+        color: #080508;
         content: "";
         position: absolute;
         left: 0;
@@ -224,7 +214,7 @@ import ytIcon from '../assets/yt_icon.svg';
         bottom: 0;
         z-index: 1;
         transform: translate(-50%, 100%);
-        color: black;
+        color: #080508;
     }
     .btn:hover span:after {
         transform: translate(-50%, 0);
@@ -295,6 +285,18 @@ import ytIcon from '../assets/yt_icon.svg';
         margin-bottom: 8.9vh;
     }
 
+    @media screen and (max-width: 1000px) { 
+        .footer-left > h2 {
+            font-size: 5.2vw;
+        }
+        #pod-dolacz {
+            font-size: 2.6vw;
+        }
+
+        #emailson {
+            font-size: 2.3vw;
+        }
+    }
     @media screen and (max-width: 700px) { 
         #footerlol {
             height: calc(93vw + 100px);   
