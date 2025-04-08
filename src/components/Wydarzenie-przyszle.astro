@@ -1,4 +1,7 @@
 <div class="wydarzenie" id="wydarzenie-klik" onclick="window.location.href='https://fb.me/e/7PWbNfdjF';">
+    <div class="loader">
+        <div class="bubble"></div>
+    </div>      
     <div class="data-wydarzenia">
         <p class="data-wydarzenia-dzien">17</p>
         <p class="data-wydarzenia-m-r">kwie<br>2025</p>
@@ -9,6 +12,9 @@
     <a class="czas-wydarzenia">18:00</a>
 </div>
 <div class="wydarzenie" id="wydarzenie-klik" onclick="window.location.href='https://fb.me/e/2DgL3KEWO';">
+    <div class="loader">
+        <div class="bubble"></div>
+    </div>      
     <div class="data-wydarzenia">
         <p class="data-wydarzenia-dzien">26</p>
         <p class="data-wydarzenia-m-r">kwie<br>2025</p>
@@ -88,7 +94,7 @@
 
     #wydarzenie-klik:hover {
         background: rgba(250, 250, 250, 0.7); 
-        backdrop-filter: blur(50px); 
+        /* backdrop-filter: blur(50px);  */
         cursor: pointer;
 
     }
@@ -138,6 +144,38 @@
             text-align: right;
         }
 
+
+        .loader {
+            position: absolute;
+            left: calc(5vw - 28px);
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* height: 100%; */
+        }
+
+            .bubble {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-image: linear-gradient(to right, #ff6b9d, #ffb8d9);
+            margin: 0 5px;
+            animation: bubbleAnimation 3s ease-in-out infinite;
+        }
+
+            @keyframes bubbleAnimation {
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.3);
+                opacity: 0.8;
+            }
+        }
+
         @media screen and (max-width: 1200px) {
             .wydarzenie a {
                 font-size: 14px;
@@ -179,5 +217,16 @@
         #lastella {
             margin-left: 0;
         }
+        .loader {
+            left: 1vw;
+        }            
+        .bubble {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-image: linear-gradient(to right, #ff6b9d, #ffb8d9);
+            margin: 0 5px;
+            animation: bubbleAnimation 3s ease-in-out infinite;
         }
+    }
 </style>
