@@ -1,10 +1,7 @@
 <div class="wydarzenie" id="wydarzenie-klik" onclick="window.location.href='https://fb.me/e/7PWbNfdjF';">
-    <div class="loader">
-        <div class="bubble"></div>
-    </div>      
     <div class="data-wydarzenia">
         <p class="data-wydarzenia-dzien">17</p>
-        <p class="data-wydarzenia-m-r">Apr<br>2025</p>
+        <p class="data-wydarzenia-m-r">kwie<br>2025</p>
     </div>
     <a class="nazwa-wydarzenia">Mystery</a>
     <a class="opis-wydarzenia">All’Improvviso</a>
@@ -12,68 +9,66 @@
     <a class="czas-wydarzenia">18:00</a>
 </div>
 <div class="wydarzenie" id="wydarzenie-klik" onclick="window.location.href='https://fb.me/e/2DgL3KEWO';">
-    <div class="loader">
-        <div class="bubble"></div>
-    </div>      
     <div class="data-wydarzenia">
         <p class="data-wydarzenia-dzien">26</p>
-        <p class="data-wydarzenia-m-r">Apr<br>2025</p>
+        <p class="data-wydarzenia-m-r">kwie<br>2025</p>
     </div>
     <a class="nazwa-wydarzenia">Biber</a>
-    <a class="opis-wydarzenia">Classically Playful</a>
-    <a class="miejsce-wydarzenia">Warsaw, PL</a>
+    <a class="opis-wydarzenia">Klasycznie Niepoważni</a>
+    <a class="miejsce-wydarzenia">Warszawa, PL</a>
     <a class="czas-wydarzenia">19:00</a>
 </div>
 <div class="wydarzenie" >
     <div class="data-wydarzenia">
         <p class="data-wydarzenia-dzien">29</p>
-        <p class="data-wydarzenia-m-r">Apr<br>2025</p>
+        <p class="data-wydarzenia-m-r">kwie<br>2025</p>
     </div>
     <a class="nazwa-wydarzenia">Biber</a>
-    <a class="opis-wydarzenia">Classics at Koszyki</a>
-    <a class="miejsce-wydarzenia">Warsaw, PL</a>
+    <a class="opis-wydarzenia">Klasyka na Koszykach</a>
+    <a class="miejsce-wydarzenia">Warszawa, PL</a>
     <a class="czas-wydarzenia">20:00</a>
 </div>
 <div class="wydarzenie" >
     <div class="data-wydarzenia">
         <p class="data-wydarzenia-dzien">25</p>
-        <p class="data-wydarzenia-m-r">May<br>2025</p>
+        <p class="data-wydarzenia-m-r">maj<br>2025</p>
     </div>
     <a class="nazwa-wydarzenia">Biber</a>
-    <a class="opis-wydarzenia">Polish Bach Society</a>
+    <a class="opis-wydarzenia">Polskie Towarzystwo Bachowskie</a>
     <a class="miejsce-wydarzenia">Kraków, PL</a>
     <a class="czas-wydarzenia">18:00</a>
 </div>
 <div class="wydarzenie" >
     <div class="data-wydarzenia">
         <p class="data-wydarzenia-dzien">12</p>
-        <p class="data-wydarzenia-m-r">Jul<br>2025</p>
+        <p class="data-wydarzenia-m-r">lip<br>2025</p>
     </div>
     <a class="nazwa-wydarzenia">Fantasticus</a>
-    <a class="opis-wydarzenia">New Music and Architecture</a>
+    <a class="opis-wydarzenia">Nova Muzyka i Architektura</a>
     <a class="miejsce-wydarzenia">Toruń, PL</a>
     <a class="czas-wydarzenia">18:00</a>
 </div>
 <div class="wydarzenie" >
     <div class="data-wydarzenia">
         <p class="data-wydarzenia-dzien">17</p>
-        <p class="data-wydarzenia-m-r">Aug<br>2025</p>
+        <p class="data-wydarzenia-m-r">sie<br>2025</p>
     </div>
     <a class="nazwa-wydarzenia">La Stella</a>
-    <a class="opis-wydarzenia">Baroque in Spiš</a>
+    <a class="opis-wydarzenia">Barok na Spiszu</a>
     <a class="miejsce-wydarzenia">Jurgów, PL</a>
     <a class="czas-wydarzenia">18:00</a>
 </div>
 <div class="wydarzenie" >
     <div class="data-wydarzenia">
         <p class="data-wydarzenia-dzien">5</p>
-        <p class="data-wydarzenia-m-r">Oct<br>2025</p>
+        <p class="data-wydarzenia-m-r">paź<br>2025</p>
     </div>
     <a id="lastella" class="nazwa-wydarzenia">La Stella</a>
-    <a class="opis-wydarzenia">Festival of Silent Music</a>
+    <a class="opis-wydarzenia">Festiwal Cichej Muzyki</a>
     <a class="miejsce-wydarzenia">Toruń, PL</a>
     <a class="czas-wydarzenia">19:00</a>
 </div>
+
 
 <style>
     .wydarzenie {
@@ -90,13 +85,13 @@
         margin-bottom: 11px;
         transition: background 0.3s, color 0.3s;
     }
+
     #wydarzenie-klik:hover {
         background: rgba(250, 250, 250, 0.7); 
-        /* backdrop-filter: blur(50px);  */
+        backdrop-filter: blur(50px); 
         cursor: pointer;
 
     }
-
     /* .wydarzenie:hover {
         background: rgba(250, 250, 250, 0.7); 
         backdrop-filter: blur(50px); 
@@ -143,33 +138,6 @@
             text-align: right;
         }
 
-        .loader {
-            position: absolute;
-            left: calc(5vw - 24px);
-            
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            /* height: 100%; */
-        }
-
-            .bubble {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-image: linear-gradient(to right, #ff6b9d, #ffb8d9);
-            margin: 0 5px;
-            animation: 2s pulse infinite ease-in-out;
-        }
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 #ffb8d9;
-            }
-
-            100% {
-                box-shadow: 0 0 0 9px #69ffa800;
-            }
-        }
         @media screen and (max-width: 1200px) {
             .wydarzenie a {
                 font-size: 14px;
@@ -181,7 +149,7 @@
         @media screen and (max-width: 600px) {
             .wydarzenie {
                 display: grid;
-                grid-template-columns: 1.1fr 1fr 1fr;
+                grid-template-columns: 1.1fr 1.2fr 0.9fr;
                 grid-template-rows: 33px 33px;
                 height: 66px;
                 width: 97%;
@@ -211,13 +179,5 @@
         #lastella {
             margin-left: 0;
         }
-        .loader {
-            left: 1vw;
-            padding-top: 28px;
-        }            
-        .bubble {
-            width: 8px;
-            height: 8px;
         }
-    }
 </style>

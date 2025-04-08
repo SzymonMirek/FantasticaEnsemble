@@ -172,6 +172,14 @@
                 box-shadow: 0 0 0 9px #69ffa800;
             }
         }
+        @media screen and (max-width: 1200px) {
+            .wydarzenie a {
+                font-size: 14px;
+            }
+            .opis-wydarzenia {
+                flex-basis: 180px;
+            }
+        }
 
         @media screen and (max-width: 1200px) {
             .wydarzenie a {
@@ -221,10 +229,6 @@
         .bubble {
             width: 8px;
             height: 8px;
-            border-radius: 50%;
-            background-image: linear-gradient(to right, #ff6b9d, #ffb8d9);
-            margin: 0 5px;
-            animation: bubbleAnimation 3s ease-in-out infinite;
         }
     }
 </style>
