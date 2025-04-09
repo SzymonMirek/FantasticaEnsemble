@@ -140,6 +140,11 @@ import { ViewTransitions } from "astro:transitions";
     }
     .ytButton, .spotifyButton, .appleButton {
         width: 100%;
+        transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    }
+    .ytButton:hover, .spotifyButton:hover, .appleButton:hover {
+        scale: 1.07;
+        /* box-shadow: 0 0px 20px rgba(193, 163, 98,0.4); */
     }
     @media screen and (max-width: 800px) {
         .naZywo {
