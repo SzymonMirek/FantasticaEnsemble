@@ -1,6 +1,10 @@
+---
+import { Image } from 'astro:assets';
+import Strzlk from '../../assets/strzlk4hover.png';
+---
 <div class="wydarzenie" id="wydarzenie-klik" onclick="window.location.href='https://fb.me/e/7PWbNfdjF';">
     <div class="loader">
-        <div class="bubble"></div>
+        <Image src={Strzlk} alt="" />
     </div>      
     <div class="data-wydarzenia">
         <p class="data-wydarzenia-dzien">17</p>
@@ -13,7 +17,7 @@
 </div>
 <div class="wydarzenie" id="wydarzenie-klik" onclick="window.location.href='https://fb.me/e/2DgL3KEWO';">
     <div class="loader">
-        <div class="bubble"></div>
+        <Image src={Strzlk} alt="" />
     </div>      
     <div class="data-wydarzenia">
         <p class="data-wydarzenia-dzien">26</p>
@@ -143,33 +147,21 @@
             text-align: right;
         }
 
+
         .loader {
             position: absolute;
-            left: calc(5vw - 24px);
-            
-            display: flex;
+            padding-bottom: 45px;
+            left: 68.1vw;   
+            display: flex        ;
             justify-content: center;
             align-items: center;
-            /* height: 100%; */
+            color: white;
         }
-
-            .bubble {
+        .loader img {
             width: 10px;
             height: 10px;
-            border-radius: 50%;
-            background-image: linear-gradient(to right, #ff6b9d, #ffb8d9);
-            margin: 0 5px;
-            animation: 2s pulse infinite ease-in-out;
         }
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 #ffb8d9;
-            }
 
-            100% {
-                box-shadow: 0 0 0 9px #69ffa800;
-            }
-        }
         @media screen and (max-width: 1200px) {
             .wydarzenie a {
                 font-size: 14px;
@@ -212,13 +204,8 @@
             margin-left: 0;
         }
         .loader {
-            left: 5.5vw;
-            /* padding-bottom: 48px; */
-            padding-top: 56px;
-        }            
-        .bubble {
-            width: 8px;
-            height: 8px;
-        }
+            left: 6.2vw;
+            padding-top: 101px;
+        }   
     }
 </style>
