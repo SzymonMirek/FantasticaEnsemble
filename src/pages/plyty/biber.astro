@@ -108,14 +108,25 @@ import {
         },
       ]}
     /> -->
-    <div hidden>
+    <!-- <div hidden>
       <input
         type="hidden"
         id="locker-id"
         name="locker-id"
         data-item-custom1-name="Punkt odbioru InPost"
         data-item-custom1-type="readonly"
-      />
+      /> -->
+      <!-- <section>
+        <label for="locker-select">Select InPost Locker:</label>
+        <select id="locker-select">
+          <option value="">-- Please choose a locker --</option>
+          <option value="KRA01M">KRA01M - Kraków, ul. Example 1</option>
+          <option value="WAW02N">WAW02N - Warszawa, ul. Example 2</option>
+          <option value="GDG03P">GDG03P - Gdańsk, ul. Example 3</option>
+        </select>
+      </section> -->
+      
+      <!-- <div hidden id="snipcart" data-api-key="eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJzQlpXVzFNZzVlQnpDYU1XU3JvTlBjRWFveFpXcW9Ua2FuZVB3X291LWxvIn0.eyJleHAiOjIwNTk5MzI4MjEsImlhdCI6MTc0NDU3MjgyMSwianRpIjoiMmNjYzFiZmYtMDFhYy00YjNmLWI0ODMtN2Y1ODc3MWIxZTQwIiwiaXNzIjoiaHR0cHM6Ly9sb2dpbi5pbnBvc3QucGwvYXV0aC9yZWFsbXMvZXh0ZXJuYWwiLCJzdWIiOiJmOjEyNDc1MDUxLTFjMDMtNGU1OS1iYTBjLTJiNDU2OTVlZjUzNTo1YWN5QkJFN2gwdWxWZV9xQWFPeVJPYzk5d3JPTlV6UU5fWEtrbkJQYmU4IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic2hpcHgiLCJzZXNzaW9uX3N0YXRlIjoiYjQwYzFjZDktNzhhZi00YWFmLTljZGEtM2MyMTI5NDA1OTZjIiwic2NvcGUiOiJvcGVuaWQgYXBpOmFwaXBvaW50cyBhcGk6c2hpcHgiLCJzaWQiOiJiNDBjMWNkOS03OGFmLTRhYWYtOWNkYS0zYzIxMjk0MDU5NmMiLCJhbGxvd2VkX3JlZmVycmVycyI6IiIsInV1aWQiOiI4ZDM2OGQzYS04MGU0LTRiNGEtOGMwZi01MjhhZTcxYTAzZjMiLCJlbWFpbCI6Im93Y3pld29yeUBnbWFpbC5jb20ifQ.e6uTAA6GxNi9z2Q4mUdE_2oRSsvEvDanvpS559UNrVxlaswC0mKtq6xGYxnjtEqE0nBNf5kap7m8OFEckqqu3ZxlF1R330G4VALF5ylpMdp6oMSRe_Q95xdwBbo9NLcisPBetXT5pgEcisXkxStklMMdTITLGYxPmBsQ9sM1zEqP7BsSNXZcE0QUNZ0tWkS3pob8k8Fbi3-rsIXYka5S3Oyd85fxVjmXzbFXkHGjkI4WbQNaEVVHmFQeCwZBQKE3cGqJgoNwXNhWIkaeXCqBIAjPO37_fl37sqZI-"></div> -->
     </div>
         <button
         class="snipcart-add-item"
@@ -166,7 +177,23 @@ import {
       <!-- </Product> -->
     </div>
 </Layout>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const lockerSelect = document.getElementById("locker-select");
 
+    lockerSelect.addEventListener("change", () => {
+      const lockerValue = lockerSelect.value;
+      if (!lockerValue) return;
+
+      // Add the locker as a custom field to the cart
+      Snipcart.api.cart.customFields.set({
+        name: "InPost Locker Code",
+        type: "readonly",
+        value: lockerValue,
+      });
+    });
+  });
+</script>
 <script src="https://geowidget.inpost.pl/inpost-geowidget.js">
   window.addEventListener("load", () => {
     const lockerInput = document.getElementById("locker-id");
