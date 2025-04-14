@@ -92,16 +92,39 @@ import {
     </div>
     
     <div class="przesprzedaz-container">
-      <Product
-      name="Biber",
-      description="Premiera: 29 kwietnia 2025. Album w przedsprzedaży zawiera: oryginalna płyta CD z autografami artystek, prezent-niespodzianka.",
-      price={49},
-      image={plytyBiberPlyta.src},
-      id="Biber-Biber",
+      <!-- <Product
+      name="Biber"
+      description="Premiera: 29 kwietnia 2025. Album w przedsprzedaży zawiera: oryginalna płyta CD z autografami artystek, prezent-niespodzianka."
+      price={49}
+      image={plytyBiberPlyta.src}
+      id="Biber-Biber"
       url="/plyty/biber"
-      >
+      customFields={[
+        {
+          name: "Punkt odbioru InPost",
+          type: "readonly",
+          value: "", // JS will populate this
+          options: [], // Required property added
+        },
+      ]}
+    /> -->
+    <div hidden>
+      <input
+        type="hidden"
+        id="locker-id"
+        name="locker-id"
+        data-item-custom1-name="Punkt odbioru InPost"
+        data-item-custom1-type="readonly"
+      />
+    </div>
         <button
-
+        class="snipcart-add-item"
+        data-item-id="Biber-Biber"
+        data-item-price="49"
+        data-item-url="/plyty/biber"
+        data-item-description="Premiera: 29 kwietnia 2025. Album w przedsprzedaży zawiera: oryginalna płyta CD z autografami artystek, prezent-niespodzianka."
+        data-item-image={plytyBiberPlyta.src}
+        data-item-name="Biber"
         >
           Zamów w przedsprzedaży  
           <div class="star-1"
@@ -140,10 +163,22 @@ import {
             </svg>
           </div>
         </button>
-      </Product>
+      <!-- </Product> -->
     </div>
 </Layout>
 
+<script src="https://geowidget.inpost.pl/inpost-geowidget.js">
+  window.addEventListener("load", () => {
+    const lockerInput = document.getElementById("locker-id");
+
+    window.InPostGeoWidget.init({
+      token: "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJzQlpXVzFNZzVlQnpDYU1XU3JvTlBjRWFveFpXcW9Ua2FuZVB3X291LWxvIn0.eyJleHAiOjIwNTk5MzI4MjEsImlhdCI6MTc0NDU3MjgyMSwianRpIjoiMmNjYzFiZmYtMDFhYy00YjNmLWI0ODMtN2Y1ODc3MWIxZTQwIiwiaXNzIjoiaHR0cHM6Ly9sb2dpbi5pbnBvc3QucGwvYXV0aC9yZWFsbXMvZXh0ZXJuYWwiLCJzdWIiOiJmOjEyNDc1MDUxLTFjMDMtNGU1OS1iYTBjLTJiNDU2OTVlZjUzNTo1YWN5QkJFN2gwdWxWZV9xQWFPeVJPYzk5d3JPTlV6UU5fWEtrbkJQYmU4IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic2hpcHgiLCJzZXNzaW9uX3N0YXRlIjoiYjQwYzFjZDktNzhhZi00YWFmLTljZGEtM2MyMTI5NDA1OTZjIiwic2NvcGUiOiJvcGVuaWQgYXBpOmFwaXBvaW50cyBhcGk6c2hpcHgiLCJzaWQiOiJiNDBjMWNkOS03OGFmLTRhYWYtOWNkYS0zYzIxMjk0MDU5NmMiLCJhbGxvd2VkX3JlZmVycmVycyI6IiIsInV1aWQiOiI4ZDM2OGQzYS04MGU0LTRiNGEtOGMwZi01MjhhZTcxYTAzZjMiLCJlbWFpbCI6Im93Y3pld29yeUBnbWFpbC5jb20ifQ.e6uTAA6GxNi9z2Q4mUdE_2oRSsvEvDanvpS559UNrVxlaswC0mKtq6xGYxnjtEqE0nBNf5kap7m8OFEckqqu3ZxlF1R330G4VALF5ylpMdp6oMSRe_Q95xdwBbo9NLcisPBetXT5pgEcisXkxStklMMdTITLGYxPmBsQ9sM1zEqP7BsSNXZcE0QUNZ0tWkS3pob8k8Fbi3-rsIXYka5S3Oyd85fxVjmXzbFXkHGjkI4WbQNaEVVHmFQeCwZBQKE3cGqJgoNwXNhWIkaeXCqBIAjPO37_fl37sqZI-",
+      onPoint: function (point) {
+        lockerInput.value = point.name + " – " + point.address.line1;
+      }
+    });
+  });
+</script>
 <script>
   window.SnipcartSettings = {
       publicApiKey: 'NWM5YzQxMzItMDI5YS00ZTFlLWFlMDctYzVhNDMyMTc0NWM2NjM4Nzk4ODkxMDAyMDYxNzgy',
