@@ -25,7 +25,7 @@ const homeLink = isEnglish ? "/en" : "/";
 <!-- TODO - na dole na mobile jak sie rozwija hamburger menu fajnie jakby na dole bylo logo fantastica to pelne -->
  <!-- TODO - 2 logo jest nad wysuwajacym sie paskiem -->
 <header id="headinio">
-  <a class="logo-container" href={homeLink} style="z-index: 999;">
+  <a class="logo-container" href={homeLink} style="z-index: 20;">
     <Logo id="logo" />
   </a>
   <ul class="desktop-nav">
@@ -64,13 +64,13 @@ const homeLink = isEnglish ? "/en" : "/";
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 20;
   }
   #logo {
       width: 90px;
       color: white;        
       -webkit-font-smoothing: antialiased;
-      z-index: 1000;
+      z-index: 19;
   }
 
   @media screen and (min-width: 700px) {
@@ -86,7 +86,7 @@ const homeLink = isEnglish ? "/en" : "/";
       background: #ffffff00;
       padding: 10px;
       width: 100%;
-      z-index: 3000;
+      z-index: 20;
       position: fixed;
       padding-top: 15px;
     }
@@ -122,7 +122,7 @@ const homeLink = isEnglish ? "/en" : "/";
   @media screen and (max-width: 700px) {
     header {
       position: fixed;
-      z-index: 3000;
+      z-index: 20;
     }
     #logo {
       margin-top: 2vh;
@@ -192,7 +192,7 @@ const homeLink = isEnglish ? "/en" : "/";
         cursor: pointer;
         
         opacity: 0; /* hide this */
-        z-index: 2000; /* and place it over the hamburger */
+        z-index: 19; /* and place it over the hamburger */
         
         -webkit-touch-callout: none;
       }
@@ -218,7 +218,7 @@ const homeLink = isEnglish ? "/en" : "/";
         background: #cdcdcd;
         border-radius: 3px;
         
-        z-index: 1001;
+        z-index: 19;
         
         transform-origin: 33px 0px;
         

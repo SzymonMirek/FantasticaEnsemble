@@ -16,7 +16,8 @@ import { ViewTransitions } from "astro:transitions";
         <div class="albumy-headline-text">
             <h1>Płyty</h1>
             <p>
-                Zapraszamy do muzycznej podróży pełnej kontrastów – od mistycznej kontemplacji po wirtuozowską ekspresję. Sprawdź nasze najnowsze albumy i pozwól się porwać barokowym brzmieniom!            </p>
+                Zapraszamy do muzycznej podróży pełnej kontrastów – od mistycznej kontemplacji po wirtuozowską ekspresję. Sprawdź nasze najnowsze albumy i pozwól się porwać barokowym brzmieniom!            
+            </p>
         </div>
         <div class="albumy-headline-img-container">
             <img class="albumyHeadlineImg" src={albumyHeadlineImg.src} alt="" />
@@ -40,15 +41,24 @@ import { ViewTransitions } from "astro:transitions";
                     Pierwszy album Owczarek | Łoboda Duo to opowieść o kontrastach. TROCHĘ SACRUM, TROCHĘ PROFANUM to muzyczna podróż przez świat Heinricha Ignaza Franza von Bibera – kompozytora, który jak nikt inny potrafił balansować na granicy tego, co niezwykłe i codzienności. W jego utworach duchowość spotyka się z ziemską ekspresją, a mistyczna kontemplacja przeplata się z dziką wirtuozerią.
                     Na tej płycie skrzypce barokowe i klawesyn nie tylko interpretują te kontrasty, ale stają się ich częścią – wibrują energią, malują przestrzeń dźwiękiem, opowiadają historie pełne napięcia, melancholii i brawury.           
                 </p>
-                <h6>
+                <!-- <h6>
                     Premiera: 29 kwietnia 2025
-                </h6>
+                </h6> -->
+                <!-- <a href="/plyty/biber">
+                    <button class="cta">
+                      <span>Kup Biber</span>
+                      <svg width="27px" height="18px" viewBox="0 0 13 10">
+                        <path d="M1,5 L11,5"></path>
+                        <polyline points="8 1 12 5 8 9"></polyline>
+                      </svg>
+                    </button>
+                  </a> -->
             </div>
         </div>
     </div>
-    <div class="albumy-biber2-container">
+    <!-- <div class="albumy-biber2-container">
         <img class="albumy-biber2-img" src={plytyBiber2.src} alt="" />
-    </div>
+    </div> -->
     <div class="albumy-fantastica-container">
         <div class="albumy-fanstastica">
             <h2>FANTASTICUS</h2>
@@ -74,7 +84,7 @@ import { ViewTransitions } from "astro:transitions";
     .albumy-container {
         display: grid;
         grid-template-columns: 100vw;
-        grid-template-rows: 730px 78vw 60vw 78vw;
+        grid-template-rows: 730px auto 0 78vw;
         font-weight: 400;
         font-family: "Gilda Display";
         
@@ -134,6 +144,7 @@ import { ViewTransitions } from "astro:transitions";
         display: grid;
         grid-template-rows: 1fr;
         width: 100vw;
+        height: fit-content;
         }
     
     .albumy-biber-up {
@@ -144,6 +155,7 @@ import { ViewTransitions } from "astro:transitions";
         grid-row: 1/2;
         background: linear-gradient(180deg, #ECE4F0 0%, #E0DBC7 100%);
         padding-right: 6vw;
+        height: 960px;
     }
 
     .albumy-biber-img-container {
@@ -164,6 +176,7 @@ import { ViewTransitions } from "astro:transitions";
         font-size: clamp(16px, 1.8vw, 30px);
         text-align: right;
         align-self: center;
+        margin-top: 40px;
     }
 
 
@@ -191,13 +204,74 @@ import { ViewTransitions } from "astro:transitions";
         font-weight: 400;
         font-size: clamp(20px, 2.5vw, 42px);
     }
-    h6 {
-        font-size: clamp(16px, 1.9vw, 35px);
-        font-weight: normal;
-    }
-    .albumy-biber-text p {
-        /* padding-left: 7vw; */
-    }
+
+        .albumy-biber-text > a > button {
+            margin-top: 50px;
+        }
+        .cta {
+            font-size: clamp(16px, 1.9vw, 35px);
+            font-weight: normal;
+            margin-top: 20px;
+
+            position: relative;
+            margin: auto;
+            padding: 12px 18px;
+            transition: all 0.2s ease;
+            border: none;
+            background: none;
+            cursor: pointer;
+            border: 2px solid #62db32;
+            border-radius: 50px;
+        }
+
+        .cta:before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            display: block;
+            border-radius: 50px;
+            width: 65px;
+            height: 61px;
+            transition: all 0.3s ease;
+        }
+
+        .cta span {
+            position: relative;
+            font-family: "Ubuntu", sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            color: #62db32;
+        }
+
+        .cta svg {
+            position: relative;
+            top: -3px;
+            margin-left: 10px;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke: #62db32;
+            stroke-width: 2;
+            transform: translateX(-5px);
+            transition: all 0.3s ease;
+        }
+
+        .cta:hover:before {
+            width: 100%;
+            background: #ceffd0;
+        }
+
+        .cta:hover svg {
+            transform: translateX(0);
+        }
+
+        .cta:active {
+            transform: scale(0.95);
+        }
+
+
     #bg-eclipse {
         height: 100%;
         width: 100%;
@@ -319,7 +393,7 @@ import { ViewTransitions } from "astro:transitions";
             width: 100vw;
         }
         .albumy-container {
-            grid-template-rows: 0.8fr 0.6fr 60vw 1fr;
+            grid-template-rows: 0.8fr 0.6fr 0 1fr;
         }
         .albumy-headline {
             grid-template-rows: 1fr 1fr;
