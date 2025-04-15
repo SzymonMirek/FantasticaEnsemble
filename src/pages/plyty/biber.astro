@@ -92,64 +92,7 @@ import {
     </div>
     
     <div class="przesprzedaz-container">
-      <!-- <Product
-      name="Biber"
-      description="Premiera: 29 kwietnia 2025. Album w przedsprzedaży zawiera: oryginalna płyta CD z autografami artystek, prezent-niespodzianka."
-      price={49}
-      image={plytyBiberPlyta.src}
-      id="Biber-Biber"
-      url="/plyty/biber"
-      customFields={[
-        {
-          name: "Punkt odbioru InPost",
-          type: "readonly",
-          value: "", // JS will populate this
-          options: [], // Required property added
-        },
-      ]}
-    /> -->
-    <!-- <div hidden>
-      <input
-        type="hidden"
-        id="locker-id"
-        name="locker-id"
-        data-item-custom1-name="Punkt odbioru InPost"
-        data-item-custom1-type="readonly"
-      /> -->
-      <!-- <section>
-        <label for="locker-select">Select InPost Locker:</label>
-        <select id="locker-select">
-          <option value="">-- Please choose a locker --</option>
-          <option value="KRA01M">KRA01M - Kraków, ul. Example 1</option>
-          <option value="WAW02N">WAW02N - Warszawa, ul. Example 2</option>
-          <option value="GDG03P">GDG03P - Gdańsk, ul. Example 3</option>
-        </select>
-      </section> -->
-      
-      <!-- <div hidden id="snipcart" data-api-key="eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJzQlpXVzFNZzVlQnpDYU1XU3JvTlBjRWFveFpXcW9Ua2FuZVB3X291LWxvIn0.eyJleHAiOjIwNTk5MzI4MjEsImlhdCI6MTc0NDU3MjgyMSwianRpIjoiMmNjYzFiZmYtMDFhYy00YjNmLWI0ODMtN2Y1ODc3MWIxZTQwIiwiaXNzIjoiaHR0cHM6Ly9sb2dpbi5pbnBvc3QucGwvYXV0aC9yZWFsbXMvZXh0ZXJuYWwiLCJzdWIiOiJmOjEyNDc1MDUxLTFjMDMtNGU1OS1iYTBjLTJiNDU2OTVlZjUzNTo1YWN5QkJFN2gwdWxWZV9xQWFPeVJPYzk5d3JPTlV6UU5fWEtrbkJQYmU4IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic2hpcHgiLCJzZXNzaW9uX3N0YXRlIjoiYjQwYzFjZDktNzhhZi00YWFmLTljZGEtM2MyMTI5NDA1OTZjIiwic2NvcGUiOiJvcGVuaWQgYXBpOmFwaXBvaW50cyBhcGk6c2hpcHgiLCJzaWQiOiJiNDBjMWNkOS03OGFmLTRhYWYtOWNkYS0zYzIxMjk0MDU5NmMiLCJhbGxvd2VkX3JlZmVycmVycyI6IiIsInV1aWQiOiI4ZDM2OGQzYS04MGU0LTRiNGEtOGMwZi01MjhhZTcxYTAzZjMiLCJlbWFpbCI6Im93Y3pld29yeUBnbWFpbC5jb20ifQ.e6uTAA6GxNi9z2Q4mUdE_2oRSsvEvDanvpS559UNrVxlaswC0mKtq6xGYxnjtEqE0nBNf5kap7m8OFEckqqu3ZxlF1R330G4VALF5ylpMdp6oMSRe_Q95xdwBbo9NLcisPBetXT5pgEcisXkxStklMMdTITLGYxPmBsQ9sM1zEqP7BsSNXZcE0QUNZ0tWkS3pob8k8Fbi3-rsIXYka5S3Oyd85fxVjmXzbFXkHGjkI4WbQNaEVVHmFQeCwZBQKE3cGqJgoNwXNhWIkaeXCqBIAjPO37_fl37sqZI-"></div> -->
-    <!-- </div>
-        <button
-        class="snipcart-add-item"
-        data-item-id="Biber-Biber"
-        data-item-price="49"
-        data-item-url="/plyty/biber"
-        data-item-description="Premiera: 29 kwietnia 2025. Album w przedsprzedaży zawiera: oryginalna płyta CD z autografami artystek, prezent-niespodzianka."
-        data-item-image={plytyBiberPlyta.src}
-        data-item-name="Biber"
-        > -->
-        <button
-          class="snipcart-add-item"
-          data-item-id="Biber-Biber"
-          data-item-price="49"
-          data-item-url="/plyty/biber"
-          data-item-description="Premiera: 29 kwietnia 2025. Album w przedsprzedaży zawiera: oryginalna płyta CD z autografami artystek, prezent-niespodzianka."
-          data-item-image={plytyBiberPlyta.src}
-          data-item-name="Biber"
-          data-item-weight="80"
-          data-item-custom1-name="Punkt odbioru InPost"
-          data-item-custom1-type="readonly"
-          data-item-custom1-value=""
-        >
+        <button onclick="window.open('https://buy.stripe.com/test_4gw9D84T1bhP2pW6oo', '_blank')">
           Zamów w przedsprzedaży  
           <div class="star-1"
           style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
@@ -190,34 +133,8 @@ import {
       <!-- </Product> -->
 
 </Layout>
-
-<script src="https://geowidget.inpost.pl/inpost-geowidget.js">
-  window.addEventListener("load", () => {
-    const lockerInput = document.getElementById("locker-id");
-
-    window.InPostGeoWidget.init({
-      token: "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJzQlpXVzFNZzVlQnpDYU1XU3JvTlBjRWFveFpXcW9Ua2FuZVB3X291LWxvIn0.eyJleHAiOjIwNTk5MzI4MjEsImlhdCI6MTc0NDU3MjgyMSwianRpIjoiMmNjYzFiZmYtMDFhYy00YjNmLWI0ODMtN2Y1ODc3MWIxZTQwIiwiaXNzIjoiaHR0cHM6Ly9sb2dpbi5pbnBvc3QucGwvYXV0aC9yZWFsbXMvZXh0ZXJuYWwiLCJzdWIiOiJmOjEyNDc1MDUxLTFjMDMtNGU1OS1iYTBjLTJiNDU2OTVlZjUzNTo1YWN5QkJFN2gwdWxWZV9xQWFPeVJPYzk5d3JPTlV6UU5fWEtrbkJQYmU4IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic2hpcHgiLCJzZXNzaW9uX3N0YXRlIjoiYjQwYzFjZDktNzhhZi00YWFmLTljZGEtM2MyMTI5NDA1OTZjIiwic2NvcGUiOiJvcGVuaWQgYXBpOmFwaXBvaW50cyBhcGk6c2hpcHgiLCJzaWQiOiJiNDBjMWNkOS03OGFmLTRhYWYtOWNkYS0zYzIxMjk0MDU5NmMiLCJhbGxvd2VkX3JlZmVycmVycyI6IiIsInV1aWQiOiI4ZDM2OGQzYS04MGU0LTRiNGEtOGMwZi01MjhhZTcxYTAzZjMiLCJlbWFpbCI6Im93Y3pld29yeUBnbWFpbC5jb20ifQ.e6uTAA6GxNi9z2Q4mUdE_2oRSsvEvDanvpS559UNrVxlaswC0mKtq6xGYxnjtEqE0nBNf5kap7m8OFEckqqu3ZxlF1R330G4VALF5ylpMdp6oMSRe_Q95xdwBbo9NLcisPBetXT5pgEcisXkxStklMMdTITLGYxPmBsQ9sM1zEqP7BsSNXZcE0QUNZ0tWkS3pob8k8Fbi3-rsIXYka5S3Oyd85fxVjmXzbFXkHGjkI4WbQNaEVVHmFQeCwZBQKE3cGqJgoNwXNhWIkaeXCqBIAjPO37_fl37sqZI-",
-      onPoint: function (point) {
-        const lockerInfo = point.name + " – " + point.address.line1;
-        document.getElementById("locker-id").value = lockerInfo;
-
-        Snipcart.api.cart.customFields.set({
-          name: "Punkt odbioru InPost",
-          type: "readonly",
-          value: lockerInfo
-        });
-}
-    });
-  });
-</script>
-<script>
-  window.SnipcartSettings = {
-      publicApiKey: 'NWM5YzQxMzItMDI5YS00ZTFlLWFlMDctYzVhNDMyMTc0NWM2NjM4Nzk4ODkxMDAyMDYxNzgy',
-      loadStrategy: 'on-user-interaction',
-      currency: "pln"
-  };
-
-  (()=>{var c,d;(d=(c=window.SnipcartSettings).version)!=null||(c.version="3.0");var s,S;(S=(s=window.SnipcartSettings).timeoutDuration)!=null||(s.timeoutDuration=2750);var l,p;(p=(l=window.SnipcartSettings).domain)!=null||(l.domain="cdn.snipcart.com");var w,u;(u=(w=window.SnipcartSettings).protocol)!=null||(w.protocol="https");var f=window.SnipcartSettings.version.includes("v3.0.0-ci")||window.SnipcartSettings.version!="3.0"&&window.SnipcartSettings.version.localeCompare("3.4.0",void 0,{numeric:!0,sensitivity:"base"})===-1,m=["focus","mouseover","touchmove","scroll","keydown"];window.LoadSnipcart=o;document.readyState==="loading"?document.addEventListener("DOMContentLoaded",r):r();function r(){window.SnipcartSettings.loadStrategy?window.SnipcartSettings.loadStrategy==="on-user-interaction"&&(m.forEach(t=>document.addEventListener(t,o)),setTimeout(o,window.SnipcartSettings.timeoutDuration)):o()}var a=!1;function o(){if(a)return;a=!0;let t=document.getElementsByTagName("head")[0],e=document.querySelector("#snipcart"),i=document.querySelector(`src[src^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][src$="snipcart.js"]`),n=document.querySelector(`link[href^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][href$="snipcart.css"]`);e||(e=document.createElement("div"),e.id="snipcart",e.setAttribute("hidden","true"),document.body.appendChild(e)),v(e),i||(i=document.createElement("script"),i.src=`${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.js`,i.async=!0,t.appendChild(i)),n||(n=document.createElement("link"),n.rel="stylesheet",n.type="text/css",n.href=`${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.css`,t.prepend(n)),m.forEach(g=>document.removeEventListener(g,o))}function v(t){!f||(t.dataset.apiKey=window.SnipcartSettings.publicApiKey,window.SnipcartSettings.addProductBehavior&&(t.dataset.configAddProductBehavior=window.SnipcartSettings.addProductBehavior),window.SnipcartSettings.modalStyle&&(t.dataset.configModalStyle=window.SnipcartSettings.modalStyle),window.SnipcartSettings.currency&&(t.dataset.currency=window.SnipcartSettings.currency),window.SnipcartSettings.templatesUrl&&(t.dataset.templatesUrl=window.SnipcartSettings.templatesUrl))}})();
+<script async
+  src="https://js.stripe.com/v3/buy-button.js">
 </script>
 
 <style>
