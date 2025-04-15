@@ -190,7 +190,18 @@ import {
       <!-- </Product> -->
 
 </Layout>
-
+<script>
+  async function getShippingOptions(postalCode, weight) {
+  const response = await fetch('/api/inpost-shipping.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ postalCode, weight })
+  });
+  return await response.json();
+}
+</script>
 <script src="https://geowidget.inpost.pl/inpost-geowidget.js">
   window.addEventListener("load", () => {
     const lockerInput = document.getElementById("locker-id");
