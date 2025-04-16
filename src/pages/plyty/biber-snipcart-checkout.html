@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Templates</title></head>
+
+    <body>
+      <div id="snipcart-templates">
+        <shipping-method section="top"> 
+          <overridable
+          name="shipping-method"
+          section="bottom"
+        >
+        <div id="lol" :style="{ color: 'red' }">
+          lol
+        </div>
+      </overridable>
+        </shipping-method>
+
+
+
+
+
+        <!-- <shipping-rates-list> 
+          <component
+              class="snipcart-shipping-rates-list"
+              :is="tag"
+              v-if="!loading"
+          >
+              <shipping-rates-list-item
+                  v-for="rate in rates"
+                  :key="rate.slug"
+                  :rate="rate"
+                  :class="{'snipcart-shipping-rates-list-item--highlight': selectedRate == rate.slug}"
+              >
+              </shipping-rates-list-item>
+              <div 
+              id="lol"
+            >
+              lol
+            </div>
+          </component>
+        </shipping-rates-list> -->
+
+      </div>
+    </body>
+</html>
