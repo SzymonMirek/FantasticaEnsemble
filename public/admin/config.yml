@@ -1,9 +1,10 @@
 backend:
   name: github
-  repo: SzymonMirek/FantasticaEnsemble
   branch: main
-  # base_url: https://www.fantasticaensemble.com/
-  # auth_endpoint: oauth
+  repo: SzymonMirek/FantasticaEnsemble
+  site_domain: www.fantasticaensemble.com # change this to your domain
+  base_url: https://www.fantasticaensemble.com # change this to your prod URL
+  auth_endpoint: oauth # the oauth route provided by the integration
 
 
 media_folder: "static/uploads"  # or your preferred media folder path
