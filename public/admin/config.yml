@@ -1,0 +1,17 @@
+backend:
+  name: git-gateway
+  branch: main  # or your preferred branch
+
+media_folder: "static/uploads"  # or your preferred media folder path
+media_library:
+  name: uploadcare  # or another supported media library
+
+collections:
+  # Your collections go here
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: body, label: Body, widget: markdown }
