@@ -1,10 +1,16 @@
----
-import Layout from '../layouts/Layout.astro';
----
-<head>
-    <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
-</head>
-
-<Layout>
-    <script src="https://unpkg.com/decap-cms@^3.1.2/dist/decap-cms.js"></script>
-</Layout>
+<!doctype html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.png" type="image/png">	
+		<link rel="mask-icon" href="/images/safari-pinned-tab.svg?v=M44lzPylqQ" color="#000000">
+		<meta name="genefantasrator" content={Astro.generator} />
+        <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
+		<title>Admin</title>
+	</head>
+	<body>
+        <script src="https://unpkg.com/decap-cms@^3.1.2/dist/decap-cms.js"></script>
+	</body>
+</html>
