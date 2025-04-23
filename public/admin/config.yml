@@ -2,7 +2,7 @@ backend:
   name: github  # or gitlab, bitbucket
   repo: SzymonMirek/FantasticaEnsemble  # e.g., my-org/my-site
   branch: main
-  base_url: https://www.fantasticaensemble.com/admin # Thćis is critical for production
+  base_url: https://www.fantasticaensemble.com # Thćis is critical for production
 
 
 media_folder: "static/uploads"  # or your preferred media folder path
