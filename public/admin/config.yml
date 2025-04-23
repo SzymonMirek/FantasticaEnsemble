@@ -1,6 +1,7 @@
 backend:
-  name: git-gateway
-  branch: main  # or your preferred branch
+  name: github  # or gitlab, bitbucket
+  repo: https://github.com/SzymonMirek/FantasticaEnsemble  # e.g., my-org/my-site
+  branch: main
 
 media_folder: "static/uploads"  # or your preferred media folder path
 media_library:
