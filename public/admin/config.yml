@@ -2,10 +2,8 @@ backend:
   name: github
   repo: SzymonMirek/FantasticaEnsemble
   branch: main
-  auth_type: implicit # Required for GitHub backend
-  api_root: https://api.github.com
-  base_url: https://github.com
-  site_domain: www.fantasticaensemble.com
+  # base_url: https://www.fantasticaensemble.com/
+  # auth_endpoint: oauth
 
 
 media_folder: "static/uploads"  # or your preferred media folder path
