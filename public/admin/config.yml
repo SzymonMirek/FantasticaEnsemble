@@ -2,7 +2,7 @@ backend:
   name: github
   repo: SzymonMirek/FantasticaEnsemble
   branch: main
-  # auth_type: implicit # For Cloudflare Pages
+  auth_type: implicit # For Cloudflare Pages
 
 
 media_folder: "static/uploads"  # or your preferred media folder path
