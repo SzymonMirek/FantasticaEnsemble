@@ -8,11 +8,25 @@ media_library:
   name: uploadcare  # or another supported media library
 
 collections:
-  # Your collections go here
-  - name: "blog"
-    label: "Blog"
-    folder: "content/blog"
-    create: true
+  - name: "wydarzenia"
+    label: "Wydarzenia"
+    folder: "src/content/wydarzenia"  # Astro Content Collections path
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    create: true  # ← THIS MUST BE ENABLED
     fields:
-      - { name: title, label: Title, widget: string }
-      - { name: body, label: Body, widget: markdown }
+      # Date Block (matches your HTML structure)
+      - label: "Data wydarzenia"
+        name: "dataWydarzenia"  # CamelCase for cleaner frontmatter
+        widget: object
+        fields:
+          - {label: "Dzień", name: "dzien", widget: string}
+          - {label: "Miesiąc i Rok", name: "mR", widget: string}  # "paź<br>2025"
+
+      # Other fields (preserve your class names)
+      - {label: "Nazwa wydarzenia", name: "nazwaWydarzenia", widget: string}
+      - {label: "Opis wydarzenia", name: "opisWydarzenia", widget: string}
+      - {label: "Miejsce", name: "miejsceWydarzenia", widget: string}
+      - {label: "Godzina", name: "czasWydarzenia", widget: string}
+      - {label: "Link do wydarzenia", name: "linkWydarzenia", widget: string, required: false }
