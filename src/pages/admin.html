@@ -1,23 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>"A static website"</title>
+<!doctype html>
+<html lang="pl">
+	<head>
+		<title>Admin</title>  
+        <!-- <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script> -->
+		<script src="https://unpkg.com/netlify-auth-providers"></script>
 
-  <!-- include the widget -->
-  <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>        
-  <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
-
-</head>
-<body>
-  <!-- Add a menu:
-   "Log in / Sign up" - when the user is not logged in
-   "Username / Log out" - when the user is logged in
-  -->
-  <div data-netlify-identity-menu></div>
-
-  <!-- Add a simpler button:
-    "Simple button that will open the modal."
-  -->
-  <div data-netlify-identity-button>"Login with Netlify Identity"</div>
-</body>
+	</head>
+	<body>
+        <script src="https://unpkg.com/decap-cms@^3.1.2/dist/decap-cms.js"></script>
+	</body>
 </html>
