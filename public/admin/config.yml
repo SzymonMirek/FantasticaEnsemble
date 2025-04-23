@@ -2,8 +2,8 @@ backend:
   name: github
   repo: SzymonMirek/FantasticaEnsemble
   branch: main
-  base_url: https://www.fantasticaensemble.com
-  auth_endpoint: oauth
+  # base_url: https://www.fantasticaensemble.com/
+  # auth_endpoint: oauth
 
 
 media_folder: "static/uploads"  # or your preferred media folder path
