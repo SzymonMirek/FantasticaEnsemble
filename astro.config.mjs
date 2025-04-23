@@ -14,5 +14,5 @@ export default defineConfig({
       svg: true,
     },
 
-  adapter: cloudflare(),
+  // adapter: cloudflare(),
 });
