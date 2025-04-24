@@ -23,8 +23,8 @@ function convertToDate(dateObj) {
   const [month, year] = monthYear.split(' ');
   
   const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  const monthIndex = monthNames.indexOf(month.toLowerCase());
-  // const monthIndex = monthNames.indexOf(month);
+  // const monthIndex = monthNames.indexOf(month.toLowerCase());
+  const monthIndex = monthNames.indexOf(month);
   
   // Create a Date object (using the 1st of the month if you don't have a specific day)
   return new Date(year, monthIndex, parseInt(dateObj.day));
