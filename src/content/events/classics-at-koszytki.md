@@ -1,7 +1,7 @@
 ---
 eventDate:
   day: "29"
-  monthYear: Apr 2025
+  monthYear: apr 2025
 repertoire: BIber
 eventName: Classics at Koszytki
 eventLocation: Warsaw, PL
