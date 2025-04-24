@@ -15,6 +15,7 @@ export default defineConfig({
   // adapter: cloudflare(),
   experimental: {
       svg: true,
+      session: true,
     },
   output: 'server',
   adapter: cloudflare(),
