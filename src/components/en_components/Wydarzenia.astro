@@ -1,9 +1,39 @@
 ---
-import Wydarzenie from '../../components/en_components/Wydarzenie-przyszle.astro'
+// Import the collection
+import { getCollection } from 'astro:content';
+import EventCard from '../EventCard.astro';
+
+// Get all events
+const allEvents = await getCollection('events');
+
+// Sort events by date
+const sortedEvents = allEvents.sort((a, b) => {
+  // Convert dates to sortable format
+  // Assuming monthYear format is like "paź 2025" or "paź<br>2025"
+  const dateA = convertToDate(a.data.eventDate);
+  const dateB = convertToDate(b.data.eventDate);
+  
+  return dateA - dateB; // Sort from oldest to newest
+});
+
+// Helper function to convert your date format to a Date object
+function convertToDate(dateObj) {
+  // Clean up the month/year string (remove <br> if present)
+  const monthYear = dateObj.monthYear.replace('<br>', ' ').trim();
+  const [month, year] = monthYear.split(' ');
+  
+  const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const monthIndex = monthNames.indexOf(month.toLowerCase());
+  
+  // Create a Date object (using the 1st of the month if you don't have a specific day)
+  return new Date(year, monthIndex, parseInt(dateObj.dzien));
+}
 ---
 
 <div class="wydarzenia-cmpnt">
-    <Wydarzenie title="Wydarzenie 1" />
+    {sortedEvents.map((event) => (
+        <EventCard event={event} />
+    ))}
 </div>
 
 <style>
