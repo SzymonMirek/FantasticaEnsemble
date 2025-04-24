@@ -1,7 +1,7 @@
 ---
 eventDate:
   day: "26"
-  monthYear: Apr 2025
+  monthYear: apr 2025
 repertoire: Biber
 eventName: Classically Playful
 eventLocation: Warsaw, PL
