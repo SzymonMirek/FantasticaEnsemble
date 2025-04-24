@@ -1,7 +1,7 @@
 ---
 eventDate:
   day: "5"
-  monthYear: Oct 2025
+  monthYear: oct 2025
 repertoire: La Stella
 eventName: Festival of Silent Music
 eventLocation: Toruń, PL
