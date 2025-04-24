@@ -1,7 +1,7 @@
 ---
 eventDate:
   day: "12"
-  monthYear: Jul 2025
+  monthYear: jul 2025
 repertoire: Fantasticus
 eventName: New Music and Architecture
 eventLocation: Toruń, PL
