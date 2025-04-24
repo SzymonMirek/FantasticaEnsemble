@@ -1,0 +1,182 @@
+---
+interface Props {
+  event: {
+    data: {
+      dataWydarzenia: {
+        dzien: string;
+        mR: string;
+      };
+      nazwaWydarzenia: string;
+      opisWydarzenia: string;
+      miejsceWydarzenia: string;
+      czasWydarzenia: string;
+      linkWydarzenia?: string;
+    };
+    slug: string;
+  };
+}
+
+const { event } = Astro.props;
+const [month, year] = event.data.dataWydarzenia.mR.split(' ');
+---
+
+<div class="wydarzenie">
+  <div class="data-wydarzenia">
+    <p class="data-wydarzenia-dzien">{event.data.dataWydarzenia.dzien}</p>
+    <p class="data-wydarzenia-m-r">
+      {month}<br>{year}
+    </p>
+  </div>
+  
+  {event.data.linkWydarzenia ? (
+    <a href={event.data.linkWydarzenia} class="nazwa-wydarzenia" target="_blank" rel="noopener noreferrer">
+      {event.data.nazwaWydarzenia}
+    </a>
+  ) : (
+    <span class="nazwa-wydarzenia">{event.data.nazwaWydarzenia}</span>
+  )}
+  
+  <p class="opis-wydarzenia">{event.data.opisWydarzenia}</p>
+  <p class="miejsce-wydarzenia">{event.data.miejsceWydarzenia}</p>
+  <p class="czas-wydarzenia">{event.data.czasWydarzenia}</p>
+</div>
+
+<style>
+    .wydarzenie {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-family: "Gilda Display";
+        align-items: center;
+        width: 96%;
+        height: 60px;
+        border-top: 1px solid #E4277640;
+        border-bottom: 1px solid #E4277640;
+        padding: 0.3% 1% 0.3% 7px;
+        margin-bottom: 11px;
+        transition: background 0.3s, color 0.3s;
+    }
+
+    #wydarzenie-klik:hover {
+        background: rgba(250, 250, 250, 0.7); 
+        /* backdrop-filter: blur(50px);  */
+        cursor: pointer;
+
+    }
+    /* .wydarzenie:hover {
+        background: rgba(250, 250, 250, 0.7); 
+        backdrop-filter: blur(50px); 
+
+    } */
+
+    .data-wydarzenia {
+        color: #353535;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0 7%;
+    }
+        .data-wydarzenia-dzien {
+            height: 100%;
+            padding-bottom: 12px;
+            font-family: Elsie;
+            font-size: 37px;
+            font-weight: 900;
+        }
+
+        .data-wydarzenia-m-r {
+            height: 100%;
+            text-align: justify;
+            font-family: "Gilda Display";
+            font-size: 14px;
+            font-weight: 400;
+        }
+        .nazwa-wydarzenia {
+            flex-basis: 100px;
+        }
+        #lastella {
+            margin-left: 22px;
+        }
+        .opis-wydarzenia {
+            flex-basis: 200px;
+        }
+        .miejsce-wydarzenia {
+            flex-basis: 120px;
+        }
+        .czas-wydarzenia {
+            color: #A71250;
+            flex-basis: 80px;
+            text-align: right;
+        }
+
+
+        .loader {
+            position: absolute;
+            padding-bottom: 45px;
+            left: 68.1vw;   
+            display: flex        ;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        .loader img {
+            width: 10px;
+            height: 10px;
+        }
+
+        @media screen and (max-width: 1200px) {
+            .wydarzenie a {
+                font-size: 14px;
+            }
+            .opis-wydarzenia {
+                flex-basis: 180px;
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
+            .wydarzenie a {
+                font-size: 14px;
+            }
+            .opis-wydarzenia {
+                flex-basis: 180px;
+            }
+        }
+        @media screen and (max-width: 600px) {
+            .wydarzenie {
+                display: grid;
+                grid-template-columns: 1.1fr 1.2fr 0.9fr;
+                grid-template-rows: 33px 33px;
+                height: 66px;
+                width: 97%;
+                padding-bottom: 0.9vh;
+            }
+            .data-wydarzenia {
+                grid-column: 1/2;
+                grid-row: 1/3;
+            }
+            .nazwa-wydarzenia {
+                grid-column: 2/3;
+                grid-row: 1/2;
+            }
+            .czas-wydarzenia {
+                grid-column: 3/4;
+                grid-row: 1/2;
+            }
+            .opis-wydarzenia {
+                grid-column: 2/3;
+                grid-row: 2/3;
+            }
+            .miejsce-wydarzenia {
+                grid-column: 3/4;
+                grid-row: 2/3;
+                text-align: right;
+            }
+        #lastella {
+            margin-left: 0;
+        }
+        .loader {
+            left: 6.2vw;
+            padding-top: 101px;
+        }            
+    }
+</style>
