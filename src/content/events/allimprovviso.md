@@ -1,7 +1,7 @@
 ---
 eventDate:
   day: "17"
-  monthYear: Apr 2025
+  monthYear: apr 2025
 repertoire: Myster
 eventName: All'Improvviso
 eventLocation: Gliwice, PL
