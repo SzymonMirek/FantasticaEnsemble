@@ -28,7 +28,7 @@ collections:
           - {label: "Miesiąc i Rok", name: "mR", widget: string}  # "paź<br>2025"
 
       # Other fields (preserve your class names)
-      - {label: "Repertuar", name: "nazwaWydarzenia", widget: string}
+      - {label: "Repertuar", name: "repertuar", widget: string}
       - {label: "Nazwa wydarzenia", name: "nazwaWydarzenia", widget: string}
       - {label: "Miejsce", name: "miejsceWydarzenia", widget: string}
       - {label: "Godzina", name: "czasWydarzenia", widget: string}
