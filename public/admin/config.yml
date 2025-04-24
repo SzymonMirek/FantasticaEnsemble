@@ -19,6 +19,7 @@ collections:
     format: frontmatter
     slug: "{{slug}}"
     create: true  # ← THIS MUST BE ENABLED
+    identifier_field: "nazwaWydarzenia" 
     fields:
       # Date Block (matches your HTML structure)
       - label: "Data wydarzenia"
@@ -42,6 +43,7 @@ collections:
     format: frontmatter
     slug: "{{slug}}"
     create: true  # ← THIS MUST BE ENABLED
+    identifier_field: "eventName" 
     fields:
       # Date Block (matches your HTML structure)
       - label: "Event date"
