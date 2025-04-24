@@ -1,0 +1,202 @@
+---
+import { Image } from 'astro:assets';
+import Strzlk from '../assets/strzlk4hover.png';
+
+interface Props {
+  event: {
+    data: {
+        eventDate: {
+        day: string;
+        monthYear: string;
+      };
+      repertoire: string;
+      eventName: string;
+      eventLocation: string;
+      eventTime: string;
+      eventLink?: string;
+    };
+    slug: string;
+  };
+}
+
+const { event } = Astro.props;
+const [month, year] = event.data.eventDate.mR.split(' ');
+---
+
+{
+  event.data.eventLink ? (
+    <div 
+      class="wydarzenie" 
+      id="wydarzenie-klik"
+      onclick={`window.location.href='${event.data.eventLink}'`}
+      style="cursor: pointer; position: relative;"
+    >
+    <div class="loader">
+        <img src={Strzlk.src} alt="" />
+    </div>  
+      <div class="data-wydarzenia">
+        <p class="data-wydarzenia-dzien">{event.data.eventDate.day}</p>
+        <p class="data-wydarzenia-m-r">
+          {month.toLowerCase()}<br>{year}
+        </p>
+      </div>
+      <a class="repertoire">{event.data.repertoire}</a>
+      <a class="nazwa-wydarzenia">{event.data.eventName}</a>
+      <a class="miejsce-wydarzenia">{event.data.eventLocation}</a>
+      <a class="czas-wydarzenia">{event.data.eventTime}</a>
+    </div>
+  ) : (
+    <div class="wydarzenie">
+      <div class="data-wydarzenia">
+        <p class="data-wydarzenia-dzien">{event.data.eventDate.dzien}</p>
+        <p class="data-wydarzenia-m-r">
+          {month.toLowerCase()}<br>{year}
+        </p>
+      </div>
+      <span class="repertoire">{event.data.repertoire}</span>
+      <span class="nazwa-wydarzenia">{event.data.eventName}</span>
+      <span class="miejsce-wydarzenia">{event.data.eventLocation}</span>
+      <span class="czas-wydarzenia">{event.data.eventTime}</span>
+    </div>
+  )
+}
+
+<style>
+    .wydarzenie {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-family: "Gilda Display";
+        align-items: center;
+        width: 96%;
+        height: 60px;
+        border-top: 1px solid #E4277640;
+        border-bottom: 1px solid #E4277640;
+        padding: 0.3% 1% 0.3% 7px;
+        margin-bottom: 11px;
+        transition: background 0.3s, color 0.3s;
+    }
+
+    #wydarzenie-klik:hover {
+        background: rgba(250, 250, 250, 0.7); 
+        /* backdrop-filter: blur(50px);  */
+        cursor: pointer;
+
+    }
+    /* .wydarzenie:hover {
+        background: rgba(250, 250, 250, 0.7); 
+        backdrop-filter: blur(50px); 
+
+    } */
+
+    .data-wydarzenia {
+        color: #353535;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0 7%;
+    }
+        .data-wydarzenia-dzien {
+            height: 100%;
+            padding-bottom: 12px;
+            font-family: Elsie;
+            font-size: 37px;
+            font-weight: 900;
+        }
+
+        .data-wydarzenia-m-r {
+            height: 100%;
+            text-align: justify;
+            font-family: "Gilda Display";
+            font-size: 14px;
+            font-weight: 400;
+        }
+        .repertoire {
+            flex-basis: 100px;
+        }
+        #lastella {
+            margin-left: 22px;
+        }
+        .nazwa-wydarzenia {
+            flex-basis: 200px;
+        }
+        .miejsce-wydarzenia {
+            flex-basis: 120px;
+        }
+        .czas-wydarzenia {
+            color: #A71250;
+            flex-basis: 80px;
+            text-align: right;
+        }
+
+
+        .loader {
+            position: absolute;
+            padding-bottom: 42.3px;
+            left: 62.5vw;
+            display: flex        ;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        .loader img {
+            width: 10px;
+            height: 10px;
+        }
+
+        @media screen and (max-width: 1200px) {
+            .wydarzenie a {
+                font-size: 14px;
+            }
+            .nazwa-wydarzenia {
+                flex-basis: 180px;
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
+            .wydarzenie a {
+                font-size: 14px;
+            }
+            .nazwa-wydarzenia {
+                flex-basis: 180px;
+            }
+        }
+        @media screen and (max-width: 600px) {
+            .wydarzenie {
+                display: grid;
+                grid-template-columns: 1.1fr 1.2fr 0.9fr;
+                grid-template-rows: 33px 33px;
+                height: 66px;
+                width: 97%;
+                padding-bottom: 0.9vh;
+            }
+            .data-wydarzenia {
+                grid-column: 1/2;
+                grid-row: 1/3;
+            }
+            .repertoire {
+                grid-column: 2/3;
+                grid-row: 1/2;
+            }
+            .czas-wydarzenia {
+                grid-column: 3/4;
+                grid-row: 1/2;
+            }
+            .nazwa-wydarzenia {
+                grid-column: 2/3;
+                grid-row: 2/3;
+            }
+            .miejsce-wydarzenia {
+                grid-column: 3/4;
+                grid-row: 2/3;
+                text-align: right;
+            }
+        #lastella {
+            margin-left: 0;
+        }
+        .loader {
+            left: 6.2vw;
+            padding-top: 101px;
+        }            
+    }
+</style>

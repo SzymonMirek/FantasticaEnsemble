@@ -3,14 +3,37 @@
 import { getCollection } from 'astro:content';
 import EventCard from '../components/EventCard.astro';
 
-// Get all events without sorting
+// Get all events
 const allEvents = await getCollection('wydarzenia');
+
+// Sort events by date
+const sortedEvents = allEvents.sort((a, b) => {
+  // Convert dates to sortable format
+  // Assuming mR format is like "paź 2025" or "paź<br>2025"
+  const dateA = convertToDate(a.data.dataWydarzenia);
+  const dateB = convertToDate(b.data.dataWydarzenia);
+  
+  return dateA - dateB; // Sort from oldest to newest
+});
+
+// Helper function to convert your date format to a Date object
+function convertToDate(dateObj) {
+  // Clean up the month/year string (remove <br> if present)
+  const mR = dateObj.mR.replace('<br>', ' ').trim();
+  const [month, year] = mR.split(' ');
+  
+  const monthNames = ['sty', 'lut', 'mar', 'kwi', 'maj', 'cze', 'lip', 'sie', 'wrz', 'paź', 'lis', 'gru'];
+  const monthIndex = monthNames.indexOf(month.toLowerCase());
+  
+  // Create a Date object (using the 1st of the month if you don't have a specific day)
+  return new Date(year, monthIndex, parseInt(dateObj.dzien));
+}
 ---
 
 <div class="wydarzenia-cmpnt">
-    {allEvents.map((event) => (
-    <EventCard event={event} />
-  ))}
+    {sortedEvents.map((event) => (
+        <EventCard event={event} />
+    ))}
 </div>
 
 <style>

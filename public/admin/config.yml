@@ -11,6 +11,7 @@ media_library:
   name: uploadcare  # or another supported media library
 
 collections:
+
   - name: "wydarzenia"
     label: "Wydarzenia"
     folder: "src/content/wydarzenia"  # Astro Content Collections path
@@ -33,3 +34,26 @@ collections:
       - {label: "Miejsce", name: "miejsceWydarzenia", widget: string}
       - {label: "Godzina", name: "czasWydarzenia", widget: string}
       - {label: "Link do wydarzenia", name: "linkWydarzenia", widget: string, required: false }
+
+  - name: "events"
+    label: "Wydarzenia (EN)"
+    folder: "src/content/events"  # Astro Content Collections path
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    create: true  # ← THIS MUST BE ENABLED
+    fields:
+      # Date Block (matches your HTML structure)
+      - label: "Event date"
+        name: "eventDate"  # CamelCase for cleaner frontmatter
+        widget: object
+        fields:
+          - {label: "Day", name: "day", widget: string}
+          - {label: "Month and Year", name: "monthYear", widget: string}  # e.g., "Oct<br>2025"
+
+      # Other fields (preserve your class names)
+      - {label: "Repertoire", name: "repertoire", widget: string}
+      - {label: "Event name", name: "eventName", widget: string}
+      - {label: "Location", name: "eventLocation", widget: string}
+      - {label: "Time", name: "eventTime", widget: string}
+      - {label: "Event link", name: "eventLink", widget: string, required: false }
