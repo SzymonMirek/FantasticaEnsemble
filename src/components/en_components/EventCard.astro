@@ -20,7 +20,7 @@ interface Props {
 }
 
 const { event } = Astro.props;
-const [month, year] = event.data.eventDate.mR.split(' ');
+const [month, year] = event.data.eventDate.monthYear.split(' ');
 ---
 
 {
