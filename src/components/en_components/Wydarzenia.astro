@@ -3,13 +3,13 @@
 import { getCollection } from 'astro:content';
 import EventCard from '../../components/en_components/EventCard.astro';
 
-// Get all events
+// Get all events from the English collection
 const allEvents = await getCollection('events');
 
 // Sort events by date
 const sortedEvents = allEvents.sort((a, b) => {
   // Convert dates to sortable format
-  // Assuming monthYear format is like "paź 2025" or "paź<br>2025"
+  // Assuming monthYear format is like "Oct 2025" or "Oct<br>2025"
   const dateA = convertToDate(a.data.eventDate);
   const dateB = convertToDate(b.data.eventDate);
   
@@ -22,15 +22,16 @@ function convertToDate(dateObj) {
   const monthYear = dateObj.monthYear.replace('<br>', ' ').trim();
   const [month, year] = monthYear.split(' ');
   
-  const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  const monthIndex = monthNames.indexOf(month.toLowerCase());
+  const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
+                     'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const monthIndex = monthNames.indexOf(month);
   
-  // Create a Date object (using the 1st of the month if you don't have a specific day)
+  // Create a Date object using the day from eventDate
   return new Date(year, monthIndex, parseInt(dateObj.day));
 }
 ---
 
-<div class="wydarzenia-cmpnt">
+<div class="events-component">
     {sortedEvents.map((event) => (
         <EventCard event={event} />
     ))}
