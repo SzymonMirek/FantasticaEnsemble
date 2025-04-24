@@ -1,16 +1,9 @@
 ---
-// Import the collection
-import { getCollection } from 'astro:content';
-import EventCard from '../components/EventCard.astro';
-
-// Get all events without sorting
-const allEvents = await getCollection('wydarzenia');
+import Wydarzenie from '../components/Wydarzenie-przyszle.astro'
 ---
 
 <div class="wydarzenia-cmpnt">
-    {allEvents.map((event) => (
-    <EventCard event={event} />
-  ))}
+    <Wydarzenie title="Wydarzenie 1" />
 </div>
 
 <style>
