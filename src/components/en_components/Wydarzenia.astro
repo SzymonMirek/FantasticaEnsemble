@@ -9,7 +9,7 @@ const allEvents = await getCollection('events');
 // Sort events by date
 const sortedEvents = allEvents.sort((a, b) => {
   // Convert dates to sortable format
-  // Assuming mR format is like "paź 2025" or "paź<br>2025"
+  // Assuming monthYear format is like "paź 2025" or "paź<br>2025"
   const dateA = convertToDate(a.data.eventDate);
   const dateB = convertToDate(b.data.eventDate);
   
@@ -19,8 +19,8 @@ const sortedEvents = allEvents.sort((a, b) => {
 // Helper function to convert your date format to a Date object
 function convertToDate(dateObj) {
   // Clean up the month/year string (remove <br> if present)
-  const mR = dateObj.mR.replace('<br>', ' ').trim();
-  const [month, year] = mR.split(' ');
+  const monthYear = dateObj.monthYear.replace('<br>', ' ').trim();
+  const [month, year] = monthYear.split(' ');
   
   const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   const monthIndex = monthNames.indexOf(month.toLowerCase());
