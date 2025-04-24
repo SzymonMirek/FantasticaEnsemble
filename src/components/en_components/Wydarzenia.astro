@@ -1,30 +1,27 @@
 ---
 // Import the collection
 import { getCollection } from 'astro:content';
-import EventCard from '../../components/en_components/EventCard.astro';
+import EventCard from '../components/EventCard.astro';
 
 // Get all events from the English collection
 const allEvents = await getCollection('events');
 
 // Sort events by date
 const sortedEvents = allEvents.sort((a, b) => {
-  // Convert dates to sortable format
-  // Assuming monthYear format is like "Oct 2025" or "Oct<br>2025"
   const dateA = convertToDate(a.data.eventDate);
   const dateB = convertToDate(b.data.eventDate);
-  
   return dateA - dateB; // Sort from oldest to newest
 });
 
 // Helper function to convert your date format to a Date object
 function convertToDate(dateObj) {
   // Clean up the month/year string (remove <br> if present)
-  const monthYear = dateObj.monthYear.replace('<br>', ' ').trim();
-  const [month, year] = monthYear.split(' ');
+  const monthYear = dateObj.monthYear.replace('<br>', ' ').trim().toLowerCase();
+  const [monthAbbr, year] = monthYear.split(' ');
   
-  const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
-                     'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  const monthIndex = monthNames.indexOf(month);
+  const monthNames = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 
+                     'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+  const monthIndex = monthNames.indexOf(monthAbbr);
   
   // Create a Date object using the day from eventDate
   return new Date(year, monthIndex, parseInt(dateObj.day));
