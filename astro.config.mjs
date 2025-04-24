@@ -3,6 +3,8 @@ import { defineConfig } from 'astro/config';
 
 import cloudflare from "@astrojs/cloudflare";
 
+import decapCmsOauth from "astro-decap-cms-oauth";
+
 // https://astro.build/config
 export default defineConfig({
   i18n: {
@@ -10,9 +12,10 @@ export default defineConfig({
     defaultLocale: "pl",
   },
 
+  // adapter: cloudflare(),
   experimental: {
       svg: true,
     },
 
-  // adapter: cloudflare(),
+  integrations: [decapCmsOauth()],
 });
