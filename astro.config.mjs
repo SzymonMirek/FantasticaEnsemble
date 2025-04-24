@@ -17,7 +17,7 @@ export default defineConfig({
       svg: true,
       session: true,
     },
-  output: 'server',
+  // output: 'server',
   adapter: cloudflare(),
   integrations: [decapCmsOauth()],
 });
