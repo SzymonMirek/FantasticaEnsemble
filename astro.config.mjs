@@ -5,6 +5,8 @@ import cloudflare from "@astrojs/cloudflare";
 
 import decapCmsOauth from "astro-decap-cms-oauth";
 
+import sitemap from "@astrojs/sitemap";
+
 // https://astro.build/config
 export default defineConfig({
   i18n: {
@@ -19,5 +21,5 @@ export default defineConfig({
     },
   // output: 'server',
   adapter: cloudflare(),
-  integrations: [decapCmsOauth()],
+  integrations: [decapCmsOauth(), sitemap()],
 });
