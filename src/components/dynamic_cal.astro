@@ -1,0 +1,209 @@
+---
+// Import the collection
+import { getCollection } from 'astro:content';
+// import EventCard from '../components/EventCard.astro';
+// import EventCard from '../components/EventCard-nocss.astro';
+import EventCard from '../components/EventCard-nocss.astro';
+
+// Get all events
+const allEvents = await getCollection('wydarzenia');
+
+// Sort events by date
+const sortedEvents = allEvents.sort((a, b) => {
+  // Convert dates to sortable format
+  // Assuming mR format is like "paź 2025" or "paź<br>2025"
+  const dateA = convertToDate(a.data.dataWydarzenia);
+  const dateB = convertToDate(b.data.dataWydarzenia);
+  
+  return dateA - dateB; // Sort from oldest to newest
+});
+
+// Helper function to convert your date format to a Date object
+function convertToDate(dateObj) {
+  // Clean up the month/year string (remove <br> if present)
+  const mR = dateObj.mR.replace('<br>', ' ').trim();
+  const [month, year] = mR.split(' ');
+  
+  const monthNames = ['sty', 'lut', 'mar', 'kwi', 'maj', 'cze', 'lip', 'sie', 'wrz', 'paź', 'lis', 'gru'];
+  const monthIndex = monthNames.indexOf(month.toLowerCase());
+  
+  // Create a Date object (using the 1st of the month if you don't have a specific day)
+  return new Date(year, monthIndex, parseInt(dateObj.dzien));
+}
+---
+
+<ul class="wydarzenia-cmpnt" scroll-animation="swoopy-n-blur" style="--_animation: swoopy-n-blur">
+
+    {sortedEvents.map((event) => (
+        <li>
+            <EventCard event={event} />
+        </li>
+    ))}
+
+    <div id="wydarzenia-przeszle" class="wydarzenia-napis">
+        <h3 id="wydarzenia-przyszle-sign">
+            Przeszłe wydarzenia
+        </h3>
+    </div>
+
+    {sortedEvents.map((event) => (
+        <li>
+            <EventCard event={event} />
+        </li>
+    ))}
+
+    <div id="wydarzenia-przyszle" class="wydarzenia-napis">
+        <h3 id="wydarzenia-przyszle-sign">
+            <!-- Przyszłe wydarzenia -->
+            PRZYSZŁE WYDARZENIA
+        </h3>
+    </div>
+</ul>
+
+<style>
+
+    h3 {
+        font-family: "Gilda Display";
+    }
+
+    .wydarzenia-napis {
+        position: sticky;
+        bottom: 0;
+
+        margin: 0;
+        color: #ec3b28;
+        height: 85px;
+        font-size: 50px;
+
+        display: flex;
+    }
+
+/* Wydarzenia przeszłe Wydarzenia przeszłe Wydarzenia przeszłe Wydarzenia przeszłe Wydarzenia przeszłe Wydarzenia przeszłe Wydarzenia przeszłe */
+    #wydarzenia-przeszle {
+        z-index: 2;
+        background-color: white;
+    }
+
+/* Informacja o przeszłył Informacja o przeszłył Informacja o przeszłył Informacja o przeszłył Informacja o przeszłył */
+
+/* Wydarzenia przyszłe Wydarzenia przyszłe Wydarzenia przyszłe Wydarzenia przyszłe Wydarzenia przyszłe Wydarzenia przyszłe Wydarzenia przyszłe */
+    #wydarzenia-przyszle {
+        /* justify-content: center; */
+    }
+    #wydarzenia-przyszle-sign {
+        margin: 0;
+        /* text-align: center; */
+    }
+
+
+    .wydarzenia-cmpnt {
+        overflow: scroll;
+        height: 650px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        overscroll-behavior-x: contain;
+        list-style-type: none;
+        /* perspective: 1000px;
+        max-block-size: 100%;
+        aspect-ratio: 9 / 16;
+        overflow-y: auto;
+        overflow-x: hidden;
+        overscroll-behavior-x: contain;
+        border: 1px solid #1c1b25;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        --_row-size: 2.5lh;
+        display: grid
+;
+        grid-auto-rows: 2.5lh; */
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+    ul {
+        & > li {
+            animation: var(--_animation) linear both;
+            animation-timeline: view();
+            animation-range: entry 0% entry 100%;
+        }
+    }
+}
+
+[scroll-animation="accordion"] > li {
+  animation-range: unset;
+}
+@keyframes accordion {
+  entry 0% {
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+  entry 100% {
+    transform-origin: top;
+    transform: scaleY(1);
+  }
+  exit 0% {
+    transform-origin: bottom;
+    transform: scaleY(1);
+  }
+  exit 100% {
+    transform-origin: bottom;
+    transform: scaleY(0);
+  }
+}
+
+[scroll-animation="swoopy-n-blur"] > li {
+    animation-range: unset;
+    /* transform-origin: top; */
+  }
+  @keyframes swoopy-n-blur {
+    entry 100% {
+      transform-origin: bottom;
+      transform: scale(.93) translateY(15%);
+      opacity: 0;
+      filter: blur(5px);
+    }
+    entry 350% {
+      transform-origin: bottom;
+      transform: rotateX(0) translateZ(-67px);
+      opacity: 1;
+      filter: none;
+    }
+
+    exit -100% {
+      transform-origin: bottom;
+      transform: rotateX(0) translateZ(-67px);
+      opacity: 1;
+      filter: none;
+    }
+    exit 100% {
+      transform-origin: bottom;
+      transform: scale(.93) translateY(15%);
+      opacity: 0;
+      filter: blur(5px);
+    }
+  }
+  
+  [scroll-animation="synchronized-swimmers"] > li {
+    animation-range: unset;
+  }
+  @keyframes synchronized-swimmers {
+    entry 0% {
+      transform-origin: left;
+      transform: rotateY(.25turn);
+      z-index: -10;
+    }
+    entry 200% {
+      transform-origin: left;
+      transform: none;
+      z-index: 1;
+    }
+    exit -100% {
+      transform-origin: left;
+      transform: none;
+    }
+    exit 100% {
+      transform-origin: left;
+      transform: rotateY(.25turn);
+    }
+  }
+</style>

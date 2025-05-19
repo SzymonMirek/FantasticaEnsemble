@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import DynamicCal from '../components/dynamic_cal.astro';
+
+---
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.png" type="image/png">	
+    <link rel="mask-icon" href="/images/safari-pinned-tab.svg?v=M44lzPylqQ" color="#000000">
+    <meta name="genefantasrator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Elsie:wght@400;900&family=Gilda+Display&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <title>Testowanie komponentu</title>
+</head>
+<body>
+    <DynamicCal />
+</body>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100vw;
+		height: 80%;
+		overflow-x: clip;
+	}
+
+</style>
