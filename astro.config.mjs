@@ -1,10 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-
 import cloudflare from "@astrojs/cloudflare";
-
 import decapCmsOauth from "astro-decap-cms-oauth";
-
 import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
@@ -13,13 +10,6 @@ export default defineConfig({
     locales: ["pl", "en"],
     defaultLocale: "pl",
   },
-
-  // adapter: cloudflare(),
-  experimental: {
-      svg: true,
-      session: true,
-    },
-  // output: 'server',
   adapter: cloudflare(),
   integrations: [decapCmsOauth(), sitemap()],
 });
