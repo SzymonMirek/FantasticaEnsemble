@@ -6,4 +6,5 @@ repertoire: Biber
 eventName: Polish Bach Society
 eventLocation: Krakow, PL
 eventTime: 18:00
+eventLink: https://shorturl.at/8ynlO
 ---
