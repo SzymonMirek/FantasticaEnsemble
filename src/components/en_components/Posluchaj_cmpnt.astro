@@ -7,6 +7,8 @@ import { ViewTransitions } from "astro:transitions";
 ---
 <head>
     <ViewTransitions />
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lite-youtube-embed/0.3.2/lite-yt-embed.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lite-youtube-embed/0.3.2/lite-yt-embed.css" integrity="sha512-utq8YFW0J2abvPCECXM0zfICnIVpbEpW4lI5gl01cdJu+Ct3W6GQMszVITXMtBLJunnaTp6bbzk5pheKX2XuXQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <!-- TODO - zaczyna sie zoomed in na phone!!, nie ma footera, moze lepszy embed z wieksza iloscia filmikow, zamien filmik, dodaj linki do przyciskow -->
 <div class="posluchaj-container">
@@ -42,9 +44,11 @@ import { ViewTransitions } from "astro:transitions";
         </div>
         <div class="zobacz-na-zywo-embed">
 			<img class="naZywo" src={naZywo.src} alt="" />
-            <iframe
-                src="https://www.youtube.com/embed/ZnTkeduqcbU">
-            </iframe>
+                <lite-youtube videoid="ZnTkeduqcbU" style="background-image: url('https://i.ytimg.com/vi/ZnTkeduqcbU/hqdefault.jpg');">
+                    <a href="https://www.youtube.com/embed/ZnTkeduqcbU" class="lty-playbtn" title="Fantastica Ensemble">
+                        <span class="lyt-visually-hidden">Fantastica Ensemble</span>
+                    </a>
+                </lite-youtube>
         </div>
     </div>
 </div>
@@ -133,7 +137,7 @@ import { ViewTransitions } from "astro:transitions";
         position: relative;
         width: 68vw;
     }
-    .zobacz-na-zywo-embed iframe {
+    .zobacz-na-zywo-embed lite-youtube {
         position: absolute;
         top: 3.5vw;
         left: 5vw;

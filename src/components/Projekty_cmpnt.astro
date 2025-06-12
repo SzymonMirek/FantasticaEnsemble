@@ -16,7 +16,7 @@ import { ViewTransitions } from "astro:transitions";
     <!-- TODO - lepszy scaling (chcialbym zeby to zdjecie sie lepiej skalowalo), i moze background animated gradient, font weight jest dziwny -->
     <div class="projekty-headline">
         <!-- TODO - zrobic tak zeby jak sie przy 1200px zmienialo to zeby bylo bardziej kanciaste jak w canvie -->
-        <img class="projektyHeadlineImg" src={projektyHeadlineImg.src} alt="" />
+        <img class="projektyHeadlineImg" src={projektyHeadlineImg.src} alt="" fetchpriority="high" />
         <div class="projekty-headline-text">
             <h1>Projekty</h1>
             <p>

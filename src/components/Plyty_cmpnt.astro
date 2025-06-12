@@ -3,7 +3,6 @@ import { Image } from 'astro:assets';
 import albumyHeadlineImg from '../assets/albumyHeadline.png';
 import plytyEclipse from '../assets/plytyEclipseLol.png';
 import plytyBiber from '../assets/plytyBiber.png';
-import plytyBiber2 from '../assets/plytyBiber2.png'
 import plytyBiberDots from '../assets/plyty-biber-dots.png'
 import { ViewTransitions } from "astro:transitions";
 ---
@@ -21,8 +20,8 @@ import { ViewTransitions } from "astro:transitions";
             </p>
         </div>
         <div class="albumy-headline-img-container">
-            <Image class="albumyHeadlineImg" src={albumyHeadlineImg} alt="" />
-            <Image class="albumyEclipseHeadline" src={plytyEclipse} alt="" />
+            <Image class="albumyHeadlineImg" src={albumyHeadlineImg} alt="" fetchpriority="high"/>
+            <Image class="albumyEclipseHeadline" src={plytyEclipse} alt="" fetchpriority="high" />
         </div>
     </div>
     <div class="albumy-biber-container">
