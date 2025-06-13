@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import albumyHeadlineImg from '../../assets/albumyHeadline.png';
 import plytyEclipse from '../../assets/plytyEclipseLol.png';
 import plytyBiber from '../../assets/plytyBiber.png';
@@ -19,19 +20,19 @@ import { ViewTransitions } from "astro:transitions";
                 We invite you on a musical journey filled with contrasts – from mystical contemplation to virtuosic expression. Check out our latest albums and let yourself be captivated by baroque sounds!            </p>
         </div>
         <div class="albumy-headline-img-container">
-            <img class="albumyHeadlineImg" src={albumyHeadlineImg.src} alt="" fetchpriority="high"/>
-            <img class="albumyEclipseHeadline" src={plytyEclipse.src} alt="" fetchpriority="high"/>
+            <Image class="albumyHeadlineImg" src={albumyHeadlineImg} alt="" fetchpriority="high"/>
+            <Image class="albumyEclipseHeadline" src={plytyEclipse} alt="" fetchpriority="high"/>
         </div>
     </div>
     <div class="albumy-biber-container">
         <div class="albumy-biber-up">
             <div class="albumy-biber-img-container">
-                <img class="albumy-biber-img" src={plytyBiber.src} alt="" />
+                <Image class="albumy-biber-img" src={plytyBiber} alt="" />
             </div>
             <div class="albumy-biber-text">
                 <!-- TODO - WAZNE: ZROB KROPKI -->
                 <h2>
-                    BIBER<img class="plyty-biber-dots" src={plytyBiberDots.src} alt="" />
+                    BIBER<Image class="plyty-biber-dots" src={plytyBiberDots} alt="" />
                 </h2>
                 <h4>
                     Sacrum/Profanum
@@ -93,7 +94,7 @@ import { ViewTransitions } from "astro:transitions";
         </div>
     </div>
     <div class="albumy-biber2-container">
-        <img class="albumy-biber2-img" src={plytyBiber2.src} alt="" />
+        <Image class="albumy-biber2-img" src={plytyBiber2} alt="" />
     </div>
     <div class="albumy-fantastica-container">
         <div class="albumy-fanstastica">
@@ -145,6 +146,7 @@ import { ViewTransitions } from "astro:transitions";
     }
     .albumyHeadlineImg {
         height: 29vw;
+        width: auto;
         z-index: 1;
     }
 
@@ -324,6 +326,7 @@ import { ViewTransitions } from "astro:transitions";
 
     .plyty-biber-dots {
         position: absolute;
+        height: auto;
         top: -6vw;
         right: -5.3vw;
         width: 26vw;
@@ -336,6 +339,7 @@ import { ViewTransitions } from "astro:transitions";
     }
     .albumy-biber2-img {
         width: -webkit-fill-available;
+        height: auto;
     }
 
 
