@@ -219,6 +219,7 @@ import { ViewTransitions } from "astro:transitions";
     .about-1-img {
         position: relative;
         height: calc(20vw + 360px);
+        width: auto;
         flex: 4;
         object-fit: contain;
         z-index: 1;
@@ -651,8 +652,8 @@ import { ViewTransitions } from "astro:transitions";
         width: 33vw;
     }
     #about-3-aleksandra-img {
-        height: auto;
         height: 32vw;
+        width: auto;
         margin-left: auto;
         align-self: center;
     }
@@ -687,6 +688,7 @@ import { ViewTransitions } from "astro:transitions";
     }
     #about-7 {
         width: 43vw;
+        height: auto;
     }
     .about-content-7 > div{
         padding-right: 5vw;
@@ -778,6 +780,7 @@ import { ViewTransitions } from "astro:transitions";
         /* margin-left: calc(20vw); */
         margin-bottom: 6vw;        
         width: 80%;
+        height: auto;
         align-self: end;
     }
     #about-3-aleksandra-inside-text-right {
@@ -863,6 +866,9 @@ import { ViewTransitions } from "astro:transitions";
     .sideways-text-and-text h3 {
         font-size: clamp(1rem, 15vw, 10ch);
     }
+    .quote-with-gradient-inside, .quote-with-gradient-inside p {
+        width: 52vw;
+    }
 /* about 7 - o nas - mobilne */
     .about-content-7 {
         padding-top: 0;
@@ -880,6 +886,7 @@ import { ViewTransitions } from "astro:transitions";
     #about-7 {
         grid-row: 1/2;
         width: 79vw;
+        height: auto;
     }
     /* TODO - Mini: .bold-line nie ma bialych linii ktore byly*/
     .bold-line {
