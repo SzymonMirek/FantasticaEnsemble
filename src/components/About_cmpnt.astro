@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import about1 from '../assets/about1.png';
 import about1Eclipse from '../assets/about1-eclipse.svg';
 import about2 from '../assets/about2.png';
@@ -41,14 +42,14 @@ import { ViewTransitions } from "astro:transitions";
                 Szukamy brzmień, które poruszają i zaskakują. Nasze koncerty to spotkania z dawną muzyką i jej niezwykłą głębią. Pokazujemy, że barok jest wciąż aktualny i niezmiennie porusza pokolenia.
             </p>
         </div>
-        <img class="about-1-img" src={about1.src} alt="O nas-1" fetchpriority="high" />
-        <img class="about-1-eclipse" src={about1Eclipse.src} alt="O nas-1-eclipse" fetchpriority="high" />
+        <Image class="about-1-img" src={about1} alt="O nas-1" fetchpriority="high" />
+        <Image class="about-1-eclipse" src={about1Eclipse} alt="O nas-1-eclipse" fetchpriority="high" />
     </div>
     <div class="about-content-2">
         <div class="about-content-2-inside">
             <a class="about-2-img-container">
-                <img class="about-2-img" src={about2.src} alt="O nas-2">
-                <img class="about-2-eclipse" src={about2Eclipse.src} alt="O nas-2-eclipse" />
+                <Image class="about-2-img" src={about2} alt="O nas-2">
+                <Image class="about-2-eclipse" src={about2Eclipse} alt="O nas-2-eclipse" />
             </a>
             <div>
                 <p>
@@ -73,7 +74,7 @@ import { ViewTransitions } from "astro:transitions";
             <p id="about-3-aleksandra-inside-text-right">
                 Ukończyłam Akademię Muzyczną im. Krzysztofa Pendereckiego w Krakowie, studiując pod okiem wybitnych specjalistów, takich jak Sirkka-Liisa Kaakinen-Pilch i Zbigniew Pilch, a swoje umiejętności doskonaliłam na kursach mistrzowskich, pracując m.in. z Antoinette Lohmann, Jorge Jimenezem, Bruno Cocsetem i Aureliuszem Golińskim. Byłam członkinią Musicae Antiquae Collegium Varsoviense w Warszawskiej Operze Kameralnej, a od grudnia 2024 roku dołączam do Capelli Cracoviensis – jednego z najważniejszych polskich zespołów muzyki dawnej. W mojej grze szukam przestrzeni między dźwiękiem a emocją, między historią a teraźniejszością. Nie interesuje mnie neutralność – interesuje mnie prawda.
             </p>
-            <img id="about-3-aleksandra-img" src={about3.src} alt="O nas-3" />
+            <Image id="about-3-aleksandra-img" src={about3} alt="O nas-3" />
         </div>
     </div>
     <div class="about-content-4-aleksandra">
@@ -98,7 +99,7 @@ import { ViewTransitions } from "astro:transitions";
     <!-- TODO - 1. dodaj tlo, 2. napraw layout bo np zdj za male itp., 3. Dodać bialy na pis na dole.   -->
     <div class="about-content-5-klaudia">
         <div class="about-content-5-klaudia-inside">
-            <img id="about-5-klaudia-img" src={about5.src} alt="O nas-5" />
+            <Image id="about-5-klaudia-img" src={about5} alt="O nas-5" />
             <div class="about-content-5-klaudia-inside-text">
                 <h2>
                     KLAUDIA<br>ŁOBODA
@@ -133,7 +134,7 @@ import { ViewTransitions } from "astro:transitions";
         </div>
     </div>
     <div class="about-content-7">
-        <img id="about-7" src={about7.src} alt="O nas-7" />
+        <Image id="about-7" src={about7} alt="O nas-7" />
         <div>
             <p>
                 Nasza praca została doceniona na międzynarodowych konkursach – zdobyłyśmy Nagrodę Specjalną na H.I.F. Biber International Competition (Austria, 2023), I nagrodę w III Konkursie Muzyki Kameralnej KraCamera (2023) oraz Nagrodę Specjalną za „najbardziej kreatywne wykonanie” podczas 12th International Maurizio Pratola Early Music Competition (Włochy, 2024). Wygrałyśmy również konkurs Da Vinci Young Sounds (2023), co zaowocowało nagraniem naszej debiutanckiej płyty we współpracy z Da Vinci Records. Dzięki Stypendium Twórczemu Miasta Krakowa 2024 nagrałyśmy nasz drugi album, poświęcony twórczości H.I.F. Bibera dla wytwórni Ars Sonora. Działamy na scenach krajowych i europejskich, koncertując w Polsce, Austrii, Finlandii, Holandii czy Niemczech. Tworzymy autorskie projekty, które są czymś więcej niż tylko koncertami – to pełne ekspresji, teatralne opowieści, w których tradycja spotyka się z nowoczesnością. Przecieramy też szlaki współpracując z artystami innych dziedzin i tworząc takie wydarzenia jak „Mystery. Everyone is losing someone”.
@@ -146,32 +147,33 @@ import { ViewTransitions } from "astro:transitions";
         </h2>
         <div class="gallery">
 
-            <img src={gallery1.src} alt="Pierwsze zdjecie galerii" />
-            <img src={gallery2.src} alt="Drugie zdjecie galerii" />
-            <img src={gallery3.src} alt="Trzecie zdjecie galerii" />
-            <img src={gallery4.src} alt="Czwarte zdjecie galerii" />
+            <Image src={gallery1} alt="Pierwsze zdjecie galerii" />
+            <Image src={gallery2} alt="Drugie zdjecie galerii" />
+            <Image src={gallery3} alt="Trzecie zdjecie galerii" />
+            <Image src={gallery4} alt="Czwarte zdjecie galerii" />
             
-            <img src={gallery5.src} alt="Piąte zdjecie galerii" />
-            <img src={gallery6.src} alt="Szóste zdjecie galerii" />
-            <img src={gallery7.src} alt="Siódme zdjecie galerii" />
-            <img src={gallery8.src} alt="Ósme zdjecie galerii" />
+            <Image src={gallery5} alt="Piąte zdjecie galerii" />
+            <Image src={gallery6} alt="Szóste zdjecie galerii" />
+            <Image src={gallery7} alt="Siódme zdjecie galerii" />
+            <Image src={gallery8} alt="Ósme zdjecie galerii" />
             
-            <img src={gallery9.src} alt="Dziewiąte zdjecie galerii" />
-            <img src={gallery10.src} alt="Dziesiąte zdjecie galerii" />
-            <img src={gallery11.src} alt="Jedenaste zdjecie galerii" />
-            <img src={gallery12.src} alt="Dwunaste zdjecie galerii" />
+            <Image src={gallery9} alt="Dziewiąte zdjecie galerii" />
+            <Image src={gallery10} alt="Dziesiąte zdjecie galerii" />
+            <Image src={gallery11} alt="Jedenaste zdjecie galerii" />
+            <Image src={gallery12} alt="Dwunaste zdjecie galerii" />
             
-            <img src={gallery14.src} alt="Czternaste zdjecie galerii" />
-            <img src={gallery15.src} alt="Piętnaste zdjecie galerii" />
-            <img src={gallery16.src} alt="Szesnaste zdjecie galerii" />
+            <Image src={gallery14} alt="Czternaste zdjecie galerii" />
+            <Image src={gallery15} alt="Piętnaste zdjecie galerii" />
+            <Image src={gallery16} alt="Szesnaste zdjecie galerii" />
             
-            <img src={gallery17.src} alt="Siedemnaste zdjecie galerii" />
-            <img src={gallery18.src} alt="Osiemnaste zdjecie galerii" />
+            <Image src={gallery17} alt="Siedemnaste zdjecie galerii" />
+            <Image src={gallery18} alt="Osiemnaste zdjecie galerii" />
 
         </div>
     </div>
 </div>
 <style>
+    
     header {
     mix-blend-mode: initial;
     }
@@ -265,6 +267,7 @@ import { ViewTransitions } from "astro:transitions";
     }
 
     .about-2-img {
+        height: auto;
         width: calc(50% + 321px);
         position: relative;
         object-fit: cover;
@@ -333,7 +336,8 @@ import { ViewTransitions } from "astro:transitions";
     }
 
     #about-3-aleksandra-img {
-        margin-left: calc(4vw);
+        margin-left: calc(4vw);    
+        height: auto;
 
     }
     /* Sekcja 4 aleksandra*/
@@ -571,6 +575,8 @@ import { ViewTransitions } from "astro:transitions";
     }    
     .gallery > img {
         width: 100%;
+        object-fit: cover;
+        height: fit-content;
         margin-bottom: 1em;
         border-radius: 1ch;
         box-shadow: 1px 1px 9px 0px rgba(0, 0, 0, 0.25);
@@ -645,6 +651,7 @@ import { ViewTransitions } from "astro:transitions";
         width: 33vw;
     }
     #about-3-aleksandra-img {
+        height: auto;
         height: 32vw;
         margin-left: auto;
         align-self: center;

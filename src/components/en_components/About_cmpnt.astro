@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import about1 from '../../assets/about1.png';
 import about1Eclipse from '../../assets/about1-eclipse.svg';
 import about2 from '../../assets/about2.png';
@@ -6,7 +7,6 @@ import about2Eclipse from '../../assets/about2-eclipse.svg';
 import about3 from '../../assets/about3.png';
 import about5 from '../../assets/about5-klaudia.png';
 import about7 from '../../assets/about7.png';
-import Footer from '../../components/en_components/Footer.astro'
 import gallery1 from '../../assets/galeria/gallery1.png';
 import gallery2 from '../../assets/galeria/gallery2.png';
 import gallery3 from '../../assets/galeria/gallery3.png';
@@ -42,14 +42,14 @@ import { ViewTransitions } from "astro:transitions";
                 We seek sounds that move and surprise. Our concerts are encounters with early music and its profound depth, proving that Baroque remains relevant and continues to resonate across generations.
             </p>
         </div>
-        <img class="about-1-img" src={about1.src} alt="O nas-1" />
-        <img class="about-1-eclipse" src={about1Eclipse.src} alt="O nas-1-eclipse" />
+        <Image class="about-1-img" src={about1} alt="O nas-1" />
+        <Image class="about-1-eclipse" src={about1Eclipse} alt="O nas-1-eclipse" />
     </div>
     <div class="about-content-2">
         <div class="about-content-2-inside">
             <a class="about-2-img-container">
-                <img class="about-2-img" src={about2.src} alt="O nas-2">
-                <img class="about-2-eclipse" src={about2Eclipse.src} alt="O nas-2-eclipse" />
+                <Image class="about-2-img" src={about2} alt="O nas-2">
+                <Image class="about-2-eclipse" src={about2Eclipse} alt="O nas-2-eclipse" />
             </a>
             <div>
                 <p>
@@ -76,7 +76,7 @@ import { ViewTransitions } from "astro:transitions";
                 I graduated from the Krzysztof Penderecki Academy of Music in Kraków, studying under renowned specialists such as Sirkka-Liisa Kaakinen-Pilch and Zbigniew Pilch, and honed my skills in masterclasses with Antoinette Lohmann, Jorge Jimenez, Bruno Cocset, and Aureliusz Goliński. I was a member of Musicae Antiquae Collegium Varsoviense at the Warsaw Chamber Opera, and starting in December 2024, I will be joining Capella Cracoviensis—one of Poland’s leading early music ensembles.
                 In my playing, I seek the space between sound and emotion, between history and the present. Neutrality doesn’t interest me—truth does.
             </p>
-            <img id="about-3-aleksandra-img" src={about3.src} alt="O nas-3" />
+            <Image id="about-3-aleksandra-img" src={about3} alt="O nas-3" />
         </div>
     </div>
     <div class="about-content-4-aleksandra">
@@ -101,7 +101,7 @@ import { ViewTransitions } from "astro:transitions";
     <!-- TODO - 1. dodaj tlo, 2. napraw layout bo np zdj za male itp., 3. Dodać bialy na pis na dole.   -->
     <div class="about-content-5-klaudia">
         <div class="about-content-5-klaudia-inside">
-            <img id="about-5-klaudia-img" src={about5.src} alt="O nas-5" />
+            <Image id="about-5-klaudia-img" src={about5} alt="O nas-5" />
             <div class="about-content-5-klaudia-inside-text">
                 <h2>
                     KLAUDIA<br>ŁOBODA
@@ -141,7 +141,7 @@ import { ViewTransitions } from "astro:transitions";
         </div>
     </div>
     <div class="about-content-7">
-        <img id="about-7" src={about7.src} alt="O nas-7" />
+        <Image id="about-7" src={about7} alt="O nas-7" />
         <div>
             <p>
                 Our work has been recognized in international competitions—we received the Special Prize at the H.I.F. Biber International Competition (Austria, 2023), First Prize at the III KraCamera Chamber Music Competition (2023), and the Special Prize for “the most creative performance” at the 12th International Maurizio Pratola Early Music Competition (Italy, 2024). We also won the Da Vinci Young Sounds competition (2023), leading to the recording of our debut album in collaboration with Da Vinci Records. Thanks to the Creative Scholarship of the City of Kraków (2024), we recorded our second album dedicated to the works of H.I.F. Biber for the Ars Sonora label.
@@ -156,27 +156,27 @@ import { ViewTransitions } from "astro:transitions";
         </h2>
         <div class="gallery">
 
-            <img src={gallery1.src} alt="Pierwsze zdjecie galerii" />
-            <img src={gallery2.src} alt="Drugie zdjecie galerii" />
-            <img src={gallery3.src} alt="Trzecie zdjecie galerii" />
-            <img src={gallery4.src} alt="Czwarte zdjecie galerii" />
+            <Image src={gallery1} alt="Pierwsze zdjecie galerii" />
+            <Image src={gallery2} alt="Drugie zdjecie galerii" />
+            <Image src={gallery3} alt="Trzecie zdjecie galerii" />
+            <Image src={gallery4} alt="Czwarte zdjecie galerii" />
             
-            <img src={gallery5.src} alt="Piąte zdjecie galerii" />
-            <img src={gallery6.src} alt="Szóste zdjecie galerii" />
-            <img src={gallery7.src} alt="Siódme zdjecie galerii" />
-            <img src={gallery8.src} alt="Ósme zdjecie galerii" />
+            <Image src={gallery5} alt="Piąte zdjecie galerii" />
+            <Image src={gallery6} alt="Szóste zdjecie galerii" />
+            <Image src={gallery7} alt="Siódme zdjecie galerii" />
+            <Image src={gallery8} alt="Ósme zdjecie galerii" />
             
-            <img src={gallery9.src} alt="Dziewiąte zdjecie galerii" />
-            <img src={gallery10.src} alt="Dziesiąte zdjecie galerii" />
-            <img src={gallery11.src} alt="Jedenaste zdjecie galerii" />
-            <img src={gallery12.src} alt="Dwunaste zdjecie galerii" />
+            <Image src={gallery9} alt="Dziewiąte zdjecie galerii" />
+            <Image src={gallery10} alt="Dziesiąte zdjecie galerii" />
+            <Image src={gallery11} alt="Jedenaste zdjecie galerii" />
+            <Image src={gallery12} alt="Dwunaste zdjecie galerii" />
             
-            <img src={gallery14.src} alt="Czternaste zdjecie galerii" />
-            <img src={gallery15.src} alt="Piętnaste zdjecie galerii" />
-            <img src={gallery16.src} alt="Szesnaste zdjecie galerii" />
+            <Image src={gallery14} alt="Czternaste zdjecie galerii" />
+            <Image src={gallery15} alt="Piętnaste zdjecie galerii" />
+            <Image src={gallery16} alt="Szesnaste zdjecie galerii" />
             
-            <img src={gallery17.src} alt="Siedemnaste zdjecie galerii" />
-            <img src={gallery18.src} alt="Osiemnaste zdjecie galerii" />
+            <Image src={gallery17} alt="Siedemnaste zdjecie galerii" />
+            <Image src={gallery18} alt="Osiemnaste zdjecie galerii" />
 
         </div>
     </div>
@@ -231,6 +231,8 @@ import { ViewTransitions } from "astro:transitions";
         flex: 4;
         object-fit: contain;
         z-index: 1;
+        /* height: auto; */
+        width: auto;
     }
 
     .about-content-1-text p {
@@ -280,6 +282,7 @@ import { ViewTransitions } from "astro:transitions";
         position: relative;
         object-fit: cover;
         z-index: 1;
+        height: auto;
     }
     
     .about-2-eclipse {
@@ -344,6 +347,7 @@ import { ViewTransitions } from "astro:transitions";
 
     #about-3-aleksandra-img {
         margin-left: calc(4vw);
+        height: auto;
 
     }
     /* Sekcja 4 aleksandra*/
@@ -545,7 +549,7 @@ import { ViewTransitions } from "astro:transitions";
     #about-7 {
         align-self: end;
         border-radius: 20px;
-
+        height: auto;
     }
 
 /* Galeria Galeria Galeria Galeria Galeria Galeria Galeria Galeria Galeria Galeria Galeria Galeria */
@@ -578,6 +582,8 @@ import { ViewTransitions } from "astro:transitions";
     }    
     .gallery > img {
         width: 100%;
+        object-fit: cover;
+        height: fit-content;
         margin-bottom: 1em;
         border-radius: 1ch;
         box-shadow: 1px 1px 9px 0px rgba(0, 0, 0, 0.25);
@@ -613,6 +619,7 @@ import { ViewTransitions } from "astro:transitions";
         margin-left: 2.3vw;
         height: 53.5vw;    
         margin-top: 4vw;
+        width: auto;
     }
 
 /* about content 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 */
@@ -622,6 +629,7 @@ import { ViewTransitions } from "astro:transitions";
     }
     .about-2-img-container {
         width: 87vw;
+        height: auto;
     }
     /* .about-2-img {
         width: calc(50% + 511px);
@@ -654,6 +662,7 @@ import { ViewTransitions } from "astro:transitions";
         height: 32vw;
         margin-left: auto;
         align-self: center;
+        height: auto;
     }
 
 
@@ -686,6 +695,7 @@ import { ViewTransitions } from "astro:transitions";
     }
     #about-7 {
         width: 43vw;
+        height: auto;
     }
     .about-content-7 > div{
         padding-right: 5vw;
@@ -729,6 +739,8 @@ import { ViewTransitions } from "astro:transitions";
     }
     .about-1-img {
         margin-top: 5vw;
+        height: auto;
+        width: auto;
     }
 /* about 2 - mobilne */
     .about-content-2 {
@@ -778,6 +790,7 @@ import { ViewTransitions } from "astro:transitions";
         margin-bottom: 6vw;        
         width: 80%;
         align-self: end;
+        height: auto;
     }
     #about-3-aleksandra-inside-text-right {
         margin-right: 0;
@@ -879,6 +892,7 @@ import { ViewTransitions } from "astro:transitions";
     #about-7 {
         grid-row: 1/2;
         width: 79vw;
+        height: auto;
     }
     /* TODO - Mini: .bold-line nie ma bialych linii ktore byly*/
     .bold-line {
