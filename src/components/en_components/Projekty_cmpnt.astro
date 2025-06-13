@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import projektyHeadlineImg from '../../assets/projektyHeadline.png';
 // TODO - uzyc tego tloProjekty zamiast pelnego url
 import tloProjekty from '../../assets/tloProjekty.png';
@@ -17,7 +18,7 @@ import { ViewTransitions } from "astro:transitions";
     <!-- TODO - lepszy scaling (chcialbym zeby to zdjecie sie lepiej skalowalo), i moze background animated gradient, font weight jest dziwny -->
     <div class="projekty-headline">
         <!-- TODO - zrobic tak zeby jak sie przy 1200px zmienialo to zeby bylo bardziej kanciaste jak w canvie -->
-        <img class="projektyHeadlineImg" src={projektyHeadlineImg.src} alt="" fetchpriority="high"/>
+        <Image class="projektyHeadlineImg" src={projektyHeadlineImg} alt="" fetchpriority="high"/>
         <div class="projekty-headline-text">
             <h1>Projects</h1>
             <p>
@@ -28,7 +29,7 @@ import { ViewTransitions } from "astro:transitions";
     <div class="projekt-1-container">
         <div class="projekt-1-up">
             <div class="projekt-1-img-container">
-                <img class="projekt1img" src={projekt1img.src} alt="" />
+                <Image class="projekt1img" src={projekt1img} alt="" />
                 <svg class="projekt1-fikusy" xmlns="http://www.w3.org/2000/svg" width="945" height="1101" viewBox="0 0 945 1101" fill="none">
                     <path d="M864 -347C774.762 -289.687 766.737 -191.5 885.277 220.015C916.707 329.128 932.608 516.018 744.763 390.674C556.919 265.331 326.935 38.9901 231 -41C143.693 -93.8091 -156.219 -66.5044 -101 173C-45.7807 412.505 214.5 739 264 851C296.869 884.2 281.885 1015.54 203 1053.28C104.394 1100.46 -368.251 938.18 -775 370.871" stroke="url(#paint0_radial_4017_73)" stroke-opacity="0.59" stroke-width="80" stroke-linecap="round"/>
                     <path d="M864 -347C774.762 -289.687 766.737 -191.5 885.277 220.015C916.707 329.128 932.608 516.018 744.763 390.674C556.919 265.331 326.935 38.9901 231 -41C143.693 -93.8091 -156.219 -66.5044 -101 173C-45.7807 412.505 214.5 739 264 851C296.869 884.2 281.885 1015.54 203 1053.28C104.394 1100.46 -368.251 938.18 -775 370.871" stroke="url(#paint1_radial_4017_73)" stroke-opacity="0.3" stroke-width="80" stroke-linecap="round"/>
@@ -84,7 +85,7 @@ import { ViewTransitions } from "astro:transitions";
                     <circle cx="45.5" cy="45.5" r="45.5" fill="#F7793C"/>
                 </svg>
 
-                <img class="projekt2img" src={projekt2img.src} alt="" />
+                <Image class="projekt2img" src={projekt2img} alt="" />
             </div>
             <div class="projekt-2-text">
                 <h2>
@@ -113,7 +114,7 @@ import { ViewTransitions } from "astro:transitions";
     <div class="projekt-3-container">
         <div class="projekt-3-up">
             <div class="projekt-3-img-container">
-                <img class="projekt3img" src={projekt3img.src} alt="" />
+                <Image class="projekt3img" src={projekt3img} alt="" />
             </div>
             <div class="projekt-3-text">
                 <h2>
@@ -143,7 +144,7 @@ import { ViewTransitions } from "astro:transitions";
     <div class="projekt-4-container">
         <div class="projekt-4-up">
             <div class="projekt-4-img-container">
-                <img class="projekt4img" src={projekt4img.src} alt="" />
+                <Image class="projekt4img" src={projekt4img} alt="" />
             </div>
             <div class="projekt-4-text">
                 <h2>
@@ -247,6 +248,7 @@ import { ViewTransitions } from "astro:transitions";
     .projekt1img {
         object-fit: contain;
         width: 82%;
+        height: auto;
         padding-right: 4.3vw;
     }
 
@@ -289,8 +291,9 @@ import { ViewTransitions } from "astro:transitions";
     .projekt-1-text p {
         /* padding-left: 7vw; */
     }
-    #bg-eclipse {
-        height: 100%;
+    #bg-eclipse {    
+        /* padding: 3.5vh 0 3.5vh 0; */
+        height: fit-content;
         width: 100%;
         background-image: url("../../assets/eclipseProjekty.svg");
         background-position: center; /* Center the image */
@@ -447,6 +450,7 @@ import { ViewTransitions } from "astro:transitions";
     .projekt3img {
         object-fit: contain;
         width: 88%;
+        height: auto;
     }
 
     .projekt-3-text {
@@ -554,6 +558,7 @@ import { ViewTransitions } from "astro:transitions";
         }
         .projektyHeadlineImg {
             height: 52vw;
+            width: auto;
             align-self: flex-end;
         }
         .projekty-headline-text {
@@ -615,6 +620,10 @@ import { ViewTransitions } from "astro:transitions";
 
         .projekt-2-container, .projekt-3-container, .projekt-4-container {
             height: 100vw;
+        }
+
+        .projekt-1-container, .projekt-2-container, .projekt-3-container, .projekt-4-container {
+            grid-template-rows: 3fr auto;
         }
     }
 
@@ -710,6 +719,7 @@ import { ViewTransitions } from "astro:transitions";
     }
     .projekt4img {
         width: 90%;
+        height: auto;
     }
     .projekt-3-img-container, .projekt-4-img-container {
         justify-content: center;
