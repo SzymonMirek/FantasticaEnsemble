@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../../../layouts/Layout.astro';
 import plytyBiberDots from '../../../assets/plyty-biber-dots.png'
 import plytyBiber from '../../../assets/plytyBiber-notext.png';
@@ -18,17 +19,17 @@ import Biber2 from '../../../assets/biber2.png'
                       Sacrum/Profanum 
                     </h4>
                 </div>
-                <img class="plyty-biber-dots" src={plytyBiberDots.src} alt="" />
+                <Image class="plyty-biber-dots" src={plytyBiberDots} alt="" />
                 <!-- <p>
                     Zapraszamy do muzycznej podróży pełnej kontrastów – od mistycznej kontemplacji po wirtuozowską ekspresję. Sprawdź nasze najnowsze albumy i pozwól się porwać barokowym brzmieniom!            </p> -->
             </div>
             <div class="albumy-headline-img-container">
-                <img class="albumy-biber-img" src={plytyBiber.src} alt="" />
+                <Image class="albumy-biber-img" src={plytyBiber} alt="" />
             </div>
         </div>
     </div>
     <div class="albumy-biber2-container">
-        <img class="albumy-biber2-img" src={Biber2.src} alt="" />
+        <Image class="albumy-biber2-img" src={Biber2} alt="" />
         <div class="albumy-biber2-text">
             <p class="projekt-text-p">
               The debut album of Fantastica is a story of contrasts. Sacrum.Profanum. takes you on a musical journey through the world of Heinrich Ignaz Franz von Biber—a composer who masterfully balanced between the extraordinary and the everyday. In his works, spirituality meets earthly expression, and mystical contemplation intertwines with untamed virtuosity. On this album, the Baroque violin and harpsichord not only interpret these contrasts but become part of them—vibrating with energy, painting sonic landscapes, and telling stories filled with tension, melancholy, and bravado.
@@ -60,7 +61,7 @@ import Biber2 from '../../../assets/biber2.png'
             </p>
           </div>
         </div>
-        <img class="albumy-biber2-img" src={plytyBiber2.src} alt="" />
+        <Image class="albumy-biber2-img" src={plytyBiber2} alt="" />
     </div>
     <div class="albumy-biber4-container">
       <div class="albumy-biber3-text">
@@ -201,6 +202,8 @@ import Biber2 from '../../../assets/biber2.png'
       top: 316px;
       right: 6.6vw;
       width: 35vw;
+
+      height: auto;
 }
     .albumy-headline-text h1 {
         /* color: #a3051d; */
@@ -218,6 +221,8 @@ import Biber2 from '../../../assets/biber2.png'
         width: 44.6vw;    
         padding-bottom: 50px;
         padding-left: 3vw;
+
+        height: auto;
     }
     .albumy-biber-text {
         grid-column: 2/3;

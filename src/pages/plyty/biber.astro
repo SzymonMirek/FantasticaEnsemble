@@ -1,7 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
 import plytyBiberDots from '../../assets/plyty-biber-dots.png'
-import plytyBiberPlyta from '../../assets/plytyBiber.png';
 import plytyBiber from '../../assets/plytyBiber-notext.png';
 import plytyBiber2 from '../../assets/plytyBiber2.png'
 import Biber2 from '../../assets/biber2.png'
@@ -27,17 +27,17 @@ import Biber2 from '../../assets/biber2.png'
                         Trochę Sacrum,<br>Troche Profanum
                     </h4>
                 </div>
-                <img class="plyty-biber-dots" src={plytyBiberDots.src} alt="" />
+                <Image class="plyty-biber-dots" src={plytyBiberDots} alt="" />
                 <!-- <p>
                     Zapraszamy do muzycznej podróży pełnej kontrastów – od mistycznej kontemplacji po wirtuozowską ekspresję. Sprawdź nasze najnowsze albumy i pozwól się porwać barokowym brzmieniom!            </p> -->
             </div>
             <div class="albumy-headline-img-container">
-                <img class="albumy-biber-img" src={plytyBiber.src} alt="" />
+                <Image class="albumy-biber-img" src={plytyBiber} alt="" />
             </div>
         </div>
     </div>
     <div class="albumy-biber2-container">
-        <img class="albumy-biber2-img" src={Biber2.src} alt="" />
+        <Image class="albumy-biber2-img" src={Biber2} alt="" />
         <div class="albumy-biber2-text">
             <p class="projekt-text-p">
                 Pierwszy album Owczarek | Łoboda Duo to opowieść o kontrastach. TROCHĘ SACRUM, TROCHĘ PROFANUM to muzyczna podróż przez świat Heinricha Ignaza Franza von Bibera – kompozytora, który jak nikt inny potrafił balansować na granicy tego, co niezwykłe i codzienności. W jego utworach duchowość spotyka się z ziemską ekspresją, a mistyczna kontemplacja przeplata się z dziką wirtuozerią.
@@ -70,7 +70,7 @@ import Biber2 from '../../assets/biber2.png'
             </p>
           </div>
         </div>
-        <img class="albumy-biber2-img" src={plytyBiber2.src} alt="" />
+        <Image class="albumy-biber2-img" src={plytyBiber2} alt="" />
     </div>
     <div class="albumy-biber4-container">
       <div class="albumy-biber3-text">
@@ -214,6 +214,8 @@ import Biber2 from '../../assets/biber2.png'
       top: 316px;
       right: 6.6vw;
       width: 35vw;
+      
+      height: auto;
 }
     .albumy-headline-text h1 {
         /* color: #a3051d; */
@@ -231,6 +233,8 @@ import Biber2 from '../../assets/biber2.png'
         width: 44.6vw;    
         padding-bottom: 50px;
         padding-left: 3vw;
+
+        height: auto;
     }
     .albumy-biber-text {
         grid-column: 2/3;
