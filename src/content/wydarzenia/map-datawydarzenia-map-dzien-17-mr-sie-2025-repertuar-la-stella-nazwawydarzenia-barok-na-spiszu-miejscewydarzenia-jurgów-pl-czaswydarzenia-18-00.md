@@ -4,6 +4,6 @@ dataWydarzenia:
   mR: sie 2025
 repertuar: La Stella
 nazwaWydarzenia: Barok na Spiszu
-miejsceWydarzenia: Jurgów, PL
+miejsceWydarzenia: TBA, PL
 czasWydarzenia: 18:00
 ---
