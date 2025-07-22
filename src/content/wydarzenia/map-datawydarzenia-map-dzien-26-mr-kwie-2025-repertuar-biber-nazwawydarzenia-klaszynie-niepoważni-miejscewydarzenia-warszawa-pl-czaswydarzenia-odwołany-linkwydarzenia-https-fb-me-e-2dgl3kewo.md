@@ -1,10 +1,10 @@
 ---
 dataWydarzenia:
-  dzien: "26"
-  mR: kwie 2025
+  dzien: "28"
+  mR: lis 2025
 repertuar: Biber
 nazwaWydarzenia: Klasycznie Niepoważni
 miejsceWydarzenia: Warszawa, PL
-czasWydarzenia: ODWOŁANY
-linkWydarzenia: https://fb.me/e/2DgL3KEWO
+czasWydarzenia: 19:00
+linkWydarzenia: ""
 ---
