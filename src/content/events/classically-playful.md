@@ -1,10 +1,10 @@
 ---
 eventDate:
-  day: "26"
-  monthYear: apr 2025
+  day: "28"
+  monthYear: lis 2025
 repertoire: Biber
-eventName: Classically Playful
+eventName: Klasycznie Niepoważni
 eventLocation: Warsaw, PL
-eventTime: CANCELLED
-eventLink: https://fb.me/e/2DgL3KEWO
+eventTime: 19:00
+eventLink: ""
 ---
