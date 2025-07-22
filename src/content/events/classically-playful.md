@@ -1,7 +1,7 @@
 ---
 eventDate:
   day: "28"
-  monthYear: lis 2025
+  monthYear: nov 2025
 repertoire: Biber
 eventName: Klasycznie Niepoważni
 eventLocation: Warsaw, PL
