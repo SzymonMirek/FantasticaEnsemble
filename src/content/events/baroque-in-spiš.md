@@ -4,6 +4,6 @@ eventDate:
   monthYear: aug 2025
 repertoire: La Stella
 eventName: Baroque in Spiš
-eventLocation: TBA, PL
+eventLocation: Jurgów, PL
 eventTime: 18:00
 ---
