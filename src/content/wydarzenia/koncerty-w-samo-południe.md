@@ -1,6 +1,6 @@
 ---
 dataWydarzenia:
-  dzien: "16"
+  dzien: "9"
   mR: lis 2025
 repertuar: Biber
 nazwaWydarzenia: Koncerty w samo południe
