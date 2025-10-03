@@ -1,6 +1,6 @@
 ---
 eventDate:
-  day: "16"
+  day: "9"
   monthYear: nov 2025
 repertoire: Biber
 eventName: Concerts at noon
