@@ -3,7 +3,7 @@ eventDate:
   day: "11"
   monthYear: january 2026
 repertoire: Biber
-eventName: Wawerskie Centrum Kultury
+eventName: New Year’s Concert
 eventLocation: Warsaw, PL
-eventTime: 17:00
+eventTime: 18:00
 ---
