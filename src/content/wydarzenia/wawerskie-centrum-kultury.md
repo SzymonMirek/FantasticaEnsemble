@@ -3,7 +3,7 @@ dataWydarzenia:
   dzien: "11"
   mR: styczeń 2026
 repertuar: Biber
-nazwaWydarzenia: Wawerskie Centrum Kultury
+nazwaWydarzenia: Koncert Noworoczny
 miejsceWydarzenia: Warszawa, PL
-czasWydarzenia: 17:00
+czasWydarzenia: 18:00
 ---
