@@ -1,7 +1,7 @@
 ---
 dataWydarzenia:
   dzien: "23"
-  mR: apr 2026
+  mR: kwie 2026
 repertuar: Biber
 nazwaWydarzenia: Sacrum/Profanum Tour
 miejsceWydarzenia: Katowice, PL
