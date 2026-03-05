@@ -1,9 +1,13 @@
 ---
 import { Image } from 'astro:assets';
+import Strzlk from '../assets/strzlk4hover.png';
 import Glowna_cmpnt3 from '../components/Glowna_cmpnt3.astro';
 import Layout from '../layouts/Layout.astro';
+import biberKropki from '../assets/biber-kropki-trasa.svg';
+import trasaPhoto from '../assets/trasa-photo.webp';
 import kimjestesmyPhoto from '../assets/kimjestesmy-photo.png'
 import Wydarzenia from '../components/Wydarzenia.astro'
+import WydarzeniaTrasa from '../components/WydarzeniaTrasa.astro'
 import kalendarzPicMain from '../assets/kalendarz-pic-main.png'
 import secondPhotoMain from '../assets/second-photo-main.png'
 import Footer from '../components/Footer.astro'
@@ -13,6 +17,68 @@ import Footer from '../components/Footer.astro'
 	<div id="fantastica-glowna">
 		<Glowna_cmpnt3 />
 		<div id="main-readable-portion">
+			<section id="trasa-section">
+				<div id="trasa-main-container">
+					<div id="trasa">
+						<h2>Sacrum/ <br>Profanum Tour</h2>
+						<div class="trasa-info-buy-container">
+							<div class="trasa-info-buy">
+								<p>Biber. Trochę sacrum. Trochę profanum. 
+								<br>Zmysłowa gra kontrastów</p>
+								
+								<a class="buy-ticket onImage0" href="https://biletyna.pl/event/view/id/581398/?utm_source=atelier&amp;utm_medium=affiliate&amp;utm_campaign=general" 
+								class="buy-ticket onImage">
+								Kup bilet
+								</a>
+							</div>
+						</div>
+						<div class="trasa-kalendarz">
+							<div class="trasa-wydarzenia">
+								<WydarzeniaTrasa title="Wydarzenia" />
+									<!-- <div 
+									class="wydarzenie" 
+									id="wydarzenie-klik"
+									style="cursor: pointer; position: relative;"
+									>
+									<div class="loader">
+										<img src={Strzlk.src} alt="" />
+									</div>  
+									<div class="data-wydarzenia">
+										<p class="data-wydarzenia-dzien">{event.data.dataWydarzenia.dzien}</p>
+										<p class="data-wydarzenia-m-r">
+										{month.toLowerCase()}<br>{year}
+										</p>
+									</div>
+									<a class="nazwa-wydarzenia">{event.data.nazwaWydarzenia}</a>
+									<a class="miejsce-wydarzenia">{event.data.miejsceWydarzenia}</a>
+									<a class="czas-wydarzenia">{event.data.czasWydarzenia}</a>
+									</div> -->
+							</div>
+						</div>
+					</div>
+					<div class="trasa-images">
+						<img class="biber-kropki" src={biberKropki.src} width={biberKropki.width} height={biberKropki.height} alt="Biber kropki" />
+						<img 
+							class="trasa-photo" 
+							src={trasaPhoto.src} 
+							style={{ height: 'auto', scale: "-1 1"}} 
+							alt="Zdjęcie Fantasticy do sekcji trasy" 
+						/>
+					</div>
+				</div>
+				<div class="trasa-repertuar-container">
+					<div class="trasa-repertuar-circle">
+						<div>
+							<p>G.A. Pandolfi Mealli - Sonaty op. 4</p>
+							<p>G.A. Pandolfi Mealli - La barnabea</p>
+							<p>G.A. Pandolfi Mealli - La viviana La monella romanesca</p>
+							<p>G.A. Pandolfi Mealli - La bianchiccia</p>
+							<p>G.A. Pandolfi Mealli - La stella</p>
+							<p>G.A. Pandolfi Mealli - La vinciolina</p>
+						</div>
+					</div>
+				</div>
+			</section>
 			<div id="o-nas-containter">
 				<div id="o-nas">
 					<div id="o-nas-left">
@@ -41,6 +107,7 @@ import Footer from '../components/Footer.astro'
 				<!-- TODO - to wychodzace poza x axis -->
 				
 			</div>
+
 			<div id="first-photo-containter" >
 				<div id="first-photo-text-container">
 					<p>
@@ -97,25 +164,28 @@ import Footer from '../components/Footer.astro'
 		#main-readable-portion {
 			display: grid;
 			grid-template-columns: 1fr 82vw 2fr;
-			grid-template-rows: 10vh 1250px 82vh auto 1fr;
+			grid-template-rows: 10vh auto 1250px 82vh auto 1fr;
 			width: 100vw;
 			height: 2000px;
-			background-color: rgba(241, 239, 239, 0.97);
-			backdrop-filter: blur(15px);
+			/* To jest super blur effect ale na teraz wyłączam!!! */
+			/* background-color: rgba(241, 239, 239, 0.97); */
+			/* backdrop-filter: blur(15px); */
+			background-color: rgba(241, 239, 239, 1);;
+    		backdrop-filter: opacity(1);
 			grid-row-start: 2;
 			height: auto;
 		}
 		
 		#o-nas-containter {
 			grid-column: 2 / 4;
-			grid-row-start: 2;
+			grid-row-start: 3;
 			z-index: 1;
 		}
 		
 		#o-nas-containter-bg {
 			height: 40%;
 			grid-column: 1/4;
-			grid-row: 2/3;
+			grid-row: 3/4;
 			bottom: 0;
 			align-self: flex-end;
 			z-index: 0;
@@ -169,6 +239,112 @@ import Footer from '../components/Footer.astro'
 			margin-bottom: 25vh;
 			align-self: center;
 		}
+		#trasa-section {
+			grid-row: 1 / 3;
+			grid-column: 1 / 4;
+			background-image: url('../assets/tlo-trasa.png');
+			background-size: cover;
+		}
+		#trasa-main-container {
+
+			padding-left: 9.6vw;
+    		padding-bottom: 9.6%;
+			display: grid;
+			/* grid-template-columns: 747px auto; */
+			grid-template-columns: 37.7vw auto;
+
+			/* margin-left: 79px;
+			display: grid;
+    		grid-template-columns: 747px auto;
+			grid-row-start: 2;
+			grid-column: 2 / 4; */
+
+			 /* To jest przed dodaniem trasy strona: */
+			/* padding-top: 50px; */
+			/* display: grid; */
+			/* grid-template-columns: 1fr 82vw 2fr; */
+			/* grid-template-rows: 10vh 1250px 1000px 82vh auto 1fr; */
+			/* background-color: rgb(241, 239, 239); */
+		}
+		#trasa {
+			/* padding-right: 46px; */
+			container-type: inline-size;
+
+		}
+		.trasa-info-buy-container {
+			margin-bottom: 93px;
+		}
+		.trasa-info-buy {
+			display: flex;
+    		justify-content: space-between;
+			padding: 0px 23px 0 7px;
+			align-items: center;
+		}
+		.trasa-info-buy > p {
+			font-size: 23px;
+			-webkit-font-smoothing: antialiased;
+			/* line-height: 127.387%; */
+		}
+		#trasa > h2 {
+			color: #262626;
+			font-family: Elsie;
+			/* font-size: 3.8rem; */
+			/* font-size: 4.4rem; */
+			/* font-size: 8.2vh; */
+			/* font-size: 84.378px;
+			font-size: calc(23px + 3vw); */
+        	font-size: 12cqi;
+			font-style: normal;
+			font-weight: 400;
+			line-height: normal;
+			align-self: center;
+			/* text-transform: uppercase; */
+			-webkit-font-smoothing: antialiased;
+			margin-bottom: 57px;
+			margin-top: 140px;
+			text-transform: uppercase;
+
+		}
+
+		.trasa-images {
+			padding-top: 21%;
+			margin-left: -30px;
+
+		}
+		.trasa-photo {
+			width: 56.3vw;
+		}
+		.biber-kropki {
+			margin-left: 13.7vw;
+		}
+
+		.trasa-repertuar-container {
+			justify-self: center;
+
+			width: 926px;
+			margin-bottom: 12.8vh;
+		}
+		.trasa-repertuar-circle {
+			width: 925px;
+			height: 242px;
+			border: 1px solid #CA602D; 
+			border-radius: 50%;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.trasa-repertuar-circle > div {
+			text-align: center;
+			color: #CA602D;
+			line-height: 1.4;
+			font-size: 1.3rem;
+		}
+
+		.trasa-repertuar-circle > div p {
+			margin: 0;
+		}
 
 		#o-nas-right-tekscik {
 			color: #343232;
@@ -185,7 +361,7 @@ import Footer from '../components/Footer.astro'
 			display: flex;
 			justify-content: center;
 			grid-column: 1/4;
-			grid-row-start: 3;
+			grid-row-start: 4;
 			background-image: url('../assets/first_photo_main.png'); /* Set the background image */
 			background-size: cover; /* Cover the whole div */
 			background-position: center;
@@ -210,7 +386,7 @@ import Footer from '../components/Footer.astro'
 		#kalendarz-container {
 			display: flex;
 			justify-content: center;
-			grid-row: 4/5;
+			grid-row: 5/6;
 			grid-column: 1/4;
 			background-color: white;
 			padding-bottom: 4vw;
@@ -218,11 +394,12 @@ import Footer from '../components/Footer.astro'
 
 		#kalendarz-container > div {
 			align-self: center;
-			height: 70%;
+			/* height: 70%; */
+			/* height: 70%; */
 			width: 90%;
 			padding: 0 5.5vw;
 			padding-bottom: 17vh;
-			
+			margin-top: 4%;
 			/* padding-left: 0; */
 		}
 
@@ -240,11 +417,22 @@ import Footer from '../components/Footer.astro'
 			background: lightgray url(../assets/tlo-kalendarz.png) 50% / cover no-repeat;
 		}
 
+		.trasa-wydarzenia {
+			display: flex;
+			justify-content: space-between;
+			flex-direction: row;
+			/* height: 600px; */
+		}
+
+		.trasa-wydarzenia > img {
+			height: 30vw;
+			width: auto;
+		}
 		.wydarzenia {
 			display: flex;
 			justify-content: space-between;
 			flex-direction: row;
-			height: 600px;
+			/* height: 600px; */
 		}
 
 		.wydarzenia > img {
@@ -256,7 +444,7 @@ import Footer from '../components/Footer.astro'
 		#second-quote-main {
 			display: flex;
 			flex-direction: row;
-			grid-row: 5/6;
+			grid-row: 6/7;
 			grid-column: 1/4;
 			height: 56vw;
 		}
@@ -306,6 +494,45 @@ import Footer from '../components/Footer.astro'
 			padding-right: 4vw;
 		}
 
+    .buy-ticket {
+		background: #F9F6EC;
+		border: 0.1px solid #746f66ed;
+		padding: 1svh 2.5svh 0.8svh 2.5svh;
+		border-radius: 20px;
+		font-size: 1.56svh;
+		letter-spacing: 0.5px;
+		color: #36322fc4;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		width: fit-content;
+		text-decoration: none;
+		scale: 1.18;
+		height: 20px;
+		-webkit-font-smoothing: antialiased;
+		/* margin-left: 20px; */
+		width: 7.1svh;
+		text-wrap: nowrap;
+		text-align: center;
+		
+    }
+
+	.buy-ticket:hover {
+		background-color: #2c2c2c;
+		color: #f5f3f0;
+		border-color: #2c2c2c;
+	}
+
+    .buy-ticket > a {
+        text-decoration: none;
+        color: #666;
+        font-family: 'MyrkenFont';
+    }
+
+		@media screen and (min-width: 1000px) {
+			.buy-ticket {
+				margin-left: 20px;
+			}
+		}
 /* max-width 1000px max-width 1000px max-width 1000px max-width 1000px max-width 1000px max-width 1000px max-width 1000px max-width 1000px max-width 1000px */
 		@media screen and (max-width: 1000px) {
 			#fantastica-glowna {
@@ -315,6 +542,92 @@ import Footer from '../components/Footer.astro'
 				width: -webkit-fill-available;
 				grid-template-rows: 10vh 196vw 82vh calc(800px + 117vw) auto;
 			}
+
+		#trasa-section {
+
+		}
+		#trasa-main-container {
+
+		}
+		#trasa {
+
+		}
+		.trasa-info-buy-container {
+
+		}
+		.trasa-info-buy {
+		}
+		.trasa-info-buy > p {
+		}
+		#trasa > h2 {
+			
+		}
+
+		.trasa-images {
+
+		}
+		.trasa-photo {
+		}
+		.biber-kropki {
+
+		}
+
+		.trasa-repertuar-container {
+			
+		}
+		.trasa-repertuar-circle {
+			
+		}
+
+		.trasa-repertuar-circle > div {
+			
+		}
+
+		.trasa-repertuar-circle > div p {
+
+		}
+		#trasa-section {
+			
+		}
+		#trasa-main-container {
+
+		}
+		#trasa {
+
+		}
+		.trasa-info-buy-container {
+
+		}
+		.trasa-info-buy {
+			
+		}
+		.trasa-info-buy > p {
+			
+		}
+		#trasa > h2 {
+			
+		}
+
+		.trasa-images {
+
+		}
+		.biber-kropki {
+
+		}
+
+		.trasa-repertuar-container {
+
+		}
+		.trasa-repertuar-circle {
+
+		}
+
+		.trasa-repertuar-circle > div {
+		}
+
+		.trasa-repertuar-circle > div p {
+
+		}
 
 			#o-nas-containter {
 				grid-column: 1/4;
@@ -406,15 +719,155 @@ import Footer from '../components/Footer.astro'
 
 /* max-width 600 pixels max-width 600 pixels max-width 600 pixels max-width 600 pixels max-width 600 pixels */
 		@media screen and (max-width: 600px) {
+			body {
+				height: auto;
+			}
 			#fantastica-glowna {
 				grid-template-rows: 110vh 1fr;
 			}
 			#main-readable-portion {        
-				grid-template-rows: 10vh 1250px 82vh auto calc(515px + 114vw);
+				grid-template-rows: 10vh 1250px auto auto auto calc(515px + 114vw);
 			}
+		#trasa-section {
+			height: max-content;
+		}
+		#trasa-main-container {
+			padding-right: 8.3vw;
+			padding-left: 0.2vw;
+			/* padding-inline: 8.3vw; */
+			grid-template-columns: auto;
+            display: grid;
+		}
+		#trasa {
+			/* padding-left: 8.3vw; */
+			padding-inline: 8.3vw;
+			/* width: max-content; */
+			width: 100vw;
+            display: grid;
+            z-index: 1;
+            grid-row: 1 / 2;
+            grid-column: 1 / 2;
+			box-sizing: border-box;
+		}
+		#trasa > h2 {
+			font-size: 10.1vw;
+			margin-top: 65px;
+			margin-bottom: 19px;
+			text-transform: uppercase;
+		}
+		.trasa-info-buy-container {
+			/* margin-bottom: 320px; */
+			margin-bottom: calc(170px + 35vw);			
+		}
+		.trasa-info-buy {
+		}
+		.trasa-info-buy > p {
+			font-size: clamp(12px, 4.1vw, 23px);
+            width: 44vw;
+		}
+
+		.trasa-images {
+			display: grid;
+            z-index: 2;
+            grid-row: 1 / 2;
+            grid-column: 1 / 2;
+			margin-left: 7px;
+		}
+		.biber-kropki {
+			display: none;
+		}
+
+		.trasa-repertuar-container {
+			width: auto;
+			margin-bottom: 80px;
+		}
+		.trasa-repertuar-circle {
+            width: 83vw;
+            height: fit-content;
+            border-radius: 3%;
+            margin-left: 5px;
+		}
+
+		.trasa-repertuar-circle > div {
+			font-size: 1.1rem;
+            line-height: 1.2;
+            width: 85vw;
+		}
+
+		.trasa-repertuar-circle > div p {
+
+		}
+		#trasa-section {
+			
+		}
+		#trasa-main-container {
+
+		}
+		#trasa {
+
+		}
+		.trasa-info-buy-container {
+			/* margin-bottom: calc(170px + 35vw); */
+		}
+		.trasa-info-buy {
+			/* padding: 0px 12px 0 0px; */
+			margin: 0px -4px 0 -2px;
+			padding: 0px 15px 0 5px;
+		}
+		.trasa-info-buy > p {
+			
+		}
+		#trasa > h2 {
+			
+		}
+		.buy-ticket {
+			padding: 2.6svw 4svw 2.3svw 4svw;
+		}
+		.trasa-images {
+			justify-content: center;
+            padding-top: 0;
+            /* margin-top: 295px; */
+			/* margin-top: calc(330px - 4vw); */
+			margin-top: calc(140px - -39vw);
+		}
+		.trasa-photo {
+			width: 95vw;
+		}
+		.biber-kropki {
+
+		}
+
+		.trasa-repertuar-container {
+
+		}
+		.trasa-repertuar-circle {
+            box-sizing: border-box;
+            padding: 20px;
+		}
+
+		.trasa-repertuar-circle > div {
+		}
+
+		.trasa-repertuar-circle > div p {
+
+		}
+
+		#o-nas {
+			height: auto;
+			margin-bottom: 110px;
+		}
 
 			#o-nas img {
 				/* margin-right: 2vw; */
+			}
+
+			#first-photo-text-container {
+				width: 94vw;
+				height: 66vh;
+				border-radius: 11px;
+				border: 1px solid rgba(220, 220, 220, 0.78);
+				margin-top: 6vh;
+				margin-bottom: 6vh;
 			}
 
 			#first-photo-text-container > p {
@@ -433,6 +886,12 @@ import Footer from '../components/Footer.astro'
 			#fbl {
 				font-size: 12.5vw;
 				/* align-items: start; */
+			}
+			#second-quote-main {
+				grid-row: 6 / 7;
+			}
+			#second-purple-quote {
+				/* height: auto; */
 			}
 			#second-quote-main > div > h2 {
 				font-size: 7.3vw;
