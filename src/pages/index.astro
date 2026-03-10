@@ -532,6 +532,10 @@ import Footer from '../components/Footer.astro'
 		@media screen and (min-width: 1000px) {
 			#trasa-section {
 				display: grid;
+				
+				/* Causes fade in between first and second seciton */
+				padding-bottom: 10vh;
+				-webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 			}
 			.buy-ticket {
 				margin-left: 20px;
