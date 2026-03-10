@@ -1,499 +1,782 @@
 ---
 import { Image } from 'astro:assets';
+import Strzlk from '../../assets/strzlk4hover.png';
 import Glowna_cmpnt3 from '../../components/Glowna_cmpnt3.astro';
 import Layout from '../../layouts/Layout.astro';
+import biberKropki from '../../assets/biber-kropki-trasa.svg';
+import trasaPhoto from '../../assets/trasa-photo.webp';
 import kimjestesmyPhoto from '../../assets/kimjestesmy-photo.png'
 import Wydarzenia from '../../components/en_components/Wydarzenia.astro'
+import WydarzeniaTrasa from '../../components/en_components/WydarzeniaTrasa.astro'
 import kalendarzPicMain from '../../assets/kalendarz-pic-main.png'
 import secondPhotoMain from '../../assets/second-photo-main.png'
 import Footer from '../../components/en_components/Footer.astro'
 ---
-<script>
-	import Lenis from "lenis"
-
-    const lenis = new Lenis()
-
-    function raf(time: number) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
-    requestAnimationFrame(raf)
-		
-</script>
 
 <Layout>
-	<div id="fantastica-glowna">
-		<Glowna_cmpnt3 />
-		<div id="main-readable-portion">
-			<div id="o-nas-containter">
-				<div id="o-nas">
-					<div id="o-nas-left">
-						<h2 style="font-family: Gilda Display;">WHO<br>ARE WE?</h2>
-					</div>
-					<Image src={kimjestesmyPhoto} alt="Who are we" />
-					<div id="o-nas-right">
-						<div id="o-nas-right-tekscik">
-							<p>
-								Fantastica Ensemble is a space where Baroque meets unparalleled expression and an innovative approach. We are a flexible ensemble, with our core consisting of violinist Aleksandra Owczarek and harpsichordist Klaudia Łoboda—artists who boldly explore rare and forgotten works, bringing them back to life. We do not recreate Baroque—we reinvent it.
-							</p>
-							<p>
-								Fantastica Ensemble is more than just a group—it is an artistic mission. We play music that knows no boundaries, defies conventions, and redefines what early music truly is. Authenticity, expression, unpredictability—this is our DNA. In our interpretations, you will hear everything we love most in art: intensity, sensuality, and beauty.
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="o-nas-containter-bg">
-				<!-- TODO - to wychodzace poza x axis -->
-				
-			</div>
-			<div id="first-photo-containter" >
-				<div id="first-photo-text-container">
-					<p>
-						„Baroque Reimagined.<br> Hear the Voice of the Youth. ”
-					</p>
-				</div>
-			</div>
-			<div id="kalendarz-container">
-				<div>
-					<!-- TODO - make gradient move i linki i na szerokosc zrobic max bo wyglada goofy w safari-->
-					<h2>
-						 CALENDAR
-					</h2>
-					<div class="wydarzenia">
-						<Wydarzenia title="Wydarzenia" />
-						<Image src={kalendarzPicMain} alt="" />
-					</div>
-				</div>
-			</div>
-			<div id="second-quote-main">
-				<Image src={secondPhotoMain} alt="Photo of Klaudia and Aleksandra with second quote" loading="lazy" decoding="async"/>
-				<div>
-					<h2>“Revolutionizing the world of Baroque music with their innovative approach.”</h2>
-					<h4>Karolina Sajniak-Drzyzga<br>
-						Julian Cochran Foundation </h4>
-					<a>“Captivating,
-						expressive performances demonstrate the musicians' deep passion for the repertoire of the
-						Baroque repertoire. Great contrasts, lyricism and danceability are an integral
-						part of their interpretations. The ensemble is not afraid to seek new solutions,
-						boldly exploring alternative concert venues and showing
-						Baroque music to a wider audience. This is a band whose doings
-						actions are worth following!
-						
-						Translated with DeepL.com (free version).”
-					</a>
-					<h4 style="padding-top: 1vw; text-align: left;">Katarzyna Czubek<br>Krzysztof Penderecki Academy of Music, Capella
-						Cracoviensis, Młoda Muzyka Dawna festival</h4>
-				</div>
-			</div>
+    <div id="fantastica-glowna">
+        <Glowna_cmpnt3 />
+        <div id="main-readable-portion">
+            <section id="trasa-section">
+                <div id="trasa-main-container">
+                    <div id="trasa">
+                        <h2>Sacrum/ <br>Profanum Tour</h2>
+                        <div class="trasa-info-buy-container">
+                            <div class="trasa-info-buy">
+                                <p>Biber. A bit of sacrum. A bit of profanum. <br>A sensual game of contrasts</p>
+                                
+                                <a class="buy-ticket onImage0" href="https://iframe657.biletyna.pl/" target="_blank">
+                                    Buy ticket
+                                </a>
+                            </div>
+                        </div>
+                        <div class="trasa-kalendarz">
+                            <div class="trasa-wydarzenia">
+                                <WydarzeniaTrasa title="Events" />
+                                    </div>
+                        </div>
+                    </div>
+                    <div class="trasa-images">
+                        <img class="biber-kropki" src={biberKropki.src} width={biberKropki.width} height={biberKropki.height} alt="Biber dots" />
+                        <img 
+                            class="trasa-photo" 
+                            src={trasaPhoto.src} 
+                            style={{ height: 'auto', scale: "-1 1"}} 
+                            alt="Fantastica photo for the tour section" 
+                        />
+                    </div>
+                </div>
+                <div class="trasa-repertuar-container">
+                    <div class="trasa-repertuar-circle">
+                        <div>
+                            <p>G.A. Pandolfi Mealli - Sonaty op. 4</p>
+                            <p>G.A. Pandolfi Mealli - La barnabea</p>
+                            <p>G.A. Pandolfi Mealli - La viviana La monella romanesca</p>
+                            <p>G.A. Pandolfi Mealli - La bianchiccia</p>
+                            <p>G.A. Pandolfi Mealli - La stella</p>
+                            <p>G.A. Pandolfi Mealli - La vinciolina</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div id="o-nas-containter">
+                <div id="o-nas">
+                    <div id="o-nas-left">
+                        <h2 style="font-family: Gilda Display;">WHO<br>ARE WE?</h2>
+                    </div>
+                    <Image src={kimjestesmyPhoto} alt="Who are we" />
+                    <div id="o-nas-right">
+                        <div id="o-nas-right-tekscik">
+                            <p>
+                                Fantastica Ensemble is a space where Baroque meets unparalleled expression and an innovative approach. We are a flexible ensemble, with our core consisting of violinist Aleksandra Owczarek and harpsichordist Klaudia Łoboda—artists who boldly explore rare and forgotten works, bringing them back to life. We do not recreate Baroque—we reinvent it.
+                            </p>
+                            <p>
+                                Fantastica Ensemble is more than just a group—it is an artistic mission. We play music that knows no boundaries, defies conventions, and redefines what early music truly is. Authenticity, expression, unpredictability—this is our DNA. In our interpretations, you will hear everything we love most in art: intensity, sensuality, and beauty.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="o-nas-containter-bg">
+                </div>
+            <div id="first-photo-containter" >
+                <div id="first-photo-text-container">
+                    <p>
+                        „Baroque Reimagined.<br> Hear the Voice of the Youth. ”
+                    </p>
+                </div>
+            </div>
+            <div id="kalendarz-container">
+                <div>
+                    <h2>
+                         CALENDAR
+                    </h2>
+                    <div class="wydarzenia">
+                        <Wydarzenia title="Wydarzenia" />
+                        <Image src={kalendarzPicMain} alt="" />
+                    </div>
+                </div>
+            </div>
+            <div id="second-quote-main">
+                <Image src={secondPhotoMain} alt="Photo of Klaudia and Aleksandra with second quote" loading="lazy" decoding="async"/>
+                <div id="second-purple-quote">
+                    <h2>“Revolutionizing the world of Baroque music with their innovative approach.”</h2>
+                    <h4>Karolina Sajniak-Drzyzga<br>
+                        Julian Cochran Foundation </h4>
+                    <a>“Captivating,
+                        expressive performances demonstrate the musicians' deep passion for the repertoire of the
+                        Baroque repertoire. Great contrasts, lyricism and danceability are an integral
+                        part of their interpretations. The ensemble is not afraid to seek new solutions,
+                        boldly exploring alternative concert venues and showing
+                        Baroque music to a wider audience. This is a band whose doings
+                        actions are worth following!
+                        
+                        Translated with DeepL.com (free version).”
+                    </a>
+                    <h4 style="padding-top: 1vw; text-align: left;">Katarzyna Czubek<br>Krzysztof Penderecki Academy of Music, Capella
+                        Cracoviensis, Młoda Muzyka Dawna festival</h4>
+                </div>
+            </div>
 
-	
-			</div>
-		</div>
-	</div>
-	<Footer animate:persist/>
-
-
-
-
-	<style>
-		#fantastica-glowna {
-			display: grid;
-			width: 100vw;
-			/* place-items: center; */
-			grid-template-rows: 150vh 1fr; 
-
-		}
-
-		#main-readable-portion {
-			display: grid;
-			grid-template-columns: 1fr 82vw 2fr;
-			grid-template-rows: 10vh 1250px 82vh auto 1fr;
-			width: 100vw;
-			height: 2000px;
-			background-color: rgba(241, 239, 239, 0.97);
-			backdrop-filter: blur(15px);
-			grid-row-start: 2;
-			height: auto;
-		}
-		
-		#o-nas-containter {
-			grid-column: 2 / 4;
-			grid-row-start: 2;
-			z-index: 1;
-		}
-		
-		#o-nas-containter-bg {
-			height: 40%;
-			grid-column: 1/4;
-			grid-row: 2/3;
-			bottom: 0;
-			align-self: flex-end;
-			z-index: 0;
-			background: linear-gradient(0deg, #E16F9E 21.65%, rgba(255, 255, 255, 0.00) 101.13%);
-		}
-
-		#o-nas {
-			display: grid;
-			grid-template-columns: 1fr 1fr;	
-			grid-template-rows: 20% 1fr;
-			gap: 130px 100px;
-			height: 970px;
-		}
-
-		#o-nas > img {
-			width: 98%;
-			height: auto;
-			margin-top: 85px;
-			grid-column: 1/2;
-			grid-row: 2/3;
-		}
-		#o-nas-right {
-			grid-column: 2/3;
-			grid-row: 1/3;
-		}
-
-		#o-nas-left {
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-			height: 1020px;
-		}
-		#o-nas-left h2 {
-			color: #262626;
-			font-family: Elsie;
-			font-size: 3.8rem;
-			font-style: normal;
-			font-weight: 400;
-			line-height: normal;
-			align-self: center;
-			padding-right: 25px;
-		}
-
-		#o-nas-left img {
-			height: auto;
-			width: calc(23vw + 280px);
-			align-self: flex-end;
-		}
-
-		#o-nas-right {
-			margin-bottom: 25vh;
-			align-self: center;
-		}
-
-		#o-nas-right-tekscik {
-			color: #343232;
-			text-align: justify;
-			font-family: "Gilda Display";
-			font-size: calc(0.6vw + 11.5px);
-			font-style: normal;
-			font-weight: 400;
-			line-height: normal;
-			margin-right: calc(33vw - 340px);
-		}
-
-		#first-photo-containter {
-			display: flex;
-			justify-content: center;
-			grid-column: 1/4;
-			grid-row-start: 3;
-			background-image: url('../../assets/first_photo_main.png'); /* Set the background image */
-			background-size: cover; /* Cover the whole div */
-			background-position: center;
-		}
-			#first-photo-text-container {
-				width: 94vw;
-				height: 71vh;
-				border-radius: 11px;
-				border: 1px solid rgba(220, 220, 220, 0.78);
-				margin-top: 6vh;
-			}
-
-				#first-photo-text-container > p {
-					color: #FFF;
-					font-family: "Gilda Display";
-					font-size: 3.2rem;
-					font-style: normal;
-					font-weight: 400;
-					line-height: normal;
-					padding: 0 3vw;
-				}
-		#kalendarz-container {
-			display: flex;
-			justify-content: center;
-			grid-row: 4/5;
-			grid-column: 1/4;
-			background-color: white;
-			padding-bottom: 4vw;
-		}
-
-		#kalendarz-container > div {
-			align-self: center;
-			height: 70%;
-			width: 90%;
-			padding: 0 5.5vw;
-			padding-bottom: 17vh;
-		}
-
-		#kalendarz-container > div > h2 {
-			color: #262626;
-			font-family: Elsie;
-			font-size: 8vh;
-			font-style: normal;
-			font-weight: 400;
-			line-height: normal;
-			padding-left: 3.5%;
-		}
-	
-		#kalendarz-container {
-			background: lightgray url(../../assets/tlo-kalendarz.png) 50% / cover no-repeat;
-		}
-
-		.wydarzenia {
-			display: flex;
-			justify-content: space-between;
-			flex-direction: row;
-			height: 600px;
-		}
-
-		.wydarzenia > img {
-			height: 30vw;
-			width: auto;
-		}
-
-		/* Drugi quote sekcja */
-		#second-quote-main {
-			display: flex;
-			flex-direction: row;
-			grid-row: 5/6;
-			grid-column: 1/4;
-			height: 56vw;
-		}
-		#second-quote-main > img
-		{
-			width: 50vw;
-			height: auto;
-		}
-		#second-quote-main > div {
-			display: flex;
-			flex-direction: column;
-			padding: 1vw 2vw 3vw 4vw;
-			background-color: #D9EDFF;
-			background-image: url('../../assets/quote-second-gdnt.svg');
-			background-size: cover;
-			background-position: center;
-			background-repeat: no-repeat;
-		}
+    
+            </div>
+        </div>
+    </div>
+    <Footer animate:persist/>
 
 
-		#second-quote-main > div > h2 {
-			color: #032D52;
-			text-align: right;
-			font-family: "Gilda Display";
-			font-size: 3.3vw;
-			font-style: normal;
-			font-weight: 400;
-			line-height: normal;
-		}
-		#second-quote-main > div > h4 {
-			color: #032D52;
-			font-family: "Gilda Display";
-			font-size: calc(0.6vw + 10px);
-			font-style: normal;
-			font-weight: 400;
-			line-height: normal;
-			text-align: right;
-		}
-		#second-quote-main > div > a {
-			color: #032D52;
-			font-family: "Gilda Display";	
-			font-size: 1.5vw;
-			font-style: normal;
-			font-weight: 400;
-			line-height: normal;
-			margin-top: auto;
-			padding-right: 4vw;
-		}
+
+
+    <style>
+        #fantastica-glowna {
+            display: grid;
+            width: 100vw;
+            /* place-items: center; */
+            grid-template-rows: 150vh 1fr; 
+
+        }
+
+        #main-readable-portion {
+            display: grid;
+            grid-template-columns: 1fr 82vw 2fr;
+            grid-template-rows: 10vh auto 1250px 82vh auto 1fr;
+            width: 100vw;
+            height: 2000px;
+            /* To jest super blur effect ale na teraz wyłączam!!! */
+            /* background-color: rgba(241, 239, 239, 0.97); */
+            /* backdrop-filter: blur(15px); */
+            background-color: rgba(241, 239, 239, 1);
+            backdrop-filter: opacity(1);
+            grid-row-start: 2;
+            height: auto;
+        }
+        
+        #o-nas-containter {
+            grid-column: 2 / 4;
+            grid-row-start: 3;
+            z-index: 1;
+        }
+        
+        #o-nas-containter-bg {
+            height: 40%;
+            grid-column: 1/4;
+            grid-row: 3/4;
+            bottom: 0;
+            align-self: flex-end;
+            z-index: 0;
+            background: linear-gradient(0deg, #E16F9E 21.65%, rgba(255, 255, 255, 0.00) 101.13%);
+        }
+
+        #o-nas {
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+            grid-template-rows: 20% 1fr;
+            gap: 130px 100px;
+            height: 970px;
+        }
+
+        #o-nas > img {
+            width: 98%;
+            height: auto;
+            margin-top: 85px;
+            grid-column: 1/2;
+            grid-row: 2/3;
+        }
+        #o-nas-right {
+            grid-column: 2/3;
+            grid-row: 1/3;
+        }
+
+        #o-nas-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 1020px;
+        }
+        #o-nas-left h2 {
+            color: #262626;
+            font-family: Elsie;
+            font-size: 3.8rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            align-self: center;
+            padding-right: 25px;
+        }
+
+        #o-nas-left img {
+            height: auto;
+            width: calc(23vw + 280px);
+            align-self: flex-end;
+        }
+
+        #o-nas-right {
+            margin-bottom: 25vh;
+            align-self: center;
+        }
+
+        #trasa-section {
+            grid-row: 1 / 3;
+            grid-column: 1 / 4;
+            background-image: url('../../assets/tlo-trasa.png');
+            background-size: cover;
+        }
+        #trasa-main-container {
+            padding-left: 9.6vw;
+            padding-bottom: 9.6%;
+            display: grid;
+            grid-template-columns: 37.7vw auto;
+        }
+        #trasa {
+            container-type: inline-size;
+        }
+        .trasa-info-buy-container {
+            margin-bottom: 93px;
+        }
+        .trasa-info-buy {
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 23px 0 7px;
+            align-items: center;
+        }
+        .trasa-info-buy > p {
+            font-size: 23px;
+            -webkit-font-smoothing: antialiased;
+        }
+        #trasa > h2 {
+            color: #262626;
+            font-family: Elsie;
+            font-size: 12cqi;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            align-self: center;
+            -webkit-font-smoothing: antialiased;
+            margin-bottom: 57px;
+            margin-top: 140px;
+            text-transform: uppercase;
+        }
+
+        .trasa-images {
+            padding-top: 21%;
+            margin-left: -30px;
+        }
+        .trasa-photo {
+            width: 56.3vw;
+        }
+        .biber-kropki {
+            margin-left: 13.7vw;
+        }
+
+        .trasa-repertuar-container {
+            justify-self: center;
+            width: 926px;
+            margin-bottom: 12.8vh;
+            display: grid;
+            justify-content: center;
+        }
+        .trasa-repertuar-circle {
+            width: 925px;
+            height: 242px;
+            border: 1px solid #CA602D; 
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .trasa-repertuar-circle > div {
+            text-align: center;
+            color: #CA602D;
+            line-height: 1.4;
+            font-size: 1.3rem;
+        }
+
+        .trasa-repertuar-circle > div p {
+            margin: 0;
+        }
+
+        #o-nas-right-tekscik {
+            color: #343232;
+            text-align: justify;
+            font-family: "Gilda Display";
+            font-size: calc(0.6vw + 11.5px);
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin-right: calc(33vw - 340px);
+        }
+
+        #first-photo-containter {
+            display: flex;
+            justify-content: center;
+            grid-column: 1/4;
+            grid-row-start: 4;
+            background-image: url('../../assets/first_photo_main.png'); /* Set the background image */
+            background-size: cover; /* Cover the whole div */
+            background-position: center;
+        }
+            #first-photo-text-container {
+                width: 94vw;
+                height: 71vh;
+                border-radius: 11px;
+                border: 1px solid rgba(220, 220, 220, 0.78);
+                margin-top: 6vh;
+            }
+
+                #first-photo-text-container > p {
+                    color: #FFF;
+                    font-family: "Gilda Display";
+                    font-size: 3.2rem;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    padding: 0 3vw;
+                }
+        #kalendarz-container {
+            display: flex;
+            justify-content: center;
+            grid-row: 5/6;
+            grid-column: 1/4;
+            background-color: white;
+            padding-bottom: 8vw;
+        }
+
+        #kalendarz-container > div {
+            align-self: center;
+            /* height: 70%; */
+            width: 90%;
+            padding: 0 5.5vw;
+            padding-bottom: 17vh;
+            margin-top: 5.5%;
+        }
+
+        #kalendarz-container > div > h2 {
+            color: #262626;
+            font-family: Elsie;
+            font-size: 8vh;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            padding-left: 3.5%;
+        }
+    
+        #kalendarz-container {
+            background: lightgray url(../../assets/tlo-kalendarz.png) 50% / cover no-repeat;
+        }
+        
+        .trasa-wydarzenia {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+
+        .trasa-wydarzenia > img {
+            height: 30vw;
+            width: auto;
+        }
+
+        .wydarzenia {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            /* height: 600px; */
+        }
+
+        .wydarzenia > img {
+            height: 30vw;
+            width: auto;
+        }
+
+        /* Drugi quote sekcja */
+        #second-quote-main {
+            display: flex;
+            flex-direction: row;
+            grid-row: 6/7;
+            grid-column: 1/4;
+            height: 56vw;
+        }
+        #second-quote-main > img
+        {
+            width: 50vw;
+            height: auto;
+        }
+        #second-quote-main > div {
+            display: flex;
+            flex-direction: column;
+            padding: 1vw 2vw 3vw 4vw;
+            background-color: #D9EDFF;
+            background-image: url('../../assets/quote-second-gdnt.svg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+
+        #second-quote-main > div > h2 {
+            color: #032D52;
+            text-align: right;
+            font-family: "Gilda Display";
+            font-size: 3.3vw;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+        #second-quote-main > div > h4 {
+            color: #032D52;
+            font-family: "Gilda Display";
+            font-size: calc(0.6vw + 10px);
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-align: right;
+        }
+        #second-quote-main > div > a {
+            color: #032D52;
+            font-family: "Gilda Display";   
+            font-size: 1.5vw;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin-top: auto;
+            padding-right: 4vw;
+        }
+        
+        .buy-ticket {
+            background: #F9F6EC;
+            border: 0.1px solid #746f66ed;
+            padding: 1svh 2.5svh 0.8svh 2.5svh;
+            border-radius: 20px;
+            font-size: 1.56svh;
+            letter-spacing: 0.5px;
+            color: #36322fc4;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: fit-content;
+            text-decoration: none;
+            scale: 1.18;
+            height: 20px;
+            -webkit-font-smoothing: antialiased;
+            /* margin-left: 20px; */
+            width: 7.1svh;
+            text-wrap: nowrap;
+            text-align: center;
+        }
+
+        .buy-ticket:hover {
+            background-color: #2c2c2c;
+            color: #f5f3f0;
+            border-color: #2c2c2c;
+        }
+
+        .buy-ticket > a {
+            text-decoration: none;
+            color: #666;
+            font-family: 'MyrkenFont';
+        }
+
+        @media screen and (min-width: 1000px) {
+            #trasa-section {
+                display: grid;
+                /* Causes fade in between first and second seciton */
+                padding-bottom: 10vh;
+                -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+            }
+            .buy-ticket {
+                margin-left: 20px;
+            }
+        }
 
 /* max-width 1000px max-width 1000px max-width 1000px max-width 1000px max-width 1000px max-width 1000px max-width 1000px max-width 1000px max-width 1000px */
-		@media screen and (max-width: 1000px) {
-			#fantastica-glowna {
-				grid-template-rows: 110vh 72%;
-			}
-			#main-readable-portion {
-				width: -webkit-fill-available;
-				grid-template-rows: 10vh 196vw 82vh calc(800px + 117vw) auto;
-			}
+        @media screen and (max-width: 1000px) {
+            #fantastica-glowna {
+                grid-template-rows: 110vh 72%;
+            }
+            #main-readable-portion {
+                width: -webkit-fill-available;
+                grid-template-rows: 10vh 196vw 82vh calc(800px + 117vw) auto;
+            }
 
-			#o-nas-containter {
-				grid-column: 1/4;
-			}
+            #o-nas-containter {
+                grid-column: 1/4;
+            }
 
-			#o-nas {
-				position: relative; 
-				grid-template-columns: 1fr;
-				grid-template-rows: auto auto auto;
-				gap: 50px;
-			}
-			#o-nas-left {
-				height: auto;
-				gap: 5px;																																															
-				grid-column: 1/2;
-				grid-row: 1/2;
-				/* height: 264vw; */
-			}
-			#o-nas-right {
-				width: 91vw;
-				/* position: absolute; */
-				/* top: 29vh; */
-				justify-self: center;
-				grid-column: 1/2;
-				grid-row: 2/3;
-				margin-bottom: 0;
-			}
-			#o-nas img {
-				width: 95%;
-				justify-self: center;
-				align-self: center;
-				grid-column: 1/2;
-				grid-row: 3/4;
-			}
-			#o-nas-right-tekscik {
-				width: 91vw;
-				font-size: calc(1.6vw + 11.5px);
-			}
-		/* First photo iphone */
-			#first-photo-containter {
-				background-position: center;
-			}
+            #o-nas {
+                position: relative; 
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto;
+                gap: 50px;
+            }
+            #o-nas-left {
+                height: auto;
+                gap: 5px;                                                                                                                                                                                           
+                grid-column: 1/2;
+                grid-row: 1/2;
+                /* height: 264vw; */
+            }
+            #o-nas-right {
+                width: 91vw;
+                /* position: absolute; */
+                /* top: 29vh; */
+                justify-self: center;
+                grid-column: 1/2;
+                grid-row: 2/3;
+                margin-bottom: 0;
+            }
+            #o-nas img {
+                width: 95%;
+                justify-self: center;
+                align-self: center;
+                grid-column: 1/2;
+                grid-row: 3/4;
+            }
+            #o-nas-right-tekscik {
+                width: 91vw;
+                font-size: calc(1.6vw + 11.5px);
+            }
+        /* First photo iphone */
+            #first-photo-containter {
+                background-position: center;
+            }
 
-		/* kalendarz iphone */
-			.wydarzenia {
-				/* row-gap: 15vw; */
-				height: auto;
-				gap: 50px;
-			}
+        /* kalendarz iphone */
+            .wydarzenia {
+                /* row-gap: 15vw; */
+                height: auto;
+                gap: 50px;
+            }
 
-			#kalendarz-container > div {
-				align-self: auto;
-				margin-top: 4vh;
-				padding-bottom: 2.5vh;
-			}
+            #kalendarz-container > div {
+                align-self: auto;
+                margin-top: 4vh;
+                padding-bottom: 2.5vh;
+            }
 
-			#kalendarz-container > div > h2 {
-				padding: 0;
-				font-size: 7vh;
-			}
+            #kalendarz-container > div > h2 {
+                padding: 0;
+                font-size: 7vh;
+            }
 
 
-			/* Second quote iphone */
-			#second-quote-main {
-				grid-row: 5 / 6;
-				flex-direction: column-reverse;
-				height: fit-content;
-				font-size: 2.1vw;
-			}
-			#second-quote-main > div{
-				height: 450px;
-			}
-			#second-quote-main > div > a {
-				font-size: 2.1vw;
-			}
-			#second-purple-quote {
-				height: 500px;
-			}
-			#second-quote-main > img {
-				height: 600px;
-				width: 100vw;
-				object-fit: cover;    
-				object-position: bottom;
-			}
+            /* Second quote iphone */
+            #second-quote-main {
+                grid-row: 5 / 6;
+                flex-direction: column-reverse;
+                height: fit-content;
+                font-size: 2.1vw;
+            }
+            #second-quote-main > div{
+                height: 450px;
+            }
+            #second-quote-main > div > a {
+                font-size: 2.1vw;
+            }
+            #second-purple-quote {
+                height: 500px;
+            }
+            #second-quote-main > img {
+                height: 600px;
+                width: 100vw;
+                object-fit: cover;    
+                object-position: bottom;
+            }
 
-			.wydarzenia {
-				flex-direction: column;
-			}
-			.wydarzenia > img {
-				height: 114vw;
-			}
+            .wydarzenia {
+                flex-direction: column;
+            }
+            .wydarzenia > img {
+                height: 114vw;
+            }
 
 /* max-width 600 pixels max-width 600 pixels max-width 600 pixels max-width 600 pixels max-width 600 pixels */
-		@media screen and (max-width: 600px) {
-			#fantastica-glowna {
-				grid-template-rows: 110vh 1fr;
-			}
-			#main-readable-portion {        
-				grid-template-rows: 10vh 1250px 82vh auto calc(515px + 114vw);
-			}
-			#first-photo-text-container > p {
-				font-size: 2.7rem;
-			}
-			#kalendarz-container {
-				height: auto;
-			}
-			#kalendarz-container > div {
-				height: auto;
-			}
-			.fantastica-big-letters {
-				align-self: start;
-				top: 23%;
-			}
-			#fbl {
-				font-size: 12.5vw;
-				/* align-items: start; */
-			}
+        @media screen and (max-width: 600px) {
+            body {
+                height: auto;
+            }
+            #fantastica-glowna {
+                grid-template-rows: 110vh 1fr;
+            }
+            #main-readable-portion {        
+                grid-template-rows: 10vh 1250px auto auto auto calc(515px + 114vw);
+            }
+            
+            #trasa-section {
+                height: max-content;
+            }
+            #trasa-main-container {
+                padding-right: 8.3vw;
+                padding-left: 0.2vw;
+                grid-template-columns: auto;
+                display: grid;
+            }
+            #trasa {
+                padding-inline: 8.3vw;
+                width: 100vw;
+                display: grid;
+                z-index: 1;
+                grid-row: 1 / 2;
+                grid-column: 1 / 2;
+                box-sizing: border-box;
+            }
+            #trasa > h2 {
+                font-size: 10.1vw;
+                margin-top: 65px;
+                margin-bottom: 19px;
+                text-transform: uppercase;
+            }
+            .trasa-info-buy-container {
+                margin-bottom: calc(170px + 35vw);          
+            }
+            .trasa-info-buy {
+                margin: 0px -4px 0 -2px;
+                padding: 0px 15px 0 5px;
+            }
+            .trasa-info-buy > p {
+                font-size: clamp(12px, 4.1vw, 23px);
+                width: 44vw;
+            }
+            .buy-ticket {
+                padding: 2.6svw 4svw 2.6svw;
+                height: fit-content;
+            }
 
-			#second-quote-main {
-				height: auto;
-			}
-			#second-quote-main > img
-			{
-				width: 100vw;
-				height: 460px;
-			}
-			#second-quote-main > div
-			{        
-				height: 550px;
-			}
-			#second-quote-main > div > h2 {
-				font-size: 7.3vw;
-			}
-			#second-quote-main > div > h4 {
-				font-size: 3.4vw;
-			}
-			#second-quote-main > div > a {
-				font-size: 3.8vw;
-			}
+            .trasa-images {
+                display: grid;
+                z-index: 2;
+                grid-row: 1 / 2;
+                grid-column: 1 / 2;
+                margin-left: 7px;
+                justify-content: center;
+                padding-top: 0;
+                margin-top: calc(140px - -39vw);
+            }
+            .trasa-photo {
+                width: 95vw;
+            }
+            .biber-kropki {
+                display: none;
+            }
+
+            .trasa-repertuar-container {
+                width: auto;
+                margin-bottom: 80px;
+            }
+            .trasa-repertuar-circle {
+                width: 83vw;
+                height: fit-content;
+                border-radius: 3%;
+                margin-left: 5px;
+                box-sizing: border-box;
+                padding: 20px;
+            }
+            .trasa-repertuar-circle > div {
+                font-size: 1.1rem;
+                line-height: 1.2;
+                width: 85vw;
+            }
+            
+            #o-nas {
+                height: auto;
+                margin-bottom: 110px;
+            }
+
+            #first-photo-text-container {
+                width: 94vw;
+                height: 66vh;
+                border-radius: 11px;
+                border: 1px solid rgba(220, 220, 220, 0.78);
+                margin-top: 6vh;
+                margin-bottom: 6vh;
+            }
+            
+            #first-photo-text-container > p {
+                font-size: 2.7rem;
+            }
+            #kalendarz-container {
+                height: auto;
+            }
+            #kalendarz-container > div {
+                height: auto;
+            }
+            .fantastica-big-letters {
+                align-self: start;
+                top: 23%;
+            }
+            #fbl {
+                font-size: 12.5vw;
+                /* align-items: start; */
+            }
+
+            #second-quote-main {
+                grid-row: 6 / 7;
+                height: auto;
+            }
+            #second-quote-main > img
+            {
+                width: 100vw;
+                height: 460px;
+            }
+            #second-quote-main > div
+            {        
+                height: 550px;
+            }
+            #second-quote-main > div > h2 {
+                font-size: 7.3vw;
+            }
+            #second-quote-main > div > h4 {
+                font-size: 3.4vw;
+            }
+            #second-quote-main > div > a {
+                font-size: 3.8vw;
+            }
 
 /* TODO - wazne, na glownej za male literki w tym */
-			#second-quote-main > div > a, #second-quote-main > div > h4 {
-				/* font-size: 10vw; */
-			}
+            #second-quote-main > div > a, #second-quote-main > div > h4 {
+                /* font-size: 10vw; */
+            }
 
-		}
-		}
-	</style>
+        }
+        }
+    </style>
 
-	<script>
-		import { gsap } from "gsap";
-		import { ScrollTrigger } from "gsap/ScrollTrigger";
-		
-		if (typeof window !== "undefined") {
-			// Register ScrollTrigger plugin
-			gsap.registerPlugin(ScrollTrigger);
+    <script>
+        import Lenis from "lenis"
+        import { gsap } from "gsap";
+        import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+        // Initialize a new Lenis instance for smooth scrolling
+        const lenis = new Lenis();
+
+        // Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
+        lenis.on('scroll', ScrollTrigger.update);
+
+        // Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
+        // This ensures Lenis's smooth scroll animation updates on each GSAP tick
+        gsap.ticker.add((time) => {
+        lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+        });
+
+        // Disable lag smoothing in GSAP to prevent any delay in scroll animations
+        gsap.ticker.lagSmoothing(0);
 
 
-			const tl = gsap.timeline({
+        if (typeof window !== "undefined") {
+            // Register ScrollTrigger plugin
+            gsap.registerPlugin(ScrollTrigger);
 
-			scrollTrigger: {
-				trigger: "#first-photo-containter",
-				start: "top bottom",
-				end: "bottom top",
-				scrub: true,
+            const tl = gsap.timeline({
 
-			},
+            scrollTrigger: {
+                trigger: "#first-photo-containter",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true,
+            },
 
-			})
-			tl.to("#first-photo-containter", {backgroundPositionY: 10}, 0)
-		}
-	</script>
+            })
+            // To dziala zeby od poczatku do konca zdjecia przejechac
+            // tl.to("#first-photo-containter", {backgroundPositionY: "-100%"}, 0)
+            tl.to("#first-photo-containter", {backgroundPositionY: 10}, 0)
+        }
+    </script>
 </Layout>

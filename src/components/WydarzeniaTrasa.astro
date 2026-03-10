@@ -1,0 +1,74 @@
+---
+import EventCard from '../components/EventCard_trasa.astro';
+
+const events = [
+  {
+    slug: "sacrum-profanum-gliwice",
+    data: {
+      dataWydarzenia: {
+        dzien: "19",
+        mR: "kwi 2026"
+      },
+      repertuar: "Biber",
+      nazwaWydarzenia: "Sacrum/Profanum Tour",
+      miejsceWydarzenia: "Gliwice, PL",
+      czasWydarzenia: "18:00"
+    }
+  },
+  {
+    slug: "sacrum-profanum-katowice",
+    data: {
+      dataWydarzenia: {
+        dzien: "23",
+        mR: "kwi 2026"
+      },
+      repertuar: "Biber",
+      nazwaWydarzenia: "Sacrum/Profanum Tour",
+      miejsceWydarzenia: "Katowice, PL",
+      czasWydarzenia: "18:00"
+    }
+  },
+  {
+    slug: "sacrum-profanum-lomza",
+    data: {
+      dataWydarzenia: {
+        dzien: "29",
+        mR: "maj 2026"
+      },
+      repertuar: "Biber",
+      nazwaWydarzenia: "Sacrum/Profanum Tour",
+      miejsceWydarzenia: "Łomża, PL",
+      czasWydarzenia: "19:00"
+    }
+  },
+  {
+    slug: "sacrum-profanum-lublin",
+    data: {
+      dataWydarzenia: {
+        dzien: "31",
+        mR: "maj 2026"
+      },
+      repertuar: "Biber",
+      nazwaWydarzenia: "Sacrum/Profanum Tour",
+      miejsceWydarzenia: "Lublin, PL",
+      czasWydarzenia: "17:00"
+    }
+  }
+];
+---
+
+<div class="wydarzenia-cmpnt">
+    {events.map((event) => (
+        <EventCard event={event} />
+    ))}
+</div>
+
+<style>
+    .wydarzenia-cmpnt {
+        display: flex;
+        flex-direction: column;
+        gap: 2% 2%;
+        width: 100%;
+        margin-top: 8px;
+    }
+</style>
