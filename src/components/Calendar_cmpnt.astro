@@ -174,9 +174,9 @@ label {
 
 .names {
     font-size: 77%;
-    font-weight: bolder;
+    /* font-weight: bolder; */
     color: black;
-    width: stretch;
+    width: -webkit-fill-available;
     margin-left: 1%;
     height: 100%;
     position: absolute;
@@ -217,6 +217,7 @@ label {
         padding-bottom: 18vh;
         /* padding-inline: calc(15vw - 100px); */
         padding-inline: max(5.5vw, calc(15vw - 100px));
+        display: grid;
     }
 
     @media screen and (max-width: 750px) {
