@@ -1,0 +1,235 @@
+---
+import { Image } from 'astro:assets';
+import albumyHeadlineImg from '../assets/albumyHeadline.png';
+import plytyEclipse from '../assets/plytyEclipseLol.png';
+import { ViewTransitions } from "astro:transitions";
+import Wydarzenia from '../components/Wydarzenia.astro'
+---
+
+<head>
+    <ViewTransitions />
+</head>
+
+<div class="calendar-container">
+
+    <section class="calendar-headline">
+        <div class="calendar-headline-text">
+
+            <h1>Kalendarz</h1>
+
+            <div class="toggle-wrapper">
+                <input id="switch" type="checkbox" checked>
+                <label for="switch">
+                    <div class="toggle-pill"></div>
+                    <div class="names">
+                    <p class="light">Przeszłe</p>
+                    <p class="dark">Przyszłe</p>
+                    </div>
+                </label>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="calendar-section">
+        <Wydarzenia title="Wydarzenia" />
+    </section>
+
+</div>
+
+<style>
+    .calendar-container {
+        display: grid;
+        grid-template-columns: 100vw;
+        /* Uproszczone wiersze tylko dla headline */
+        grid-template-rows: auto; 
+        font-weight: 400;
+        font-family: "Gilda Display";
+        background: linear-gradient(180deg, #FFF 0%, #ECE4F0 100%);
+    }
+
+    /* Calendar head section*/
+
+
+    /* Projekty Headline */
+    .calendar-headline {
+        width: 100vw;
+        display: grid;
+        /* grid-template-rows: 680px;  */
+        /* grid-template-rows: 550px; */
+        grid-template-rows: 580px;
+        /* background: linear-gradient(180deg, #FFF 0%, #ECE4F0 100%); */
+        overflow: hidden;
+    }
+
+    .calendar-headline-img-container {
+        position: relative;
+        grid-column: 2/3;
+        justify-self: center;
+        align-self: center;
+        display: flex;
+    }
+
+    .albumyHeadlineImg {
+        height: 29vw;
+        width: auto;
+        z-index: 1;
+    }
+
+    .albumyEclipseHeadline {
+        position: absolute;
+        top: -24vw;
+        left: -24vw;
+        z-index: 0;
+    }
+
+    .calendar-headline-text {
+        grid-column: 1/2;
+        align-self: center;
+        font-family: "Gilda Display";
+        text-align: center;
+        font-size: 23px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 130px;
+    }
+
+    .calendar-headline-text h1 {
+        background: linear-gradient(180deg, #8E13F3 0%, #2599F8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        /* font-size: calc(80px + 5.5vw); */
+        font-size: min(17.4vw,calc(80px + 5.5vw));
+        padding-right: 1.3vw;
+        font-weight: 400;
+        margin: 0;
+    }
+
+    .calendar-headline-text p {
+        /* padding: 0 7%; */
+    }
+
+    /* Responsive */
+    @media screen and (min-width: 1800px) {
+        .albumyEclipseHeadline {
+            left: -1vw;
+        }
+    }
+
+    /* @media screen and (max-width: 600px) {
+        .calendar-headline {
+            grid-template-rows: 1fr;
+            grid-template-columns: 100vw;
+            padding-top: 11vw;
+            height: auto;
+        }
+        .calendar-headline-text {
+            grid-row: 1/2;
+            grid-column: 1/2;
+        }
+        .calendar-headline-img-container {
+            grid-row: 2/3;
+            grid-column: 1/2;
+            margin-bottom: 10vw;
+        }
+        .albumyHeadlineImg {
+            height: 59vw;
+            width: auto;
+        }
+    } */
+
+
+#switch {
+  display: none;
+}
+
+
+label {
+    display: block;
+    width: 12rem;
+    height: 3.5rem;
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 100px;
+    position: relative;
+    cursor: pointer;
+    margin: 2rem auto; 
+}
+
+.toggle-wrapper {
+    width: fit-content;
+}
+
+.toggle-pill {
+    position: absolute;
+    width: 50%;
+    height: 3.5rem;
+    background-color: #fff;
+    border-radius: 100px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, .15);
+    transition: transform .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 1;
+}
+
+
+.names {
+    font-size: 77%;
+    font-weight: bolder;
+    color: black;
+    width: stretch;
+    margin-left: 1%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    z-index: 2;
+    justify-content: space-around;
+}
+
+.light, .dark {
+  margin: 0;
+  pointer-events: none;
+}
+
+#switch:checked + label .toggle-pill {
+  transform: translateX(100%);
+}
+
+.dark {
+  opacity: .5;
+  /* padding-right: 6px; */
+}
+
+#switch:checked + label .dark {
+  opacity: 1;
+}
+
+#switch:checked + label .light {
+  opacity: .5;
+}
+
+    /* Calendar section*/
+
+    
+    .calendar-section {
+        padding-bottom: 18vh;
+        /* padding-inline: calc(15vw - 100px); */
+        padding-inline: max(5.5vw, calc(15vw - 100px));
+    }
+
+    @media screen and (max-width: 750px) {
+        .calendar-section {
+            /* padding-inline: 5.5vw; */
+        }
+    }
+    @media screen and (max-width: 660px) {
+        .calendar-headline {
+            grid-template-rows: calc(27.4vw + 400px);
+        }
+        .calendar-headline-text {
+            margin-top: 120px;
+        }
+    }
+</style>
