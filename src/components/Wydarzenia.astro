@@ -41,7 +41,16 @@ function convertToDate(dateObj) {
         display: flex;
         flex-direction: column;
         gap: 2% 2%;
-        width: 100%;
+        width: 70vw;
         margin-top: 8px;
+        justify-self: center;
+        height: -webkit-fit-content;
     }
+    @media screen and (max-width: 1150px) {
+        .wydarzenia-cmpnt {
+            max-width: 805px;
+            width: -webkit-fill-available;
+        }
+    }
+
 </style>
