@@ -1,7 +1,7 @@
 ---
 dataWydarzenia:
   dzien: "28"
-  mR: czer 2026
+  mR: cze 2026
 repertuar: Biber
 nazwaWydarzenia: Janakkala Baroque Festival
 miejsceWydarzenia: Janakkala, FI
