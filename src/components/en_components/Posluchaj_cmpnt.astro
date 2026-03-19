@@ -1,217 +1,231 @@
 ---
-import ytButton from '../../assets/ytButton.svg';
-import spotifyButton from '../../assets/spotifyButton.svg';
-import appleButton from '../../assets/appleButton.svg';
-import naZywo from '../../assets/naZywo.svg';
+import ytButton from "../../assets/ytButton.svg";
+import spotifyButton from "../../assets/spotifyButton.svg";
+import appleButton from "../../assets/appleButton.svg";
+import naZywo from "../../assets/naZywo.svg";
 import { ViewTransitions } from "astro:transitions";
 ---
+
 <head>
-    <ViewTransitions />
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lite-youtube-embed/0.3.2/lite-yt-embed.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lite-youtube-embed/0.3.2/lite-yt-embed.css" integrity="sha512-utq8YFW0J2abvPCECXM0zfICnIVpbEpW4lI5gl01cdJu+Ct3W6GQMszVITXMtBLJunnaTp6bbzk5pheKX2XuXQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <ViewTransitions />
+  <script
+    defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/lite-youtube-embed/0.3.2/lite-yt-embed.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/lite-youtube-embed/0.3.2/lite-yt-embed.css"
+    integrity="sha512-utq8YFW0J2abvPCECXM0zfICnIVpbEpW4lI5gl01cdJu+Ct3W6GQMszVITXMtBLJunnaTp6bbzk5pheKX2XuXQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 </head>
 <!-- TODO - zaczyna sie zoomed in na phone!!, nie ma footera, moze lepszy embed z wieksza iloscia filmikow, zamien filmik, dodaj linki do przyciskow -->
 <div class="posluchaj-container">
-    <div class="posluchaj-socials-container">
-        <div class="posluchaj-socials-header">
-            <p>
-                Listen to us:
-            </p>
-        </div>
-        <div class="posluchaj-socials">
-            <div class="posluchaj-socials-buttons">
-                <a href="https://www.youtube.com/@fantastica.ensemble">
-                    <img class="ytButton" src={ytButton.src} alt="" />
-                </a>
-            </div>
-            <div class="posluchaj-socials-buttons">
-                <a href="https://open.spotify.com/artist/0zsm0Jzu81HSbG5OxmGm7q">
-                    <img class="spotifyButton" src={spotifyButton.src} alt="" />
-                </a>
-            </div>
-            <div class="posluchaj-socials-buttons">
-                <a href="https://music.apple.com/us/artist/fantastica-ensemble/1808820770">
-                    <img class="appleButton" src={appleButton.src} alt="" />
-                </a>
-            </div>
-        </div>
+  <div class="posluchaj-socials-container">
+    <div class="posluchaj-socials-header">
+      <p>Listen to us:</p>
     </div>
-    <div class="zobacz-na-zywo-container">
-        <div class="zobacz-na-zywo">
-            <p>
-                Watch us live:
-            </p>
-        </div>
-        <div class="zobacz-na-zywo-embed">
-			<img class="naZywo" src={naZywo.src} alt="" />
-                <lite-youtube videoid="ZnTkeduqcbU" id="liteYt" style="background-image: url('https://i.ytimg.com/vi/ZnTkeduqcbU/hqdefault.jpg'); max-width: none;">
-                    <a href="https://www.youtube.com/embed/ZnTkeduqcbU" class="lty-playbtn" title="Fantastica Ensemble">
-                        <span class="lyt-visually-hidden">Fantastica Ensemble</span>
-                    </a>
-                </lite-youtube>
-        </div>
+    <div class="posluchaj-socials">
+      <div class="posluchaj-socials-buttons">
+        <a href="https://www.youtube.com/@fantastica.ensemble">
+          <img class="ytButton" src={ytButton.src} alt="" />
+        </a>
+      </div>
+      <div class="posluchaj-socials-buttons">
+        <a href="https://open.spotify.com/artist/0zsm0Jzu81HSbG5OxmGm7q">
+          <img class="spotifyButton" src={spotifyButton.src} alt="" />
+        </a>
+      </div>
+      <div class="posluchaj-socials-buttons">
+        <a href="https://music.apple.com/us/artist/fantastica-ensemble/1808820770">
+          <img class="appleButton" src={appleButton.src} alt="" />
+        </a>
+      </div>
     </div>
+  </div>
+  <div class="zobacz-na-zywo-container">
+    <div class="zobacz-na-zywo">
+      <p>Watch us live:</p>
+    </div>
+    <div class="zobacz-na-zywo-embed">
+      <img class="naZywo" src={naZywo.src} alt="" />
+      <lite-youtube
+        videoid="ZnTkeduqcbU"
+        id="liteYt"
+        style="background-image: url('https://i.ytimg.com/vi/ZnTkeduqcbU/hqdefault.jpg'); max-width: none;"
+      >
+        <a
+          href="https://www.youtube.com/embed/ZnTkeduqcbU"
+          class="lty-playbtn"
+          title="Fantastica Ensemble"
+        >
+          <span class="lyt-visually-hidden">Fantastica Ensemble</span>
+        </a>
+      </lite-youtube>
+    </div>
+  </div>
 </div>
 <!-- <div id="footerlol">
 
 </div> -->
-    <style>
+<style>
+  .posluchaj-container {
+    display: grid;
+    grid-template-rows: auto auto;
+    background: linear-gradient(180deg, #80c3fe 0%, #ebc0d8 100%);
+    z-index: 3;
+    width: 100vw;
+  }
 
+  .posluchaj-socials-container {
+    grid-row: 1 / 2;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: 24vh 1fr;
+    font-family: Elsie;
+    font-size: 82px;
+    font-style: normal;
+    font-weight: 900;
+  }
+
+  .posluchaj-socials-header {
+    grid-column: 2 / 3;
+    grid-row-start: 2;
+    text-align: center;
+    height: 12vh;
+  }
+
+  .posluchaj-socials-header p {
+    margin: 0;
+  }
+
+  .posluchaj-socials {
+    grid-column: 2 / 3;
+    grid-row-start: 2;
+    display: flex;
+    margin-top: 10vh;
+  }
+
+  .posluchaj-socials-buttons {
+    width: 33%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .ytButton {
+    margin-top: 4vh;
+  }
+
+  .spotifyButton {
+    margin-top: 29vh;
+  }
+
+  /* Watch us live */
+  .zobacz-na-zywo-container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: auto auto;
+    height: 97vw;
+    font-family: Elsie;
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 900;
+  }
+
+  .zobacz-na-zywo {
+    grid-column: 2 / 3;
+    grid-row-start: 2;
+    text-align: center;
+    height: 12vh;
+  }
+
+  .zobacz-na-zywo-embed {
+    grid-column: 2 / 3;
+    grid-row-start: 2;
+    text-align: center;
+    height: auto;
+    margin-top: 25vh;
+    position: relative;
+  }
+
+  .naZywo {
+    position: relative;
+    width: 68vw;
+  }
+
+  .zobacz-na-zywo-embed lite-youtube {
+    position: absolute;
+    top: 3.5vw;
+    left: 5vw;
+    height: auto;
+    aspect-ratio: 65 / 39;
+    width: 58vw;
+    z-index: 1;
+  }
+
+  .ytButton,
+  .spotifyButton,
+  .appleButton {
+    width: 100%;
+  }
+
+  .ytButton:hover,
+  .spotifyButton:hover,
+  .appleButton:hover {
+    scale: 1.07;
+  }
+
+  @media screen and (max-width: 800px) {
+    .naZywo {
+      width: 88vw;
+    }
+
+    .zobacz-na-zywo p {
+      margin: 0 4vw;
+    }
+
+    .zobacz-na-zywo-embed iframe {
+      top: 2.5vw;
+      width: 80vw;
+      left: 8.4vw;
+    }
+
+    #liteYt {
+      width: 78vw;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
     .posluchaj-container {
-        display: grid;
-        grid-template-rows: auto auto;
-        background: linear-gradient(180deg, #80C3FE 0%, #EBC0D8 100%);
-        z-index: 3;
-        width: 100vw;
-    }
-
-    .posluchaj-socials-container {
-        grid-row: 1/2;
-        display: grid;
-        grid-template-columns: 1fr auto 1fr;
-        grid-template-rows: 24vh 1fr;
-        
-        font-family: Elsie;
-        font-size: 82px;
-        font-style: normal;
-        font-weight: 900;
-    }
-
-    .posluchaj-socials-header {
-        grid-column: 2/3;
-        grid-row-start: 2;
-        text-align: center;
-        height: 12vh;
-    }
-    .posluchaj-socials-header p {
-        margin: 0 0;
+      width: 100%;
+      padding-bottom: 55vw;
     }
 
     .posluchaj-socials {
-        grid-column: 2/3;
-        grid-row-start: 2;
-        display: flex;
-        margin-top: 10vh;
-
+      font-size: 18vw;
+      margin-top: 30vw;
+      height: min-content;
     }
+
+    .posluchaj-socials-container {
+      font-size: 50px;
+      grid-template-rows: 24vh 0fr;
+    }
+
     .posluchaj-socials-buttons {
-        width: 33%;
-        height: auto;
-        object-fit: contain;
-    }
-    .ytButton {
-        margin-top: 4vh;
-    }
-    .spotifyButton {
-        margin-top: 29vh;
+      height: 30%;
     }
 
-    /* Zobacz na zywo */
+    .spotifyButton {
+      margin-top: 18vh;
+    }
 
     .zobacz-na-zywo-container {
-        display: grid;
-        grid-template-columns: 1fr auto 1fr;
-        grid-template-rows: auto auto;
-        height: 97vw;
+      grid-template-rows: 23vw 144vw;
+    }
 
-        font-family: Elsie;
-        font-size: 62px;
-        font-style: normal;
-        font-weight: 900;
+    #liteYt {
+      margin-left: 6.6vw;
     }
-    .zobacz-na-zywo {
-        grid-column: 2/3;
-        grid-row-start: 2;
-        text-align: center;
-        height: 12vh;
-    }
-    .zobacz-na-zywo-embed {
-        grid-column: 2/3;
-        grid-row-start: 2;
-        text-align: center;
-        height: auto;
-        margin-top: 25vh;
-        position: relative;
-    }
-    .naZywo {
-        position: relative;
-        width: 68vw;
-    }
-    .zobacz-na-zywo-embed lite-youtube {
-        position: absolute;
-        top: 3.5vw;
-        left: 5vw;
-        height: auto;
-        /* justify-self: anchor-center; */
-        aspect-ratio: 65/39;
-        width: 58vw;
-        z-index: 1;
-    }
-    .ytButton, .spotifyButton, .appleButton {
-        width: 100%;
-    }
-    .ytButton:hover, .spotifyButton:hover, .appleButton:hover {
-        scale: 1.07;
-        /* box-shadow: 0 0px 20px rgba(193, 163, 98,0.4); */
-    }
-    @media screen and (max-width: 800px) {
-        .naZywo {
-            width: 88vw;
-        }
-        .zobacz-na-zywo p {
-            margin: 0 4vw 0 4vw;
-        }
-        .zobacz-na-zywo-embed iframe {
-            top: 2.5vw;
-            width: 80vw;
-            left: 8.4vw;
-        }
-
-        #liteYt {
-            width: 78vw;
-        }
-/* 
-    #footerlol {
-        height:  calc(42vh + 103px);
-        width: 100vw;
-    } */
-    @media screen and (max-width: 600px) {
-        .posluchaj-container{
-            width: 100%;
-            padding-bottom: 55vw;
-        }
-        .posluchaj-socials {
-            font-size: 18vw;
-            margin-top: 60vw;
-        }
-        .zobacz-na-zywo-embed {
-            /* margin-top: 36vh; */
-        }
-        .posluchaj-socials {
-            margin-top: 30vw;
-            height: min-content;
-        }
-        .posluchaj-socials-container {
-            font-size: 50px;
-            grid-template-rows: 24vh 0fr;
-        }
-        .posluchaj-socials-buttons {
-            height: 30%;
-        }
-        .spotifyButton {
-            margin-top: 18vh;
-        }
-        .zobacz-na-zywo-container {
-            grid-template-rows: 23vw 144vw;
-        }
-
-        #liteYt {
-            margin-left: 6.6vw;
-        }
-    }
-    /* @media screen and (max-width: 420px) {
-        #liteYt {
-            margin-left: 6.6vw;
-        }
-    } */
+  }
 </style>

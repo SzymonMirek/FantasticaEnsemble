@@ -1,67 +1,59 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
-import Header from '../components/Header.astro';
-// TODO - WAZNE - to nie dziala na oficjalnym serwerze
+import { ViewTransitions } from "astro:transitions";
+import Header from "../components/Header.astro";
 const pageTitles = {
-  '/': 'Fantastica',
-  '/o-nas': 'Fantastica | O nas',
-  '/posluchaj': 'Fantastica | Posłuchaj',
-  '/projekty': 'Fantastica | Projekty',
-  '/plyty': 'Fantastica | Płyty',
-  '/kontakt': 'Fantastica | Kontakt',
+  "/": "Fantastica",
+  "/o-nas": "Fantastica | O nas",
+  "/posluchaj": "Fantastica | Posłuchaj",
+  "/projekty": "Fantastica | Projekty",
+  "/plyty": "Fantastica | Płyty",
+  "/kontakt": "Fantastica | Kontakt",
   // English routes
-  '/en': 'Fantastica',
-  '/en/about': 'Fantastica | About',
-  '/en/listen': 'Fantastica | Listen',
-  '/en/projects': 'Fantastica | Projects',
-  '/en/CD': 'Fantastica | CD',
-  '/en/contact': 'Fantastica | Contact'
+  "/en": "Fantastica",
+  "/en/about": "Fantastica | About",
+  "/en/listen": "Fantastica | Listen",
+  "/en/projects": "Fantastica | Projects",
+  "/en/CD": "Fantastica | CD",
+  "/en/contact": "Fantastica | Contact",
 };
 
-// Get the current pathname
 const currentPath = Astro.url.pathname;
-
-// Get the custom title or fallback to a default
-const title = pageTitles[currentPath as keyof typeof pageTitles] || 'Fantastica';
+const title = pageTitles[currentPath as keyof typeof pageTitles] || "Fantastica";
 ---
 
-<!-- TODO - NAJZWAZNIEJSZE!!!! - dodac te linki z boku co chcialy, dodac sekcje posluchaj do glownej. wersja angielska -->
 <!doctype html>
 <html lang="pl">
-	<head>
-		<meta charset="UTF-8" />
-		<!-- <meta name="viewport" content="width=device-width" /> -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.png" type="image/png">	
-		<!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"> -->
-		<link rel="mask-icon" href="/images/safari-pinned-tab.svg?v=M44lzPylqQ" color="#000000">
-		<meta name="genefantasrator" content={Astro.generator} />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Elsie:wght@400;900&family=Gilda+Display&display=swap" rel="stylesheet">
-		<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-		<title>{title}</title>
-	</head>
-	<body>
-		<Header animate:persist />
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="mask-icon" href="/images/safari-pinned-tab.svg?v=M44lzPylqQ" color="#000000" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Elsie:wght@400;900&family=Gilda+Display&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"
+    ></script>
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header animate:persist />
+    <slot />
+  </body>
 </html>
 
 <style is:global>
-	html,
-	body {
-		/* TODO - experimental font smoothing */
-		/* -webkit-font-smoothing: antialiased; */
-		/* scroll-behavior: smooth; */
-		margin: 0;
-		width: 100vw;
-		height: 80%;
-		overflow-x: clip;
-	}
-
+  html,
+  body {
+    margin: 0;
+    width: 100vw;
+    height: 80%;
+    overflow-x: clip;
+  }
 </style>

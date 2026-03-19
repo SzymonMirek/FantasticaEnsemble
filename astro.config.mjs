@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 import cloudflare from "@astrojs/cloudflare";
 import decapCmsOauth from "astro-decap-cms-oauth";
 import sitemap from "@astrojs/sitemap";

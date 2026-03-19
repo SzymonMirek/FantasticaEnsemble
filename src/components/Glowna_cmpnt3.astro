@@ -1,254 +1,265 @@
 ---
-import background from '../assets/fantastica-tlo-gradient.svg';
-import falanding from '../assets/head-z-purple-kolem.png';
-import vidoo from '../assets/fantastica-vid.mp4';
+import background from "../assets/fantastica-tlo-gradient.svg";
+import falanding from "../assets/head-z-purple-kolem.png";
+import vidoo from "../assets/fantastica-vid.mp4";
 ---
 
-	<div class="scroll-container-container">
-		<div class="scroll-container">
-			<section id="background-that-fades">
-				<img class="background" id="fadeImage" src={background.src} alt="" fetchpriority="high" />
-				<img class="falanding" id="fadeImage" class="widFantastica" src={falanding.src} alt="" fetchpriority="high" />
-			</section>
-			<video 
-			id="fantastica-bg-vid" 
-			autoplay 
-			muted 
-			loop 
-			playsinline
-			webkit-playsinline
-			x5-playsinline
-			preload="auto"
-			disablepictureinpicture
-		  >
-				<source src={vidoo} type="video/mp4">
-			</video>
-		</div>
-		<h1 class="fantastica-big-letters" >
-			FANTASTICA
-		</h1>
-	</div>
-
-
+<div class="scroll-container-container">
+  <div class="scroll-container">
+    <section id="background-that-fades">
+      <img class="background" id="fadeImage" src={background.src} alt="" fetchpriority="high" />
+      <img
+        class="falanding"
+        id="fadeImage"
+        class="widFantastica"
+        src={falanding.src}
+        alt=""
+        fetchpriority="high"
+      />
+    </section>
+    <video
+      id="fantastica-bg-vid"
+      autoplay
+      muted
+      loop
+      playsinline
+      webkit-playsinline
+      x5-playsinline
+      preload="auto"
+      disablepictureinpicture
+    >
+      <source src={vidoo} type="video/mp4" />
+    </video>
+  </div>
+  <h1 class="fantastica-big-letters">FANTASTICA</h1>
+</div>
 
 <style>
+  .scroll-container-container {
+    position: absolute;
+    display: flex;
+    width: 100vw;
+    height: 150vh;
+    overflow: clip;
+    grid-row: 1/2;
+  }
+  .fantastica-big-letters {
+    position: absolute;
+    z-index: 10;
+    top: calc(94.1vh - 150px);
+    /* top: 80vh; */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #e2e4e7;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Elsie;
+    font-size: calc(5vw + 80px);
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    pointer-events: none;
+    will-change: opacity, transform;
+    -webkit-font-smoothing: antialiased;
+  }
 
-	.scroll-container-container {
-		position: absolute;
-		display: flex;
-		width: 100vw;
-		height: 150vh;
-		overflow: clip;
-		grid-row: 1/2;
-	}
-	.fantastica-big-letters {
-			position: absolute;
-			z-index: 10;    
-			top: calc(94.1vh - 150px);   
-			/* top: 80vh; */
-			left: 50%;
-			transform: translate(-50%, -50%);color: #E2E4E7;
-            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-            font-family: Elsie;
-            font-size: calc(5vw + 80px);
-            font-style: normal;
-            font-weight: 900;
-            line-height: normal;
-            pointer-events: none;
-			will-change: opacity, transform;
-			-webkit-font-smoothing: antialiased;
-		}
+  .scroll-container {
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    pointer-events: none;
+  }
+  #background-that-fades {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    pointer-events: none;
+  }
+  .background {
+    position: absolute;
+    height: 100vh;
+    z-index: -2;
+    width: 100%;
+    object-fit: cover;
+    pointer-events: none;
+  }
 
-	.scroll-container {
-		display: flex;
-		position: fixed;
-		width: 100vw;
-		height: 100vh;
-		justify-content: center;
-		pointer-events: none
-	}
-		#background-that-fades {
-			display: flex;
-			justify-content: center;
-			position: absolute;
-			width: 100vw;
-			height: 100%;
-			pointer-events: none
-		}
-			.background {
-				position: absolute;
-				height: 100vh;
-				z-index: -2;
-				width: 100%;
-				object-fit: cover;
-				pointer-events: none
-			}
+  .falanding {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    height: 76vh;
+    pointer-events: none;
+  }
 
-			.falanding {
-				position: absolute;
-				z-index: -1;
-				bottom: 0;
-				height: 76vh;
-				pointer-events: none
-			}
+  #fantastica-bg-vid {
+    position: absolute;
+    height: 100vh;
+    z-index: -3;
+    width: 100%;
+    object-fit: cover;
+  }
 
-		#fantastica-bg-vid {
-			position: absolute;
-			height: 100vh;
-			z-index: -3;
-			width: 100%;
-			object-fit: cover;
-		}
-
-
-/* MMNIEJ NIZ 1000 PX */
-@media screen and (max-width: 1000px) {
-	/* #fantastica-glowna {
+  /* MMNIEJ NIZ 1000 PX */
+  @media screen and (max-width: 1000px) {
+    /* #fantastica-glowna {
 		grid-template-rows: 110vh 2000px;
 	} */
-	.fantastica-big-letters {
-		font-size: 12.5vw;
-		top: 20vh;   
-	}
-	.falanding {
-		height: 500px;
-		aspect-ratio: auto;
-        margin-right: 12vw;
-	}
-}
+    .fantastica-big-letters {
+      font-size: 12.5vw;
+      top: 20vh;
+    }
+    .falanding {
+      height: 500px;
+      aspect-ratio: auto;
+      margin-right: 12vw;
+    }
+  }
 </style>
 
-
 <script>
-	import { gsap } from "gsap";
-	import { ScrollTrigger } from "gsap/ScrollTrigger";
-	
-	// Register ScrollTrigger plugin
-	gsap.registerPlugin(ScrollTrigger);
-	
-	// Wait for DOM to load
-	document.addEventListener("DOMContentLoaded", () => {
-		// Set initial state (works for all screen sizes)
-		gsap.set("#background-that-fades", { opacity: 1 });
-		gsap.set("#fantastica-bg-vid", { opacity: 1 });
-		
-		// Fade out background (same for all screens)
-		gsap.to("#background-that-fades", {
-			opacity: 0,
-			scrollTrigger: {
-				trigger: ".scroll-container-container",
-				start: "top top",
-				end: "+=25%",
-				scrub: true,
-			}
-		});
-	
-		// Responsive animations using matchMedia
-		ScrollTrigger.matchMedia({
-			// Desktop (1000px and up)
-			"(min-width: 1285px)": function() {
-				const tl = gsap.timeline({
-					scrollTrigger: {
-						trigger: ".scroll-container-container",
-						start: "+=25%",
-						end: "+=67.5%",
-						scrub: true,
-						pin: ".fantastica-big-letters",
-						pinSpacing: false,
-					}
-				});
-				
-				tl.to(".fantastica-big-letters", { duration: 0.2 })
-				  .to(".fantastica-big-letters", { 
-					  color: "#A76AFB",
-					  scale: "1.4vw 1.4vw",
-					  y: -220,
-					  duration: 0.8
-				  })
-				  .to("#fantastica-bg-vid", {
-					  filter: "grayscale(100%)",
-					  duration: 0.4
-				  }, "<+=0.2");
-			},
-			"(min-width: 1000px) and (max-width: 1284px)": function() {
-				const mobile1Tl = gsap.timeline({
-					scrollTrigger: {
-						trigger: ".scroll-container-container",
-						start: "+=25%",
-						end: "+=75%",
-						scrub: true,
-						pin: ".fantastica-big-letters",
-						pinSpacing: false,
-					}
-				});
-				
-				mobile1Tl.to(".fantastica-big-letters", { duration: 0.2 })
-				  .to(".fantastica-big-letters", { 
-					  color: "#A76AFB",
-					  scale: "1.2vw 1.2vw",
-					  y: -220,
-					  duration: 0.8
-				  })
-				  .to("#fantastica-bg-vid", {
-					  filter: "grayscale(100%)",
-					  duration: 0.4
-				  }, "<+=0.2");
-			},
-	
-			// Mobile/Tablet (under 1000px)
-			"(max-width: 999px)": function() {
-				const mobileTl = gsap.timeline({
-					scrollTrigger: {
-						trigger: ".scroll-container-container",
-						start: "top top",
-						end: "+=82%",
-						scrub: true,
-						pin: ".fantastica-big-letters",
-						pinSpacing: false,
-					}
-				});
-				
-				mobileTl.to(".fantastica-big-letters", { 
-						   color: "#A76AFB",
-						   scale: "1.2vw 1.2vw",  // Smaller scale
-						//    y: -220,               // Less vertical movement
-						   duration: 0.6
-					   })
-					   .to("#fantastica-bg-vid", {
-						   filter: "grayscale(100%)",
-						   duration: 0.6
-					   });  // Faster transition
-			}
-		});				
-		gsap.to("#fantastica-bg-vid", {
-			opacity: 0,
-			scrollTrigger: {
-				trigger: ".scroll-container-container",
-				start: "+=130%",
-				scrub: true,
-				onEnter: () => {
-					const video = document.querySelector("#fantastica-bg-vid") as HTMLVideoElement | null;
-					const bg = document.querySelector("#fadeImage") as HTMLImageElement | null;
-					if (video) {
-						video.style.display = "none";
-						video.pause();
-					}
-					if (bg) {
-						bg.style.display = "none";
-					}
-				},
-				onLeaveBack: () => {
-					const video = document.querySelector("#fantastica-bg-vid") as HTMLVideoElement;
-					const bg = document.querySelector("#fadeImage") as HTMLImageElement;
-					if (video) {
-						video.style.display = "block";
-						video.play();
-					}
-					if (bg) {
-						bg.style.display = "block";
-					}
-				}
-			}
-		});
-	});
-	</script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  // Register ScrollTrigger plugin
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Wait for DOM to load
+  document.addEventListener("DOMContentLoaded", () => {
+    // Set initial state (works for all screen sizes)
+    gsap.set("#background-that-fades", { opacity: 1 });
+    gsap.set("#fantastica-bg-vid", { opacity: 1 });
+
+    // Fade out background (same for all screens)
+    gsap.to("#background-that-fades", {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".scroll-container-container",
+        start: "top top",
+        end: "+=25%",
+        scrub: true,
+      },
+    });
+
+    // Responsive animations using matchMedia
+    ScrollTrigger.matchMedia({
+      // Desktop (1000px and up)
+      "(min-width: 1285px)": function () {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".scroll-container-container",
+            start: "+=25%",
+            end: "+=67.5%",
+            scrub: true,
+            pin: ".fantastica-big-letters",
+            pinSpacing: false,
+          },
+        });
+
+        tl.to(".fantastica-big-letters", { duration: 0.2 })
+          .to(".fantastica-big-letters", {
+            color: "#A76AFB",
+            scale: "1.4vw 1.4vw",
+            y: -220,
+            duration: 0.8,
+          })
+          .to(
+            "#fantastica-bg-vid",
+            {
+              filter: "grayscale(100%)",
+              duration: 0.4,
+            },
+            "<+=0.2",
+          );
+      },
+      "(min-width: 1000px) and (max-width: 1284px)": function () {
+        const mobile1Tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".scroll-container-container",
+            start: "+=25%",
+            end: "+=75%",
+            scrub: true,
+            pin: ".fantastica-big-letters",
+            pinSpacing: false,
+          },
+        });
+
+        mobile1Tl
+          .to(".fantastica-big-letters", { duration: 0.2 })
+          .to(".fantastica-big-letters", {
+            color: "#A76AFB",
+            scale: "1.2vw 1.2vw",
+            y: -220,
+            duration: 0.8,
+          })
+          .to(
+            "#fantastica-bg-vid",
+            {
+              filter: "grayscale(100%)",
+              duration: 0.4,
+            },
+            "<+=0.2",
+          );
+      },
+
+      // Mobile/Tablet (under 1000px)
+      "(max-width: 999px)": function () {
+        const mobileTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".scroll-container-container",
+            start: "top top",
+            end: "+=82%",
+            scrub: true,
+            pin: ".fantastica-big-letters",
+            pinSpacing: false,
+          },
+        });
+
+        mobileTl
+          .to(".fantastica-big-letters", {
+            color: "#A76AFB",
+            scale: "1.2vw 1.2vw", // Smaller scale
+            //    y: -220,               // Less vertical movement
+            duration: 0.6,
+          })
+          .to("#fantastica-bg-vid", {
+            filter: "grayscale(100%)",
+            duration: 0.6,
+          }); // Faster transition
+      },
+    });
+    gsap.to("#fantastica-bg-vid", {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".scroll-container-container",
+        start: "+=130%",
+        scrub: true,
+        onEnter: () => {
+          const video = document.querySelector("#fantastica-bg-vid") as HTMLVideoElement | null;
+          const bg = document.querySelector("#fadeImage") as HTMLImageElement | null;
+          if (video) {
+            video.style.display = "none";
+            video.pause();
+          }
+          if (bg) {
+            bg.style.display = "none";
+          }
+        },
+        onLeaveBack: () => {
+          const video = document.querySelector("#fantastica-bg-vid") as HTMLVideoElement;
+          const bg = document.querySelector("#fadeImage") as HTMLImageElement;
+          if (video) {
+            video.style.display = "block";
+            video.play();
+          }
+          if (bg) {
+            bg.style.display = "block";
+          }
+        },
+      },
+    });
+  });
+</script>

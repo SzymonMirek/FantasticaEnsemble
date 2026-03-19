@@ -1,48 +1,56 @@
-# Astro Starter Kit: Basics
+# Fantastica Ensemble (Astro)
 
-```sh
-npm create astro@latest -- --template basics
+Strona zespołu Fantastica Ensemble zbudowana w Astro, z treściami wydarzeń edytowanymi przez Decap CMS (Netlify CMS).
+
+## Szybki start
+
+```bash
+npm install
+npm run dev
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Komendy
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+npm run dev
+npm run build
+npm run preview
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Formatowanie
 
-## 🧞 Commands
+Repo używa Prettiera (z `prettier-plugin-astro`).
 
-All commands are run from the root of the project, from a terminal:
+```bash
+npm run format
+npm run format:check
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Treści (Content Collections)
 
-## 👀 Want to learn more?
+Wydarzenia są trzymane jako markdown w:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- `src/content/wydarzenia/` (PL)
+- `src/content/events/` (EN)
+
+Każdy plik ma frontmatter zgodny ze schematem kolekcji (wykorzystywane w komponentach renderujących listy/karty wydarzeń).
+
+## CMS (Decap)
+
+Konfiguracja panelu CMS jest w `public/admin/config.yml` i wskazuje foldery kolekcji powyżej.
+
+## Zmienne środowiskowe
+
+Integracja `astro-decap-cms-oauth` wymaga podczas builda zmiennych:
+
+- `OAUTH_GITHUB_CLIENT_ID`
+- `OAUTH_GITHUB_CLIENT_SECRET`
+
+W repo jest plik `.env.example` z placeholderami. **Nie commituj** prawdziwych sekretów do `.env` (plik `.env` jest zignorowany przez git).
+
+## Struktura projektu (najważniejsze)
+
+- `src/pages/`: strony
+- `src/components/`: komponenty
+- `src/layouts/`: layouty (w tym globalny `<head>` i style)
+- `public/`: statyczne zasoby i panel admina

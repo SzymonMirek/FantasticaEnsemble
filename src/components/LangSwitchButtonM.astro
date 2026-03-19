@@ -1,51 +1,51 @@
 ---
 const { pathname } = Astro.url;
-const isEnglish = pathname.startsWith('/en');
+const isEnglish = pathname.startsWith("/en");
 ---
 
 <section transition:persist id="lang-switch-button-m">
-    <label title="PLm" for="pl" class="label">
-      <input id="pl" name="languagem" type="radio" checked={!isEnglish} />
-      PL
-    </label>
-    <label title="ENm" for="en" class="label">
-      <input id="en" name="languagem" type="radio" checked={isEnglish} />
-      EN
-    </label>
+  <label title="PLm" for="pl" class="label">
+    <input id="pl" name="languagem" type="radio" checked={!isEnglish} />
+    PL
+  </label>
+  <label title="ENm" for="en" class="label">
+    <input id="en" name="languagem" type="radio" checked={isEnglish} />
+    EN
+  </label>
 </section>
 
 <script>
   function handleLanguageSwitch(lang: string) {
     const currentPath = window.location.pathname;
-    
-    if (lang === 'enm' && !currentPath.startsWith('/en')) {
+
+    if (lang === "enm" && !currentPath.startsWith("/en")) {
       // Switch to English
-      if (currentPath === '/') {
-        window.location.href = '/en';
+      if (currentPath === "/") {
+        window.location.href = "/en";
       } else {
         const newPath = `/en${currentPath}`;
         window.location.href = newPath;
       }
-    } else if (lang === 'plm' && currentPath.startsWith('/en')) {
+    } else if (lang === "plm" && currentPath.startsWith("/en")) {
       // Switch to Polish
-      const newPath = currentPath.replace('/en', '');
-      window.location.href = newPath || '/';
+      const newPath = currentPath.replace("/en", "");
+      window.location.href = newPath || "/";
     }
   }
 
   // Add event listeners to radio buttons
-  document.querySelectorAll('input[name="language"]').forEach(radio => {
-    radio.addEventListener('change', (e) => {
+  document.querySelectorAll('input[name="language"]').forEach((radio) => {
+    radio.addEventListener("change", (e) => {
       handleLanguageSwitch((e.target as HTMLInputElement).id);
     });
   });
 </script>
 <style>
- @media (min-width: 768px) { 
+  @media (min-width: 768px) {
     opacity: 0;
     transform: scale(1.2);
- }
- #lang-switch-button-m {
+  }
+  #lang-switch-button-m {
     --col-pink: linear-gradient(144deg, #af40ff, #4f46e5);
     --col-dark: #0c0f14;
     --col-darkGray: #52555a;

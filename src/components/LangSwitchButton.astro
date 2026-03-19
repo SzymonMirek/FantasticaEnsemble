@@ -1,60 +1,62 @@
 ---
 const { pathname } = Astro.url;
-const isEnglish = pathname.startsWith('/en');
+const isEnglish = pathname.startsWith("/en");
 
 // Define URL mappings
 const urlMappings = {
-  '/': '/en',
-  '/o-nas': '/en/about',
-  '/posluchaj': '/en/listen',
-  '/projekty': '/en/projects',
-  '/plyty': '/en/CD',
-  '/kontakt': '/en/contact'
+  "/": "/en",
+  "/o-nas": "/en/about",
+  "/posluchaj": "/en/listen",
+  "/projekty": "/en/projects",
+  "/plyty": "/en/CD",
+  "/kontakt": "/en/contact",
 };
 
 // Create reverse mappings for English to Polish
 const reverseUrlMappings = Object.fromEntries(
-  Object.entries(urlMappings).map(([pl, en]) => [en, pl])
+  Object.entries(urlMappings).map(([pl, en]) => [en, pl]),
 );
 ---
 
 <section transition:persist id="lang-switch-button">
-    <label title="PL" for="pl" class="label">
-      <input id="pl" name="language" type="radio" checked={!isEnglish} />
-      PL
-    </label>
-    <label title="EN" for="en" class="label">
-      <input id="en" name="language" type="radio" checked={isEnglish} />
-      EN
-    </label>
+  <label title="PL" for="pl" class="label">
+    <input id="pl" name="language" type="radio" checked={!isEnglish} />
+    PL
+  </label>
+  <label title="EN" for="en" class="label">
+    <input id="en" name="language" type="radio" checked={isEnglish} />
+    EN
+  </label>
 </section>
 
 <script define:vars={{ urlMappings, reverseUrlMappings }}>
   function handleLanguageSwitch(lang) {
     const currentPath = window.location.pathname;
-    
-    if (lang === 'en') {
+
+    if (lang === "en") {
       // Switch to English
-      const newPath = urlMappings[currentPath] || '/en';
+      const newPath = urlMappings[currentPath] || "/en";
       window.location.href = newPath;
     } else {
       // Switch to Polish
-      const newPath = reverseUrlMappings[currentPath] || '/';
+      const newPath = reverseUrlMappings[currentPath] || "/";
       window.location.href = newPath;
     }
   }
 
   // Add event listeners to radio buttons
-  document.querySelectorAll('input[name="language"]').forEach(radio => {
-    radio.addEventListener('change', (e) => {
+  document.querySelectorAll('input[name="language"]').forEach((radio) => {
+    radio.addEventListener("change", (e) => {
       handleLanguageSwitch(e.target.id);
     });
   });
 </script>
 
 <style>
- @media (min-width: 768px) { display: flex;}
- #lang-switch-button {
+  @media (min-width: 768px) {
+    display: flex;
+  }
+  #lang-switch-button {
     --col-pink: pink;
     --col-dark: #0c0f14;
     --col-darkGray: #52555a;
@@ -121,9 +123,9 @@ const reverseUrlMappings = Object.fromEntries(
   }
   @media (max-width: 768px) {
     #lang-switch-button {
-        display: none;
-        right: -5px;    
-        /* display: contents; */
+      display: none;
+      right: -5px;
+      /* display: contents; */
     }
   }
 </style>

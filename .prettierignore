@@ -1,0 +1,8 @@
+dist/
+.astro/
+node_modules/
+.DS_Store
+
+# Optional: keep CMS/admin vendor assets untouched if any appear later
+public/admin/
+

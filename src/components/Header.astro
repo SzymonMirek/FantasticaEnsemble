@@ -1,40 +1,44 @@
 ---
-import Logo from '../assets/logoo.svg';
-import LangSwitchButton from '../components/LangSwitchButton.astro';
-import LangSwitchButtonM from '../components/LangSwitchButtonM.astro';
+import Logo from "../assets/logoo.svg";
+import LangSwitchButton from "../components/LangSwitchButton.astro";
+import LangSwitchButtonM from "../components/LangSwitchButtonM.astro";
 const links = {
   pl: [
     { name: "O nas", href: "/o-nas" },
-    { name: "Posłuchaj", href: "/posluchaj" },
+    // { name: "Posłuchaj", href: "/posluchaj" },
     { name: "Projekty", href: "/projekty" },
     { name: "Płyty", href: "/plyty" },
-    { name: "Kontakt", href: "/kontakt" }
+    { name: "Kontakt", href: "/kontakt" },
   ],
   en: [
     { name: "About", href: "/en/about" },
-    { name: "Listen", href: "/en/listen" },
+    // { name: "Listen", href: "/en/listen" },
     { name: "Projects", href: "/en/projects" },
     { name: "CD", href: "/en/CD" },
-    { name: "Contact", href: "/en/contact" }
-  ]
+    { name: "Contact", href: "/en/contact" },
+  ],
 };
-const isEnglish = Astro.url.pathname.startsWith('/en');
+const isEnglish = Astro.url.pathname.startsWith("/en");
 const currentLinks = isEnglish ? links.en : links.pl;
 const homeLink = isEnglish ? "/en" : "/";
 ---
-<!-- TODO - na dole na mobile jak sie rozwija hamburger menu fajnie jakby na dole bylo logo fantastica to pelne -->
- <!-- TODO - 2 logo jest nad wysuwajacym sie paskiem -->
+
+<!-- TODO - na dole na mobile jak sie rozwija hamburger menu fajnie jakby na dole bylo logo fantastica to pelne --><!-- TODO - 2 logo jest nad wysuwajacym sie paskiem -->
 <header id="headinio">
   <a class="logo-container" href={homeLink} style="z-index: 20;">
     <Logo id="logo" />
   </a>
   <ul class="desktop-nav">
-      {currentLinks.map((link) => (
-        <li><a href={link.href}>{link.name}</a></li>
-      ))}
+    {
+      currentLinks.map((link) => (
+        <li>
+          <a href={link.href}>{link.name}</a>
+        </li>
+      ))
+    }
   </ul>
   <LangSwitchButton />
-<!-- Navigation - Mobile -->
+  <!-- Navigation - Mobile -->
   <div class="mobile-nav">
     <nav role="navigation">
       <div id="menuToggle">
@@ -44,114 +48,108 @@ const homeLink = isEnglish ? "/en" : "/";
           <span></span>
           <span></span>
         </div>
-        
 
         <ul id="menu">
-          {currentLinks.map((link) => (
-            <li><a href={link.href}>{link.name}</a></li>
-          ))}
+          {
+            currentLinks.map((link) => (
+              <li>
+                <a href={link.href}>{link.name}</a>
+              </li>
+            ))
+          }
           <LangSwitchButtonM />
         </ul>
       </div>
-      
     </nav>
+  </div>
 
-</header>
-
-<style>
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 20;
-    -webkit-font-smoothing: antialiased;
-
-  }
-  #logo {
-      width: 90px;
-      color: white;        
-      -webkit-font-smoothing: antialiased;
-      z-index: 19;
-  }
-
-  @media screen and (min-width: 700px) {
-
-
-    .mobile-nav {
-      display: none;
-      -webkit-font-smoothing: antialiased;
-    }
+  <style>
     header {
-      mix-blend-mode: difference;
-      display: flex;
-      justify-content: space-between;
-      background: #ffffff00;
-      padding: 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
       z-index: 20;
-      position: fixed;
-      padding-top: 15px;
-    }
-    
-
-    .desktop-nav {
-      display: flex;
-      list-style: none;
-      align-items: center;
-      gap: 20px;
-    }
-    a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.2rem;
-      font-family: "Gilda Display", serif;
-      font-weight: 400;
-      font-style: normal;
-    }
-    a:hover {
-      color: yellow;
-    }
-    .logo-container {
-        margin-left: 7vw;
-    }
-
-    .desktop-nav {
-      padding-right: 8vw;
-      
-    }
-  }
-  /* navigation - mobile STYLES */
-  @media screen and (max-width: 700px) {
-    header {
-      position: fixed;
-      z-index: 20;
+      -webkit-font-smoothing: antialiased;
     }
     #logo {
-      margin-top: 2vh;
-      margin-left: 3.7vh;
-      width: 9vh;
-    }
-    #lang-switch-button1 {
-      opacity: 0;
-    }
-    .desktop-nav {
-      display: none;
+      width: 90px;
+      color: white;
+      -webkit-font-smoothing: antialiased;
+      z-index: 19;
     }
 
-    .mobile-nav {
-      display: block;
-    }
+    @media screen and (min-width: 700px) {
+      .mobile-nav {
+        display: none;
+        -webkit-font-smoothing: antialiased;
+      }
+      header {
+        mix-blend-mode: difference;
+        display: flex;
+        justify-content: space-between;
+        background: #ffffff00;
+        padding: 10px;
+        width: 100%;
+        z-index: 20;
+        position: fixed;
+        padding-top: 15px;
+      }
 
-    .logo-container {
-      position: fixed; 
-      top: -10px; 
-      left: 1vw; 
-      
-    }
+      .desktop-nav {
+        display: flex;
+        list-style: none;
+        align-items: center;
+        gap: 20px;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-family: "Gilda Display", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      a:hover {
+        color: yellow;
+      }
+      .logo-container {
+        margin-left: 7vw;
+      }
 
-      #menuToggle
-      {
+      .desktop-nav {
+        padding-right: 8vw;
+      }
+    }
+    /* navigation - mobile STYLES */
+    @media screen and (max-width: 700px) {
+      header {
+        position: fixed;
+        z-index: 20;
+      }
+      #logo {
+        margin-top: 2vh;
+        margin-left: 3.7vh;
+        width: 9vh;
+      }
+      #lang-switch-button1 {
+        opacity: 0;
+      }
+      .desktop-nav {
+        display: none;
+      }
+
+      .mobile-nav {
+        display: block;
+      }
+
+      .logo-container {
+        position: fixed;
+        top: -10px;
+        left: 1vw;
+      }
+
+      #menuToggle {
         display: block;
         /* You can also use relative/absolute here if you want to stay on the top */
         position: fixed;
@@ -161,29 +159,25 @@ const homeLink = isEnglish ? "/en" : "/";
         /* pointer-events: none !important; */
         z-index: -1;
         height: 44px;
-        
+
         /* -webkit-user-select: none;
         user-select: none; */
       }
 
-      #menuToggle a
-      {
+      #menuToggle a {
         text-decoration: none;
         color: #232323;
-        
+
         transition: color 0.3s ease;
       }
 
-      #menuToggle a:hover
-      {
-        background: linear-gradient(180deg, #8E13F3 0%, #2599F8 100%);
+      #menuToggle a:hover {
+        background: linear-gradient(180deg, #8e13f3 0%, #2599f8 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
 
-
-      #menuToggle input
-      {
+      #menuToggle input {
         display: block;
         width: 40px;
         height: 32px;
@@ -191,12 +185,12 @@ const homeLink = isEnglish ? "/en" : "/";
         top: -7px;
         right: -5px;
         left: auto;
-        
+
         cursor: pointer;
-        
+
         opacity: 0; /* hide this */
         z-index: 19; /* and place it over the hamburger */
-        
+
         -webkit-touch-callout: none;
       }
 
@@ -206,10 +200,8 @@ const homeLink = isEnglish ? "/en" : "/";
       .menu-icon {
         position: absolute;
         right: 0;
-        
       }
-      #menuToggle span
-      {
+      #menuToggle span {
         display: block;
         width: 33px;
         height: 4px;
@@ -217,26 +209,24 @@ const homeLink = isEnglish ? "/en" : "/";
         position: relative;
         right: 0;
 
-        
         background: #cdcdcd;
         border-radius: 3px;
-        
+
         z-index: 19;
-        
+
         transform-origin: 33px 0px;
-        
-        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                    opacity 0.55s ease;
+
+        transition:
+          transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+          background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+          opacity 0.55s ease;
       }
 
-      #menuToggle span:first-child
-      {
+      #menuToggle span:first-child {
         transform-origin: 100% 0%;
       }
 
-      #menuToggle span:nth-last-child(2)
-      {
+      #menuToggle span:nth-last-child(2) {
         transform-origin: 100% 100%;
       }
 
@@ -244,8 +234,7 @@ const homeLink = isEnglish ? "/en" : "/";
       * Transform all the slices of hamburger
       * into a crossmark.
       */
-      #menuToggle input:checked ~ span
-      {
+      #menuToggle input:checked ~ span {
         opacity: 1;
         transform: rotate(-45deg) translate(0, -1px);
         background: #232323;
@@ -254,8 +243,7 @@ const homeLink = isEnglish ? "/en" : "/";
       /*
       * But let's hide the middle one.
       */
-      #menuToggle input:checked ~ span:nth-last-child(3)
-      {
+      #menuToggle input:checked ~ span:nth-last-child(3) {
         opacity: 0;
         transform: rotate(0deg) scale(0.2, 0.2);
       }
@@ -263,8 +251,7 @@ const homeLink = isEnglish ? "/en" : "/";
       /*
       * Ohyeah and the last one should go the other direction
       */
-      #menuToggle input:checked ~ span:nth-last-child(2)
-      {
+      #menuToggle input:checked ~ span:nth-last-child(2) {
         transform: rotate(45deg) translate(0, -1px);
       }
 
@@ -272,8 +259,7 @@ const homeLink = isEnglish ? "/en" : "/";
       * Make this absolute positioned
       * at the top left of the screen
       */
-      #menu
-      {
+      #menu {
         position: relative;
         max-width: 400px;
         width: 100vw;
@@ -287,32 +273,28 @@ const homeLink = isEnglish ? "/en" : "/";
         list-style-type: none;
         -webkit-font-smoothing: antialiased;
         /* to stop flickering of text in safari */
-        
+
         transform-origin: 100% 0%;
         transform: translate(100%, 0);
-        
-        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
       }
 
-      #menu li
-      {
+      #menu li {
         padding: 10px 0;
         font-size: 44px;
       }
 
-      #menu li label
-      {
+      #menu li label {
         cursor: pointer;
       }
 
       /*
       * And let's slide it in from the left
       */
-      #menuToggle input:checked ~ ul
-      {
+      #menuToggle input:checked ~ ul {
         transform: none;
       }
-
-
-  }
-</style>
+    }
+  </style>
+</header>
