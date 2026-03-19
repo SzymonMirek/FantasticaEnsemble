@@ -2,6 +2,9 @@ dist/
 .astro/
 node_modules/
 .DS_Store
+src/components/en_components/Footer.astro
+src/components/About_cmpnt.astro
+src/components/en_components/About_cmpnt.astro
 
 # Optional: keep CMS/admin vendor assets untouched if any appear later
 public/admin/
