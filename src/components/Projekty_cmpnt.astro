@@ -254,7 +254,9 @@ import { ViewTransitions } from "astro:transitions";
     grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
     grid-template-rows: max-content;
     background-image: url("../assets/tloProjekty.png");
-    height: auto;
+    /* height: auto; */
+    /* height: 84vh; */
+    height: calc(39vh + 20vw);
     align-content: end;
     padding-top: 16vh;
     background-size: cover;
@@ -263,7 +265,9 @@ import { ViewTransitions } from "astro:transitions";
   .projektyHeadlineImg {
     grid-column: 1/2;
     grid-row: 2/3;
-    height: 50vw;
+    /* height: 50vw; */
+    /* height: 40vw; */
+    height: calc(58vh + 12vw);
     justify-self: center;
     margin-top: 0.2vw;
     width: auto;
@@ -274,16 +278,26 @@ import { ViewTransitions } from "astro:transitions";
     font-family: "Gilda Display";
     text-align: center;
     font-size: 23px;
+    display: grid;
+    align-content: start;
+    justify-content: center;
   }
   .projekty-headline-text h1 {
     color: #dd2471;
-    font-size: calc(80px + 7vw);
+    /* font-size: calc(80px + 7vw); */
+    /* font-size: calc(70px + 7vw); */
+    font-size: calc(64px + 7vw);
     /* text-align: right; */
     padding-right: 1.6vw;
     font-weight: 400;
+    margin-bottom: 10vh;
   }
   .projekty-headline-text p {
-    padding: 0 6vw;
+    /* padding: 0 6vw; */
+    width: 36vw;
+    justify-self: center;
+    padding-right: 2vw;
+    margin-top: 0;
   }
 
   /* TODO - small things: gradient jest inny, BIG things: ślaczek */
@@ -313,16 +327,21 @@ import { ViewTransitions } from "astro:transitions";
   }
   .projekt1img {
     object-fit: contain;
-    width: 82%;
+    /* width: 82%; */
+    width: 79%;
     height: auto;
     padding-right: 4.3vw;
   }
 
   .projekt-1-text {
     grid-column: 2/3;
-    font-size: clamp(16px, 1.8vw, 30px);
+    /* font-size: clamp(16px, 1.8vw, 30px); */
+    font-size: clamp(16px, 1.6vw, 25px);
     text-align: right;
-    align-self: anchor-center;
+    align-self: center;
+    max-width: 730px;
+    justify-self: end;
+    margin-right: 1.5vw;
   }
 
   .projekt-1-down {
@@ -344,6 +363,7 @@ import { ViewTransitions } from "astro:transitions";
     );
     align-content: center;
     display: flex;
+    justify-content: center;
   }
 
   .projekt-1-down-bg {
@@ -356,7 +376,7 @@ import { ViewTransitions } from "astro:transitions";
   h2 {
     font-weight: 400;
     margin-bottom: 1vw;
-    font-size: clamp(40px, 5vw, 76px);
+    font-size: clamp(40px, 5vw, 82px);
     color: #bd74e2;
   }
 
@@ -364,14 +384,15 @@ import { ViewTransitions } from "astro:transitions";
     margin-top: 1vw;
     margin-bottom: 5vw;
     font-weight: 400;
-    font-size: clamp(20px, 2.5vw, 42px);
+    font-size: clamp(20px, 2.5vw, 36px);
   }
   .projekt-1-text p {
     /* padding-left: 7vw; */
   }
   #bg-eclipse {
     height: 100%;
-    width: 100%;
+    width: 90%;
+
     background-image: url("../assets/eclipseProjekty.svg");
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
@@ -381,7 +402,7 @@ import { ViewTransitions } from "astro:transitions";
     list-style-type: none;
     text-align: center;
     color: #fff;
-    font-size: clamp(16px, 1.8vw, 30px);
+    font-size: clamp(16px, 1.6vw, 25px);
   }
   .projekt-1-down ul {
     margin-top: 3vw;
@@ -410,6 +431,9 @@ import { ViewTransitions } from "astro:transitions";
     grid-row: 1/2;
     background: #e4e9f0;
     padding-right: 6vw;
+    padding-bottom: 20vh;
+    box-sizing: content-box;
+    padding-top: 20vh;
   }
 
   .projekt-2-img-container {
@@ -429,9 +453,9 @@ import { ViewTransitions } from "astro:transitions";
 
   .projekt-2-text {
     grid-column: 2/3;
-    font-size: clamp(16px, 1.8vw, 30px);
+    font-size: clamp(16px, 1.5vw, 25px);
     text-align: right;
-    align-self: anchor-center;
+    align-self: center;
   }
 
   .projekt2-fikusy {
@@ -448,8 +472,8 @@ import { ViewTransitions } from "astro:transitions";
     top: -45vw;
     left: -7vw;
     z-index: 2;
-    justify-self: anchor-center;
-    align-self: anchor-center;
+    justify-self: center;
+    align-self: center;
     width: 9.6%;
   }
 
@@ -464,38 +488,42 @@ import { ViewTransitions } from "astro:transitions";
     align-content: center;
     display: flex;
     margin-top: 0;
+    justify-content: center;
   }
 
   h2 {
     font-weight: 400;
     margin-bottom: 1vw;
-    font-size: clamp(40px, 4.5vw, 76px);
+    font-size: clamp(40px, 4.5vw, 82px);
   }
 
   h4 {
     margin-top: 1vw;
     margin-bottom: 5vw;
     font-weight: 400;
-    font-size: clamp(20px, 2.5vw, 42px);
+    font-size: clamp(20px, 2.5vw, 36px);
   }
   .projekt-2-text p {
     /* padding-left: 7vw; */
   }
   #bg-eclipse {
     height: 100%;
-    width: 100%;
+    /* width: 100%; */
+    width: 90%;
     background-image: url("../assets/eclipseProjekty.svg");
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: 80% 100%;
+    display: grid;
   }
   #bg-eclipse ul {
     list-style-type: none;
     text-align: center;
     color: #fff;
-    font-size: clamp(16px, 1.8vw, 30px);
-    height: 17vw;
+    font-size: clamp(16px, 1.6vw, 25px);
+    height: 15vw;
     align-content: center;
+    margin: 5vh 0px;
   }
   .projekt-2-down ul {
     margin-top: 0;
@@ -533,9 +561,11 @@ import { ViewTransitions } from "astro:transitions";
   .projekt-3-text {
     grid-column: 1/2;
     grid-row: 2 / 3;
-    font-size: clamp(16px, 1.8vw, 30px);
+    font-size: clamp(16px, 1.6vw, 25px);
     text-align: left;
-    align-self: anchor-center;
+    align-self: center;
+    box-sizing: border-box;
+    padding-right: 11vw;
   }
 
   .projekt-3-text h2 {
@@ -548,6 +578,7 @@ import { ViewTransitions } from "astro:transitions";
     background-color: #da4c86;
     align-content: center;
     display: flex;
+    justify-content: center;
   }
 
   .projekt-2-text p {
@@ -556,7 +587,7 @@ import { ViewTransitions } from "astro:transitions";
   #bg-eclipse {
     /* padding: 3.5vh 0 3.5vh 0; */
     height: fit-content;
-    width: 100%;
+    width: 90%;
     background-image: url("../assets/eclipseProjekty.svg");
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
@@ -566,8 +597,8 @@ import { ViewTransitions } from "astro:transitions";
     list-style-type: none;
     text-align: center;
     color: #fff;
-    font-size: clamp(16px, 1.8vw, 30px);
-    height: 17vw;
+    font-size: clamp(16px, 1.6vw, 25px);
+    height: 15vw;
     align-content: center;
   }
   .projekt-2-down ul {
@@ -606,9 +637,11 @@ import { ViewTransitions } from "astro:transitions";
   .projekt-4-text {
     grid-column: 1/2;
     grid-row: 2 / 3;
-    font-size: clamp(16px, 1.8vw, 30px);
+    font-size: clamp(16px, 1.5vw, 25px);
     text-align: left;
-    align-self: anchor-center;
+    align-self: center;
+    box-sizing: border-box;
+    padding-right: 9vw;
   }
 
   .projekt-4-text h2 {
@@ -621,6 +654,7 @@ import { ViewTransitions } from "astro:transitions";
     background-color: #8c00ff; /* You can change this color */
     align-content: center;
     display: flex;
+    justify-content: center;
   }
 
   img {
@@ -632,6 +666,7 @@ import { ViewTransitions } from "astro:transitions";
   @media (max-width: 1200px) and (min-width: 800px) {
     .projekty-headline {
       grid-template-columns: 6fr 7fr;
+      padding-top: 13vw;
     }
     .projektyHeadlineImg {
       height: 52vw;
@@ -640,12 +675,18 @@ import { ViewTransitions } from "astro:transitions";
     }
     .projekty-headline-text {
       padding: 1vw 2vw;
+      align-content: center;
     }
     .projekty-headline-text > h1 {
       padding-bottom: 0vw;
+      margin-top: 0vw;
+      font-size: 12vw;
+      margin-bottom: 8vh;
     }
     .projekty-headline-text > p {
-      font-size: 2.2vw;
+      /* font-size: 2.2vw; */
+      font-size: calc(0.9vw + 10px);
+      width: auto;
     }
 
     .projekt-1-container {
@@ -660,9 +701,14 @@ import { ViewTransitions } from "astro:transitions";
     .projekt-4-container {
       width: 100vw;
     }
+    #bg-eclipse {
+      width: 100%;
+    }
   }
 
+  /* RESPONSIVE - Phone */
   @media (max-width: 800px) {
+    /* Wczesniej od 800px  */
     .projekty-container {
       grid-template-rows: 115vw 83vw 100vw 100vw 100vw;
       grid-template-columns: 100vw;
@@ -706,26 +752,30 @@ import { ViewTransitions } from "astro:transitions";
     .projekt-4-container {
       grid-template-rows: 3fr auto;
     }
-  }
 
-  /* RESPONSIVE - Phone */
-  @media (max-width: 700px) {
+    /* Wczesniej od 800px  */
     .projekty-container {
       grid-template-rows: minmax(115vw, auto) repeat(4, minmax(172vw, auto));
     }
     .projekty-headline {
       /* margin-top: 12vw; */
       height: -webkit-fit-content;
-      padding-top: 6vh;
+      padding-top: 3vh;
+      z-index: 0;
     }
 
     .projekty-headline-text {
       text-align: left;
       flex-direction: column;
     }
+    .projekty-headline-text h1 {
+      font-size: calc(80px + 7vw);
+    }
     .projekty-headline-text p {
       margin-top: 0;
       margin-bottom: 5vw;
+      width: auto;
+      padding: 0 6vw;
     }
     .projekt-2-container,
     .projekt-3-container,
@@ -748,19 +798,33 @@ import { ViewTransitions } from "astro:transitions";
     .projekty-headline-text > h1 {
       text-align: center;
       padding-right: 0%;
+      margin-bottom: 7vh;
     }
     .projektyHeadlineImg {
       width: 91%;
     }
     /* proba img dopasowania */
     .projekt-1-up,
-    .projekt-2-up,
+    .projekt-2-up {
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.85fr 1fr;
+      padding-left: 6vw;
+      padding-right: 6vw;
+      padding-bottom: 0vh;
+      padding-top: 6vh;
+      z-index: -1;
+    }
+    .projekt1-fikusy {
+      z-index: -1;
+    }
     .projekt-3-up,
     .projekt-4-up {
       grid-template-columns: 1fr;
       grid-template-rows: 0.85fr 1fr;
       padding-left: 6vw;
       padding-right: 6vw;
+      padding-bottom: 4vh;
+      padding-top: 2vh;
     }
     .projekt-1-img-container,
     .projekt-2-img-container,
@@ -774,13 +838,21 @@ import { ViewTransitions } from "astro:transitions";
     .projekt-1-img-container {
       margin-top: 5vw;
     }
+    .projekt-2-img-container {
+      display: grid;
+    }
+
+    .projekt1img {
+      padding-right: 9.3vw;
+    }
 
     .projekt-1-text {
       grid-column: 1/2;
     }
     .projekt1-fikusy {
       left: -6vw;
-      top: -5vw;
+      /* top: -5vw; */
+      top: -20vw;
     }
     .projekt2-fikusy {
       top: -44vw;
@@ -792,10 +864,16 @@ import { ViewTransitions } from "astro:transitions";
     }
     .projekt2img {
       height: auto;
+      justify-self: center;
+      padding-right: 0;
     }
     .projekt-2-text {
       grid-column: 1/2;
       grid-row: 2/3;
+    }
+    .projekt-3-text,
+    .projekt-4-text {
+      padding-right: 0;
     }
     #bg-eclipse {
       background-size: 260.4%;
