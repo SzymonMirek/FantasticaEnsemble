@@ -10,9 +10,13 @@ import WydarzeniaTrasa from "../components/WydarzeniaTrasa.astro";
 import kalendarzPicMain from "../assets/kalendarz-pic-main.png";
 import secondPhotoMain from "../assets/second-photo-main.png";
 import Footer from "../components/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
 ---
 
 <Layout>
+  <!-- <head>
+    <ViewTransitions />
+  </head> -->
   <div id="fantastica-glowna">
     <Glowna_cmpnt3 />
     <div id="main-readable-portion">
@@ -793,35 +797,40 @@ import Footer from "../components/Footer.astro";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
 
   // Initialize a new Lenis instance for smooth scrolling
-  const lenis = new Lenis();
+  function initAnimations() {
+    const lenis = new Lenis();
 
-  // Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
-  lenis.on("scroll", ScrollTrigger.update);
+    // Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
+    lenis.on("scroll", ScrollTrigger.update);
 
-  // Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
-  // This ensures Lenis's smooth scroll animation updates on each GSAP tick
-  gsap.ticker.add((time) => {
-    lenis.raf(time * 1000); // Convert time from seconds to milliseconds
-  });
-
-  // Disable lag smoothing in GSAP to prevent any delay in scroll animations
-  gsap.ticker.lagSmoothing(0);
-
-  if (typeof window !== "undefined") {
-    // Register ScrollTrigger plugin
-    gsap.registerPlugin(ScrollTrigger);
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#first-photo-containter",
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
-      },
+    // Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
+    // This ensures Lenis's smooth scroll animation updates on each GSAP tick
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000); // Convert time from seconds to milliseconds
     });
-    // To dziala zeby od poczatku do konca zdjecia przejechac
-    // tl.to("#first-photo-containter", {backgroundPositionY: "-100%"}, 0)
-    tl.to("#first-photo-containter", { backgroundPositionY: 10 }, 0);
+
+    // Disable lag smoothing in GSAP to prevent any delay in scroll animations
+    gsap.ticker.lagSmoothing(0);
+
+    if (typeof window !== "undefined") {
+      // Register ScrollTrigger plugin
+      gsap.registerPlugin(ScrollTrigger);
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#first-photo-containter",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+
+      // To dziala zeby od poczatku do konca zdjecia przejechac
+      // tl.to("#first-photo-containter", {backgroundPositionY: "-100%"}, 0)
+      tl.to("#first-photo-containter", { backgroundPositionY: 10 }, 0);
+    }
+
     //or with multiple refs
+    document.addEventListener("astro:page-load", initAnimations);
   }
 </script>
