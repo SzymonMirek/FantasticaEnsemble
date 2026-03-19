@@ -796,41 +796,148 @@ import { ViewTransitions } from "astro:transitions";
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-  // Initialize a new Lenis instance for smooth scrolling
+  gsap.registerPlugin(ScrollTrigger);
+
+  let lenis: Lenis;
+
   function initAnimations() {
-    const lenis = new Lenis();
+    // 1. Clean up
+    if (lenis) {
+      lenis.destroy();
+    }
 
-    // Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
-    lenis.on("scroll", ScrollTrigger.update);
+    // 2. Initialize Lenis
+    if (window.innerWidth > 999) {
+      lenis = new Lenis();
+      lenis.on("scroll", ScrollTrigger.update);
+      gsap.ticker.add((time) => lenis.raf(time * 1000));
+      gsap.ticker.lagSmoothing(0);
+    }
 
-    // Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
-    // This ensures Lenis's smooth scroll animation updates on each GSAP tick
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000); // Convert time from seconds to milliseconds
-    });
-
-    // Disable lag smoothing in GSAP to prevent any delay in scroll animations
-    gsap.ticker.lagSmoothing(0);
-
-    if (typeof window !== "undefined") {
-      // Register ScrollTrigger plugin
-      gsap.registerPlugin(ScrollTrigger);
-
+    // 3. Parallax on first photo
+    const firstPhotoContainer = document.querySelector("#first-photo-containter");
+    if (firstPhotoContainer) {
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: "#first-photo-containter",
+          trigger: firstPhotoContainer,
           start: "top bottom",
           end: "bottom top",
           scrub: true,
         },
       });
-
-      // To dziala zeby od poczatku do konca zdjecia przejechac
-      // tl.to("#first-photo-containter", {backgroundPositionY: "-100%"}, 0)
-      tl.to("#first-photo-containter", { backgroundPositionY: 10 }, 0);
+      tl.to(firstPhotoContainer, { backgroundPositionY: "10%" }, 0);
     }
 
-    //or with multiple refs
-    document.addEventListener("astro:page-load", initAnimations);
+    // 4. Hero animations (from Glowna_cmpnt3)
+    const heroTrigger = document.querySelector(".scroll-container-container");
+    if (!heroTrigger) return;
+
+    gsap.set("#background-that-fades", { opacity: 1 });
+    gsap.set("#fantastica-bg-vid", { opacity: 1 });
+
+    gsap.to("#background-that-fades", {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".scroll-container-container",
+        start: "top top",
+        end: "+=25%",
+        scrub: true,
+      },
+    });
+
+    const mm = gsap.matchMedia();
+
+    mm.add("(min-width: 1285px)", () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".scroll-container-container",
+          start: "+=25%",
+          end: "+=67.5%",
+          scrub: true,
+          pin: ".fantastica-big-letters",
+          pinSpacing: false,
+        },
+      });
+      tl.to(".fantastica-big-letters", { duration: 0.2 })
+        .to(".fantastica-big-letters", {
+          color: "#A76AFB",
+          scale: 1.4,
+          y: -220,
+          duration: 0.8,
+        })
+        .to("#fantastica-bg-vid", { filter: "grayscale(100%)", duration: 0.4 }, "<+=0.2");
+    });
+
+    mm.add("(min-width: 1000px) and (max-width: 1284px)", () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".scroll-container-container",
+          start: "+=25%",
+          end: "+=75%",
+          scrub: true,
+          pin: ".fantastica-big-letters",
+          pinSpacing: false,
+        },
+      });
+      tl.to(".fantastica-big-letters", { duration: 0.2 })
+        .to(".fantastica-big-letters", {
+          color: "#A76AFB",
+          scale: 1.2,
+          y: -220,
+          duration: 0.8,
+        })
+        .to("#fantastica-bg-vid", { filter: "grayscale(100%)", duration: 0.4 }, "<+=0.2");
+    });
+
+    mm.add("(max-width: 999px)", () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".scroll-container-container",
+          start: "top top",
+          end: "+=82%",
+          scrub: true,
+          pin: ".fantastica-big-letters",
+          pinSpacing: false,
+        },
+      });
+      tl.to(".fantastica-big-letters", {
+        color: "#A76AFB",
+        scale: 1.2,
+        duration: 0.6,
+      }).to("#fantastica-bg-vid", { filter: "grayscale(100%)", duration: 0.6 });
+    });
+
+    gsap.to("#fantastica-bg-vid", {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".scroll-container-container",
+        start: "+=130%",
+        scrub: true,
+        onEnter: () => {
+          const video = document.querySelector("#fantastica-bg-vid") as HTMLVideoElement | null;
+          const bg = document.querySelector("#fadeImage") as HTMLElement | null;
+          const fa = document.querySelector("#falandingImg") as HTMLElement | null;
+          if (video) {
+            video.style.display = "none";
+            video.pause();
+          }
+          if (bg) bg.style.display = "none";
+          if (fa) fa.style.display = "none";
+        },
+        onLeaveBack: () => {
+          const video = document.querySelector("#fantastica-bg-vid") as HTMLVideoElement | null;
+          const bg = document.querySelector("#fadeImage") as HTMLElement | null;
+          const fa = document.querySelector("#falandingImg") as HTMLElement | null;
+          if (video) {
+            video.style.display = "block";
+            video.play();
+          }
+          if (bg) bg.style.display = "block";
+          if (fa) fa.style.display = "block";
+        },
+      },
+    });
   }
+
+  document.addEventListener("astro:page-load", initAnimations);
 </script>
