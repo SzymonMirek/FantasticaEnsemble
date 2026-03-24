@@ -798,7 +798,11 @@ import { ViewTransitions } from "astro:transitions";
 
   gsap.registerPlugin(ScrollTrigger);
 
-  let lenis: Lenis;
+  let lenis = new Lenis({
+    duration: 0.2,
+    smoothWheel: true,
+    wheelMultiplier: 1.5,
+  });
 
   function initAnimations() {
     // 1. Clean up

@@ -20,7 +20,7 @@ import Wydarzenia from "../components/Wydarzenia.astro";
         <label for="switch">
           <div class="toggle-pill"></div>
           <div class="names">
-            <p class="light">Minione</p>
+            <p class="light">Przeszłe</p>
             <p class="dark">Nadchodzące</p>
           </div>
         </label>
@@ -29,7 +29,13 @@ import Wydarzenia from "../components/Wydarzenia.astro";
   </section>
 
   <section class="calendar-section">
-    <Wydarzenia title="Wydarzenia" />
+    <div id="events-upcoming" class="tab-content">
+      <Wydarzenia type="upcoming" />
+    </div>
+
+    <div id="events-past" class="tab-content">
+      <Wydarzenia type="past" />
+    </div>
   </section>
 </div>
 
@@ -141,13 +147,14 @@ import Wydarzenia from "../components/Wydarzenia.astro";
 
   label {
     display: block;
-    width: 12rem;
+    width: 16rem;
     height: 3.5rem;
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 100px;
     position: relative;
     cursor: pointer;
     margin: 2rem auto;
+    margin-right: 1.15vw;
   }
 
   .toggle-wrapper {
@@ -156,7 +163,7 @@ import Wydarzenia from "../components/Wydarzenia.astro";
 
   .toggle-pill {
     position: absolute;
-    width: 50%;
+    width: 46%;
     height: 3.5rem;
     background-color: #fff;
     border-radius: 100px;
@@ -170,7 +177,7 @@ import Wydarzenia from "../components/Wydarzenia.astro";
     /* font-weight: bolder; */
     color: black;
     width: -webkit-fill-available;
-    margin-left: 1%;
+    margin-left: 2%;
     height: 100%;
     position: absolute;
     display: flex;
@@ -179,6 +186,7 @@ import Wydarzenia from "../components/Wydarzenia.astro";
     user-select: none;
     z-index: 2;
     justify-content: space-around;
+    gap: -0.3vw;
   }
 
   .light,
@@ -188,7 +196,8 @@ import Wydarzenia from "../components/Wydarzenia.astro";
   }
 
   #switch:checked + label .toggle-pill {
-    transform: translateX(100%);
+    transform: translateX(71.5%);
+    width: 58.5%;
   }
 
   .dark {
@@ -213,9 +222,49 @@ import Wydarzenia from "../components/Wydarzenia.astro";
     display: grid;
   }
 
+  /* --- Style dla animacji zakładek --- */
+  .tab-content {
+    display: none; /* Domyślnie ukrywamy oba kontenery */
+  }
+
+  /* Klasa dodawana przez JS do aktywnego kontenera */
+  .tab-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  /* Definicja animacji: płynne pojawienie się i delikatny ruch do góry */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
   @media screen and (max-width: 750px) {
-    .calendar-section {
-      /* padding-inline: 5.5vw; */
+    label {
+      -webkit-tap-highlight-color: transparent;
+      width: 15rem;
+      height: 3.3rem;
+      border-radius: 80px;
+    }
+    .toggle-wrapper {
+    }
+    .toggle-pill {
+      height: 3.3rem;
+    }
+    .names {
+      font-size: 70%;
+    }
+    .names > p {
+      margin-top: 1px;
+    }
+    #switch {
+      transform: translateX(76.3%);
+      width: 56.5%;
     }
   }
   @media screen and (max-width: 660px) {
@@ -227,3 +276,31 @@ import Wydarzenia from "../components/Wydarzenia.astro";
     }
   }
 </style>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const switchInput = document.getElementById("switch") as HTMLInputElement;
+    const upcomingContainer = document.getElementById("events-upcoming");
+    const pastContainer = document.getElementById("events-past");
+
+    if (switchInput && upcomingContainer && pastContainer) {
+      const updateView = () => {
+        if (switchInput.checked) {
+          // Switch zaznaczony -> pokazujemy Nadchodzące
+          upcomingContainer.classList.add("active");
+          pastContainer.classList.remove("active");
+        } else {
+          // Switch odznaczony -> pokazujemy Przeszłe
+          upcomingContainer.classList.remove("active");
+          pastContainer.classList.add("active");
+        }
+      };
+
+      // Inicjalizacja stanu przy załadowaniu strony
+      updateView();
+
+      // Nasłuchiwanie na kliknięcia
+      switchInput.addEventListener("change", updateView);
+    }
+  });
+</script>
