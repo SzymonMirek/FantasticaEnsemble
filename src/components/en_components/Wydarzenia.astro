@@ -1,21 +1,19 @@
 ---
-// Import the collection
 import { getCollection } from "astro:content";
 import EventCard from "../../components/en_components/EventCard.astro";
 
-// Get all events from the English collection
+// Definiujemy prop "type" dla wersji angielskiej
+interface Props {
+  type: "past" | "upcoming";
+}
+const { type = "upcoming" } = Astro.props;
+
+// Pobieramy kolekcję "events" (angielską)
 const allEvents = await getCollection("events");
 
-// Sort events by date
-const sortedEvents = allEvents.sort((a, b) => {
-  const dateA = convertToDate(a.data.eventDate);
-  const dateB = convertToDate(b.data.eventDate);
-  return dateA - dateB; // Sort from oldest to newest
-});
-
-// Helper function to convert your date format to a Date object
-function convertToDate(dateObj) {
-  // Clean up the month/year string (remove <br> if present)
+// Helper function dostosowany do angielskich kluczy i miesięcy
+function convertToDate(dateObj: any) {
+  // Czyścimy string (obsługa <br> i spacji)
   const monthYear = dateObj.monthYear.replace("<br>", " ").trim().toLowerCase();
   const [monthAbbr, year] = monthYear.split(" ");
 
@@ -33,15 +31,41 @@ function convertToDate(dateObj) {
     "nov",
     "dec",
   ];
+
   const monthIndex = monthNames.indexOf(monthAbbr);
 
-  // Create a Date object using the day from eventDate
-  return new Date(year, monthIndex, parseInt(dateObj.day));
+  // Ważne: używamy dateObj.day oraz przeliczonego monthIndex
+  return new Date(parseInt(year), monthIndex, parseInt(dateObj.day));
 }
+
+// Obecna data do porównań
+const now = new Date();
+now.setHours(0, 0, 0, 0);
+
+// Filtrowanie i sortowanie
+const filteredEvents = allEvents
+  .filter((event) => {
+    const eventDate = convertToDate(event.data.eventDate);
+    if (type === "past") return eventDate < now;
+    return eventDate >= now;
+  })
+  .sort((a, b) => {
+    const dateA = convertToDate(a.data.eventDate).getTime();
+    const dateB = convertToDate(b.data.eventDate).getTime();
+
+    // Upcoming: closest first | Past: newest first
+    return type === "past" ? dateB - dateA : dateA - dateB;
+  });
 ---
 
 <div class="wydarzenia-cmpnt">
-  {sortedEvents.map((event) => <EventCard event={event} />)}
+  {
+    filteredEvents.length > 0 ? (
+      filteredEvents.map((event) => <EventCard event={event} />)
+    ) : (
+      <p class="brak-wydarzen">No events to display.</p>
+    )
+  }
 </div>
 
 <style>
@@ -49,7 +73,21 @@ function convertToDate(dateObj) {
     display: flex;
     flex-direction: column;
     gap: 2% 2%;
-    width: 100%;
+    width: 70vw;
     margin-top: 8px;
+    justify-self: center;
+    height: -webkit-fit-content;
+  }
+  .brak-wydarzen {
+    text-align: center;
+    font-family: "Gilda Display";
+    color: #555;
+    margin-top: 2rem;
+  }
+  @media screen and (max-width: 1150px) {
+    .wydarzenia-cmpnt {
+      max-width: 805px;
+      width: -webkit-fill-available;
+    }
   }
 </style>
