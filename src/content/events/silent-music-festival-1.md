@@ -1,9 +1,9 @@
 ---
-dataWydarzenia:
-  dzien: "05"
-  mR: Oct 2025
-repertuar: Pandolfi
-nazwaWydarzenia: Silent Music Festival
-miejsceWydarzenia: Torun, PL
-czasWydarzenia: 17:00
+eventDate:
+  day: "05"
+  monthYear: oct 2025
+repertoire: Pandolfi
+eventName: Silent Music Festival
+eventLocation: Torun, PL
+eventTime: 17:00
 ---

@@ -1,9 +1,9 @@
 ---
-dataWydarzenia:
-  dzien: "17"
-  mR: Aug 2025
-repertuar: Pandolfi
-nazwaWydarzenia: Baroque in Spisz
-miejsceWydarzenia: Jurgow, PL
-czasWydarzenia: 18:00
+eventDate:
+  day: "17"
+  monthYear: aug 2025
+repertoire: Pandolfi
+eventName: Baroque in Spisz
+eventLocation: Jurgow, PL
+eventTime: 18:00
 ---

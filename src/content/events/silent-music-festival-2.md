@@ -1,9 +1,9 @@
 ---
-dataWydarzenia:
-  dzien: "17"
-  mR: Oct 2025
-repertuar: Baroque Disco
-nazwaWydarzenia: Silent Music Festival
-miejsceWydarzenia: Krakow, PL
-czasWydarzenia: 20:00
+eventDate:
+  day: "17"
+  monthYear: oct 2025
+repertoire: Baroque Disco
+eventName: Silent Music Festival
+eventLocation: Krakow, PL
+eventTime: 20:00
 ---

@@ -1,9 +1,9 @@
 ---
-dataWydarzenia:
-  dzien: "17"
-  mR: Apr 2025
-repertuar: Mystery
-nazwaWydarzenia: All’Improvviso Festival
-miejsceWydarzenia: Gliwice, PL
-czasWydarzenia: 18:00
+eventDate:
+  day: "17"
+  monthYear: apr 2025
+repertoire: Mystery
+eventName: All’Improvviso Festival
+eventLocation: Gliwice, PL
+eventTime: 18:00
 ---

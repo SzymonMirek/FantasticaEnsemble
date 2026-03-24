@@ -1,9 +1,9 @@
 ---
-dataWydarzenia:
-  dzien: "12"
-  mR: Jul 2025
-repertuar: Fantasticus
-nazwaWydarzenia: New Music and Architecture Festival
-miejsceWydarzenia: Torun, PL
-czasWydarzenia: 18:00
+eventDate:
+  day: "12"
+  monthYear: jul 2025
+repertoire: Fantasticus
+eventName: New Music and Architecture Festival
+eventLocation: Torun, PL
+eventTime: 18:00
 ---

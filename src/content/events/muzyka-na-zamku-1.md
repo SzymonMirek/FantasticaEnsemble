@@ -1,9 +1,9 @@
 ---
-dataWydarzenia:
-  dzien: "21"
-  mR: Sep 2025
-repertuar: Fantasticus
-nazwaWydarzenia: Music at the Castle
-miejsceWydarzenia: Lidzbark Warminski, PL
-czasWydarzenia: 18:00
+eventDate:
+  day: "21"
+  monthYear: sep 2025
+repertoire: Fantasticus
+eventName: Music at the Castle
+eventLocation: Lidzbark Warminski, PL
+eventTime: 18:00
 ---
