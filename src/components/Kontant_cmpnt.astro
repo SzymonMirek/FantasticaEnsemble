@@ -180,6 +180,11 @@ import { ViewTransitions } from "astro:transitions";
   .footer-right-icon {
     height: 33px;
   }
+  @media screen and (max-width: 1120px) and (min-width: 1000px) {
+    .kontakt-container {
+      grid-template-rows: 45vh minmax(450px, 50vh);
+    }
+  }
   @media screen and (max-width: 700px) {
     .kontakt-container {
       grid-template-rows: 36vh 1fr;

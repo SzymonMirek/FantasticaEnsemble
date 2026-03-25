@@ -23,7 +23,7 @@ import { ViewTransitions } from "astro:transitions";
       <section id="trasa-section">
         <div id="trasa-main-container">
           <div id="trasa">
-            <h2>Sacrum/ <br />Profanum Tour</h2>
+            <h2 class="trasa-title">Sacrum/ <br />Profanum Tour</h2>
             <div class="trasa-info-buy-container">
               <div class="trasa-info-buy">
                 <p>Biber. Trochę sacrum. Trochę profanum. <br />Zmysłowa gra kontrastów</p>
@@ -275,9 +275,15 @@ import { ViewTransitions } from "astro:transitions";
   .trasa-images {
     padding-top: 21%;
     margin-left: -30px;
+    display: flex;
+    flex-direction: column;
   }
   .trasa-photo {
-    width: 56.3vw;
+    width: 44.5vw;
+    justify-self: end;
+    align-self: end;
+    margin-right: 5vw;
+    margin-top: 4.8vh;
   }
   .biber-kropki {
     margin-left: 13.7vw;
@@ -286,7 +292,8 @@ import { ViewTransitions } from "astro:transitions";
   .trasa-repertuar-container {
     justify-self: center;
 
-    width: 926px;
+    /* width: 926px; */
+    width: auto;
     margin-bottom: 12.8vh;
 
     display: grid;
@@ -496,7 +503,40 @@ import { ViewTransitions } from "astro:transitions";
     color: #666;
     font-family: "MyrkenFont";
   }
+  @media screen and (max-width: 1120px) and (min-width: 1000px) {
+    #main-readable-portion {
+      grid-template-rows: 10vh auto auto 82vh auto 1fr;
+    }
+    #o-nas-containter {
+      padding-right: 5vw;
+    }
+    .trasa-images {
+      padding-top: 24%;
+    }
+    .biber-kropki {
+      width: 34vw;
+    }
+    .trasa-photo {
+      justify-self: auto;
+      align-self: center;
+      margin-right: 0vw;
+      margin-top: 3.8vh;
+    }
+    .trasa-info-buy-container {
+      margin-bottom: 63px;
+    }
+  }
 
+  @media screen and (min-width: 1000px) {
+    #trasa-section {
+      display: grid;
+      padding-bottom: 10vh;
+      -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    }
+    .buy-ticket {
+      margin-left: 20px;
+    }
+  }
   @media screen and (max-width: 1000px) {
     body {
       height: auto;
@@ -514,6 +554,8 @@ import { ViewTransitions } from "astro:transitions";
 
     #o-nas-containter {
       grid-column: 1/4;
+      padding-inline: 5vw;
+      padding-top: 2vh;
     }
 
     #o-nas {
@@ -640,8 +682,9 @@ import { ViewTransitions } from "astro:transitions";
     }
 
     #trasa-main-container {
-      padding-right: 8.3vw;
-      padding-left: 0.2vw;
+      /* padding-right: 8.3vw; */
+      /* padding-left: 0.2vw; */
+      padding-inline: 8.3vw;
       grid-template-columns: auto;
       display: grid;
     }
@@ -664,12 +707,13 @@ import { ViewTransitions } from "astro:transitions";
     }
 
     .trasa-info-buy-container {
-      margin-bottom: calc(170px + 35vw);
+      /* margin-bottom: calc(170px + 35vw); */
     }
 
     .trasa-info-buy {
       margin: 0px -4px 0 -2px;
       padding: 0px 15px 0 5px;
+      /* width: 84%; */
     }
 
     .trasa-info-buy > p {
@@ -690,11 +734,15 @@ import { ViewTransitions } from "astro:transitions";
       margin-left: 7px;
       justify-content: center;
       padding-top: 0;
-      margin-top: calc(140px - -39vw);
+      /* margin-top: calc(140px - -39vw); */
     }
 
     .trasa-photo {
-      width: 95vw;
+      /* width: 82.3vw; */
+      width: 76.5vw;
+    }
+    .trasa-info-buy-container {
+      margin-bottom: 50px;
     }
 
     .biber-kropki {
@@ -729,6 +777,30 @@ import { ViewTransitions } from "astro:transitions";
 
     #fbl {
       font-size: 12.5vw;
+    }
+    /* #trasa > h2, .trasa-info-buy-container, .trasa-kalendarz { */
+    #trasa {
+      display: contents;
+    }
+    .trasa-title {
+      grid-row: 1/2;
+    }
+    .trasa-info-buy-container {
+      grid-row: 2/3;
+    }
+    .trasa-images {
+      grid-row: 3/4;
+    }
+    .trasa-kalendarz {
+      grid-row: 4/5;
+      box-sizing: border-box;
+      width: 83.5vw;
+      margin-top: 5.4vh;
+    }
+  }
+  @media screen and (max-width: 1000px) and (min-width: 850px) {
+    .trasa-info-buy-container {
+      /* margin-bottom: calc(170px + 65vw); */
     }
   }
 </style>
