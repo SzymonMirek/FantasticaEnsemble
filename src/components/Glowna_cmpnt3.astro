@@ -14,15 +14,8 @@ import { ViewTransitions } from "astro:transitions";
   <div class="scroll-container">
     <section id="background-that-fades">
       <!-- <img class="background" id="fadeImage" src={background.src} alt="" fetchpriority="high" /> -->
-      <div class="background" id="fadeImage"></div>
-      <img
-        class="falanding"
-        id="fadeImage"
-        class="widFantastica"
-        src={falanding.src}
-        alt=""
-        fetchpriority="high"
-      />
+      <div class="background"></div>
+      <img class="falanding widFantastica" src={falanding.src} alt="" fetchpriority="high" />
     </section>
     <!-- poster="src/assets/video-prev.webp" -->
     <!-- poster={videoPoster.src} -->
@@ -115,11 +108,7 @@ import { ViewTransitions } from "astro:transitions";
     object-fit: cover;
   }
 
-  /* MMNIEJ NIZ 1000 PX */
   @media screen and (max-width: 1000px) {
-    /* #fantastica-glowna {
-		grid-template-rows: 110vh 2000px;
-	} */
     .fantastica-big-letters {
       font-size: 12.5vw;
       top: 20vh;

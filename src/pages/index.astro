@@ -296,7 +296,10 @@ import { ViewTransitions } from "astro:transitions";
   .trasa-repertuar-circle {
     width: 925px;
     height: 242px;
-    border: 1px solid #ca602d;
+    border: 1px solid #ca602d57;
+    /* border-top: 1px solid rgba(247, 121, 60, 0.4); */
+    /* border-bottom: 1px solid rgba(247, 121, 60, 0.4); */
+
     border-radius: 50%;
 
     display: flex;
@@ -306,7 +309,7 @@ import { ViewTransitions } from "astro:transitions";
 
   .trasa-repertuar-circle > div {
     text-align: center;
-    color: #ca602d;
+    color: #ca602dd1;
     line-height: 1.4;
     font-size: 1.3rem;
   }
@@ -430,6 +433,7 @@ import { ViewTransitions } from "astro:transitions";
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    height: auto;
   }
 
   #second-quote-main > div > h2 {
@@ -494,23 +498,19 @@ import { ViewTransitions } from "astro:transitions";
     font-family: "MyrkenFont";
   }
 
-  @media screen and (min-width: 1000px) {
-    #trasa-section {
-      display: grid;
-      padding-bottom: 10vh;
-      -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-    }
-    .buy-ticket {
-      margin-left: 20px;
-    }
-  }
   @media screen and (max-width: 1000px) {
-    #fantastica-glowna {
-      grid-template-rows: 110vh 72%;
+    body {
+      height: auto;
     }
+
+    #fantastica-glowna {
+      grid-template-rows: 122vh 1fr;
+    }
+
     #main-readable-portion {
       width: -webkit-fill-available;
-      grid-template-rows: 10vh 196vw 82vh calc(800px + 117vw) auto;
+      /* grid-template-rows: 10vh auto auto auto auto calc(515px + 114vw); */
+      grid-template-rows: 10vh auto auto auto auto auto;
     }
 
     #o-nas-containter {
@@ -522,23 +522,25 @@ import { ViewTransitions } from "astro:transitions";
       grid-template-columns: 1fr;
       grid-template-rows: auto auto auto;
       gap: 50px;
+      height: auto;
+      margin-bottom: 110px;
     }
+
     #o-nas-left {
       height: auto;
       gap: 5px;
       grid-column: 1/2;
       grid-row: 1/2;
-      /* height: 264vw; */
     }
+
     #o-nas-right {
       width: 91vw;
-      /* position: absolute; */
-      /* top: 29vh; */
       justify-self: center;
       grid-column: 1/2;
       grid-row: 2/3;
       margin-bottom: 0;
     }
+
     #o-nas img {
       width: 95%;
       justify-self: center;
@@ -546,26 +548,48 @@ import { ViewTransitions } from "astro:transitions";
       grid-column: 1/2;
       grid-row: 3/4;
     }
+
     #o-nas-right-tekscik {
       width: 91vw;
       font-size: calc(1.6vw + 11.5px);
     }
-    /* First photo iphone */
+
     #first-photo-containter {
       background-position: center;
     }
 
-    /* kalendarz iphone */
+    #first-photo-text-container {
+      width: 94vw;
+      height: 66vh;
+      border-radius: 11px;
+      border: 1px solid rgba(220, 220, 220, 0.78);
+      margin-top: 6vh;
+      margin-bottom: 6vh;
+    }
+
+    #first-photo-text-container > p {
+      font-size: 2.7rem;
+    }
+
     .wydarzenia {
-      /* row-gap: 15vw; */
       height: auto;
       gap: 50px;
+      flex-direction: column;
+    }
+
+    .wydarzenia > img {
+      height: 114vw;
+    }
+
+    #kalendarz-container {
+      height: auto;
     }
 
     #kalendarz-container > div {
       align-self: auto;
       margin-top: 4vh;
       padding-bottom: 2.5vh;
+      height: auto;
     }
 
     #kalendarz-container > div > h2 {
@@ -573,224 +597,139 @@ import { ViewTransitions } from "astro:transitions";
       font-size: 7vh;
     }
 
-    /* Second quote iphone */
     #second-quote-main {
-      grid-row: 5 / 6;
+      grid-row: 6 / 7;
       flex-direction: column-reverse;
-      height: fit-content;
+      height: auto;
       font-size: 2.1vw;
     }
+
+    #second-quote-main > div {
+      padding: 1vw 5vw 3vw 4vw;
+    }
+
+    #second-quote-main > div > h2 {
+      font-size: 7.3vw;
+      margin-bottom: 1vh;
+    }
+
+    #second-quote-main > div > h4 {
+      font-size: 3.6vw;
+    }
+
     #second-quote-main > div > a {
-      font-size: 2.1vw;
+      font-size: 4.1vw;
+      margin-top: 7vh;
     }
+
     #second-purple-quote {
       height: 500px;
     }
+
     #second-quote-main > img {
-      height: 600px;
+      height: auto;
       width: 100vw;
       object-fit: cover;
       object-position: bottom;
     }
 
-    .wydarzenia {
-      flex-direction: column;
-    }
-    .wydarzenia > img {
-      height: 114vw;
+    #trasa-section {
+      height: max-content;
     }
 
-    /* max-width 600 pixels max-width 600 pixels max-width 600 pixels max-width 600 pixels max-width 600 pixels */
-    @media screen and (max-width: 600px) {
-      body {
-        height: auto;
-      }
-      #fantastica-glowna {
-        grid-template-rows: 110vh 1fr;
-      }
-      #main-readable-portion {
-        grid-template-rows: 10vh 1250px auto auto auto calc(515px + 114vw);
-      }
-      #trasa-section {
-        height: max-content;
-      }
-      #trasa-main-container {
-        padding-right: 8.3vw;
-        padding-left: 0.2vw;
-        /* padding-inline: 8.3vw; */
-        grid-template-columns: auto;
-        display: grid;
-      }
-      #trasa {
-        /* padding-left: 8.3vw; */
-        padding-inline: 8.3vw;
-        /* width: max-content; */
-        width: 100vw;
-        display: grid;
-        z-index: 1;
-        grid-row: 1 / 2;
-        grid-column: 1 / 2;
-        box-sizing: border-box;
-      }
-      #trasa > h2 {
-        font-size: 10.1vw;
-        margin-top: 65px;
-        margin-bottom: 19px;
-        text-transform: uppercase;
-      }
-      .trasa-info-buy-container {
-        /* margin-bottom: 320px; */
-        margin-bottom: calc(170px + 35vw);
-      }
-      .trasa-info-buy {
-      }
-      .trasa-info-buy > p {
-        font-size: clamp(12px, 4.1vw, 23px);
-        width: 44vw;
-      }
+    #trasa-main-container {
+      padding-right: 8.3vw;
+      padding-left: 0.2vw;
+      grid-template-columns: auto;
+      display: grid;
+    }
 
-      .trasa-images {
-        display: grid;
-        z-index: 2;
-        grid-row: 1 / 2;
-        grid-column: 1 / 2;
-        margin-left: 7px;
-      }
-      .biber-kropki {
-        display: none;
-      }
+    #trasa {
+      padding-inline: 8.3vw;
+      width: 100vw;
+      display: grid;
+      z-index: 1;
+      grid-row: 1 / 2;
+      grid-column: 1 / 2;
+      box-sizing: border-box;
+    }
 
-      .trasa-repertuar-container {
-        width: auto;
-        margin-bottom: 80px;
-      }
-      .trasa-repertuar-circle {
-        width: 83vw;
-        height: fit-content;
-        border-radius: 3%;
-        margin-left: 5px;
-      }
+    #trasa > h2 {
+      font-size: 10.1vw;
+      margin-top: 65px;
+      margin-bottom: 19px;
+      text-transform: uppercase;
+    }
 
-      .trasa-repertuar-circle > div {
-        font-size: 1.1rem;
-        line-height: 1.2;
-        width: 85vw;
-      }
+    .trasa-info-buy-container {
+      margin-bottom: calc(170px + 35vw);
+    }
 
-      .trasa-repertuar-circle > div p {
-      }
-      #trasa-section {
-      }
-      #trasa-main-container {
-      }
-      #trasa {
-      }
-      .trasa-info-buy-container {
-        /* margin-bottom: calc(170px + 35vw); */
-      }
-      .trasa-info-buy {
-        /* padding: 0px 12px 0 0px; */
-        margin: 0px -4px 0 -2px;
-        padding: 0px 15px 0 5px;
-      }
-      .trasa-info-buy > p {
-      }
-      #trasa > h2 {
-      }
-      .buy-ticket {
-        padding: 2.6svw 4svw 2.6svw;
-        height: fit-content;
-      }
-      .trasa-images {
-        justify-content: center;
-        padding-top: 0;
-        /* margin-top: 295px; */
-        /* margin-top: calc(330px - 4vw); */
-        margin-top: calc(140px - -39vw);
-      }
-      .trasa-photo {
-        width: 95vw;
-      }
-      .biber-kropki {
-      }
+    .trasa-info-buy {
+      margin: 0px -4px 0 -2px;
+      padding: 0px 15px 0 5px;
+    }
 
-      .trasa-repertuar-container {
-      }
-      .trasa-repertuar-circle {
-        box-sizing: border-box;
-        padding: 20px;
-      }
+    .trasa-info-buy > p {
+      font-size: clamp(12px, 4.1vw, 23px);
+      width: 44vw;
+    }
 
-      .trasa-repertuar-circle > div {
-      }
+    .buy-ticket {
+      padding: 2.6svw 4svw 2.6svw;
+      height: fit-content;
+    }
 
-      .trasa-repertuar-circle > div p {
-      }
+    .trasa-images {
+      display: grid;
+      z-index: 2;
+      grid-row: 1 / 2;
+      grid-column: 1 / 2;
+      margin-left: 7px;
+      justify-content: center;
+      padding-top: 0;
+      margin-top: calc(140px - -39vw);
+    }
 
-      #o-nas {
-        height: auto;
-        margin-bottom: 110px;
-      }
+    .trasa-photo {
+      width: 95vw;
+    }
 
-      #o-nas img {
-        /* margin-right: 2vw; */
-      }
+    .biber-kropki {
+      display: none;
+    }
 
-      #first-photo-text-container {
-        width: 94vw;
-        height: 66vh;
-        border-radius: 11px;
-        border: 1px solid rgba(220, 220, 220, 0.78);
-        margin-top: 6vh;
-        margin-bottom: 6vh;
-      }
+    .trasa-repertuar-container {
+      width: auto;
+      margin-bottom: 80px;
+    }
 
-      #first-photo-text-container > p {
-        font-size: 2.7rem;
-      }
-      #kalendarz-container {
-        height: auto;
-      }
-      #kalendarz-container > div {
-        height: auto;
-      }
-      .fantastica-big-letters {
-        align-self: start;
-        top: 23%;
-      }
-      #fbl {
-        font-size: 12.5vw;
-        /* align-items: start; */
-      }
-      #second-quote-main {
-        grid-row: 6 / 7;
-      }
-      #second-purple-quote {
-        /* height: auto; */
-      }
-      #second-quote-main > div > h2 {
-        font-size: 7.3vw;
-      }
-      #second-quote-main > div > h4 {
-        font-size: 3.4vw;
-      }
-      #second-quote-main > div > a {
-        font-size: 3.8vw;
-      }
-      #second-quote-main > img {
-        width: 100vw;
-        height: auto;
-      }
+    .trasa-repertuar-circle {
+      width: 83vw;
+      height: fit-content;
+      /* border-radius: 3%; */
+      border-radius: 0%;
+      margin-left: 5px;
+      box-sizing: border-box;
+      padding: 20px;
+    }
 
-      /* TODO - wazne, na glownej za male literki w tym */
-      #second-quote-main > div > a,
-      #second-quote-main > div > h4 {
-        /* font-size: 10vw; */
-      }
+    .trasa-repertuar-circle > div {
+      font-size: 1.1rem;
+      line-height: 1.2;
+      width: 85vw;
+    }
+
+    .fantastica-big-letters {
+      align-self: start;
+      top: 23%;
+    }
+
+    #fbl {
+      font-size: 12.5vw;
     }
   }
 </style>
-
 <script>
   import Lenis from "lenis";
   import { gsap } from "gsap";
@@ -805,6 +744,9 @@ import { ViewTransitions } from "astro:transitions";
   });
 
   function initAnimations() {
+    // 0. Wyczyść stare triggery przy powrocie na stronę
+    ScrollTrigger.getAll().forEach((t) => t.kill());
+
     // 1. Clean up
     if (lenis) {
       lenis.destroy();
@@ -817,6 +759,28 @@ import { ViewTransitions } from "astro:transitions";
       gsap.ticker.add((time) => lenis.raf(time * 1000));
       gsap.ticker.lagSmoothing(0);
     }
+
+    // --- KRYTYCZNE DLA SAFARI I VIEWTRANSITIONS ---
+    // Resetujemy stan elementów po powrocie z innej podstrony
+    const video = document.querySelector("#fantastica-bg-vid") as HTMLVideoElement | null;
+    const bg = document.querySelector(".background") as HTMLElement | null;
+    const fa = document.querySelector(".falanding") as HTMLElement | null;
+
+    if (bg) bg.style.display = "block";
+    if (fa) fa.style.display = "block";
+
+    if (video) {
+      video.style.display = "block";
+      const playPromise = video.play();
+      // Safari czasami blokuje play() po transition, wymuszamy przeładowanie strumienia
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          video.load();
+          video.play();
+        });
+      }
+    }
+    // ----------------------------------------------
 
     // 3. Parallax on first photo
     const firstPhotoContainer = document.querySelector("#first-photo-containter");
@@ -832,7 +796,7 @@ import { ViewTransitions } from "astro:transitions";
       tl.to(firstPhotoContainer, { backgroundPositionY: "10%" }, 0);
     }
 
-    // 4. Hero animations (from Glowna_cmpnt3)
+    // 4. Hero animations
     const heroTrigger = document.querySelector(".scroll-container-container");
     if (!heroTrigger) return;
 
@@ -918,26 +882,26 @@ import { ViewTransitions } from "astro:transitions";
         start: "+=130%",
         scrub: true,
         onEnter: () => {
-          const video = document.querySelector("#fantastica-bg-vid") as HTMLVideoElement | null;
-          const bg = document.querySelector("#fadeImage") as HTMLElement | null;
-          const fa = document.querySelector("#falandingImg") as HTMLElement | null;
-          if (video) {
-            video.style.display = "none";
-            video.pause();
+          const v = document.querySelector("#fantastica-bg-vid") as HTMLVideoElement | null;
+          const bgEl = document.querySelector(".background") as HTMLElement | null;
+          const faEl = document.querySelector(".falanding") as HTMLElement | null;
+          if (v) {
+            v.style.display = "none";
+            v.pause();
           }
-          if (bg) bg.style.display = "none";
-          if (fa) fa.style.display = "none";
+          if (bgEl) bgEl.style.display = "none";
+          if (faEl) faEl.style.display = "none";
         },
         onLeaveBack: () => {
-          const video = document.querySelector("#fantastica-bg-vid") as HTMLVideoElement | null;
-          const bg = document.querySelector("#fadeImage") as HTMLElement | null;
-          const fa = document.querySelector("#falandingImg") as HTMLElement | null;
-          if (video) {
-            video.style.display = "block";
-            video.play();
+          const v = document.querySelector("#fantastica-bg-vid") as HTMLVideoElement | null;
+          const bgEl = document.querySelector(".background") as HTMLElement | null;
+          const faEl = document.querySelector(".falanding") as HTMLElement | null;
+          if (v) {
+            v.style.display = "block";
+            v.play();
           }
-          if (bg) bg.style.display = "block";
-          if (fa) fa.style.display = "block";
+          if (bgEl) bgEl.style.display = "block";
+          if (faEl) faEl.style.display = "block";
         },
       },
     });
