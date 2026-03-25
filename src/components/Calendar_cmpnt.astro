@@ -279,6 +279,8 @@ import Wydarzenia from "../components/Wydarzenia.astro";
 
 <script>
   document.addEventListener("astro:page-load", () => {
+    window.scrollTo(0, 0);
+
     const switchInput = document.getElementById("switch") as HTMLInputElement;
     const upcomingContainer = document.getElementById("events-upcoming");
     const pastContainer = document.getElementById("events-past");
