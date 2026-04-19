@@ -6,4 +6,5 @@ repertoire: Biber
 eventName: Sacrum/Profanum Tour
 eventLocation: Łomża, PL
 eventTime: 19:00
+eventLink: https://fb.me/e/7qNcNXmN7
 ---
