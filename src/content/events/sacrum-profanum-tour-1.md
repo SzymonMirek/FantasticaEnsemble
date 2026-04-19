@@ -6,4 +6,5 @@ repertoire: Biber
 eventName: Sacrum/Profanum Tour
 eventLocation: Katowice, PL
 eventTime: 18:00
+eventLink: https://fb.me/e/4yvQY7lcH
 ---
