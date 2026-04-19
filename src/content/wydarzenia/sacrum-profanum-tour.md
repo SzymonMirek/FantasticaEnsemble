@@ -6,4 +6,5 @@ repertuar: Biber
 nazwaWydarzenia: Sacrum/Profanum Tour
 miejsceWydarzenia: Gliwice, PL
 czasWydarzenia: 18:00
+linkWydarzenia: https://fb.me/e/6cLXjWGWB
 ---
