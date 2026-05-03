@@ -540,8 +540,14 @@ import { ViewTransitions } from "astro:transitions";
   @media screen and (max-width: 1000px) {
     body {
       height: auto;
+      pointer-events: none;
     }
-
+    body > * {
+      pointer-events: auto;
+    }
+    .footer {
+      pointer-events: all;
+    }
     #fantastica-glowna {
       grid-template-rows: 122vh 1fr;
     }

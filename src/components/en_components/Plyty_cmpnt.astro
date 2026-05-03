@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import albumyHeadlineImg from "../../assets/albumyHeadline.png";
-import plytyEclipse from "../../assets/plytyEclipseLol.png";
 import plytyBiber from "../../assets/plytyBiber.png";
 import plytyBiber2 from "../../assets/plytyBiber2.png";
 import plytyBiberDots from "../../assets/plyty-biber-dots.png";
@@ -25,7 +24,7 @@ import { ViewTransitions } from "astro:transitions";
     </div>
     <div class="albumy-headline-img-container">
       <Image class="albumyHeadlineImg" src={albumyHeadlineImg} alt="" fetchpriority="high" />
-      <Image class="albumyEclipseHeadline" src={plytyEclipse} alt="" fetchpriority="high" />
+      <div class="glow-background"></div>
     </div>
   </div>
   <div class="albumy-biber-container">
@@ -155,11 +154,18 @@ import { ViewTransitions } from "astro:transitions";
     z-index: 1;
   }
 
-  .albumyEclipseHeadline {
+  .albumyEclipseHeadline,
+  .glow-background  {
     position: absolute;
-    top: -24vw;
-    left: -24vw;
+    top: -14vw;
+    left: -7vw;
     z-index: 0;
+    width: 888px;
+    height: 616px;
+    border-radius: 888px;
+    opacity: 0.95;
+    background: #ebc0d8;
+    filter: blur(150px);
   }
   .albumy-headline-text {
     grid-column: 1/2;
@@ -606,7 +612,8 @@ import { ViewTransitions } from "astro:transitions";
     }
   }
   @media screen and (min-width: 1800px) {
-    .albumyEclipseHeadline {
+    .albumyEclipseHeadline,
+    .glow-background { {
       left: -1vw;
     }
   }

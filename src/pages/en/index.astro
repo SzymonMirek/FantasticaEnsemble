@@ -502,6 +502,13 @@ import Footer from "../../components/en_components/Footer.astro";
 
   /* max-width 1000px max-width 1000px max-width 1000px max-width 1000px max-width 1000px max-width 1000px max-width 1000px max-width 1000px max-width 1000px */
   @media screen and (max-width: 1000px) {
+    body {
+      height: auto;
+      pointer-events: none;
+    }
+    body > * {
+      pointer-events: auto;
+    }
     #fantastica-glowna {
       grid-template-rows: 110vh 72%;
     }
